@@ -49,8 +49,7 @@
 <a id="Что-мы-предлагаем" class="anchor" href="#%D0%A7%D1%82%D0%BE-%D0%BC%D1%8B-%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%B0%D0%B3%D0%B0%D0%B5%D0%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>Что мы предлагаем?</h2>
 
 <ul>
-<li>
-<a href="http://splusminusx.github.io/java/index.html">Сущностную модель и API</a>. </li>
+<li>Сущностную модель и API. <a href="http://splusminusx.github.io/java/index.html">Android</a> <a href="http://splusminusx.github.io/ios/index.html">iOS</a> </li>
 <li>Огромную возможность кастомизации UI.</li>
 <li>Демонстрационное приложение с примером использования SDK.</li>
 </ul>
@@ -58,12 +57,12 @@
 <h2>
 <a id="Архитектура-приложения-использующего-livetex-sdk" class="anchor" href="#%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE-livetex-sdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Архитектура приложения использующего LiveTex SDK</h2>
 
+<h3>
+<a id="Описание-интерфейсов-android" class="anchor" href="#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%B2-android" aria-hidden="true"><span class="octicon octicon-link"></span></a>Описание интерфейсов. Android.</h3>
+
 <p><img src="http://goo.gl/ICS0LE" alt="Модель"></p>
 
 
-
-<h3>
-<a id="Описание-интерфейсов" class="anchor" href="#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%B2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Описание интерфейсов</h3>
 
 <div class="highlight highlight-java"><pre>
 <span class="k">public</span> <span class="k">interface</span> <span class="nc">IInitHandler</span> {
@@ -302,6 +301,329 @@
     <span class="kt">void</span> <span class="nf">getDepartmentOperators</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Employee</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
 }
 </pre></div>
+
+<h3>
+<a id="Описание-интерфейсов-ios" class="anchor" href="#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%B2-ios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Описание интерфейсов. iOS</h3>
+
+<p><img src="http://goo.gl/9O66MD" alt="Модель"></p>
+
+
+
+<div class="highlight highlight-objective-c"><pre><span class="cm">/*!</span>
+<span class="cm"> Протокол делегата для работы с нотификациями сервиса нотификаций диалога</span>
+<span class="cm"></span>
+<span class="cm"> @warning Методы делегата выполняется синхронно на главном потоке относительно параллельного потока рабочей последовательной</span>
+<span class="cm"> очереди SDK (serial queue) с использованием механизма Grand Central Dispatch и библиотеки libdispatch.</span>
+<span class="cm"> */</span>
+
+<span class="kt">@protocol</span> <span class="nc">LTMobileSDKNotificationHandlerProtocol</span> &lt;NSObject&gt;
+
+<span class="cm">/*!</span>
+<span class="cm"> Бан посетителя с указанием сообщения причины.</span>
+<span class="cm"> */</span>
+- (<span class="kt">void</span>) <span class="nf">ban</span><span class="nf">:</span> (<span class="no">NSString</span> *) <span class="nv">message</span>;
+<span class="cm">/*!</span>
+<span class="cm"> Обновление состояния диалога</span>
+<span class="cm"> */</span>
+- (<span class="kt">void</span>) <span class="nf">updateDialogState</span><span class="nf">:</span> (LTDialogState *) <span class="nv">state</span>;
+<span class="cm">/*!</span>
+<span class="cm"> Передача фаила</span>
+<span class="cm"> */</span>
+- (<span class="kt">void</span>) <span class="nf">receiveFileMessage</span><span class="nf">:</span> (LTFileMessage *) <span class="nv">message</span>;
+<span class="cm">/*!</span>
+<span class="cm"> Новое сообщение пользователю</span>
+<span class="cm"> */</span>
+- (<span class="kt">void</span>) <span class="nf">receiveTextMessage</span><span class="nf">:</span> (LTTextMessage *) <span class="nv">message</span>;
+<span class="cm">/*!</span>
+<span class="cm"> Подтверждение набора сообщения</span>
+<span class="cm"> */</span>
+- (<span class="kt">void</span>) <span class="nf">confirmTextMessage</span><span class="nf">:</span> (LTTextMessage *) <span class="nv">message</span>;
+<span class="cm">/*!</span>
+<span class="cm"> Удерживающее сообщение</span>
+<span class="cm"> */</span>
+- (<span class="kt">void</span>) <span class="nf">receiveHoldMessage</span><span class="nf">:</span> (LTHoldMessage *) <span class="nv">message</span>;
+<span class="cm">/*!</span>
+<span class="cm"> Получение нотификации</span>
+<span class="cm"> */</span>
+- (<span class="kt">void</span>) <span class="nf">receiveTypingMessage</span><span class="nf">:</span> (LTTypingMessage *) <span class="nv">message</span>;
+
+<span class="kt">@end</span></pre></div>
+
+<p><code>LTMobileSDKNotificationHandlerProtocol</code> - обработчик оповещений от сервера.</p>
+
+<div class="highlight highlight-objective-c"><pre><span class="kt">@interface</span> <span class="nc">LTMobileSDK</span> : <span class="no">NSObject</span>
+
+- (<span class="kt">instancetype</span>)<span class="nf">initWithParams</span><span class="nf">:</span>(LTMobileSDKInitializationParams*)<span class="nv">params</span>;
+
+- (<span class="kt">void</span>)<span class="nf">runWithSuccess</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSString</span> *token))<span class="nf">success</span>
+               <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *exception))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Запрос диалога с конкретным оператором.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, </span>
+<span class="cm"> параметром у которого явлется объект типа NSException</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">requestWithSuccess</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTDialogState *state))<span class="nf">success</span>
+                   <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Запрос диалога с конкретным оператором.</span>
+<span class="cm"></span>
+<span class="cm"> @param attributes данные сопутствующие диалогу.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, параметром у которого является объект типа LTDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать в случае неверных</span>
+<span class="cm"> атрибутов диалога.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">requestWithDialogAttributes</span><span class="nf">:</span>(LTDialogAttributes*)<span class="nv">attributes</span>
+                            <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTDialogState *state))<span class="nf">success</span>
+                            <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Запрос диалога с конкретным оператором.</span>
+<span class="cm"> @param mOperator оператор, к которым необходимо начать диалог.</span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, параметром у которого является объект типа </span>
+<span class="cm"> LTDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSException</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать в</span>
+<span class="cm"> случае неверных атрибутов диалога или при указании невалидного оператора.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">requestWithOperator</span><span class="nf">:</span>(LTEmployeeId)<span class="nv">employeeId</span>
+                        <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTDialogState *state))<span class="nf">success</span>
+                        <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Запрос диалога с конкретным оператором.</span>
+<span class="cm"> @param mOperator оператор, к которым необходимо начать диалог.</span>
+<span class="cm"> @param attributes данные сопутствующие диалогу.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, параметром у которого является объект типа LTDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать в</span>
+<span class="cm"> случае неверных атрибутов диалога или при указании невалидного оператора.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">requestWithOperator</span><span class="nf">:</span>(LTEmployeeId)<span class="nv">employeeId</span>
+                 <span class="nf">dialogAttributes</span><span class="nf">:</span>(LTDialogAttributes*)<span class="nv">attributes</span>
+                          <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTDialogState *state))<span class="nf">success</span>
+                          <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Запрос диалога с операторами указанного департамента.</span>
+<span class="cm"> @param department департамент, с оператом которого необходимо начать диалог.</span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, параметром у которого является объект типа LTDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать при указании </span>
+<span class="cm"> невалидного депертамента.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">requestWithDepartment</span><span class="nf">:</span>(LTDepartmentId)<span class="nv">departmentId</span>
+                      <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTDialogState *state))<span class="nf">success</span>
+                      <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Запрос диалога с операторами указанного департамента.</span>
+<span class="cm"> @param department департамент, с оператом которого необходимо начать диалог.</span>
+<span class="cm"> @param attributes данные сопутствующие диалогу.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, параметром у которого является объект типа LTDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать в</span>
+<span class="cm"> случае неверных атрибутов диалога или при указании невалидного депертамента.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">requestWithDepartment</span><span class="nf">:</span>(LTDepartmentId)<span class="nv">departmentId</span>
+             <span class="nf">dialogAttributes</span><span class="nf">:</span>(LTDialogAttributes*)<span class="nv">attributes</span>
+                      <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTDialogState *state))<span class="nf">success</span>
+                      <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Прекращение диалога с собеседником.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, параметром у которого является объект типа LTDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать в</span>
+<span class="cm">   случае отсутствия текущего диалога.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">closeWithSuccess</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTDialogState *state))<span class="nf">success</span>
+                 <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Оценка диалога с собеседником.</span>
+<span class="cm"></span>
+<span class="cm"> @param vote оценка собеседника.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, параметром у которого является объект типа LTDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать в</span>
+<span class="cm"> случае отсутствия текущего диалога.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">voteWithVote</span><span class="nf">:</span>(LTVote*)<span class="nv">Vote</span>
+             <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)())<span class="nf">success</span>
+             <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Оповещение о наборе текста.</span>
+<span class="cm"></span>
+<span class="cm"> @param message набранное сообщение.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать в</span>
+<span class="cm"> случае отсутствия текущего диалога.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">typingWithTypingMessage</span><span class="nf">:</span>(LTTypingMessage*)<span class="nv">message</span>
+                        <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)())<span class="nf">success</span>
+                        <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Отправка текстового сообщения.</span>
+<span class="cm"></span>
+<span class="cm"> @param message текст сообщения.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result message созданое сервером сообщение.</span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата. Может возникать в</span>
+<span class="cm"> случае отсутствия текущего диалога.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">sendMessage</span><span class="nf">:</span>(<span class="no">NSString</span>*)<span class="nv">text</span>
+            <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTTextMessage *message))<span class="nf">success</span>
+            <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Получение истории сообщений диалога.</span>
+<span class="cm"></span>
+<span class="cm"> @param limit количество запрашиваемых сообщений из истории.</span>
+<span class="cm"></span>
+<span class="cm"> @param offset количество пропускаемых сообщений истории.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"> @result messages список сообщений истории чата</span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">messageHistory</span><span class="nf">:</span>(<span class="nc">int16_t</span>)<span class="nv">limit</span>
+                <span class="nf">offset</span><span class="nf">:</span>(<span class="nc">int16_t</span>)<span class="nv">offset</span>
+               <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSArray</span> *messages))<span class="nf">success</span>
+               <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Получение текущего состояния интерфейса клиента сервиса диалога.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result state текущее состояние интерфейса клиента сервиса диалога.</span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">getStateWithSuccess</span><span class="nf">:</span>(<span class="kt">void</span>(^)(LTDialogState *state))<span class="nf">success</span>
+                    <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *chatException))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Получение списка операторов с указанным статусом.</span>
+<span class="cm"></span>
+<span class="cm"> @param status интересующий статус.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"> @result operators список операторов с указанным статусом.</span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">getOperators</span><span class="nf">:</span>(LTStatus)<span class="nv">status</span>
+             <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSArray</span> *operators))<span class="nf">success</span>
+             <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *error))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Получение списка департаментов с указанным статусом.</span>
+<span class="cm"></span>
+<span class="cm"> @param status интересующий статус.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result departments список департаментов с указанным статусом.</span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">getDepartments</span><span class="nf">:</span>(LTStatus)<span class="nv">status</span>
+               <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSArray</span> *departments))<span class="nf">success</span>
+               <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *error))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Получение списка департаментов с указанным статусом.</span>
+<span class="cm"></span>
+<span class="cm"> @param department депертамент, операторы которого будут получены</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"></span>
+<span class="cm"> @result operators список операторов с указанным депертаментом.</span>
+<span class="cm"></span>
+<span class="cm"> @result chatException ошибка сервиса чата.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">getDepartmentOperators</span><span class="nf">:</span>(LTDepartment*)<span class="nv">department</span>
+                       <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSArray</span> *operators))<span class="nf">success</span>
+                       <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *error))<span class="nf">failure</span>;
+
+<span class="cm">/*!</span>
+<span class="cm"> Установка имени посетителя.</span>
+<span class="cm"></span>
+<span class="cm"> @param name имя посетителя.</span>
+<span class="cm"></span>
+<span class="cm"> @result Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается</span>
+<span class="cm"> колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption</span>
+<span class="cm"> пойманый при выполнии операции в параллельном потоке очереди SDK. </span>
+<span class="cm"> @result chatException ошибка сервиса чата.</span>
+<span class="cm"> */</span>
+
+- (<span class="kt">void</span>)<span class="nf">setVisitorName</span><span class="nf">:</span>(<span class="no">NSString</span> *)<span class="nv">name</span>
+               <span class="nf">success</span><span class="nf">:</span>(<span class="kt">void</span>(^)())<span class="nf">success</span>
+               <span class="nf">failure</span><span class="nf">:</span>(<span class="kt">void</span>(^)(<span class="no">NSException</span> *error))<span class="nf">failure</span>;
+<span class="kt">@end</span></pre></div>
 
 <h2>
 <a id="С-чего-начать" class="anchor" href="#%D0%A1-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>С чего начать?</h2>
