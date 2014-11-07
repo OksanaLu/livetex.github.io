@@ -173,7 +173,7 @@
     <span class="cm">/**<span class="h"></span></span>
 <span class="cm"><span class="h">     * Запрос собеседника для диалога.</span></span>
 <span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
 
@@ -181,7 +181,7 @@
 <span class="cm"><span class="h">     * Запрос собеседника для диалога.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
 
@@ -189,7 +189,7 @@
 <span class="cm"><span class="h">     * Запрос диалога с конкретным оператором.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> operator - оператор, к которым необходимо начать диалог.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler  - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler  - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Employee</span> <span class="nv">operator</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
 
@@ -198,31 +198,31 @@
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> operator   - оператор, к которым необходимо начать диалог.</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Employee</span> <span class="nv">operator</span>, <span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
 
     <span class="cm">/**<span class="h"></span></span>
 <span class="cm"><span class="h">     * Запрос диалога с операторами указанного департамента.</span></span>
 <span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, с оператом которого необходимо начать диалог.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, с оператором которого необходимо начать диалог.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
 
     <span class="cm">/**<span class="h"></span></span>
 <span class="cm"><span class="h">     * Запрос диалога с операторами указанного департамента.</span></span>
 <span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, с оператом которого необходимо начать диалог.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, с оператором которого необходимо начать диалог.</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
 
     <span class="cm">/**<span class="h"></span></span>
 <span class="cm"><span class="h">     * Прекращение диалога с собеседником.</span></span>
 <span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">close</span>(<span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
 
@@ -230,7 +230,7 @@
 <span class="cm"><span class="h">     * Оценка диалога с собеседником.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> vote    - оценка собеседника.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">vote</span>(<span class="kt">Vote</span> <span class="nv">vote</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
 
@@ -238,7 +238,7 @@
 <span class="cm"><span class="h">     * Оповещение о наборе текста.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> message - набранное сообщение.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">typing</span>(<span class="kt">TypingMessage</span> <span class="nv">message</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
 
@@ -246,7 +246,7 @@
 <span class="cm"><span class="h">     * Отправка текстового сообщения.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> text    - текст сообщения.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">sendTextMessage</span>(<span class="kt">String</span> <span class="nv">text</span>, <span class="kt">AHandler&lt;<span class="kt">TextMessage</span>&gt;</span> <span class="nv">handler</span>);
 
@@ -255,7 +255,7 @@
 <span class="cm"><span class="h">     * при получение сообщения от собеседника.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> message - текст сообщения.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">confirmTextMessage</span>(<span class="kt">livetex.message<span class="o">.</span>TextMessage</span> <span class="nv">message</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
 
@@ -264,7 +264,7 @@
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> limit   - количество запрашиваемых сообщений из истории.</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> offset  - количество пропускаемых сообщений истории.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">messageHistory</span>(<span class="kt">short</span> <span class="nv">limit</span>, <span class="kt">short</span> <span class="nv">offset</span>, <span class="kt">AHandler&lt;<span class="kt">List&lt;<span class="kt">TextMessage</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
 
@@ -272,7 +272,7 @@
 <span class="cm"><span class="h">     * Установка имени посетителя.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> name    - имя посетителя.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">setName</span>(<span class="kt">String</span> <span class="nv">name</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
 
@@ -280,7 +280,7 @@
 <span class="cm"><span class="h">     * Получение списка операторов с указанным статусом.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> status  - интересующий статус.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">getOperators</span>(<span class="kt">String</span> <span class="nv">status</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Employee</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
 
@@ -289,15 +289,15 @@
 <span class="cm"><span class="h">     * с указанным статусом.</span></span>
 <span class="cm"><span class="h">     *</span></span>
 <span class="cm"><span class="h">     * <span class="k">@param</span> status  - интересующий статус.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">getDepartments</span>(<span class="kt">String</span> <span class="nv">status</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Department</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
 
     <span class="cm">/**<span class="h"></span></span>
 <span class="cm"><span class="h">     * Получение списка операторов привязанных к указанному департаменту.</span></span>
 <span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> department - депертамент, операторы которого будут получены.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, операторы которого будут получены.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
 <span class="cm"><span class="h">     </span>*/</span>
     <span class="kt">void</span> <span class="nf">getDepartmentOperators</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Employee</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
 }
