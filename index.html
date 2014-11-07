@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Getting Started : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Getting Started</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/splusminusx">View on GitHub</a>
+
+          <h1 id="project_title">Getting Started</h1>
+          <h2 id="project_tagline"></h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="livetex-sdk-Стартовая-документация-android" class="anchor" href="#livetex-sdk-%D0%A1%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D0%B0%D1%8F-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F-android" aria-hidden="true"><span class="octicon octicon-link"></span></a>LiveTex SDK. Стартовая документация. Android.</h1>
+
+<h2>
+<a id="Глоссарий" class="anchor" href="#%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Глоссарий</h2>
+
+<p><strong>LiveTex SDK</strong> - Software Developer Kit. Набор инструментов для интеграции с системой LiveTex.</p>
+
+<p><strong>Мобильный клиент</strong> или <strong>клиент</strong> - конечный пользователь SDK, пользователь приложения с интегрированным SDK.</p>
+
+<p><strong>Приложение</strong> - программа для предоставления возможности коммуникации с клиентом.</p>
+
+<p><strong>Ключ SDK</strong> - уникальный идентификатор разработчика приложения.</p>
+
+<p><strong>Клиентское приложение</strong> - программа осуществляющая интеграцию с SDK.</p>
+
+<p><strong>Токен посетителя</strong> - уникальный идентификатор посетителя.</p>
+
+<h2>
+<a id="Что-мы-предлагаем" class="anchor" href="#%D0%A7%D1%82%D0%BE-%D0%BC%D1%8B-%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%B0%D0%B3%D0%B0%D0%B5%D0%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>Что мы предлагаем?</h2>
+
+<ul>
+<li>Сущностную модель и API.</li>
+<li>Огромную возможность кастомизации UI.</li>
+<li>Демонстрационное приложение с примером использования SDK.</li>
+</ul>
+
+<h2>
+<a id="Архитектура-приложения-использующего-livetex-sdk" class="anchor" href="#%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE-livetex-sdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Архитектура приложения использующего LiveTex SDK</h2>
+
+<p><img src="http://goo.gl/ICS0LE" alt="Модель"></p>
+
+
+
+<h3>
+<a id="Описание-интерфейсов" class="anchor" href="#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%B2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Описание интерфейсов</h3>
+
+<div class="highlight highlight-java"><pre>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">IInitHandler</span> {
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Обработка результат успешной инициализации SDK.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> token - идентификатор посетителя.</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">onSuccess</span>(<span class="kt">String</span> <span class="nv">token</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Обработчик ошибки инициализации.</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">onError</span>(<span class="kt">String</span> <span class="nv">error</span>);
+}
+</pre></div>
+
+<p><code>IInitHandler</code> - обработчик события инициализации SDK, после вызова метода 
+<code>onSuccess</code> данного обработчика можно начинать взаимодействие с экземпляром 
+<code>Livetex</code>. Обработчик успешной инициализации принимает аргументом уникальный 
+токен посетителя <code>token</code>. Токен может быть использован при повторной 
+инициализации SDK. Необходим для восстановления истории переписки посетителя.</p>
+
+<div class="highlight highlight-java"><pre>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">INotificationHandler</span> {
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Оповещение посетителя о блокировке.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> message сообщение блокировки.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">ban</span>(<span class="kt">String</span> <span class="nv">message</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Оповещение об изменении состояния сервиса диалога.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> state  новое состояние интерфейса сервиса диалога.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">updateDialogState</span>(<span class="kt">DialogState</span> <span class="nv">state</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Оповещение о переданном файле.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> message сообщение передачи файла.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">receiveFileMessage</span>(<span class="kt">FileMessage</span> <span class="nv">message</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Оповещение о переданном текстовом сообщении.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> message  текстовое сообщение.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">receiveTextMessage</span>(<span class="kt">TextMessage</span> <span class="nv">message</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Оповещение о новом удерживающем сообщении.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> message удерживающее сообщение.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">receiveHoldMessage</span>(<span class="kt">HoldMessage</span> <span class="nv">message</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Оповещение о наборе текста.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> message сообщение оповещения о наборе текста.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">receiveTypingMessage</span>(<span class="kt">TypingMessage</span> <span class="nv">message</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Обработчик ошибок.</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">onError</span>(<span class="kt">String</span> <span class="nv">message</span>);
+}
+</pre></div>
+
+<p><code>INotificationHandler</code> - обработчик оповещений от сервера. </p>
+
+<div class="highlight highlight-java"><pre>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">ILivetex</span> {
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Инициализация SDK</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик результата инициализации.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> notificationHandler - обработчик оповещений.</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">init</span>(<span class="k">final</span> <span class="kt">IInitHandler</span> <span class="nv">handler</span>, <span class="k">final</span> <span class="kt">INotificationHandler</span> <span class="nv">notificationHandler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Разрушение SDK.</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">destroy</span>();
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Запрос собеседника для диалога.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Запрос собеседника для диалога.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Запрос диалога с конкретным оператором.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> operator - оператор, к которым необходимо начать диалог.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler  - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Employee</span> <span class="nv">operator</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Запрос диалога с конкретным оператором.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> operator   - оператор, к которым необходимо начать диалог.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Employee</span> <span class="nv">operator</span>, <span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Запрос диалога с операторами указанного департамента.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, с оператом которого необходимо начать диалог.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Запрос диалога с операторами указанного департамента.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, с оператом которого необходимо начать диалог.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Прекращение диалога с собеседником.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">close</span>(<span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Оценка диалога с собеседником.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> vote    - оценка собеседника.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">vote</span>(<span class="kt">Vote</span> <span class="nv">vote</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Оповещение о наборе текста.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> message - набранное сообщение.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">typing</span>(<span class="kt">TypingMessage</span> <span class="nv">message</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Отправка текстового сообщения.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> text    - текст сообщения.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">sendTextMessage</span>(<span class="kt">String</span> <span class="nv">text</span>, <span class="kt">AHandler&lt;<span class="kt">TextMessage</span>&gt;</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Подтверждение получения сообщения. Необходимо вызывать</span></span>
+<span class="cm"><span class="h">     * при получение сообщения от собеседника.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> message - текст сообщения.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">confirmTextMessage</span>(<span class="kt">livetex.message<span class="o">.</span>TextMessage</span> <span class="nv">message</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Получение истории сообщений диалога.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> limit   - количество запрашиваемых сообщений из истории.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> offset  - количество пропускаемых сообщений истории.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">messageHistory</span>(<span class="kt">short</span> <span class="nv">limit</span>, <span class="kt">short</span> <span class="nv">offset</span>, <span class="kt">AHandler&lt;<span class="kt">List&lt;<span class="kt">TextMessage</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Установка имени посетителя.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> name    - имя посетителя.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">setName</span>(<span class="kt">String</span> <span class="nv">name</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Получение списка операторов с указанным статусом.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> status  - интересующий статус.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">getOperators</span>(<span class="kt">String</span> <span class="nv">status</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Employee</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Получение списка департаментов, в котором присутствуют операторы</span></span>
+<span class="cm"><span class="h">     * с указанным статусом.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> status  - интересующий статус.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">getDepartments</span>(<span class="kt">String</span> <span class="nv">status</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Department</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
+
+    <span class="cm">/**<span class="h"></span></span>
+<span class="cm"><span class="h">     * Получение списка операторов привязанных к указанному департаменту.</span></span>
+<span class="cm"><span class="h">     *</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> department - депертамент, операторы которого будут получены.</span></span>
+<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - Колбэк</span></span>
+<span class="cm"><span class="h">     </span>*/</span>
+    <span class="kt">void</span> <span class="nf">getDepartmentOperators</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Employee</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
+}
+</pre></div>
+
+<h2>
+<a id="С-чего-начать" class="anchor" href="#%D0%A1-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>С чего начать?</h2>
+
+<ol>
+<li>Создать аккаунт в LiveTex.</li>
+<li>Создать операторов, группы и сайты в Личном Кабинете.</li>
+<li>Получить бинарный пакет SDK и добавить его в свой проект.</li>
+<li>Получить ключ разработчика и доступ к <code>sendbox</code> окружения для отладки.</li>
+</ol>
+
+<p>После выполнения вышеуказанных шагов у вас будет:</p>
+
+<ul>
+<li>Адрес сервиса аутентификации на <code>sendbox</code> окружении. (Пример: <a href="http://authentication-sendbox.livetex.ru:9000">http://authentication-sendbox.livetex.ru:9000</a>).</li>
+<li>Ключ SDK. (Пример: <code>NEVER_SHOW_THIS_KEY_TO_STRANGERS</code>).</li>
+<li>Идентификатор приложения, он же идентификатор сайта полученный в Личном Кабинете (Пример: 10001350).</li>
+</ul>
+
+<h2>
+<a id="Первые-шаги-Инициализация-sdk" class="anchor" href="#%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D0%B5-%D1%88%D0%B0%D0%B3%D0%B8-%D0%98%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-sdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Первые шаги. Инициализация SDK.</h2>
+
+<p>Инициализация SDK в основном потоке приложения.</p>
+
+<div class="highlight highlight-java"><pre>
+<span class="k">public</span> <span class="kt">void</span> run() {
+
+  import <span class="kt">ru.livetex.sdk.handler<span class="o">.</span>IInitHandler</span>;
+  import <span class="kt">ru.livetex.sdk.handler<span class="o">.</span>INotificationHandler</span>;
+  import ru<span class="o">.</span>livetex<span class="o">.</span>sdk<span class="o">.</span><span class="o">*</span>
+  import ru<span class="o">.</span>livetex<span class="o">.</span>sdk<span class="o">.</span><span class="o">*</span>
+  import ru<span class="o">.</span>livetex<span class="o">.</span>capabilities<span class="o">.</span><span class="o">*</span>
+  import ru<span class="o">.</span>livetex<span class="o">.</span>token<span class="o">.</span><span class="o">*</span>
+
+  <span class="c1">// клиентские пакеты</span>
+  import <span class="kt">custom.package<span class="o">.</span>CustomInitHandler</span> <span class="c1">// реализует интерфейс IInitHandler</span>
+  import <span class="kt">custom.package<span class="o">.</span>CustomNotificationHandler</span> <span class="c1">// реализует интерфейс INotificationHandler</span>
+
+  <span class="c1">// URL сервиса аутентификации.</span>
+  string url <span class="o">=</span> <span class="s2">"http://authentication-sendbox.livetex.ru:9000"</span>;
+
+  <span class="c1">// Ключ SDK для авторизации кодовой базы клиент.</span>
+  string key <span class="o">=</span> <span class="s2">"NEVER_SHOW_THIS_KEY_TO_STRANGERS"</span>;
+
+  <span class="c1">// Идентификатор приложения клиента, в текущий </span>
+  <span class="c1">// момент - это идентификатор сайта, который можно </span>
+  <span class="c1">// получить из личного кабинета.</span>
+  string application <span class="o">=</span> <span class="s2">"10001350"</span>;
+
+  <span class="c1">// Список возможностей реализованных в клиентском приложении.</span>
+  <span class="kt">List&lt;<span class="kt">Capabilities</span>&gt;</span> capabilities <span class="o">=</span> <span class="k">new</span> <span class="kt">ArrayList&lt;<span class="kt">Capabilities</span>&gt;</span>();
+
+  <span class="c1">// Получение токена аутентификации из персистентного хранилища клиента SDK.</span>
+  <span class="c1">// Реализуется на усмотрение разработчика.</span>
+  <span class="kt">String</span> token <span class="o">=</span> getTokenFromCustomClientStorage();
+
+  <span class="c1">// Пользовательское приложение умеет вести диалог.</span>
+  capabilities<span class="o">.</span>add(<span class="kt">Capabilities</span><span class="no"><span class="o">.</span>CHAT</span>);
+
+  <span class="c1">// Пользовательское приложение умеет принимать файлы.</span>
+  capabilities<span class="o">.</span>add(<span class="kt">Capabilities</span><span class="no"><span class="o">.</span>FILES_RECEIVE</span>);
+
+  <span class="kt">Builder</span> builder <span class="o">=</span> <span class="k">new</span> <span class="kt">Builder</span>(url, key, application);
+  builder<span class="o">.</span>addCapabilities(capabilities);
+  builder<span class="o">.</span>addToken(token);
+
+  <span class="kt">Livetex</span> livetex <span class="o">=</span> <span class="k">new</span> builder.build();
+
+  <span class="kt">CustomInitHandler</span> initHandler <span class="o">=</span> <span class="k">new</span> <span class="kt">CustomInitHandler</span>();
+  <span class="kt">CustomNotificationHandler</span> notificationHandler <span class="o">=</span> <span class="k">new</span> <span class="kt">CustomNotificationHandler</span>();
+
+  livetex<span class="o">.</span>init(initHandler, notificationHandler);
+
+}</pre></div>
+
+<h2>
+<a id="Сценарии-использования" class="anchor" href="#%D0%A1%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>Сценарии использования</h2>
+
+<h3>
+<a id="Начало-диалога-с-оператором" class="anchor" href="#%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE-%D0%B4%D0%B8%D0%B0%D0%BB%D0%BE%D0%B3%D0%B0-%D1%81-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>Начало диалога с оператором</h3>
+
+<p><img src="http://goo.gl/vRteFF" alt="Модель"></p>
+
+
+
+<ol>
+<li>Посетитель открывает приложение с интегрированным SDK.</li>
+<li>Посетитель открывает окно выбора оператора для диалога.</li>
+<li>Посетитель выбирает оператора для диалога.</li>
+<li>Система назначает посетителю оператора для диалога.</li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
