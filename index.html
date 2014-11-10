@@ -247,7 +247,7 @@ sdk.delegate = delegate;
 <span class="c1">// Инициализация SDK.</span>
 [sdk <span class="nf">runWithSuccess:</span>^(<span class="no">NSString</span> *token) {
 
-    <span class="c1">// Запрос диалога с любым оператормо сайта.</span>
+    <span class="c1">// Запрос диалога с любым оператором.</span>
     [sdk <span class="nf">requestWithSuccess:</span>^(LTDialogState *state) {
         <span class="c1">//...</span>
     } <span class="nf">failure:</span>^(<span class="no">NSException</span> *chatExeption) {
@@ -257,6 +257,17 @@ sdk.delegate = delegate;
 } <span class="nf">failure:</span>^(<span class="no">NSException</span> *exception) {
     <span class="c1">// ...</span>
 }];</pre></div>
+
+<p>Описанный выше пример позволяет реализовать следующий сценарий:</p>
+
+<ol>
+<li>Пользователь инициализирует SDK (вызов <code>init</code>).</li>
+<li>При успешной инициализации SDK выполняется соответствующий обработчик (вызов <code>onSuccess</code>).</li>
+<li>Тело обработчика успешной инициализации запрашивает диалог с оператором (вызов <code>request</code>).</li>
+<li>Обработчик оповещений дожидается события назначения оператора для диалога (вызов <code>updateDialogState</code>).</li>
+<li>Если оператор для диалога назначен отправляем сообщение (вызов <code>sendTextMessage</code>).</li>
+<li>Сообщения принимаемые от оператора логируются (вызов <code>receiveTextMessage</code>). </li>
+</ol>
       </section>
     </div>
 
