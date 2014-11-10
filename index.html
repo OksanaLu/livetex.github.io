@@ -238,8 +238,6 @@ params.sdkKey = <span class="s2">@"NEVER_SHOW_THIS_KEY_TO_STRANGERS"</span>;
 <span class="c1">// получить в личном кабинете.</span>
 params.applicationId = <span class="s2">@"10001350"</span>;
 
-params.callbackQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="m">0</span>);
-
 LTMobileSDK *sdk = [[LTMobileSDK <span class="nf">alloc</span>] <span class="nf">initWithParams:</span>params];
 
 <span class="c1">// Инициализация кастомного обработчика оповещений.</span>
@@ -257,8 +255,7 @@ sdk.delegate = delegate;
     }];
 
 } <span class="nf">failure:</span>^(<span class="no">NSException</span> *exception) {
-
-    [<span class="nb">self</span> <span class="nf">tstPassedBAD</span>];
+    <span class="c1">// ...</span>
 }];</pre></div>
       </section>
     </div>
