@@ -28,370 +28,245 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="livetex-sdk-Стартовая-документация-android" class="anchor" href="#livetex-sdk-%D0%A1%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D0%B0%D1%8F-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F-android" aria-hidden="true"><span class="octicon octicon-link"></span></a>LiveTex SDK. Стартовая документация. Android.</h1>
+<a id="livetex-sdk-Стартовая-документация" class="anchor" href="#livetex-sdk-%D0%A1%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D0%B0%D1%8F-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>LiveTex SDK. Стартовая документация</h1>
 
-<h2>
-<a id="Глоссарий" class="anchor" href="#%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Глоссарий</h2>
+<p><strong>Livetex SDK</strong> предоставляет инструментарий для реализации возможность 
+консультировать пользователей мобильных приложений. </p>
 
-<p><strong>LiveTex SDK</strong> - Software Developer Kit. Набор инструментов для интеграции с системой LiveTex.</p>
+<p>Функциональность:</p>
 
-<p><strong>Мобильный клиент</strong> или <strong>клиент</strong> - конечный пользователь SDK, пользователь приложения с интегрированным SDK.</p>
+<ul>
+<li>возможность выбора департамента и оператора для диалога;</li>
+<li>создание и завершение диалога;</li>
+<li>передача и прием текстовых сообщений;</li>
+<li>прием файлов от оператора;</li>
+<li>мгновенное оповещение о событиях: бан, оповещение о наборе, 
+удерживающие сообщения, изменение оператора диалога,
+закрытие диалога оператором;</li>
+<li>просмотр истории сообщений;</li>
+</ul>
 
-<p><strong>Приложение</strong> - программа для предоставления возможности коммуникации с клиентом.</p>
-
-<p><strong>Ключ SDK</strong> - уникальный идентификатор разработчика приложения.</p>
-
-<p><strong>Клиентское приложение</strong> - программа осуществляющая интеграцию с SDK.</p>
-
-<p><strong>Токен посетителя</strong> - уникальный идентификатор посетителя.</p>
-
-<h2>
-<a id="Что-мы-предлагаем" class="anchor" href="#%D0%A7%D1%82%D0%BE-%D0%BC%D1%8B-%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%B0%D0%B3%D0%B0%D0%B5%D0%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>Что мы предлагаем?</h2>
+<p>Документация API: </p>
 
 <ul>
 <li>
-<a href="http://splusminusx.github.io/java/index.html">Сущностную модель и API</a>. </li>
-<li>Огромную возможность кастомизации UI.</li>
-<li>Демонстрационное приложение с примером использования SDK.</li>
+<a href="http://splusminusx.github.io/java/index.html">Android</a> </li>
+<li><a href="http://splusminusx.github.io/ios/index.html">iOS</a></li>
 </ul>
 
-<h2>
-<a id="Архитектура-приложения-использующего-livetex-sdk" class="anchor" href="#%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE-livetex-sdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Архитектура приложения использующего LiveTex SDK</h2>
+<p>Demo-приложение: </p>
 
-<p><img src="http://goo.gl/ICS0LE" alt="Модель"></p>
-
-
-
-<h3>
-<a id="Описание-интерфейсов" class="anchor" href="#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%B2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Описание интерфейсов</h3>
-
-<div class="highlight highlight-java"><pre>
-<span class="k">public</span> <span class="k">interface</span> <span class="nc">IInitHandler</span> {
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Обработка результат успешной инициализации SDK.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> token - идентификатор посетителя.</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">onSuccess</span>(<span class="kt">String</span> <span class="nv">token</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Обработчик ошибки инициализации.</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">onError</span>(<span class="kt">String</span> <span class="nv">error</span>);
-}
-</pre></div>
-
-<p><code>IInitHandler</code> - обработчик события инициализации SDK, после вызова метода 
-<code>onSuccess</code> данного обработчика можно начинать взаимодействие с экземпляром 
-<code>Livetex</code>. Обработчик успешной инициализации принимает аргументом уникальный 
-токен посетителя <code>token</code>. Токен может быть использован при повторной 
-инициализации SDK. Необходим для восстановления истории переписки посетителя.</p>
-
-<div class="highlight highlight-java"><pre>
-<span class="k">public</span> <span class="k">interface</span> <span class="nc">INotificationHandler</span> {
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Оповещение посетителя о блокировке.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> message сообщение блокировки.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">ban</span>(<span class="kt">String</span> <span class="nv">message</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Оповещение об изменении состояния сервиса диалога.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> state  новое состояние интерфейса сервиса диалога.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">updateDialogState</span>(<span class="kt">DialogState</span> <span class="nv">state</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Оповещение о переданном файле.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> message сообщение передачи файла.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">receiveFileMessage</span>(<span class="kt">FileMessage</span> <span class="nv">message</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Оповещение о переданном текстовом сообщении.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> message  текстовое сообщение.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">receiveTextMessage</span>(<span class="kt">TextMessage</span> <span class="nv">message</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Оповещение о новом удерживающем сообщении.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> message удерживающее сообщение.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">receiveHoldMessage</span>(<span class="kt">HoldMessage</span> <span class="nv">message</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Оповещение о наборе текста.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> message сообщение оповещения о наборе текста.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">receiveTypingMessage</span>(<span class="kt">TypingMessage</span> <span class="nv">message</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Обработчик ошибок.</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">onError</span>(<span class="kt">String</span> <span class="nv">message</span>);
-}
-</pre></div>
-
-<p><code>INotificationHandler</code> - обработчик оповещений от сервера. </p>
-
-<div class="highlight highlight-java"><pre>
-<span class="k">public</span> <span class="k">interface</span> <span class="nc">ILivetex</span> {
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Инициализация SDK</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик результата инициализации.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> notificationHandler - обработчик оповещений.</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">init</span>(<span class="k">final</span> <span class="kt">IInitHandler</span> <span class="nv">handler</span>, <span class="k">final</span> <span class="kt">INotificationHandler</span> <span class="nv">notificationHandler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Разрушение SDK.</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">destroy</span>();
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Запрос собеседника для диалога.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Запрос собеседника для диалога.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Запрос диалога с конкретным оператором.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> operator - оператор, к которым необходимо начать диалог.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler  - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Employee</span> <span class="nv">operator</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Запрос диалога с конкретным оператором.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> operator   - оператор, к которым необходимо начать диалог.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Employee</span> <span class="nv">operator</span>, <span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>)
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Запрос диалога с операторами указанного департамента.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, с оператором которого необходимо начать диалог.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Запрос диалога с операторами указанного департамента.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, с оператором которого необходимо начать диалог.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> attributes - данные сопутствующие диалогу.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">request</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">DialogAttributes</span> <span class="nv">attributes</span>, <span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Прекращение диалога с собеседником.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">close</span>(<span class="kt">AHandler&lt;<span class="kt">DialogState</span>&gt;</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Оценка диалога с собеседником.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> vote    - оценка собеседника.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">vote</span>(<span class="kt">Vote</span> <span class="nv">vote</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Оповещение о наборе текста.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> message - набранное сообщение.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">typing</span>(<span class="kt">TypingMessage</span> <span class="nv">message</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Отправка текстового сообщения.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> text    - текст сообщения.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">sendTextMessage</span>(<span class="kt">String</span> <span class="nv">text</span>, <span class="kt">AHandler&lt;<span class="kt">TextMessage</span>&gt;</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Подтверждение получения сообщения. Необходимо вызывать</span></span>
-<span class="cm"><span class="h">     * при получение сообщения от собеседника.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> message - текст сообщения.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">confirmTextMessage</span>(<span class="kt">livetex.message<span class="o">.</span>TextMessage</span> <span class="nv">message</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Получение истории сообщений диалога.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> limit   - количество запрашиваемых сообщений из истории.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> offset  - количество пропускаемых сообщений истории.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">messageHistory</span>(<span class="kt">short</span> <span class="nv">limit</span>, <span class="kt">short</span> <span class="nv">offset</span>, <span class="kt">AHandler&lt;<span class="kt">List&lt;<span class="kt">TextMessage</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Установка имени посетителя.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> name    - имя посетителя.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">setName</span>(<span class="kt">String</span> <span class="nv">name</span>, <span class="kt">AHandler</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Получение списка операторов с указанным статусом.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> status  - интересующий статус.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">getOperators</span>(<span class="kt">String</span> <span class="nv">status</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Employee</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Получение списка департаментов, в котором присутствуют операторы</span></span>
-<span class="cm"><span class="h">     * с указанным статусом.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> status  - интересующий статус.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">getDepartments</span>(<span class="kt">String</span> <span class="nv">status</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Department</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
-
-    <span class="cm">/**<span class="h"></span></span>
-<span class="cm"><span class="h">     * Получение списка операторов привязанных к указанному департаменту.</span></span>
-<span class="cm"><span class="h">     *</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> department - департамент, операторы которого будут получены.</span></span>
-<span class="cm"><span class="h">     * <span class="k">@param</span> handler    - обработчик</span></span>
-<span class="cm"><span class="h">     </span>*/</span>
-    <span class="kt">void</span> <span class="nf">getDepartmentOperators</span>(<span class="kt">Department</span> <span class="nv">department</span>, <span class="kt">AHandler&lt;<span class="kt">ArrayList&lt;<span class="kt">Employee</span>&gt;</span>&gt;</span> <span class="nv">handler</span>);
-}
-</pre></div>
+<ul>
+<li>
+<a href="https://github.com/LiveTex/Livetex-Android-SDK-Demo">Android</a> </li>
+<li><a href="https://github.com/LiveTex/Livetex-iOS-SDK-Demo">iOS</a></li>
+</ul>
 
 <h2>
 <a id="С-чего-начать" class="anchor" href="#%D0%A1-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>С чего начать?</h2>
 
-<ol>
-<li>Создать аккаунт в LiveTex.</li>
-<li>Создать операторов, группы и сайты в Личном Кабинете.</li>
-<li>Получить бинарный пакет SDK и добавить его в свой проект.</li>
-<li>Получить ключ разработчика и доступ к <code>sendbox</code> окружения для отладки.</li>
-</ol>
+<h3>
+<a id="Шаг-1-Создание-аккаунта" class="anchor" href="#%D0%A8%D0%B0%D0%B3-1-%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Шаг 1. Создание аккаунта</h3>
 
-<p>После выполнения вышеуказанных шагов у вас будет:</p>
-
-<ul>
-<li>Адрес сервиса аутентификации на <code>sendbox</code> окружении. (Пример: <a href="http://authentication-sendbox.livetex.ru:9000">http://authentication-sendbox.livetex.ru:9000</a>).</li>
-<li>Ключ SDK. (Пример: <code>NEVER_SHOW_THIS_KEY_TO_STRANGERS</code>).</li>
-<li>Идентификатор приложения, он же идентификатор сайта полученный в Личном Кабинете (Пример: 10001350).</li>
-</ul>
-
-<h2>
-<a id="Первые-шаги-Инициализация-sdk" class="anchor" href="#%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D0%B5-%D1%88%D0%B0%D0%B3%D0%B8-%D0%98%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-sdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Первые шаги. Инициализация SDK.</h2>
-
-<p>Инициализация SDK в основном потоке приложения.</p>
-
-<div class="highlight highlight-java"><pre>
-<span class="k">public</span> <span class="kt">void</span> run() {
-
-  import <span class="kt">ru.livetex.sdk.handler<span class="o">.</span>IInitHandler</span>;
-  import <span class="kt">ru.livetex.sdk.handler<span class="o">.</span>INotificationHandler</span>;
-  import ru<span class="o">.</span>livetex<span class="o">.</span>sdk<span class="o">.</span><span class="o">*</span>
-  import ru<span class="o">.</span>livetex<span class="o">.</span>sdk<span class="o">.</span><span class="o">*</span>
-  import ru<span class="o">.</span>livetex<span class="o">.</span>capabilities<span class="o">.</span><span class="o">*</span>
-  import ru<span class="o">.</span>livetex<span class="o">.</span>token<span class="o">.</span><span class="o">*</span>
-
-  <span class="c1">// клиентские пакеты</span>
-  import <span class="kt">custom.package<span class="o">.</span>CustomInitHandler</span> <span class="c1">// реализует интерфейс IInitHandler</span>
-  import <span class="kt">custom.package<span class="o">.</span>CustomNotificationHandler</span> <span class="c1">// реализует интерфейс INotificationHandler</span>
-
-  <span class="c1">// URL сервиса аутентификации.</span>
-  string url <span class="o">=</span> <span class="s2">"http://authentication-sendbox.livetex.ru:9000"</span>;
-
-  <span class="c1">// Ключ SDK для авторизации кодовой базы клиент.</span>
-  string key <span class="o">=</span> <span class="s2">"NEVER_SHOW_THIS_KEY_TO_STRANGERS"</span>;
-
-  <span class="c1">// Идентификатор приложения клиента, в текущий </span>
-  <span class="c1">// момент - это идентификатор сайта, который можно </span>
-  <span class="c1">// получить из личного кабинета.</span>
-  string application <span class="o">=</span> <span class="s2">"10001350"</span>;
-
-  <span class="c1">// Список возможностей реализованных в клиентском приложении.</span>
-  <span class="kt">List&lt;<span class="kt">Capabilities</span>&gt;</span> capabilities <span class="o">=</span> <span class="k">new</span> <span class="kt">ArrayList&lt;<span class="kt">Capabilities</span>&gt;</span>();
-
-  <span class="c1">// Получение токена аутентификации из персистентного хранилища клиента SDK.</span>
-  <span class="c1">// Реализуется на усмотрение разработчика.</span>
-  <span class="kt">String</span> token <span class="o">=</span> getTokenFromCustomClientStorage();
-
-  <span class="c1">// Пользовательское приложение умеет вести диалог.</span>
-  capabilities<span class="o">.</span>add(<span class="kt">Capabilities</span><span class="no"><span class="o">.</span>CHAT</span>);
-
-  <span class="c1">// Пользовательское приложение умеет принимать файлы.</span>
-  capabilities<span class="o">.</span>add(<span class="kt">Capabilities</span><span class="no"><span class="o">.</span>FILES_RECEIVE</span>);
-
-  <span class="kt">Builder</span> builder <span class="o">=</span> <span class="k">new</span> <span class="kt">Builder</span>(url, key, application);
-  builder<span class="o">.</span>addCapabilities(capabilities);
-  builder<span class="o">.</span>addToken(token);
-
-  <span class="kt">Livetex</span> livetex <span class="o">=</span> <span class="k">new</span> builder.build();
-
-  <span class="kt">CustomInitHandler</span> initHandler <span class="o">=</span> <span class="k">new</span> <span class="kt">CustomInitHandler</span>();
-  <span class="kt">CustomNotificationHandler</span> notificationHandler <span class="o">=</span> <span class="k">new</span> <span class="kt">CustomNotificationHandler</span>();
-
-  livetex<span class="o">.</span>init(initHandler, notificationHandler);
-
-}</pre></div>
-
-<h2>
-<a id="Сценарии-использования" class="anchor" href="#%D0%A1%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>Сценарии использования</h2>
+<p>Регистрируемся в системе <a href="https://billing.livetex.ru/signup/">Livetex</a>, 
+добавляем <a href="https://billing.livetex.ru/operators/operator/add/">оператора</a> и 
+<a href="https://billing.livetex.ru/site/add">сайт</a>.</p>
 
 <h3>
-<a id="Начало-диалога-с-оператором" class="anchor" href="#%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE-%D0%B4%D0%B8%D0%B0%D0%BB%D0%BE%D0%B3%D0%B0-%D1%81-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>Начало диалога с оператором</h3>
+<a id="Шаг-2-Получение-инструментов" class="anchor" href="#%D0%A8%D0%B0%D0%B3-2-%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Шаг 2. Получение инструментов</h3>
 
-<p><img src="http://goo.gl/Nwr9Pv" alt="Модель"></p>
+<p><a href="mailto:sdk@livetex.ru">Запрашиваем</a> ключ разработчика, доступ к 
+"песочнице" и бинарный пакет SDK. В письме необходимо указать идентификатор
+аккаунта и название платформы.</p>
+
+<h3>
+<a id="Шаг-3-Добавление-библиотеки-sdk-к-проекту" class="anchor" href="#%D0%A8%D0%B0%D0%B3-3-%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B8-sdk-%D0%BA-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>Шаг 3. Добавление библиотеки SDK к проекту</h3>
+
+<p>Пример добавления библиотеки SDK к проекту можно найти в репозитории с 
+demo-приложением.</p>
+
+<h3>
+<a id="Шаг-4-Разработка-обработчиков-оповещений-от-сервера" class="anchor" href="#%D0%A8%D0%B0%D0%B3-4-%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%BE%D0%B2-%D0%BE%D0%BF%D0%BE%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BE%D1%82-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Шаг 4. Разработка обработчиков оповещений от сервера</h3>
+
+<p>Livetex SDK предоставляет возможность мгновенного оповещения о новых 
+событиях от сервера. Новые события могут влиять на отображение информации 
+пользователю приложения. Livetex SDK требует от разработчика реализации 
+обработчика оповещений от сервера. Детали интерфейса обработчика можно найти 
+по ссылкам:</p>
+
+<ul>
+<li>INotificationHandler <a href="http://splusminusx.github.io/java/nit/livetex/mymodule/sdk/handler/INotificationDialogHandler.html#INotificationDialogHandler">Android</a>
+</li>
+<li>LTMobileSDKNotificationHandlerProtocol <a href="http://splusminusx.github.io/ios/Protocols/LTMbileSDKNotificationHandlerProtocol/index.html#//apple_ref/occ/intf/LTMbileSDKNotificationHandlerProtocol">iOS</a>
+</li>
+</ul>
+
+<p>Пример обработчика оповещений на Java с функциональностью открытия диалога и отсылки сообщения.</p>
+
+<div class="highlight highlight-java"><pre>
+<span class="c1">// Обработчик инициализации.</span>
+<span class="k">class</span> <span class="nc">CustomInitHandler</span> <span class="k">implements</span> <span class="no">IInitHandler</span> {
+
+  <span class="k">private</span> <span class="kt">Livetex</span> sdk;
+
+  <span class="nf">CustomInitHandler</span>(<span class="kt">Livetex</span> <span class="nv">livetex</span>) {
+    sdk <span class="o">=</span> livetex;
+  }
+
+  <span class="c1">// В случае успешной инициализации сохраняем переданный токен и создаем обращение.</span>
+  <span class="k">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span>(<span class="kt">String</span> <span class="nv">token</span>) {
+    saveTokenToCustomClientStorage(token);
+    sdk<span class="o">.</span>request(<span class="k">new</span> <span class="kt">AHandler&lt;<span class="kt">State</span>&gt;</span>());
+  }
+}
+
+<span class="k">class</span> <span class="nc">CustomNotificationHandler</span> <span class="k">implements</span> <span class="no">INotificationHandler</span> {
+
+  <span class="k">private</span> <span class="kt">Livetex</span> sdk;
+
+  <span class="nf">CustomNotificationHandler</span>(<span class="kt">Livetex</span> <span class="nv">livetex</span>) {
+    sdk <span class="o">=</span> livetex;
+  }
+
+  <span class="m">...</span>
+
+  <span class="c1">// При назначении оператора для диалога отправляем приветственное сообщение.</span>
+  <span class="k">public</span> <span class="kt">void</span> <span class="nf">updateDialogState</span>(<span class="kt">DialogState</span> <span class="nv">state</span>) {
+    <span class="k">if</span> (state<span class="o">.</span>isSetEmployee()) {
+      sdk<span class="o">.</span>sendTextMessage(<span class="s2">"Hello"</span>, <span class="k">new</span> <span class="kt">AHandler&lt;<span class="kt">TextMessage</span>&gt;</span>());
+    }
+  }
+
+  <span class="c1">// Логируем сообщения оператора.</span>
+  <span class="k">public</span> <span class="kt">void</span> <span class="nf">receiveTextMessage</span>(<span class="kt">TextMessage</span> <span class="nv">message</span>) {
+    <span class="kt">System</span><span class="o">.</span>out<span class="o">.</span>println(message<span class="o">.</span>getText());
+  }
+  <span class="m">...</span>
+}
+</pre></div>
+
+<p>Пример обработчика оповещений на Objective-c с функциональностью открытия диалога и отсылки сообщения.</p>
+
+<div class="highlight highlight-objective-c"><pre>
+<span class="kt">@interface</span> <span class="nc">LTCustomNotificationDelegate</span> : <span class="no">NSObject</span>  &lt;LTMobileSDKNotificationHandlerProtocol&gt;
+<span class="k">@property</span>(<span class="k">nonatomic</span>, <span class="k">copy</span>) <span class="kt">void</span> (^callBack) (<span class="kt">id</span> data);
+<span class="kt">@end</span>
+
+...
+
+<span class="kt">@implementation</span> <span class="nc">LTCustomNotificationDelegate</span>
+
+<span class="c1">// Обработка изменения состояния.</span>
+- (<span class="kt">void</span>) <span class="nf">updateDialogState</span><span class="nf">:</span> (LTDialogState *) <span class="nv">state</span>
+{
+    <span class="c1">// Проверяем назначен ли оператор для диалога.</span>
+    <span class="k">if</span> (state.<span class="nv">employee</span> != <span class="kc">nil</span>) {
+      <span class="c1">// Отправляем сообщение.</span>
+      [sdk <span class="nf">sendMessage:</span><span class="s2">@"Hello"</span> <span class="nf">success:</span>^(LTTextMessage *message) {
+        ...
+      } <span class="nf">failure:</span>^(<span class="no">NSException</span> *chatExeption) {
+        ...
+      }];
+    }
+}
+
+<span class="c1">// Обработка нового сообщения от оператора.</span>
+- (<span class="kt">void</span>) <span class="nf">receiveTextMessage</span><span class="nf">:</span> (LTTextMessage *) <span class="nv">message</span>
+{
+    <span class="nf">NSLog</span>(message.<span class="nv">text</span>);
+}
+<span class="kt">@end</span>
+</pre></div>
+
+<h3>
+<a id="Шаг-5-Инициализация-sdk" class="anchor" href="#%D0%A8%D0%B0%D0%B3-5-%D0%98%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-sdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Шаг 5. Инициализация SDK</h3>
+
+<p>Пример инициализации Android SDK в основном потоке приложения.</p>
+
+<div class="highlight highlight-java"><pre><span class="c1">// URL сервиса аутентификации, получен на втором шаге данного гайда.</span>
+string url <span class="o">=</span> <span class="s2">"http://authentication-sandbox.livetex.ru:9000"</span>;
+
+<span class="c1">// Ключ SDK для аутентификации кодовой базы клиент, получен на втором шаге данного гайда.</span>
+string key <span class="o">=</span> <span class="s2">"NEVER_SHOW_THIS_KEY_TO_STRANGERS"</span>;
+
+<span class="c1">// Идентификатор приложения клиента - это идентификатор сайта, который можно </span>
+<span class="c1">// получить в личном кабинете.</span>
+string application <span class="o">=</span> <span class="s2">"10001350"</span>;
+
+<span class="c1">// Список возможностей реализованных в клиентском приложении.</span>
+<span class="kt">List&lt;<span class="kt">Capabilities</span>&gt;</span> capabilities <span class="o">=</span> <span class="k">new</span> <span class="kt">ArrayList&lt;<span class="kt">Capabilities</span>&gt;</span>();
+
+<span class="c1">// Клиентское приложение умеет вести диалог.</span>
+capabilities<span class="o">.</span>add(<span class="kt">Capabilities</span><span class="no"><span class="o">.</span>CHAT</span>);
+
+<span class="c1">// Клиентское приложение умеет принимать файлы.</span>
+capabilities<span class="o">.</span>add(<span class="kt">Capabilities</span><span class="no"><span class="o">.</span>FILES_RECEIVE</span>);
+
+<span class="c1">// Получение токена аутентификации из персистентного хранилища клиента SDK.</span>
+<span class="c1">// Реализуется на усмотрение разработчика. На этапе инициализации SDK можно</span>
+<span class="c1">// указать уникальный токен для идентификации клиента и восстановления </span>
+<span class="c1">// истории переписки. Если токен указан не будет система создаст нового </span>
+<span class="c1">// клиента.    </span>
+<span class="kt">String</span> token <span class="o">=</span> getTokenFromCustomClientStorage();
+
+<span class="kt">Builder</span> builder <span class="o">=</span> <span class="k">new</span> <span class="kt">Builder</span>(context, key, application);
+builder<span class="o">.</span>addCapabilities(capabilities);
+builder<span class="o">.</span>addToken(token);
+builder<span class="o">.</span>addUrl(url);
+
+<span class="kt">Livetex</span> livetex <span class="o">=</span> <span class="k">new</span> builder.build();
+
+<span class="c1">// Обработчик инициализации SDK реализуется разработчиком.</span>
+<span class="kt">CustomInitHandler</span> initHandler <span class="o">=</span> <span class="k">new</span> <span class="kt">CustomInitHandler</span>(livetex);
+<span class="c1">// Обработчик оповещений от сервера реализуется разработчиком.</span>
+<span class="kt">CustomNotificationHandler</span> notificationHandler <span class="o">=</span> <span class="k">new</span> <span class="kt">CustomNotificationHandler</span>(livetex);
+
+livetex<span class="o">.</span>init(initHandler, notificationHandler);</pre></div>
+
+<p>Пример инициализации iOS SDK в основном потоке приложения.</p>
+
+<div class="highlight highlight-objective-c"><pre>LTMobileSDKInitializationParams *params = [LTMobileSDKInitializationParams <span class="nf">new</span>];
+
+<span class="c1">// URL сервиса аутентификации, получен на втором шаге данного гайда.</span>
+params.livetexUrl = <span class="s2">@"http://authentication-sandbox.livetex.ru:9000"</span>;
+
+<span class="c1">// Ключ SDK для аутентификации кодовой базы клиент, получен на втором шаге данного гайда.</span>
+params.sdkKey = <span class="s2">@"NEVER_SHOW_THIS_KEY_TO_STRANGERS"</span>;
 
 
+<span class="c1">// Идентификатор приложения клиента - это идентификатор сайта, который можно </span>
+<span class="c1">// получить в личном кабинете.</span>
+params.applicationId = <span class="s2">@"10001350"</span>;
+
+LTMobileSDK *sdk = [[LTMobileSDK <span class="nf">alloc</span>] <span class="nf">initWithParams:</span>params];
+
+<span class="c1">// Инициализация кастомного обработчика оповещений.</span>
+LTCustomNotificationDelegate *delegate = [LTCustomNotificationDelegate <span class="nf">new</span>];
+sdk.delegate = delegate;
+
+<span class="c1">// Инициализация SDK.</span>
+[sdk <span class="nf">runWithSuccess:</span>^(<span class="no">NSString</span> *token) {
+
+    <span class="c1">// Запрос диалога с любым оператором.</span>
+    [sdk <span class="nf">requestWithSuccess:</span>^(LTDialogState *state) {
+        <span class="c1">//...</span>
+    } <span class="nf">failure:</span>^(<span class="no">NSException</span> *chatExeption) {
+        <span class="c1">//...</span>
+    }];
+
+} <span class="nf">failure:</span>^(<span class="no">NSException</span> *exception) {
+    <span class="c1">// ...</span>
+}];</pre></div>
+
+<p>Описанный выше пример позволяет реализовать следующий сценарий:</p>
 
 <ol>
-<li>Посетитель открывает приложение с интегрированным SDK.</li>
-<li>Посетитель открывает окно выбора оператора для диалога.</li>
-<li>Посетитель выбирает оператора для диалога.</li>
-<li>Система назначает посетителю оператора для диалога.</li>
+<li>Пользователь инициализирует SDK (вызов <code>init</code>).</li>
+<li>При успешной инициализации SDK выполняется соответствующий обработчик (вызов <code>onSuccess</code>).</li>
+<li>Тело обработчика успешной инициализации запрашивает диалог с оператором (вызов <code>request</code>).</li>
+<li>Обработчик оповещений дожидается события назначения оператора для диалога (вызов <code>updateDialogState</code>).</li>
+<li>Если оператор для диалога назначен отправляем сообщение (вызов <code>sendTextMessage</code>).</li>
+<li>Сообщения принимаемые от оператора логируются (вызов <code>receiveTextMessage</code>). </li>
 </ol>
       </section>
     </div>
