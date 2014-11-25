@@ -1,13 +1,3 @@
-livetex.capabilities
-livetex.client_entity
-livetex.conversation
-livetex.department
-livetex.dialog
-livetex.dialog_state
-livetex.employee
-livetex.endpoint
-livetex.livetex_service
-livetex.message
-livetex.vote
-nit.livetex.mymodule.sdk
-nit.livetex.mymodule.sdk.handler
+livetex.sdk
+livetex.sdk.handler
+livetex.sdk.models
