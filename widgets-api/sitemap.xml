@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/events/conversation-started/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/methods/addEventListener/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/methods/getDepartmentStatus/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/methods/getDepartments/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/methods/hideChatLabel/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/methods/openWelcomeWindow/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/methods/removeEventListener/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/methods/setConversationAttributes/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/methods/setWelcomeDepartments/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/methods/showChatLabel/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/typedefs/ConversationAttribute/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/enums/ConversationAttributeType/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/enums/ConversationSource/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/enums/Event/</loc>
+     <lastmod>2015-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>
