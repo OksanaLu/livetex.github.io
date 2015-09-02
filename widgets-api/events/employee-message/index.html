@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>ConversationSource - LiveTex API</title>
+	<title>Employee message - LiveTex API</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -59,13 +59,25 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../events/conversation-started/">Conversation started</a>
+    <a href="../conversation-started/">Conversation started</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Employee message</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../offline-message/">Offline message</a>
 </li>
 
                         
@@ -105,6 +117,12 @@
                             
 <li >
     <a href="../../methods/openWelcomeWindow/">openWelcomeWindow</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../methods/reinit/">Reinit</a>
 </li>
 
                         
@@ -152,25 +170,25 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enums <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../ConversationAttributeType/">ConversationAttributeType</a>
-</li>
-
-                        
-                            
-<li class="active">
-    <a href="./">ConversationSource</a>
+    <a href="../../enums/ConversationAttributeType/">ConversationAttributeType</a>
 </li>
 
                         
                             
 <li >
-    <a href="../Event/">Event</a>
+    <a href="../../enums/Event/">Event</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../enums/Source/">Source</a>
 </li>
 
                         
@@ -189,12 +207,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../ConversationAttributeType/">
+                        <a rel="next" href="../conversation-started/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../Event/">
+                        <a rel="prev" href="../offline-message/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -210,41 +228,47 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#conversationsource">ConversationSource</a></li>
+        <li class="main active"><a href="#employee-message">employee-message</a></li>
         
-            <li><a href="#_1">Описание</a></li>
+            <li><a href="#_1">Данные</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="conversationsource">ConversationSource</h2>
-<h3 id="_1">Описание</h3>
-<p>Источник разговора</p>
+<h2 id="employee-message">employee-message</h2>
+<h3 id="_1">Данные</h3>
+<h4 id="event">event</h4>
+<p>'employee-message'</p>
+<h4 id="data">data</h4>
 <table>
 <thead>
 <tr>
-<th>Ключ</th>
-<th>Значение</th>
+<th>Параметр</th>
+<th>Тип</th>
 <th>Описание</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>VISITOR</td>
-<td>'visitor'</td>
-<td>Посетитель</td>
+<td>message_id</td>
+<td>string</td>
+<td>Идентификатор обращения</td>
+<td></td>
 </tr>
 <tr>
-<td>EMPLOYEE</td>
-<td>'employee'</td>
-<td>Работник организации (Приглашение)</td>
+<td>sender_id</td>
+<td>string</td>
+<td>Идентификатор отправителя</td>
+<td></td>
 </tr>
 <tr>
-<td>SYSTEM</td>
-<td>'system'</td>
-<td>Система вовлечения (Автоприглашение)</td>
+<td>text</td>
+<td>string</td>
+<td>Текст обращения</td>
+<td></td>
 </tr>
 </tbody>
 </table></div>

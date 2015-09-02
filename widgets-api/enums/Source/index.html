@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>ConversationAttribute - LiveTex API</title>
+	<title>Source - LiveTex API</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -155,13 +155,13 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Typedefs <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">ConversationAttribute</a>
+<li >
+    <a href="../../typedefs/ConversationAttribute/">ConversationAttribute</a>
 </li>
 
                         
@@ -170,25 +170,25 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enums <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../enums/ConversationAttributeType/">ConversationAttributeType</a>
+    <a href="../ConversationAttributeType/">ConversationAttributeType</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../enums/Event/">Event</a>
+    <a href="../Event/">Event</a>
 </li>
 
                         
                             
-<li >
-    <a href="../../enums/Source/">Source</a>
+<li class="active">
+    <a href="./">Source</a>
 </li>
 
                         
@@ -207,12 +207,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../../methods/showChatLabel/">
+                        <a rel="next" href="../Event/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../../enums/ConversationAttributeType/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -228,55 +228,46 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#conversationattribute">ConversationAttribute</a></li>
+        <li class="main active"><a href="#source">Source</a></li>
         
             <li><a href="#_1">Описание</a></li>
-        
-            <li><a href="#_2">Тип</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="conversationattribute">ConversationAttribute</h2>
+<h2 id="source">Source</h2>
 <h3 id="_1">Описание</h3>
-<p>Аттрибут чата</p>
-<h3 id="_2">Тип</h3>
-<p>{key: string, value: string, is_hidden: boolean, type: number}</p>
+<p>Источник</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
+<th>Ключ</th>
+<th>Значение</th>
 <th>Описание</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>key</td>
-<td>string</td>
-<td>Название аттрибута</td>
-<td></td>
+<td>VISITOR</td>
+<td>'visitor'</td>
+<td>Посетитель</td>
 </tr>
 <tr>
-<td>value</td>
-<td>string</td>
-<td>Значение аттрибута</td>
-<td></td>
+<td>EMPLOYEE</td>
+<td>'employee'</td>
+<td>Работник организации (Приглашение)</td>
 </tr>
 <tr>
-<td>is_hidden</td>
-<td>boolean</td>
-<td>Флаг видимости аттрибута посетителю</td>
-<td></td>
+<td>SYSTEM</td>
+<td>'system'</td>
+<td>Система вовлечения (Автоприглашение)</td>
 </tr>
 <tr>
-<td>type</td>
-<td>LiveTex.ConversationAttributeType</td>
-<td>Тип аттрибута</td>
-<td></td>
+<td>API</td>
+<td>'api'</td>
+<td>API</td>
 </tr>
 </tbody>
 </table></div>

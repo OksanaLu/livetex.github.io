@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>ConversationAttribute - LiveTex API</title>
+	<title>Reinit - LiveTex API</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -86,67 +86,67 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Methods <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../methods/addEventListener/">addEventListener</a>
+    <a href="../addEventListener/">addEventListener</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/getDepartmentStatus/">getDepartmentStatus</a>
+    <a href="../getDepartmentStatus/">getDepartmentStatus</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/getDepartments/">getDepartments</a>
+    <a href="../getDepartments/">getDepartments</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/hideChatLabel/">hideChatLabel</a>
+    <a href="../hideChatLabel/">hideChatLabel</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/openWelcomeWindow/">openWelcomeWindow</a>
+    <a href="../openWelcomeWindow/">openWelcomeWindow</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Reinit</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/reinit/">Reinit</a>
+    <a href="../removeEventListener/">removeEventListener</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/removeEventListener/">removeEventListener</a>
+    <a href="../setConversationAttributes/">setConversationAttributes</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/setConversationAttributes/">setConversationAttributes</a>
+    <a href="../setWelcomeDepartments/">setWelcomeDepartments</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/setWelcomeDepartments/">setWelcomeDepartments</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../methods/showChatLabel/">showChatLabel</a>
+    <a href="../showChatLabel/">showChatLabel</a>
 </li>
 
                         
@@ -155,13 +155,13 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Typedefs <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">ConversationAttribute</a>
+<li >
+    <a href="../../typedefs/ConversationAttribute/">ConversationAttribute</a>
 </li>
 
                         
@@ -207,12 +207,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../../methods/showChatLabel/">
+                        <a rel="next" href="../openWelcomeWindow/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../../enums/ConversationAttributeType/">
+                        <a rel="prev" href="../removeEventListener/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -228,58 +228,60 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#conversationattribute">ConversationAttribute</a></li>
+        <li class="main active"><a href="#reinit">reinit</a></li>
         
             <li><a href="#_1">Описание</a></li>
         
-            <li><a href="#_2">Тип</a></li>
+            <li><a href="#_2">Параметры</a></li>
+        
+            <li><a href="#_3">Пример</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="conversationattribute">ConversationAttribute</h2>
+<h2 id="reinit">reinit</h2>
 <h3 id="_1">Описание</h3>
-<p>Аттрибут чата</p>
-<h3 id="_2">Тип</h3>
-<p>{key: string, value: string, is_hidden: boolean, type: number}</p>
+<p>Полностью реинициализирует сессию посетителя. Сбрасывает состояние.</p>
+<p>ВНИМАНИЕ! Вызов этого метода при активном чате приведет к его немедленному
+  закрытию. Вернуться к истории переписки посетитель уже не сможет.</p>
+<h3 id="_2">Параметры</h3>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
+<th>Имя</th>
 <th>Тип</th>
 <th>Описание</th>
-<th></th>
+<th>Опциональность</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>key</td>
-<td>string</td>
-<td>Название аттрибута</td>
+<td>complete</td>
+<td>!function()</td>
 <td></td>
+<td>Опциональный</td>
 </tr>
 <tr>
-<td>value</td>
-<td>string</td>
-<td>Значение аттрибута</td>
+<td>cancel</td>
+<td>!function()</td>
 <td></td>
-</tr>
-<tr>
-<td>is_hidden</td>
-<td>boolean</td>
-<td>Флаг видимости аттрибута посетителю</td>
-<td></td>
-</tr>
-<tr>
-<td>type</td>
-<td>LiveTex.ConversationAttributeType</td>
-<td>Тип аттрибута</td>
-<td></td>
+<td>Опциональный</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h3 id="_3">Пример</h3>
+<pre><code class="javascript">function onSuccess() {
+    console.log('LiveTex is reinitialized');
+ }
+
+ function onFail() {
+    console.log('LiveTex is not reinitialized');
+ }
+
+ LiveTex.reinit(onSuccess, onFail);
+</code></pre></div>
             
         </div>
 

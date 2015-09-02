@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>ConversationAttribute - LiveTex API</title>
+	<title>Offline message - LiveTex API</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -59,25 +59,25 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../events/conversation-started/">Conversation started</a>
+    <a href="../conversation-started/">Conversation started</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../events/employee-message/">Employee message</a>
+    <a href="../employee-message/">Employee message</a>
 </li>
 
                         
                             
-<li >
-    <a href="../../events/offline-message/">Offline message</a>
+<li class="active">
+    <a href="./">Offline message</a>
 </li>
 
                         
@@ -155,13 +155,13 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Typedefs <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">ConversationAttribute</a>
+<li >
+    <a href="../../typedefs/ConversationAttribute/">ConversationAttribute</a>
 </li>
 
                         
@@ -207,12 +207,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../../methods/showChatLabel/">
+                        <a rel="next" href="../employee-message/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../../enums/ConversationAttributeType/">
+                        <a rel="prev" href="../../methods/addEventListener/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -228,22 +228,20 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#conversationattribute">ConversationAttribute</a></li>
+        <li class="main active"><a href="#offline-message">offline-message</a></li>
         
-            <li><a href="#_1">Описание</a></li>
-        
-            <li><a href="#_2">Тип</a></li>
+            <li><a href="#_1">Данные</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="conversationattribute">ConversationAttribute</h2>
-<h3 id="_1">Описание</h3>
-<p>Аттрибут чата</p>
-<h3 id="_2">Тип</h3>
-<p>{key: string, value: string, is_hidden: boolean, type: number}</p>
+<h2 id="offline-message">offline-message</h2>
+<h3 id="_1">Данные</h3>
+<h4 id="event">event</h4>
+<p>'offline-message'</p>
+<h4 id="data">data</h4>
 <table>
 <thead>
 <tr>
@@ -255,27 +253,21 @@
 </thead>
 <tbody>
 <tr>
-<td>key</td>
+<td>message_id</td>
 <td>string</td>
-<td>Название аттрибута</td>
+<td>Идентификатор обращения</td>
 <td></td>
 </tr>
 <tr>
-<td>value</td>
+<td>source</td>
+<td>{type: LiveTex.Source, id: string}</td>
+<td>Источник сообщения</td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
 <td>string</td>
-<td>Значение аттрибута</td>
-<td></td>
-</tr>
-<tr>
-<td>is_hidden</td>
-<td>boolean</td>
-<td>Флаг видимости аттрибута посетителю</td>
-<td></td>
-</tr>
-<tr>
-<td>type</td>
-<td>LiveTex.ConversationAttributeType</td>
-<td>Тип аттрибута</td>
+<td>Текст обращения</td>
 <td></td>
 </tr>
 </tbody>
