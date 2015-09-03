@@ -4,30 +4,32 @@ body{
   line-height: 100%
 }
 a.link{
-  color: #476CB2;
-  border-radius: 15px;
+  color: #FFF;
+  border-radius: 7px;
   text-decoration: none;
-  outline: none;
+  outline: medium none;
   font-size: 22px;
   display: inline-block;
   letter-spacing: 1px;
-  padding: 0 5px 10px;
+  padding: 0px 5px 10px;
+  border: 1px solid transparent;
+  width: 270px;
+  text-align: center;
+  height: 40px;
+  background: rgba(98, 180, 228, 0.75) none repeat scroll 0% 0%;
+  line-height: 35px;
 
-  border: 1px solid rgba(0,0,0,0);
 }
 a.link:hover{
   text-decoration: none;
   border-bottom: 1px solid;
-}
-a.link:visited{
-  color: #999999;
 }
 
 a{
   color: #476CB2;
 }
 a:hover{
-  color: #5ab2e4;
+  background: #5272b4;
 
 }
 ul{
@@ -37,25 +39,25 @@ ul{
 
 }
 ul li {
-  margin-bottom: 7px;
-  text-align: left;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 
 
 .inner{
-  width: 397px;
+  width: 651px;
   margin: 0 auto;
   line-height: auto;
-  height: 300px;
+  height: 350px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -150px;
-  margin-left: -198.5px;
+  margin-top: -180px;
+  margin-left: -325.5px;
 }
 .logo{
-  margin: 60px auto 0;
+  margin: 60px auto 30px;
   display: block;
 }
 .logo-text{
