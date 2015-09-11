@@ -1,0 +1,2831 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<!--[if lt IE 9]>
+<script src="http://livetex.ru/wp-content/themes/livetex/js/html5shiv.js"></script>
+<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1075">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel='stylesheet' id='contact-form-7-css'  href='http://livetex.ru/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.5.2' type='text/css' media='all' />
+  <script type='text/javascript' src='http://livetex.ru/wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+  <script type='text/javascript' src='http://livetex.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+  <meta name="description" content="LiveTex Client API (JavaScript). Руководство разработчка и описание методов." />
+  <link rel="canonical" href="http://livetex.ru/api/" />
+  <title>LiveTex Client API. Руководство разработчика</title>
+
+  <link rel="stylesheet" type="text/css" media="all" href="http://livetex.ru/wp-content/themes/livetex/style.css" />
+  <link media="only screen and (max-device-width: 1024px)" href="http://livetex.ru/wp-content/themes/livetex/css/iphone.css?003" type="text/css" rel="stylesheet" />
+  <link rel="pingback" href="http://livetex.ru/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" media="all" href="http://livetex.ru/wp-content/themes/livetex/js/shadowbox/shadowbox.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="http://livetex.ru/wp-content/themes/livetex/css/lead-autoinvite.css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script type="text/javascript" src="http://livetex.ru/wp-content/themes/livetex/js/shadowbox/shadowbox.js"></script>
+
+  <link rel="icon" href="http://livetex.ru/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://livetex.ru/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://livetex.ru/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://livetex.ru/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://livetex.ru/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="http://livetex.ru/apple-touch-icon-precomposed.png">
+
+  <meta property="og:image" content="http://livetex.ru/wp-content/themes/livetex/images/news/default-image.png" />
+  <meta property="og:title" content="LiveTex Client API. Руководство разработчика"/>
+
+  <!-- code highlighter -->
+  <link type="text/css" rel="stylesheet" href="http://livetex.ru/api/css/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="http://livetex.ru/api/css/shThemeDefault.css" />
+  <script type="text/javascript" src="http://livetex.ru/api/js/shCore.js"></script>
+  <script type="text/javascript" src="http://livetex.ru/api/js/shBrushJScript.js"></script>
+  <script type="text/javascript">
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+    $(document).ready(function() {
+      $('.method-list a').click(function() {
+        $('html, body').animate({
+          scrollTop: $($(this).attr('id')).offset().top
+        });;
+      });
+    });
+  </script>
+  <!-- /code highlighter -->
+
+  <style type="text/css">
+    body, .help-page-content p, .help-page-content ul li, .help-page-content table, .help-page-content code {font-size: 13px !important;}
+    /* .help-menu a {font-size:13px;} */
+    .menu .sub-menu a {font-size:13px;}
+
+    h1, h2, h3 {
+      margin-top: 1.8em;
+      margin-bottom: 0.2em;
+    }
+    h3 {font-size:1.2em;}
+    h1:first-child, h2:first-child, h3:first-child, h1+h2, h2+h3  {margin-top: 0px !important;}
+
+    header {width: 980px;}
+    nav {width: 980px;}
+    nav .livetex-nav-menu {width:985px;}
+    nav .livetex-nav-menu > li {width:106px;}
+    .help-menu .sub-menu {margin-left:0px;}
+    .page-bg-wrapper {width: 980px;}
+    nav .livetex-nav-menu > li > ul {left:-20px;}
+
+    ul.sub-menu a {padding-left:20px !important;}
+
+    .help-page-content caption.caption, .help-page-content p.caption {
+      font-style: normal; text-align: left; font-weight: bold;
+      padding: 0px 0px 0px 0px;
+    }
+    table.table {width:100%;}
+    table.table td, table.table th {
+      vertical-align: top;
+      padding: 5px;
+      text-align: left;
+      border-collapse: collapse;
+      border: 1px solid #5580af; /* #709DCD; #142036; */
+    }
+    table.params td:first-child + td, table.terms tr td:first-child {white-space:nowrap;}
+    table.params th, table.terms th {background-color:#5580af; color: #b1e1ff;}
+
+    div.pic {margin-top: 30px; width:350px;}
+    div#x-widget-pic {margin-top: 30px; width:600px;}
+    div.pic img {margin:0px;}
+    div.pic div {font-weight:bold;font-size:13px;}
+    div.pics {width:100%;}
+    div.pics div.pic {float:left;}
+    .warning {color:red;}
+
+    #back-to-top {
+      position: fixed;
+      width: 220px;
+      text-align:center;
+      bottom: 30px;
+      left: 0px;
+      text-decoration: none;
+      color: #CCD3E0;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px;
+      display: none;
+    }
+
+    #back-to-top span {
+      padding-left:20px;
+      background: url("images/top_n.png") left 20% no-repeat;
+    }
+
+    #back-to-top:hover {
+      background-color: #5580AF;
+      color: #B8E3F8;
+    }
+    #back-to-top:hover span {
+      background-image: url("images/top_h.png");
+    }
+  </style>
+  <style media="print">
+    header, nav, footer, .help-menu, .help-page .left-column {display:none !important;}
+    .help-page .right-column {margin-left:0px;}
+    body, .column-page-container {background:none !important;}
+  </style>
+
+</head>
+
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MCM6RR"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MCM6RR');</script>
+<!-- End Google Tag Manager -->
+<!--[if lt IE 7]>
+<p class="chromeframe">Вы используете <strong>устаревший</strong> браузер. Пожалуйста, <a href="http://browsehappy.com/">скачайте более современный</a> или <a href="http://www.google.com/chromeframe/?redirect=true">установите Google Chrome Frame</a>, чтобы использовать все функции сайта</p>
+<![endif]-->
+<header class="clearfix">
+  <div class="home clearfix">
+    <a href="http://livetex.ru/">
+      <img class="logo" src="http://livetex.ru/wp-content/themes/livetex/images/homepage/livetex.png" alt="Livetex — Сервисы для коммуникации с посетителями сайта" />
+    </a>
+  </div>
+  <div class="social-btns">
+    <a title="LiveTex в Facebook" href="http://www.facebook.com/pages/Liveoperator/168899586491427"><img src="http://livetex.ru/wp-content/themes/livetex/images/homepage/slides/fb.png" width="26" height="26" alt="LiveTex в Facebook" /></a>
+    <a title="LiveTex в Twitter" href="http://twitter.com/#!/livetex_ru/"><img src="http://livetex.ru/wp-content/themes/livetex/images/homepage/slides/twitter.png" width="26" height="26" alt="LiveTex в Twitter" /></a>
+    <a title="LiveTex в Вконтакте" href="http://vkontakte.ru/club14150896"><img src="http://livetex.ru/wp-content/themes/livetex/images/homepage/slides/vk.png" width="27" height="27" alt="LiveTex в Вконтакте" /></a>
+    <a title="LiveTex в Youtube" href="http://www.youtube.com/user/livetexvideos"><img src="http://livetex.ru/wp-content/themes/livetex/images/homepage/slides/youtube.png" width="56" height="23" alt="LiveTex в Youtube" /></a>
+  </div>
+  <div class="phone-number">
+    <ul>
+      <li>+7 (495)<span style="display:none;">_</span> 644<span style="display:none;">_</span>-29-41</li>
+      <li>+7 (812)<span style="display:none;">_</span> 449<span style="display:none;">_</span>-49-20</li>
+    </ul>
+  </div>
+  <div class="call_us">
+    <a>Позвонить онлайн</a>
+  </div>
+  <div class="login">
+    <div class="lang clearfix">
+
+      <!-- <ul>
+      <li class='lang-item lang-item-8 current-lang'><a hreflang='ru' href='http://livetex.ru/help/code-setup/'>РУС</a></li>
+      <li class='lang-item lang-item-9'><a hreflang='uk' href='http://livetex.ru/uk/'>УКР</a></li>
+      </ul> -->
+
+    </div>
+    <a class="enter-link clearfix" href="https://my.livetex.ru/login">Вход&nbsp;для&nbsp;клиентов</a>
+  </div>
+</header>
+
+
+<nav>
+  <ul class="livetex-nav-menu">
+    <li>
+      <a href="http://livetex.ru/#products">Продукты</a>
+      <ul class="sub-menu">
+        <li><a href="http://livetex.ru/landing-chat/">Онлайн-консультант LiveTex</a></li>
+        <li><a href="http://livetex.ru/landing-leads/"><nobr>Генератор лидов LiveTex</nobr></a></li>
+        <li><a href="http://livetex.ru/landing-calls/"><nobr>Звонки LiveTex</nobr></a></li>
+        <li><a href="http://livetex.ru/virtual-assistant/"><nobr>Виртуальный&nbsp;ассистент</nobr></a></li>
+        <li><a href="http://livetex.ru/online-monitoring/"><nobr>Онлайн-мониторинг</nobr></a></li>
+        <li><a href="http://livetex.ru/online-statistics/"><nobr>Онлайн-статистика</nobr></a></li>
+        <li class="divided"><a href="http://livetex.ru/x-widget/"><nobr>X-widget</nobr></a></li>
+        <!-- <li ><a href="http://livetex.ru/webinar-livetex/"><span style="color: #edc300;">Вебинар LiveTex</span></a></li> -->
+        <li class="post-divided"><a href="http://livetex.ru/features/">Возможности</a></li>
+        <li><a href="http://livetex.ru/category/reviews/">Отзывы</a></li>
+        <li><a href="http://livetex.ru/updates/">Обновления</a></li>
+        <li><a href="http://livetex.ru/prices/">Тарифы</a></li>
+        <li class="divided"><a href="http://livetex.ru/demo/">Демо</a></li>
+        <p class="post-divided">Что такое LiveTex?</p>
+        <a class="video" rel="shadowbox[main-menu];width=600;height=480" title="Что такое LiveTex"  href="http://www.youtube.com/embed/rFtRIiZSwB8?rel=0"><img src="http://livetex.ru/wp-content/themes/livetex/images/career/about-livetex-preview.jpg" /></a>
+      </ul>
+    </li>
+    <li class="double">
+      <a href="/industry/">Отраслевые<br/> решения</a>
+      <ul class="sub-menu">
+        <li><a href="http://livetex.ru/industry/shop/"><nobr>Интернет-магазины</nobr></a></li>
+        <li><a href="http://livetex.ru/industry/finance/">Финансовые&nbsp;организации</a></li>
+        <li><a href="http://livetex.ru/industry/it/">Информационные&nbsp;технологии</a></li>
+        <li><a href="http://livetex.ru/industry/cars/">Автобизнес</a></li>
+        <li><a href="http://livetex.ru/industry/logistics/">Логистика</a></li>
+        <li><a href="http://livetex.ru/industry/estate/">Недвижимость</a></li>
+        <li><a href="http://livetex.ru/industry/insurance/">Страхование</a></li>
+        <li><a href="http://livetex.ru/industry/telecom/">Телекоммуникации&nbsp;и&nbsp;связь</a></li>
+        <li><a href="http://livetex.ru/industry/tourism/">Туризм</a></li>
+        <li><a href="http://livetex.ru/industry/consulting/">Консалтинг</a></li>
+        <li><a href="http://livetex.ru/industry/med/">Медицина</a></li>
+        <li><a href="http://livetex.ru/industry/equipment/">Оборудование</a></li>
+        <!-- <li><a href="/industry/edu">Образование</a></li>
+        <li><a href="/industry/gov">Государственные организации</a></li> -->
+      </ul>
+    </li>
+    <li>
+      <a href="http://livetex.ru/prices/">Тарифы</a>
+      <ul class="sub-menu">
+        <li><a href="http://livetex.ru/prices/">Стандартный&nbsp;тариф</a></li>
+        <li><a href="http://livetex.ru/enterprise/">LiveTex Enterprise</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://livetex.ru/partner/">Партнерам</a>
+    </li>
+    <li class="double">
+      <a href="http://livetex.ru/technology/">Технологии и&nbsp;интеграция</a>
+      <ul class="sub-menu">
+        <li><a href="http://livetex.ru/technology/architecture/">Архитектура&nbsp;системы</a></li>
+        <li><a href="http://livetex.ru/technology/api/">API</a></li>
+        <li><a href="http://livetex.ru/technology/crm/">Интеграция&nbsp;с&nbsp;CRM</a></li>
+        <!-- <li><a href="http://livetex.ru/technology/command/">Команда&nbsp;разработки</a></li> -->
+      </ul>
+    </li>
+    <li>
+      <a href="http://livetex.ru/help/">Поддержка</a>
+      <ul class="sub-menu">
+        <li><a style="color: #edc300;" href="http://livetex.ru/download-client/"><nobr>Скачать приложение оператора</nobr></a></li>
+        <li><a href="http://livetex.ru/help/">Помощь и советы</a></li>
+        <li><a href="http://livetex.ru/help/support/"><nobr>Техническая поддержка</nobr></a></li>
+        <li><a href="http://livetex.ru/help/label/"><nobr>Уникальный дизайн ярлыка</nobr></a></li>
+        <li><a href="http://livetex.ru/help/question-answer/">Вопросы и ответы</a></li>
+        <li><a href="http://livetex.ru/help/video/" onClick="return true">Видеоуроки</a></li>
+        <!-- <li><a href="http://livetex.ru/updates/">Обновления</a></li> -->
+        <li><a href="https://my.livetex.ru/login">Вход для клиентов</a></li>
+        <li><a href="http://livetex.ru/sla/">Соглашение&nbsp;об&nbsp;уровне&nbsp;услуг</a></li>
+        <li class="divided"><a href="http://livetex.ru/help/experts/">Рассылка</a></li>
+        <!-- <p class="post-divided">Быстрый старт</p> -->
+        <!-- <a class="video" rel="shadowbox[main-menu];width=600;height=480" title="Видеоурок - Быстрый старт"  href="http://www.youtube.com/embed/AL0KNQSKQqo?rel=0"><img src="http://livetex.ru/wp-content/themes/livetex/images/layout/qucikstart-video.jpg" /></a> -->
+      </ul>
+    </li>
+    <li>
+      <a href="http://livetex.ru/company/">Компания</a>
+      <ul class="sub-menu">
+        <li><a href="http://livetex.ru/company/">О компании</a></li>
+        <li><a href="https://blog.livetex.ru">Блог LiveTex</a></li>
+        <li><a href="http://livetex.ru/category/news/">Новости</a></li>
+        <li><a href="http://livetex.ru/researches/">Исследования</a></li>
+        <li><a href="http://livetex.ru/category/press/">Пресса о нас</a></li>
+        <li><a href="http://livetex.ru/materials/"><nobr>Рекламные материалы</nobr></a></li>
+        <li><a href="http://livetex.ru/presentation/">Презентации</a></li>
+        <li><a href="http://livetex.ru/social_program/"><nobr>Социальная программа</nobr></a></li>
+        <!-- <li><a href="http://livetex.ru/livetex-moscow-workshop">Семинар LiveTex Moscow</a></li> -->
+        <li><a href="http://livetex.ru/career/">Работа в LiveTex</a></li>
+        <li class="divided"><a href="http://livetex.ru/contacts/">Контакты&nbsp;и&nbsp;реквизиты</a></li>
+        <li class="post-divided"><a href="http://www.youtube.com/embed/Q-qghFFGviw?rel=0" rel="shadowbox[main-menu];width=600;height=480">Видео о работе в LiveTex</a></li>
+        <a class="video" rel="shadowbox[main-menu];width=600;height=480" title="Career at LiveTex"  href="http://www.youtube.com/embed/Q-qghFFGviw?rel=0"><img src="http://livetex.ru/wp-content/themes/livetex/images/vacancy/video-career-preview.jpg" /></a>
+      </ul>
+    </li>
+    <li class="reg-btn">
+      <a href="https://my.livetex.ru/login" onclick="dataLayer.push({'event':'GAevent', 'eventCategory':'submit', 'eventAction':'reg_form', 'eventLabel':'Go to registr'})">Попробовать<br/> бесплатно</a>
+    </li>
+  </ul>
+</nav>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.accordion > li > a').before('<span></span>');
+    $('.accordion a').click(function() {
+      $(this).parent().toggleClass('active').children('div').slideToggle('400');
+    });
+
+    $(".help-page-content a").click(function (event) {
+      var href = $(this).attr("href");
+      if (href.indexOf("#") == 0) {
+        var destination = $(href).offset().top;
+        $("html, body").animate({scrollTop: destination}, 500 )
+      }
+    });
+  });
+</script>
+<div class="page-bg-wrapper">
+  <div class="column-page-bg-top">
+
+    <div class="column-page-container clearfix">
+      <div class="clearfix">
+        <div class="help-page">
+          <div class="left-column">
+
+            <div class="help-menu">
+              <div>
+                <ul class="menu">
+                  <li><a href="#intro">Введение</a></li>
+                  <li><a href="#terms">Основные термины</a></li>
+                  <li><a href="#apiInit">Инициализация Client API</a></li>
+                  <li><a href="#popup">Особенности открытия внешнего окна</a></li>
+                  <li><a href="#methods">Методы</a>
+                    <ul class="sub-menu" style="display:block">
+                      <li><a href="#getButton">getButton()</a></li>
+                      <li><a href="#getDepartments">getDepartments()</a></li>
+                      <li><a href="#getGroupStatus">getGroupStatus()</a></li>
+                      <li><a href="#getOperators">getOperators()</a></li>
+                      <li><a href="#getOperatorStates">getOperatorStates()</a></li>
+                      <li><a href="#haveOnlineOperators">haveOnlineOperators()</a></li>
+                      <li><a href="#hasActiveChat">hasActiveChat()</a></li>
+                      <li><a href="#hideCallLabel">hideCallLabel()</a></li>
+                      <li><a href="#hideChatLabel">hideChatLabel()</a></li>
+                      <li><a href="#hideInvitation">hideInvitation()</a></li>
+                      <li><a href="#isInvitationShown">isInvitationShown()</a></li>
+                      <li><a href="#off">off()</a></li>
+                      <li><a href="#on">on()</a></li>
+                      <li><a href="#openCallWindow">openCallWindow()</a></li>
+                      <li><a href="#openChatWindow">openChatWindow()</a></li>
+                      <li><a href="#openEmbeddedChatWindow">openEmbeddedChatWindow()</a></li>
+                      <li><a href="#openOfflineWindow">openOfflineWindow()</a></li>
+                      <li><a href="#openWelcomeWindow">openWelcomeWindow()</a></li>
+                      <li><a href="#reinitSession">reinitSession()</a></li>
+                      <li><a href="#sendMessage">sendMessage()</a></li>
+                      <li><a href="#setChatOpenCallback">setChatOpenCallback()</a></li>
+                      <li><a href="#setInvitationActionCallback">setInvitationActionCallback()</a></li>
+                      <li><a href="#setInvitationOpenCallback">setInvitationOpenCallback()</a></li></li>
+                  <li><a href="#setManyPrechatFields">setManyPrechatFields()</a></li>
+                  <li><a href="#setName">setName()</a></li>
+                  <li><a href="#setPrechatFields">setPrechatFields()</a></li>
+                  <li><a href="#setWelcomeGroups">setWelcomeGroups()</a></li>
+                  <li><a href="#setWelcomeOpenCallback">setWelcomeOpenCallback()</a></li>
+                  <li><a href="#showCallLabel">showCallLabel()</a></li>
+                  <li><a href="#showChatLabel">showChatLabel()</a></li>
+                  <li><a href="#showInvitation">showInvitation()</a></li>
+                </ul></li>
+                <li><a href="#events">События</a>
+                  <ul class="sub-menu" style="display:block">
+                    <li><a href="#call_open">call_open</a></li>
+                    <li><a href="#callback_action">callback_action</a></li>
+                    <li><a href="#callback_open">callback_open</a></li>
+                    <li><a href="#callback_state_change">callback_state_change</a></li>
+                    <li><a href="#chat_invitation_action">chat_invitation_action</a></li>
+                    <li><a href="#chat_invitation_open">chat_invitation_open</a></li>
+                    <li><a href="#chat_open">chat_open</a></li>
+                    <li><a href="#chat_welcome_action">chat_welcome_action</a></li>
+                    <li><a href="#chat_welcome_open">chat_welcome_open</a></li>
+                    <li><a href="#lead_action">lead_action</a></li>
+                    <li><a href="#lead_open">lead_open</a></li>
+                    <li><a href="#offline_action">offline_action</a></li>
+                    <li><a href="#offline_open">offline_open</a></li>
+                  </ul></li>
+                </ul>
+
+                <a href="#" id="back-to-top"><span></span>Наверх</a>
+
+              </div></div>
+
+          </div>
+
+          <div class="right-column help-page-content">
+
+            <h1>LiveTex Client API. Руководство разработчика</h1>
+            <h2 id="intro">Введение</h2>
+
+            <p>Код вставки виджета, размещаемый на странице сайта. Предоставляет ряд JavaScript-методов объекта <strong>LiveTex</strong>, которые могут быть использованы разработчиками сайта для более тесной интеграции виджета с логикой работы страницы. Методы позволяют:</p>
+            <ul>
+              <li>передать дополнительную информацию со страницы в ПО «Пульт оператора»;</li>
+              <li>программно инициировать механизмы виджета по наступлению событий на странице;</li>
+              <li>предустановить параметры чата на основе данных о посетителе или информации на странице;</li>
+              <li>выполнить какое-то действие на странице, если посетитель открыл окно чата;</li>
+              <li>показать дополнительную информацию посетителю, если все операторы недоступны;</li>
+              <li>и многое другое.</li>
+            </ul>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">Обратите внимание!</span>
+                <ol>
+                  <li>Для инициализации API, на странице сайта (внутри тегов &lt;body&gt;&lt;/body&gt;) необходимо разместить  код, который можно получить в Личном кабинете клиента на сайте <a href="https://billing.livetex.ru/overall/" target="blank">livetex.ru</a>. В Личном кабинете, перейдите по ссылкам «Обзор» и «Установить код на сайт».</li>
+                  <li>Если вы не нашли в Client API необходимых функций, напишите нам по адресу электронной почты <a href="mailto:support@livetex.ru">support@livetex.ru</a>. Мы обязательно учтем ваши пожелания.</li>
+                </ol>
+              </div></div></div>
+
+            <h2 id="terms">Основные термины</h2>
+            <table class="table terms">
+
+              <tr>
+                <th>Термин</th>
+                <th>Описание</th>
+              </tr>
+
+              <tr>
+                <td>Встроенное окно</td>
+                <td>Окно чата между посетителем и оператором, расположенное непосредственно на открытой посетителем странице сайта. Встроенное окно, как правило, открывается нажатием на ярлык, прикрепленный к краю основного окна браузера.</td>
+              </tr>
+
+              <tr>
+                <td>Внешнее окно</td>
+                <td>Окно чата между посетителем и оператором, открывающееся в отдельном окне браузера посетителя.</td>
+              </tr>
+
+              <tr>
+                <td>Приглашение</td>
+                <td>Выезжающий из-за края видимой области браузера слой, содержащий текст приглашения посетителя к чату.</td>
+              </tr>
+
+              <tr>
+                <td>Приветствие</td>
+                <td>Окно с формой для ввода посетителем данных (имя, пречат поля, текст вопроса) перед началом чата. Может быть встроенным и внешним.</td>
+              </tr>
+
+              <tr>
+                <td>Пречат поле</td>
+                <td>Поле в окне приветствия, предназначенное для ввода посетителем дополнительной информации, которая будет показана оператору в ПО «Пульт оператора». Пречат поля могут явно определяться в Личном кабинете клиента. В этом случае они доступны посетителю в форме для ввода значений.<br>Существуют также скрытые пречат поля, которые устанавливаются через методы API. В этом случае они недоступны посетителю, но могут отображаться в ПО «Пульт оператора».</td>
+              </tr>
+
+              <tr>
+                <td>Окно офлайн-сообщения</td>
+                <td>Окно с формой, в котором посетитель может ввести текст интересующего вопроса, а также оставить свои адрес электронной почты и телефон для связи.</td>
+              </tr>
+
+              <tr>
+                <td>Окно генератора лидов</td>
+                <td>Окно с формой, в котором посетитель может ввести текст интересующего вопроса, а также оставить свои адрес электронной почты и телефон для связи. Это окно по сути очень похоже на форму офлайн-сообщения, но немного отличается визуально и настройками. Окно генератора лидов замещает окно офлайн-сообщения при покупке опции «Генератор лидов».</td>
+              </tr>
+
+              <tr>
+                <td>Окно звонка с сайта</td>
+                <td>Окно с запросом разрешения на доступ к камере и микрофону компьютера посетителя. Открывается при нажатии на ярлык или кнопку звонка.</td>
+              </tr>
+
+              <tr>
+                <td>Окно звонка из чата</td>
+                <td>Окно звонка из чата представляет собой режим работы окна чата, который инициализируется кнопкой «Позвонить». При этом поверх списка сообщений чата появляется запрос разрешения на доступ к камере и микрофону компьютера посетителя.</td>
+              </tr>
+              <tr>
+                <td>Окно X-widget</td>
+                <td>При покупке продукта «<a href="/x-widget">X-widget</a>» виджет LiveTex при определенных обстоятельствах отображает окно X-widget. Это окно предлагает посетителю указать номер телефона, по которому ему сможет перезвонить оператор.</td>
+              </tr>
+
+            </table>
+
+            <div class="pics">
+              <div class="pic">
+                <img src="images/invitation_window.jpg" alt="Приглашение"/>
+                <div>Рисунок 1. Приглашение</div>
+              </div>
+
+              <div class="pic">
+                <div style="height:370px;"></div>
+              </div>
+
+              <div class="pic">
+                <img src="images/offline_window.jpg" alt="Окно офлайн-сообщения"/>
+                <div>Рисунок 2. Окно офлайн-сообщения</div>
+              </div>
+
+              <div class="pic">
+                <img src="images/offline_window.jpg" alt="Окно генератора лидов"/>
+                <div>Рисунок 3. Окно генератора лидов</div>
+              </div>
+
+              <div class="pic">
+                <img src="images/welcome_embedded.jpg" alt="Встроенное окно приветствия"/>
+                <div>Рисунок 4. Встроенное окно приветствия</div>
+              </div>
+
+              <div class="pic">
+                <img src="images/chat_embedded.jpg" alt="Встроенное окно чата"/>
+                <div>Рисунок 5. Встроенное окно чата</div>
+              </div>
+
+              <div class="pic">
+                <img src="images/welcome_window.jpg" alt="Внешнее окно приветствия"/>
+                <div>Рисунок 6. Внешнее окно приветствия</div>
+              </div>
+
+              <div class="pic">
+                <img src="images/chat_window.jpg" alt="Внешнее окно чата"/>
+                <div>Рисунок 7. Внешнее окно чата</div>
+              </div>
+
+              <div class="pic">
+                <img src="images/call_from_btn.jpg" alt="Окно звонка с сайта"/>
+                <div>Рисунок 8. Окно звонка с сайта</div>
+              </div>
+
+              <div class="pic">
+                <img src="images/call_from_chat.jpg" alt="Окно со звонком из чата"/>
+                <div>Рисунок 9. Звонок из чата</div>
+              </div>
+
+              <div class="pic" id="x-widget-pic">
+                <img src="images/x-widget.jpg" alt="Окно X-widget" />
+                <div>Рисунок 10. Окно X-widget</div>
+              </div>
+
+            </div>
+            <div style="clear:both;"></div>
+
+
+
+            <h2 id="apiInit">Инициализация Client API</h2>
+
+            <p>Объект <strong>LiveTex</strong> и его методы реализованы непосредственно в коде виджета, который загружается стандартным кодом вставки LiveTex. Асинхронная загрузка виджета не позволяет точно предсказать момент окончания его инициализации. Для того чтобы быть уверенным в наличии виджета на странице, в коде вставки следует предопределить объект <strong>LiveTex</strong>, в котором определить обработчик события <strong>onLiveTexReady</strong>. Эта функция будет вызвана сразу после завершения инициализации LiveTex Client API.</p>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+&lt;script type="text/javascript"&gt;
+var liveTex = true,
+	liveTexID = YOUR_SITE_ID,
+	liveTex_object = true;
+
+/* ********************************** */
+var LiveTex = {
+    onLiveTexReady: function() {
+		// код, выполняемый после инициализации LiveTex Client API
+		alert("LiveTex Ready");
+    }
+};
+/* ********************************** */
+ 
+(function() {
+    var lt = document.createElement('script');
+    lt.type = 'text/javascript';
+    lt.async = true;
+    lt.src = 'http://cs15.livetex.ru/js/client.js';
+    var sc = document.getElementsByTagName('script')[0];
+    if (sc) sc.parentNode.insertBefore(lt, sc);
+    else  document.documentElement.firstChild.appendChild(lt);
+})();
+&lt;/script&gt;
+</pre>
+
+
+
+            <h2 id="popup">Особенности открытия внешнего окна</h2>
+
+            <p>Все современные браузеры оснащены механизмами блокировки всплывающих окон. Это делается для защиты пользователя от окон, открывающихся без их ведома.
+              Браузер не будет блокировать открытие такого окна, только если оно открывается в результате действия пользователя.</p>
+
+            <p>Некоторые методы Client API (openCallWinow(), openChatWindow(), openOfflineWindow(), openWelcomeWindow() и т.д.) открывают внешнее(всплывающее) окно браузера,
+              Если эти методы вызвать непосредственно в обработчике действия пользователя, то окно успешно откроется.</p>
+
+            <p>Однако, если такой метод вызвать в callback-функции большинства методов Client API, то браузер заблокирует открытие внешнего окна.
+              Это происходит из-за того, что большинство методов Client API выполняют асинхронный HTTP-запрос, который по сути завершает поток исполнение кода. А когда приходит ответ, создается новый поток исполнения, в котором выполняется callback-функция.
+              Такую ситуацию браузер считает попыткой открыть окно без явного действия пользователя и выполняет блокировку.</p>
+
+
+            <p class="caption">Окно откроется:</p>
+<pre class="brush: js">
+&lt;script type="text/javascript"&gt;
+var onClick(){
+    LiveTex.openChatWindow();
+};
+&lt;/script&gt;
+
+&lt;button onclick="onClick()"&gt;Начать чат&lt;/button&gt;
+</pre>
+
+
+            <p class="caption">Окно будет заблокировано:</p>
+<pre class="brush: js">
+&lt;script type="text/javascript"&gt;
+var onClick(){
+    LiveTex.setName("Владимир", function(){
+        LiveTex.openChatWindow();
+    });
+};
+&lt;/script&gt;
+
+&lt;button onclick="onClick()"&gt;Начать чат&lt;/button&gt;
+</pre>
+
+            <p>В этом примере блокировка сработает, так как вызов callback-функции в методе setName() осуществляется в другом потоке исполнения.</p>
+
+
+
+            <h2 id="methods">Методы объекта LiveTex</h2>
+
+            <h3 id="getButton">LiveTex.getButton(buttonId, onResult)</h3>
+
+            <p class="warning">ВНИМАНИЕ! Метод является устаревшим и не рекомендуется к использованию.</p>
+
+            <p>Принимает свойства указанной кнопки.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>buttonId</td>
+                <td>string</td>
+                <td>Идентификатор кнопки. Определить идентификатор можно по коду вставки кнопки, например: &lt;div id="liveTexButton_<strong>44675</strong>">&lt;/div>.</td>
+              </tr>
+              <tr>
+                <td>onResult</td>
+                <td>Function(data)</td>
+                <td>Обработчик, в который передаются результаты работы метода. Принимает объект со свойствами кнопки или информацию об ошибке.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.getButton("123456", function(data){
+		alert(JSON.stringify(data));
+	}
+);
+</pre>
+
+            <p class="caption">Пример возвращаемого значения:</p>
+<pre class="brush: js">
+{
+	"id": "liveTexButton_123456",
+	"voice": 1,
+	"member_id": 1,
+	"group_id": 123456,
+	"url": "",
+	"online": "abf51560145b7f677af4efcb4acb1c64.png",
+	"offline": "a1f40d5c3a3f9977c86c52ee03b233ef.png",
+	"border": "6ee2895eb005a81621e2fcbcac2b10ea.png",
+	"width": 223,
+	"height": 100,
+	"foto_w": 60,
+	"foto_h": 70,
+	"border_w": 70,
+	"border_h": 80,
+	"namet": 34,
+	"namel": 90,
+	"departt": 54,
+	"departl": 90,
+	"color": "#ffffff",
+	"offcolor": "#666666",
+	"names": "18px",
+	"departs": "13px",
+	"custom": false,
+	"custom_def_w": null,
+	"custom_def_h": null,
+	"bcolor": 3,
+	"bsize": 3,
+	"custom_on": "",
+	"custom_off": "",
+	"do_welcome": 0,
+	"flag_site": false,
+	"flag_group": true,
+	"flag_member": false,
+	"flag_custom": 0,
+	"customSettings": {
+		"custom_w": 0,
+		"custom_h": 0,
+		"custom_woff": 0,
+		"custom_hoff": 0
+	}
+}
+</pre>
+
+            <p class="caption">Пример информации об ошибке:</p>
+<pre class="brush: js">
+{
+	"errno": 1003,
+	"errtext": "Button not found"
+}
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="getDepartments">LiveTex.getDepartments(onSuccess)</h3>
+
+            <p>Принимает список отделов сайта.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function(Array.&lt;Object&gt;)</td>
+                <td>Обработчик, который вызывается при успешном выполнении операции. Принимает массив объектов с данными отделов.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.getDepartments(function(data){
+		for(var i=0; i < data.length; i++){
+			alert("Название отдела: " + data[i].name);
+		}
+	}
+);
+</pre>
+
+            <p class="caption">Пример массива отделов, передаваемого в обработчик onSuccess:</p>
+<pre class="brush: js">
+[
+    {"id":123456, "name":"Все сотрудники"},
+    {"id":123457, "name":"Отдел продаж"},
+    {"id":123458, "name":"Отдел технической поддержки"}
+]    
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="getGroupStatus">LiveTex.getGroupStatus(deptId, onSuccess)</h3>
+
+            <p>Принимает статус отдела.</p>
+            <p>Отдел считается активным (в сети), если доступен хотя бы один оператор отдела.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>deptId</td>
+                <td>string</td>
+                <td>Идентификатор отдела. Идентификатор можно получить, например, с помощью метода <a href="#getDepartments">LiveTex.getDepartments()</a>.</td>
+              </tr>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function(boolean)</td>
+                <td>Обработчик, который вызывается при наличии операторов в сети. Принимает значение <strong>true</strong>, если есть хотя бы один оператор этого отдела в сети, и <strong>false</strong> - если все операторы недоступны.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.getGroupStatus("123456", function(is_online){
+		if(is_online){
+			alert("В данный момент в отделе есть online-операторы");
+		}
+	}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="getOperators">LiveTex.getOperators(onSuccess)</h3>
+
+            <p>Принимает список операторов сайта.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function(Array.&lt;Object&gt;)</td>
+                <td>Обработчик, вызываемый после завершения операции. Принимает массив объектов с данными операторов.</td>
+              </tr>
+            </table>
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.getOperators(function(data){
+        for(var i=0; i < data.length; i++){
+            alert("Оператор: " + data[i].firstname);
+        }
+    }
+);
+</pre>
+
+            <p class="caption">Пример массива операторов, передаваемого в обработчик onSuccess:</p>
+<pre class="brush: js">
+[
+    {
+        "avatar":"//cs15.livetex.ru/00ad12dfced2938b6fa5f047f8fb06aa.png",
+        "department_id":[377,379],
+        "firstname":"Тестер",
+        "id":568,
+		"is_call":true,
+        "is_call_forwarding": false,
+        "lastname":"Один",
+        "state_id":0
+    },
+    {
+        "avatar":"",
+        "department_id":[377],
+        "firstname":"Tester 3",
+        "id":571,
+        "is_call":true,
+        "is_call_forwarding": false,
+        "lastname":"",
+        "state_id":0
+    },
+    {
+        "avatar":"//cs15.livetex.ru/c1ceaab34cf7576cf71dc56e51b9cff1.png",
+        "department_id":[378],
+        "firstname":"T4",
+        "id":653,
+        "is_call":true,
+        "is_call_forwarding": false,
+        "lastname":"",
+        "state_id":0
+    }
+]
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="getOperatorStates">LiveTex.getOperatorStates(onSuccess)</h3>
+
+            <p>Принимает список возможных состояний оператора.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function(Array.&lt;Object&gt;)</td>
+                <td>Обработчик, который вызывается после завершения операции. Принимает массив объектов с данными операторов: <strong>id</strong>, <strong>name</strong>, <strong>description</strong>.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.getOperatorStates(function(data){
+		for(var i=0; i < data.length; i++){
+			alert("Название статуса: " + data[i].name);
+		}
+	}
+);
+</pre>
+
+            <p class="caption">Пример массива состояний, передаваемого в обработчик onSuccess:</p>
+<pre class="brush: js">
+[
+    {"id":0, "name":"offline", "description":"member is offline"},
+    {"id":1, "name":"online", "description":"member is online"},
+    {"id":2, "name":"busy", "description":"member is busy"}
+]    
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="haveOnlineOperators">LiveTex.haveOnlineOperators(onOnline, onOffline)</h3>
+
+            <p>Проверяет присутствие операторов в сети, и принимает список операторов, доступных в текущий момент.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>onOnline</td>
+                <td>Function(Array.&lt;Object&gt;)</td>
+                <td>Обработчик, который вызывается при наличии операторов в сети. Принимает массив объектов с данными операторов.</td>
+              </tr>
+              <tr>
+                <td>onOffline</td>
+                <td>Function()</td>
+                <td>Обработчик, который вызывается в случае, если нет ни одного доступного оператора.</td>
+              </tr>
+            </table>
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.haveOnlineOperators(function(data) {
+	alert("Операторы онлайн!");
+}, function() {
+	alert("Операторы офлайн");
+});
+</pre>
+
+            <p class="caption">Пример массива с данными операторов, передаваемого в обработчик onOnline:</p>
+<pre class="brush: js">
+[
+    {
+        "avatar": "",
+        "department_id": [1,2,3],
+        "firstname": "Иван",
+        "id": 123,
+        "is_call": true,
+        "is_call_forwarding": false,
+        "last_name": "",
+        "state_id": 1
+    }
+]
+</pre>
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="hasActiveChat">LiveTex.hasActiveChat()</h3>
+
+            <p>Проверяет наличие активного чата.</p>
+
+            <p>Метод не имеет параметров. Возвращает булевое значение: <strong>true</strong> - у посетителя уже есть активный чат, <strong>false</strong> - у посетителя нет активного чата.</p>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">ВНИМАНИЕ! Метод работает только при использовании встроенного окна чата.</span>
+                <p>В данный момент работоспособность метода при использовании внешнего окна чата НЕ гарантируется.</p>
+              </div></div></div>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+if(LiveTex.hasActiveChat()){
+	alert("Есть активный чат.");
+}
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="hideCallLabel">LiveTex.hideCallLabel()</h3>
+
+            <p>Скрывает ярлык звонков.</p>
+
+            <p>Метод не имеет параметров и не возвращает значения.</p>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.hideCallLabel();
+</pre>
+
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="hideChatLabel">LiveTex.hideChatLabel()</h3>
+
+            <p>Скрывает ярлык чата.</p>
+
+            <p>Метод не имеет параметров и не возвращает значения.</p>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.hideChatLabel();
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="hideInvitation">LiveTex.hideInvitation()</h3>
+
+            <p>Закрывает открытое окно приглашения.</p>
+
+            <p>Метод не имеет параметров и не возвращает значения.</p>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.hideInvitation();
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="isInvitationShown">LiveTex.isInvitationShown()</h3>
+
+            <p>Проверяет наличие открытого окна приглашения.</p>
+            <p>Метод не имеет параметров. Возвращает булевое значение:  <strong>true</strong> - окно приглашения открыто, <strong>false</strong> - окно приглашения закрыто.</p>
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+if(LiveTex.isInvitationShown()){
+	alert("Окно приглашения открыто");
+}
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="off">LiveTex.off(eventType, [onEvent])</h3>
+
+            <p>Удаляет обработчик события, установленный с помощью метода <a href="#on">LiveTex.on()</a>.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>eventType</td>
+                <td>string</td>
+                <td>Тип события. Чувствительно к регистру символов. Перечень возможых типов событий приведен в разделе «<a href=#events>События</a>».</td>
+              </tr>
+              <tr>
+                <td>onEvent</td>
+                <td>Function</td>
+                <td>Функция-обработчик, которую надо удалить из списка обработчиков указанного события.<br/>
+                  Если указанный обработчик зарегистрирован для указанного события, то он будет удален.
+                  Если не указано, то будут удалены все обработчики указанного события.<br/></td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример удаления всех обработчиков события «chat_open»:</p>
+<pre class="brush: js">
+LiveTex.off("chat_open");
+</pre>
+
+            <p class="caption">Пример регистрации и удаления обработчика события «chat_open»:</p>
+<pre class="brush: js">
+function onChatOpen(data){
+    alert("Открыт чат");
+}
+
+// Регистрация обработчика
+LiveTex.on("chat_open", onChatOpen);
+
+// Удаление обработчика
+LiveTex.off("chat_open", onChatOpen);
+</pre>
+
+            <p class="caption">Пример регистрации и удаления анонимной функции-обработчика события «chat_open»:</p>
+<pre class="brush: js">
+// Регистранция анонимной функции-обработчика
+var handler = LiveTex.on("chat_open", function(datа){
+    alert("Открыт чат");
+});
+
+// Удаление обработчика
+LiveTex.off("chat_open", handler);
+</pre>
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="on">LiveTex.on(eventType, onEvent)</h3>
+
+            <p>Регистрирует функцию-обработчик указанного события.</p>
+
+            <p>Возвращает функцию, указанную в параметре onEvent. Это значение можно использовать для удаления обработчика в методе <a href="#off">LiveTex.off()</a></p>
+
+            <p>Возможна регистрация нескольких обработчиков на одно событие путем повторного вызова этого метода.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>eventType</td>
+                <td>string</td>
+                <td>Тип события. Чувствительно к регистру символов. Перечень возможых типов событий приведен в разделе «<a href=#events>События</a>».</td>
+              </tr>
+              <tr>
+                <td>onEvent</td>
+                <td>Function(Object)</td>
+                <td>Функция-обработчик события. Принимает объект типа Event. Подробности в разделе «<a href=#events>События</a>».
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.on("chat_open", function(e){
+    alert("Открыт чат");
+});
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="openCallWindow">LiveTex.openCallWindow([deptId])</h3>
+
+            <p>Открывает внешнее окно звонка.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>deptId</td>
+                <td>string </td>
+                <td>Идентификатор отдела, с которым требуется соединить посетителя. Идентификатор можно получить, например, с помощью метода <a href="#getDepartments">LiveTex.getDepartments()</a>.<br/>Если метод вызван без указания deptId, то звонок будет направлен на случайно выбранного  оператора из числа доступных на данном сайте.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.openCallWindow();
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="openChatWindow">LiveTex.openChatWindow([operatorId][, message][, chatAttributes][, hiddenAttributes])</h3>
+
+            <p>Открывает внешнее окно чата.</p>
+
+            <p>Если метод вызван без параметров или с единственным параметром <strong>operatorId</strong> с пустой строкой в качестве значения, то метод ведет себя следующим образом:</p>
+            <ul>
+              <li>При отсутствии доступных операторов, открывается окно офлайн-сообщения или окно генератора лидов, если активна опция "Генератор лидов".</li>
+              <li>При наличии доступных операторов и отсутствии активного чата открывается окно приветствия.</li>
+              <li>При наличии активного чата открывается окно активного чата.</li>
+            </ul>
+
+            <p>Если указан второй параметр(<strong>message</strong>), даже если его значение - пустая строка, то метод ведет себя следующим образом:</p>
+            <ul>
+              <li>При отсутствии активного чата и при наличии доступных операторов, соответствующих значению <strong>operatorId</strong>, открывается окно нового чата, минуя окно приветствия. Если <strong>operatorId</strong> - пустая строка, то чату будет назначен оператор в соответствии со стандартным алгоритмом выбора оператора LiveTex. При этом, если message - пустая строка, то чат стартует без сообщений. Если в message непустая строка, то она отправляется в чат от имени посетителя.</li>
+              <li>При наличии активного чата, открывается окно активного чата. При этом, если message - пустая строка, то в чате нового сообщения не появляется. Если в message непустая строка, то она отправляется в активный чат от имени посетителя.</li>
+            </ul>
+
+            <p>Если в параметре <strong>operatorId</strong> указан несуществующий оператор или оператор, который в данный момент недоступен, то, поведение окна будет соответствовать заданию пустой строки в параметр <strong>operatorId</strong> - оператор будет назнач.</p>
+
+            <p>Этот метод удобно вызывать в определенном контексте на странице сайта, с передачей методу параметров <strong>operatorId</strong>, <strong>message</strong> и <strong>chatAttributes</strong>. В этом случае, посетитель сразу увидит открытое окно с первым сообщением от своего имени. Оператор при этом получит необходимую информацию о контексте с помощью параметра <strong>chatAttributes</strong>.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>operatorId</td>
+                <td>string </td>
+                <td>Идентификатор оператора, с которым требуется соединить посетителя. Идентификатор можно получить, например, с помощью метода <a href="#getOperators">LiveTex.getOperators()</a>.</td>
+              </tr>
+              <tr>
+                <td>message</td>
+                <td>string</td>
+                <td>Сообщение, отображаемое в поле чата при открытии окна чата.
+                </td>
+              </tr>
+              <tr>
+                <td>chatAttributes</td>
+                <td>Object</td>
+                <td>Набор скрытых пречат полей, видимых оператору в ПО «Пульт оператора».
+                </td>
+              </tr>
+              <tr>
+                <td>hiddenAttributes</td>
+                <td>Object</td>
+                <td>Набор скрытых пречат полей, не отображаемых в ПО «Пульт оператора».
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.openChatWindow("12345",
+    "Не могли бы вы меня проконсультировать?",
+	{"VIP клиент": "Да", "Артикул товара:": "QW123456"},
+	{"client_id": "123"}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="openEmbeddedChatWindow">LiveTex.openEmbeddedChatWindow([operatorId][, message][, chatAttributes][, hiddenAttributes])</h3>
+
+            <p>Открывает встроенное окно чата на странице посетителя.</p>
+
+            <p>Если метод вызван без параметров или с единственным параметром <strong>operatorId</strong> с пустой строкой в качестве значения, то метод ведет себя следующим образом:</p>
+            <ul>
+              <li>При отсутствии доступных операторов, открывается окно офлайн-сообщения или окно генератора лидов, если активна опция "Генератор лидов".</li>
+              <li>При наличии доступных операторов и отсутствии активного чата открывается окно приветствия.</li>
+              <li>При наличии активного чата открывается окно активного чата.</li>
+            </ul>
+
+            <p>Если указан второй параметр(<strong>message</strong>), даже если его значение - пустая строка, то метод ведет себя следующим образом:</p>
+            <ul>
+              <li>При отсутствии активного чата и при наличии доступных операторов, соответствующих значению <strong>operatorId</strong>, открывается окно нового чата, минуя окно приветствия. Если <strong>operatorId</strong> - пустая строка, то чату будет назначен оператор в соответствии со стандартным алгоритмом выбора оператора LiveTex. При этом, если message - пустая строка, то чат стартует без сообщений. Если в message непустая строка, то она отправляется в чат от имени посетителя.</li>
+              <li>При наличии активного чата, открывается окно активного чата. При этом, если message - пустая строка, то в чате нового сообщения не появляется. Если в message непустая строка, то она отправляется в активный чат от имени посетителя.</li>
+            </ul>
+
+            <p>Если в параметре <strong>operatorId</strong> указан несуществующий оператор или оператор, который в данный момент недоступен, то, вне зависимости от наличия второго параметра, откроется окно офлайн-сообщения или окно генератора лидов, если активна опция "Генератор лидов".</p>
+
+            <p>Встроенное окно открывается вне зависимости от настроек типа окна (встроенное или внешнее) в Личном кабинете.</p>
+
+            <p>Если в Личном кабинете указано внешнее окно, то в работе этого метода присутствует одна особенность. При активном чате встроенное окно можно сворачивать и разворачивать нажатием на ярлык. Но если свернуть встроенное окно и перейти на другую страницу (или обновить текущую), то при нажатии на ярлык открывается внешнее окно чата.</p>
+
+            <p>Этот метод удобно вызывать в определенном контексте на странице сайта, с передачей методу параметров <strong>operatorId</strong>, <strong>message</strong> и <strong>chatAttributes</strong>. В этом случае, посетитель сразу увидит открытое окно с первым сообщением от своего имени. Оператор при этом получит необходимую информацию о контексте с помощью параметра <strong>chatAttributes</strong>.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <td>operatorId</td>
+              <td>string</td>
+              <td>Идентификатор оператора, с которым требуется соединить посетителя. Идентификатор можно получить, например, с помощью метода <a href="#getOperators">LiveTex.getOperators()</a>.</td>
+              </tr>
+              <tr>
+                <td>message</td>
+                <td>string</td>
+                <td>Сообщение, отображаемое в поле чата при открытии окна чата.</td>
+              </tr>
+              <tr>
+                <td>chatAttributes</td>
+                <td>Object</td>
+                <td>Набор скрытых пречат полей, видимых оператору в ПО «Пульт оператора».</td>
+              </tr>
+              <tr>
+                <td>hiddenAttributes</td>
+                <td>Object</td>
+                <td>Набор скрытых пречат полей, не отображаемых в ПО «Пульт оператора».</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.openEmbeddedChatWindow("12345",
+    "Не могли бы вы меня проконсультировать?",
+    {"VIP клиент": "Да", "Артикул товара:": "QW123456"},
+    {"client_id": "123"}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="openOfflineWindow">LiveTex.openOfflineWindow()</h3>
+
+            <p>Открывает внешнее окно офлайн-сообщения.</p>
+
+            <p>Посетителю будет предложено окно с формой для ввода вопроса и указания адреса электронной почты для получения ответа.</p>
+
+            <p>Метод не имеет параметров и не возвращает значений.</p>
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.openOfflineWindow();
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="openWelcomeWindow">LiveTex.openWelcomeWindow([operatorId][, chatAttributes][, hiddenAttributes])</h3>
+
+            <p>Открывает внешнее окно приветствия.</p>
+
+            <p>При указании идентификатора оператора <strong>operatorId</strong>, в окне приветствия не отображается поле выбора отдела.</p>
+
+            <p>Если название пречат поля в <strong>chatAttributes</strong> совпадает с названием видимого посетителю пречат поля, то его значение не предустанавливается в соответствующее поле ввода.
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>operatorId</td>
+                <td>string</td>
+                <td>Идентификатор оператора, с которым будет открыт чат.</td>
+              </tr>
+              <tr>
+                <td>chatAttributes</td>
+                <td>Object</td>
+                <td>Набор скрытых пречат полей, видимых оператору в ПО «Пульт оператора».
+                </td>
+              </tr>
+              <tr>
+                <td>hiddenAttributes</td>
+                <td>Object</td>
+                <td>Набор скрытых пречат полей, не отображаемых в ПО «Пульт оператора».
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.openWelcomeWindow("12345",
+	{"VIP клиент": "Да", "Артикул товара:": "QW123456"},
+	{"client_id": "123"}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="reinitSession">LiveTex.reinitSession([onSuccess])</h3>
+
+            <p>Полностью реинициализирует сессию посетителя.</p>
+
+            <p>Метод предназначен для удаления следов пребывания пользователя. Внешний вид и состояние всех органов управления становится таким, как если бы посетитель зашел на страницу в первый раз.</p>
+
+            <p><strong>ВНИМАНИЕ!</strong> Вызов этого метода при активном чате приведет к его немедленному неявному закрытию. Вернуться к истории переписки посетитель уже не сможет.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <td>onSuccess</td>
+              <td>Function()</td>
+              <td>Функция, которая будет вызвана после завершения выполнения операции.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.reinitSession(function(){
+    alert("Начата новая сессия.");
+});
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="sendMessage">LiveTex.sendMessage(text)</h3>
+
+            <p>Отправляет сообщение в активный чат.</p>
+
+            <p>Возвращает булевое значение: <strong>true</strong> - сообщение успешно отправлено, <strong>false</strong> - активного чата нет, сообщение проигнорировано.</p>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">ВНИМАНИЕ! Метод работает только при использовании встроенного окна чата.</span>
+                <p>В данный момент работоспособность метода при использовании внешнего окна чата НЕ гарантируется.</p>
+              </div></div></div>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <td>text</td>
+              <td>string</td>
+              <td>Текст сообщения.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.sendMessage("У меня есть еще один вопрос.");
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="setChatOpenCallback">LiveTex.setChatOpenCallback(onOpen)</h3>
+
+            <p><span class="warning">ВНИМАНИЕ! Метод является устаревшим и не рекомендуется к использованию.</span><br/>
+              Для регистрации обработчиков событий следует использовать метод <a href="#on">LiveTex.on()</a>, событие <a href="#chat_open">chat_open</a>.</p>
+
+            <p>Выполняет регистрацию функции-обработчика, которая вызывается при открытии окна чата.</p>
+
+            <p>Возвращает функцию, указанную в параметре onOpen. Это значение можно использовать для удаления обработчика в методе <a href="#off">LiveTex.off()</a></p>
+
+            <p>Возможна регистрация нескольких обработчиков события путем повторного вызова этого метода.</p>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">ВНИМАНИЕ! Надежный вызов callback-функции возможен только при использовании встроенного чата.</span>
+                <p>При использовании внешнего окна чата вызов callback-функции в большинстве случаев корректно выполняется только в браузерах Firefox, Apple Safari, Google Chrome, а также в браузерах, основанных на WebKit.</p>
+                <p>В других браузерах, в том числе Microsoft Internet Explorer всех версий, при использовании внешнего окна чата вызов callback-функции НЕ гарантируется.</p>
+              </div></div></div>
+
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>onOpen</td>
+                <td>Function()</td>
+                <td>Функция, которая вызывается при открытии окна чата.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.setChatOpenCallback(
+	function(){
+		alert("Открыто окно чата!");
+	}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="setInvitationActionCallback">LiveTex.setInvitationActionCallback(onAction)</h3>
+
+            <p><span class="warning">ВНИМАНИЕ! Метод является устаревшим и не рекомендуется к использованию.</span><br/>
+              Для регистрации обработчиков событий следует использовать метод <a href="#on">LiveTex.on()</a>, событие <a href="#chat_invitation_action">chat_invitation_action</a>.</p>
+
+            <p>Выполняет регистрацию функции-обработчика, которая будет вызвана при определенном действии посетителя в окне приглашения.</p>
+
+            <p>Возвращает функцию, указанную в параметре onAction. Это значение можно использовать для удаления обработчика с помощью метода <a href="#off">LiveTex.off()</a></p>
+
+            <p>Возможна регистрация нескольких обработчиков события путем повторного вызова этого метода.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <td>onAction</td>
+              <td>Function(string)</td>
+              <td>Функция, которая вызывается при определенном действии посетителя в окне приглашения.<br>
+                Принимает строку - название действия пользователя. Возможные значения:
+                <ul>
+                  <li><strong>decline</strong> - посетитель нажал на ссылку «Нет, спасибо»;</li>
+                  <li><strong>close</strong> - посетитель закрыл ярлык или ярлык свернулся автоматически, например, при нажатии на кнопку открытия чата на странице;</li>
+                  <li><strong>send</strong> - посетитель ввел текст вопроса и нажал на кнопку «Отправить».</li>
+                </ul>
+              </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.setInvitationActionCallback(
+    function(type){
+        switch(type){
+            case "decline":
+                alert("Посетитель сказал: \"Нет, спасибо!\"");
+                break;
+            case "close":
+                alert("Посетитель закрыл ярлык.");
+                break;
+            case "send":
+                alert("Посетитель ввел текст и нажал \"Отправить\".");
+                break;
+        }
+    }
+);
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="setInvitationOpenCallback">LiveTex.setInvitationOpenCallback(onOpen)</h3>
+
+            <p><span class="warning">ВНИМАНИЕ! Метод является устаревшим и не рекомендуется к использованию.</span><br/>
+              Для регистрации обработчиков событий следует использовать метод <a href="#on">LiveTex.on()</a>, событие <a href="#chat_invitation_open">chat_invitation_open</a>.</p>
+
+            <p>Выполняет регистрацию функции-обработчика, которая будет вызвана при открытии окна приглашения.</p>
+
+            <p>Возвращает функцию, указанную в параметре onOpen. Это значение можно использовать для удаления обработчика в методе <a href="#off">LiveTex.off()</a></p>
+
+            <p>Возможна регистрация нескольких обработчиков события путем повторного вызова этого метода.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <td>onOpen</td>
+              <td>Function(string)</td>
+              <td>Функция, которая будет вызвана после открытия окна приглашения.<br>
+                Принимает строку - название источника возникновения события. Возможные значения:
+                <ul>
+                  <li><strong>auto</strong> - приглашение открыто автоматически по настроенному в Личном кабинете сценарию;</li>
+                  <li><strong>api</strong> - приглашение открыто путем вызова метода <a href="#showIntitation">LiveTex.showIntitation()</a>;</li>
+                  <li><strong>manual</strong> - приглашение инициировано оператором вручную.</li>
+                </ul>
+              </td>
+
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.setInvitationOpenCallback(
+    function(type){
+        switch(type){
+            case "auto":
+                alert("Показано автоматическое приглашение.");
+                break;
+            case "api":
+                alert("Сработал метод LiveTex.showIntitation()");
+                break;
+            case "manual":
+                alert("Показано приглашение оператора.");
+                break;
+        }
+    }
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="setManyPrechatFields">LiveTex.setManyPrechatFields(chatAttributes[, hiddenAttributes][, onSuccess])</h3>
+
+            <p>Передает скрытые пречат поля, не отображаемые в окне приветствия.</p>
+
+            <p>Этот метод полностью дублирует параметры <strong>chatAttributes</strong> и <strong>hiddenAttributes</strong> методов <strong>openChatWindow()</strong> и <strong>openWelcomeWindow()</strong>. Отличие состоит в том, что его можно вызывать заранее и пречат поля будут установлены не только для внешнего окна, но и для встроенного.</p>
+
+            <p>Пречат поля, установленные методом <strong>setManyPrechatFields()</strong>, комбинируются с полями, переданными в параметрах методов <strong>openChatWindow()</strong> и <strong>openWelcomeWindow()</strong>. Если имена параметров совпадают, то будет установлено значение, указанное в параметрах <strong>openChatWindow()</strong> и <strong>openWelcomeWindow()</strong>.</p>
+
+            <p>Если название пречат поля в <strong>chatAttributes</strong> совпадает с названием видимого посетителю пречат поля, то в ПО "Пульт оператор" будет отображаться то значение, которое посетитель ввел в соответствующее пречат поле. </p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>chatAttributes</td>
+                <td>Object</td>
+                <td>Набор скрытых пречат полей, видимых оператору в ПО «Пульт оператора».
+                </td>
+              </tr>
+              <tr>
+                <td>hiddenAttributes</td>
+                <td>Object</td>
+                <td>Набор скрытых пречат полей, не отображаемых в ПО «Пульт оператора».
+                </td>
+              </tr>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function()</td>
+                <td>Обработчик, который вызывается при успешном выполнении метода.</td>
+              </tr>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.setManyPrechatFields(
+	{"VIP клиент": "Да", "Артикул товара:": "QW123456"},
+	{"client_id": "12345"},
+	function(){alert("Пречат поля успешно установлены.")}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="setName">LiveTex.setName(name[, onSuccess][, isEditable])</h3>
+
+            <p>Устанавливает имя для текущего посетителя сайта.</p>
+
+            <p>Этот метод следует вызывать перед вызовом методов openChatWindow(), openEmbeddedChatWindow(), openWelcomeWindow().</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>Имя, устанавливаемое для посетителя сайта.</td>
+              </tr>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function()</td>
+                <td>Обработчик, который вызывается при успешном выполнении операции.</td>
+              </tr>
+              <tr>
+                <td>isEditable</td>
+                <td>boolean</td>
+                <td>Признак редактируемости поля "Имя" после выполнения метода. По умолчанию - false. Если указать true, то посетитель сможет отредактировать предустановленное значение.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример 1. Посетитель не сможет поменять свое имя</p>
+<pre class="brush: js">
+LiveTex.setName("Валентин", function(){
+    // Открывать чат следует в callback-функции
+    LiveTex.openEmbeddedChatWindow();
+});
+</pre>
+
+            <p class="caption">Пример 2. Поле "Имя" будет разблокировано</p>
+<pre class="brush: js">
+LiveTex.setName("Валентин", function(){
+        LiveTex.openEmbeddedChatWindow();
+}, true);  // isEditable = true
+</pre>
+
+
+            <p class="caption">Пример 3. Вызов перед openChatWindow() для преодоления блокировки всплывающего окна</p>
+<pre class="brush: js">
+&lt;script type="text/javascript"&gt;
+var onClick(){
+    LiveTex.setName("Владимир");
+    LiveTex.openChatWindow();
+};
+&lt;/script&gt;
+
+&lt;button onclick="onClick()"&gt;Начать чат&lt;/button&gt;
+</pre>
+            <p><strong>ВНИМАНИЕ!</strong> Этот вариант следует применять только при необходимости предустановить имя посетителя непосредственно перед открытием внешнего (именно внешнего) окна. При открытии встроенного окна методом openEmbeddedChatWindow() это вариант может не сработать. В этом случае следует использовать пример 1 или 2. <a href="#popup">Особенности открытия внешнего окна</a> не распространяются на встроенные окна LiveTex().</p>
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="setPrechatFields">LiveTex.setPrechatFields(firstField[, secondField][, onSuccess])</h3>
+
+            <p>Обеспечивает предустановку текста в пречат полях окна приветствия.</p>
+
+            <p>Для использования метода необходимо, чтобы в настройках Личного кабинета клиента соответствующие пречат поля были активированы.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>firstField</td>
+                <td>string</td>
+                <td>Значение первого пречат поля.</td>
+              </tr>
+              <tr>
+                <td>secondField</td>
+                <td>string</td>
+                <td>Значение второго пречат поля.</td>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function()</td>
+                <td>Обработчик, который вызывается при успешном выполнении метода.</td>
+              </tr>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.setPrechatFields("Заказ 123456", "Срочно", function(data){
+		alert("Пречат поля предустановлены.");
+	}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="setWelcomeGroups">LiveTex.setWelcomeGroups(deptIds[, onSuccess])</h3>
+
+            <p>Устанавливает набор отделов, которые будут показаны посетителю в выпадающем списке окна приветствия.</p>
+
+            <p><strong>ВНИМАНИЕ!</strong> В выпадающем окне будут отображены только те отделы, в которых есть доступные операторы.
+              Если среди установленных отделов нет отделов с доступными операторами, то, при открытии окна чата
+              посетителем кликом по ярлыку или опосредованно c помощью методов <a href="#openChatWindow">openChatWindow()</a>
+              или <a href="#openEmbeddedChatWindow">openEmbeddedChatWindow()</a>, откроется окно офлайн-сообщения
+              или окно генератора лидов, если активна опция "Генератор лидов".</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>deptIds</td>
+                <td>Array</td>
+                <td>Массив идентификаторов отделов. Идентификаторы отделов можно получить, например, с помощью метода <a href="#getDepartments">LiveTex.getDepartments()</a>.</td>
+              </tr>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function()</td>
+                <td>Функция, которая будет вызвана после завершения выполнения операции.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.setWelcomeGroups(
+	[123, 124],
+	function(){alert("Группа назначена");}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="setWelcomeOpenCallback">LiveTex.setWelcomeOpenCallback(onOpen)</h3>
+
+            <p><span class="warning">ВНИМАНИЕ! Метод является устаревшим и не рекомендуется к использованию.</span><br/>
+              Для регистрации обработчиков событий следует использвать метод <a href="#on">LiveTex.on()</a>, событие <a href="#chat_welcome_open">chat_welcome_open</a>.</p>
+
+            <p>Выполняет регистрацию callback-функции, которая вызывается при открытии окна приветствия.</p>
+
+            <p>Возможно указание только одной callback-функции. Повторный вызов этого метода приводит к ее переопределению.</p>
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>onOpen</td>
+                <td>Function()</td>
+                <td>Функция, которая вызывается при открытии окна приветствия.</td>
+              </tr>
+            </table>
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.setWelcomeOpenCallback(
+	function(){
+		alert("Открыто окно приветствия!");
+	}
+);
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="showCallLabel">LiveTex.showCallLabel()</h3>
+
+            <p>Отображает ярлык звонков.</p>
+
+            <p>Метод не имеет параметров и не возвращает значения.</p>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.showCallLabel();
+</pre>
+
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="showChatLabel">LiveTex.showChatLabel()</h3>
+
+            <p>Отображает ярлык чата.</p>
+
+            <p>Метод не имеет параметров и не возвращает значения.</p>
+
+            <p class="caption">Пример:</p>
+<pre class="brush: js">
+LiveTex.showChatLabel();
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="showInvitation">LiveTex.showInvitation(text[, deptId[, operatorId]][, onSuccess])</h3>
+
+            <p>Отображает текст приглашения посетителю сайта.</p>
+
+            <p>Приглашение может быть нацелено на определенный отдел или оператора. При указании идентификатора оператора <strong>operatorId</strong>, необходимо также указать идентификатор отдела <strong>deptId</strong>, в который оператор входит.</p>
+
+            <p>Если <strong>deptId</strong> и <strong>operatorId</strong> не указаны или в качестве значений указана пустая строка, то рассматриваются все доступные операторы сайта.</p>
+
+            <p>Приглашение показывается только при наличии доступного оператора, соотвествующего указанным критериям выборки.</p>
+            <ul>
+              <li>Если <strong>deptId</strong> и <strong>operatorId</strong> не указаны, то должен быть хотя бы один доступный оператор на сайте.</li>
+              <li>Если указан только <strong>deptId</strong>, то необходимо, чтобы был доступен хотя бы один оператор, входящий в указанный отдел.</li>
+              <li>Если указаны и <strong>deptId</strong>, и <strong>operatorId</strong>, то приглашение покажется, только если указанный оператор доступен и он входит в указанный отдел.</li>
+            </ul>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">ВНИМАНИЕ! Приглашение НЕ показывается, если <strong>deptId</strong> указывает на скрытый отдел вне зависимости от наличия в нем доступных операторов.</span>
+              </div></div></div>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">ВНИМАНИЕ! Окна приглашения НЕ могут перекрывать друг друга.</span>
+                <p>Если у посетителя уже открыто окно приглашении, то попытки открыть другое приглашение будут проигнорированы.</p>
+                <p>Проверить, открыто ли в данный момент окно приглашения, можно с помощью метода <a href="#isInvitationShown">LiveTex.isInvitationShown()</a>.</p>
+              </div></div></div>
+
+
+            <table class="table params">
+              <caption class="caption">Параметры:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>text</td>
+                <td>string</td>
+                <td>Текст приглашения посетителю сайта.</td>
+              </tr>
+              <tr>
+                <td>deptId</td>
+                <td>string</td>
+                <td>Идентификатор отдела.</td>
+              </tr>
+
+              <tr>
+                <td>operatorId</td>
+                <td>string </td>
+                <td>Идентификатор оператора сайта. При указании оператора, необходимо также указывать идентификатор отдела, в который он входит.</td>
+              </tr>
+              <tr>
+                <td>onSuccess</td>
+                <td>Function(boolean)</td>
+                <td>Функция, которая будет вызвана после завершения выполнения операции. Принимает значение типа boolean: <strong>true</strong> - оператор найден, приглашение открывается; <strong>false</strong> - нет свободных операторов, приглашение показано не будет.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Примеры:</p>
+<pre class="brush: js">
+LiveTex.showInvitation("Привет"); // На любого свободного оператора
+LiveTex.showInvitation("Привет", "123"); // На отдел 123
+LiveTex.showInvitation("Привет", "123", "45"); // На оператора 45 из отдела 123
+
+// Открылось или нет?
+LiveTex.showInvitation("Привет", "", "", function(ok){
+    if(ok){
+        alert("Приглашение открыто");
+    }
+});
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h2 id="events">События</h2>
+
+            <p>Виджет LiveTex предоставляет возможность подписаться на ряд событий, которые возникают в ходе его работы.</p>
+
+            <p>С помощью метода <a href="#on">LiveTex.on()</a> можно зарегистрировать свою функцию-обработчик, которая будет вызвана при возникновении указанного события.</p>
+
+            <p>Функция-обработчик при вызове принимает в качестве аргумента объект типа Event, содержащий дополнительную информацию о событии.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства объекта Event</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>type</td>
+                <td>string</td>
+                <td>Обязательное. Тип события.</td>
+              </tr>
+              <tr>
+                <td>data</td>
+                <td>Object</td>
+                <td>Опциональное. Объект, содержащий специфичный для конкретного события набор свойств. Если событие не имеет данных, то этого свойства не будет.</td>
+              </tr>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event события chat_open:</p>
+<pre class="brush: js">
+{
+    "type": "chat_open",
+    "data": {
+        "is_embedded": true
+    }
+}
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="call_open">Событие call_open</h3>
+
+            <p>Возникает при открытии окна звонка.</p>
+
+            <p>Это событие НЕ означает, что звонок состоялся. В открывшемся окне звонка пользователю необходимо выполнить ряд подготовительных действий: установить flash-плагин (если еще не установлен), а также разрешить доступ к звуковым устройствам. Пользователь может отказаться от выполнения одного из этих действий, в этом случае звонок не состоится.</p>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">ВНИМАНИЕ! Вызов callback-функции по событию call_open не всегда осуществляется при нажатии на кнопку "Позвонить" во внешнем окне чата.</span>
+                <ol>
+                  <li>Вызов не происходит, если закрыта родительская вкладка браузера.</li>
+                  <li>При наличии родительской вкладки вызов гарантируется только в браузерах Firefox, Apple Safari, Google Chrome, а также в браузерах, основанных на WebKit. В других браузерах, в том числе Microsoft Internet Explorer всех версий, вызов callback-функции в такой ситуации НЕ гарантируется.</li>
+                </ol>
+              </div></div></div>
+
+            <table class="table params">
+              <caption class="caption">Свойства события call_open:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события. Возможные значения:
+                  <ul>
+                    <li><strong>visitor</strong> - окно звонка открыто посетителем;</li>
+                    <li><strong>api</strong> - окно звонка открыто программно путем вызова метода <a href="#openCallWindow">LiveTex.openCallWindow()</a>.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>control</td>
+                <td>string</td>
+                <td>Элемент управления, с помощью которого открыто окно звонка. Возможные значения:
+                  <ul>
+                    <li><strong>button</strong> - кнопка звонка;</li>
+                    <li><strong>label</strong> - ярлык звонка;</li>
+                    <li><strong>chat_button</strong> - кнопка «Позвонить» во встроенном или внешнем окне чата;</li>
+                    <li><strong>custom</strong> - другой элемент управления, в результате использования которого был вызван метод <a href="#openCallWindow">LiveTex.openCallWindow()</a>, открывший окно звонка.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>button_id</td>
+                <td>string</td>
+                <td>ID нажатой кнопки. Содержит значение только для control = button. При других значениях control равно <strong>null</strong>.
+                </td>
+              </tr>
+              <tr>
+                <td>department_id</td>
+                <td>string</td>
+                <td>ID отдела, указанного в контексте звонка в следующих случаях:
+                  <ul>
+                    <li>Если звонок начался из чата, при старте которого пользователем в окне приветствия был выбран отдел.</li>
+                    <li>Если звонок начался из чата, который запущен нажатием на кнопку, настроенную на конкретный отдел.</li>
+                    <li>Звонок начался при нажатии на кнопку звонка, настроенную на конкретный отдел.</li>
+                    <li>Звонок инициирован вызовом метода <a href="#openCallWindow">LiveTex.openCallWindow()</a> с указанием конкретного отдела.</li>
+                  </ul>
+                  Во всех остальных случаях - <strong>null</strong>.
+                </td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>Имя посетителя.</td>
+              </tr>
+              <tr>
+                <td>prechats_chat</td>
+                <td>Object</td>
+                <td>Объект со значениями пречат полей, введенных посетителем в окне приветствия или указанных в аргументах методов с именем chatAttributes. <strong>null</strong>, если не определено ни одного пречат поля.</td>
+              </tr>
+              <tr>
+                <td>prechats_hidden</td>
+                <td>Object</td>
+                <td>Объект со значениями скрытых пречат полей, указанных в аргументах методов с именем hiddenAttributes. <strong>null</strong>, если не определено ни одного скрытого пречат поля.</td>
+              </tr>
+            </table>
+
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "call_open",
+    "data": {
+        "source": "visitor",
+        "control": "label",
+        "button_id": null,
+        "department_id": null,
+        "name": "Дмитрий",
+        "prechats_chat": null,
+        "prechats_hidden": {
+            "client_id": "654321"
+        }
+    }
+}
+</pre>
+
+
+            <p class="caption">Пример обработки события call_open:</p>
+<pre class="brush: js">
+LiveTex.on("call_open", function(e){
+    if(e.data.control == "label")
+        alert("Окно звонка открыто кликом по ярлыку.");
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="callback_action">Событие callback_action</h3>
+
+            <p>Возникает при выполнении посетителем действия в окне X-widget.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события callback_action:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник открытия окна. Возможные значения:
+                  <ul>
+                    <li><strong>auto</strong> - окно открыто автоматически.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>action</td>
+                <td>string</td>
+                <td>Действие посетителя. Возможные значения:
+                  <ul>
+                    <li><strong>decline</strong> - посетитель явно отказался от обратного звонка;</li>
+                    <li><strong>send</strong> - посетитель ввел номер телефона и заказал обратный звонок.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "callback_action",
+    "data": {
+        "source": "auto",
+        "action": "send"
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события callback_action:</p>
+<pre class="brush: js">
+LiveTex.on("callback_action", function(e){
+    if(e.data.action == "decline"){
+        alert("Посетитель отказался от обратного звонка");
+    }
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="callback_open">Событие callback_open</h3>
+
+            <p>Возникает при открытии окна X-widget.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события callback_open:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события. Возможные значения:
+                  <ul>
+                    <li><strong>auto</strong> - окно открыто автоматически.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "callback_open",
+    "data": {
+        "source": "auto"
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события callback_open:</p>
+<pre class="brush: js">
+LiveTex.on("callback_open", function(e){
+    if(e.data.source == "auto"){
+        alert("Открыто окно с предложением обратного звонка!");
+    }
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="callback_state_change">Событие callback_state_change</h3>
+
+            <p>Возникает при изменении состояния окна X-widget.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события callback_state_change:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события. Возможные значения:
+                  <ul>
+                    <li><strong>auto</strong> - окно открыто автоматически.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>state</td>
+                <td>string</td>
+                <td>Состояние заказанного обратного звонка. Возможные значения:
+                  <ul>
+                    <li><strong>success</strong> - оператор дозвонился до посетителя.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "callback_state_change",
+    "data": {
+        "source": "auto",
+        "state": "success"
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события callback_state_change:</p>
+<pre class="brush: js">
+LiveTex.on("callback_state_change", function(e){
+    if(e.data.state == "success"){
+        alert("Оператор дозвонился до посетителя");
+    }
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="chat_invitation_action">Событие chat_invitation_action</h3>
+
+            <p>Возникает при совершении посетителем действия в окне приглашения к чату.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события chat_invitation_action:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события.
+                  <p>Значение этого свойства равно значению одноименного свойства события  <a href="#chat_invitation_open">chat_invitation_open</a>. Возможные значения:</p>
+                  <ul>
+                    <li><strong>auto</strong> - приглашение открыто автоматически по настроенному в Личном кабинете сценарию;</li>
+                    <li><strong>api</strong> - приглашение открыто путем вызова метода <a href="#showIntitation">LiveTex.showIntitation()</a>;</li>
+                    <li><strong>manual</strong> - приглашение инициировано оператором вручную.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>action</td>
+                <td>string</td>
+                <td>Действие посетителя. Возможные значения:
+                  <ul>
+                    <li><strong>decline</strong> - посетитель нажал на ссылку "Нет, спасибо";</li>
+                    <li><strong>send</strong> - посетитель ввел текст вопроса и нажал на кнопку "Отправить";</li>
+                    <li><strong>hide</strong> - посетитель свернул окно нажатием на ярлык, или окно свернулось автоматически при возникновении какого-то другого события;</li>
+                    <li><strong>show</strong> - посетитель свернул и повторно развернул окно приглашения.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "chat_invitation_action",
+    "data": {
+        "action": "send"
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события chat_invitation_action:</p>
+<pre class="brush: js">
+LiveTex.on("chat_invitation_action", function(e){
+    if(e.data.action == "decline"){
+        alert("Пользователь кликнул по ссылке \"Нет спасибо\"!");
+    }
+});
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="chat_invitation_open">Событие chat_invitation_open</h3>
+
+            <p>Возникает при открытии окна приглашения к чату.</p>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">ВНИМАНИЕ! Окна приглашения НЕ могут перекрывать друг друга.</span>
+                <p>Если у посетителя уже открыто окно приглашении, то попытки открыть другое окно приглашения будут проигнорированы. Например, если у посетителя открылось окно приглашения от оператора и следом за этим сработал сценарий вовлечения, то приглашение сценария вовлечения будет проигнорировано. При этом второе событие chat_invitation_open также не возникнет.</p>
+                <p>Отображение других приглашений станет возможным после закрытия окна приглашения.</p>
+              </div></div></div>
+
+            <table class="table params">
+              <caption class="caption">Свойства события chat_invitation_open:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события. Возможные значения:
+                  <ul>
+                    <li><strong>auto</strong> - приглашение открыто автоматически по настроенному в Личном кабинете сценарию;</li>
+                    <li><strong>api</strong> - приглашение открыто путем вызова метода <a href="#showIntitation">LiveTex.showIntitation()</a>;</li>
+                    <li><strong>manual</strong> - приглашение инициировано оператором вручную.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "chat_invitation_open",
+    "data": {
+        "source": "auto"
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события chat_invitation_open:</p>
+<pre class="brush: js">
+LiveTex.on("chat_invitation_open", function(e){
+    if(e.data.source == "manual"){
+        alert("Приглашение отправлено оператором!");
+    }
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="chat_open">Событие chat_open</h3>
+
+            <p>Возникает при открытии чата.</p>
+
+            <div class="attention-bg-t"><div class="attention-bg-b">
+              <div class="information"><span class="blue">ВНИМАНИЕ! Надежный вызов callback-функции по событию chat_open возможен только при использовании встроенного чата.</span>
+                <p>При использовании внешнего окна чата, вызов callback-функции в большинстве случаев корректно выполняется только в браузерах Firefox, Apple Safari, Google Chrome, а также в браузерах, основанных на WebKit.</p>
+                <p>В других браузерах, в том числе Microsoft Internet Explorer всех версий, при использовании внешнего окна чата вызов callback-функции НЕ гарантируется.</p>
+              </div></div></div>
+
+            <table class="table params">
+              <caption class="caption">Свойства события chat_open:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события. Возможные значения:
+                  <ul>
+                    <li><strong>invitation</strong> - чат начат из окна приглашения.<br>
+                      Этим значением помечаются чаты, начатые из окна приглашения, открытого любым способом: автоматически по сценарию вовлечения, вручную оператором или с помощью метода <a href="#showInvitation">LiveTex.showInitation()</a>;</li>
+                    <li><strong>visitor</strong> - чат начат по инициативе посетителя;</li>
+                    <li><strong>api</strong> - чат инициирован программно путем вызова метода Client API.</li>
+                  </ul>
+                </td>
+              </tr>
+              <!-- <tr>
+                  <td>control</td>
+                  <td>string</td>
+                  <td>Элемент управления, с помощью которого открыто окно чата. Возможные значения:
+                  <ul>
+                  <li><strong>button</strong> - кнопка чата;</li>
+                  <li><strong>label</strong> - ярлык чата;</li>
+                  <li><strong>custom</strong> - другой элемент управления, в результате использования которого с помощью методов Client API было открыто окно чата.</li>
+                  </ul>
+                  </td>
+              </tr>
+              <tr>
+                  <td>button_id</td>
+                  <td>string</td>
+                  <td>ID нажатой кнопки. Содержит значение только для control = button. При других значениях control равно <strong>null</strong>.
+                  </td>
+              </tr> -->
+              <tr>
+                <td>department_id</td>
+                <td>string</td>
+                <td>ID отдела, указанного при старте чата в следующих случаях:
+                  <ul>
+                    <li>При выборе отдела пользователем в окне приветствия.</li>
+                    <li>При нажатии на кнопку чата, настроенную на конкретный отдел.</li>
+                  </ul>
+                  Во всех остальных случаях - <strong>null</strong>.
+                </td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>Имя посетителя.</td>
+              </tr>
+              <tr>
+                <td>prechats_chat</td>
+                <td>Object</td>
+                <td>Объект со значениями пречат полей, введенных посетителем в окне приветствия или указанных в аргументах методов с именем chatAttributes. <strong>null</strong>, если не определено ни одного пречат поля.</td>
+              </tr>
+              <tr>
+                <td>prechats_hidden</td>
+                <td>Object</td>
+                <td>Объект со значениями скрытых пречат полей, указанных в аргументах методов с именем hiddenAttributes. <strong>null</strong>, если не определено ни одного скрытого пречат поля.</td>
+              </tr>
+              <tr>
+                <td>is_embedded</td>
+                <td>boolean</td>
+                <td>Тип окна чата. Значение <strong>true</strong>, если открыто встроенное окно.</td>
+              </tr>
+            </table>
+
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "chat_open",
+    "data": {
+        "source": "visitor",
+        "department_id": "123456",
+        "name": "Дмитрий",
+        "prechats_chat": {
+            "Телефон": "+7 (123) 4567890"
+        },
+        "prechats_hidden": {
+            "client_id": "654321"
+        },
+        "is_embedded": true
+    }
+}
+</pre>
+
+
+            <p class="caption">Пример обработки события chat_open:</p>
+<pre class="brush: js">
+LiveTex.on("chat_open", function(e){
+    if(e.data.is_embedded){
+        alert("Начат встроенный чат.");
+    }
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="chat_welcome_action">Событие chat_welcome_action</h3>
+
+            <p>Возникает при совершении посетителем действия в окне приветствия.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события chat_welcome_action:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>action</td>
+                <td>string</td>
+                <td>Действие посетителя. Возможные значения:
+                  <ul>
+                    <li><strong>send</strong> - посетитель заполнил форму и нажал на кнопку «Отправить»;</li>
+                    <li><strong>hide</strong> - посетитель свернул окно нажатием на ярлык, или окно свернулось автоматически при возникновении какого-то другого события;</li>
+                    <li><strong>show</strong> - посетитель свернул и повторно развернул окно привествия.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "chat_welcome_action",
+    "data": {
+        "action": "send"
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события chat_welcome_action:</p>
+<pre class="brush: js">
+LiveTex.on("chat_welcome_action", function(e){
+    if(e.data.action == "close"){
+        alert("Пользователь закрыл окно приветствия!");
+    }
+});
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="chat_welcome_open">Событие chat_welcome_open</h3>
+
+            <p>Возникает при первом открытии окна приветствия.</p>
+
+            <p>Если посетитель нажатием на ярлык закрывает окно приветствия, после чего снова нажимает на ярлык для открытия окна, окно приветствия снова отображается, но событие <strong>chat_welcome_open</strong> при этом уже не возникает. Предполагается, что повторные нажатия на ярлык лишь скрывают/раскрывают окно приветствия.</p>
+
+            <p>Однако после перехода на другую страницу или обновления текущей, нажатие на ярлык вновь вызывает событие <strong>chat_welcome_open</strong>.</p>
+
+            <p>При нахождении посетителя на одной странице, событие chat_welcome_open может быть вызвано повторно методами <strong>LiveTex.openEmbeddedChatWindow()</strong> без параметров и <strong>LiveTex.openWelcomeWindow()</strong>.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события chat_welcome_open:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события. Возможные значения:
+                  <ul>
+                    <li><strong>visitor</strong> - окно открыто по инициативе посетителя;</li>
+                    <li><strong>api</strong> - окно приветствия открыто путем вызова метода Client API.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>is_embedded</td>
+                <td>boolean</td>
+                <td>Тип окна. Значение <strong>true</strong>, если открыто встроенное окно.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "chat_welcome_open",
+    "data": {
+        "source": "visitor",
+        "is_embedded": true
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события chat_welcome_open:</p>
+<pre class="brush: js">
+LiveTex.on("chat_welcome_open", function(e){
+    if(e.data.source == "visitor"){
+        alert("Посетитель инициировал чат и ему открылось окно приветствия!");
+    }
+});
+</pre>
+
+
+            <!-- ----------------------------------------- -->
+
+
+            <h3 id="lead_action">Событие lead_action</h3>
+
+            <p>Возникает при выполнении посетителем действия в окне генератора лида.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события lead_action:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник открытия окна. Возможные значения:
+                  <ul>
+                    <li><strong>auto</strong> - окно открыто автоматически по настроенному в Личном кабинете сценарию вовлечения;</li>
+                    <li><strong>visitor</strong> - окно открыто по инициативе посетителя;</li>
+                    <li><strong>api</strong> - окно открыто путем вызова метода Client API.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>action</td>
+                <td>string</td>
+                <td>Действие посетителя. Возможные значения:
+                  <ul>
+                    <li><strong>decline</strong> - посетитель нажал на ссылку «Нет, спасибо»;</li>
+                    <li><strong>send</strong> - посетитель ввел текст вопроса и нажал на кнопку «Отправить»;</li>
+                    <li><strong>hide</strong> - посетитель свернул окно нажатием на ярлык, или окно свернулось автоматически при возникновении какого-то другого события;</li>
+                    <li><strong>show</strong> - посетитель повторно развернул окно генератора лидов после сворачивания.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>is_embedded</td>
+                <td>boolean</td>
+                <td>Тип окна. Значение <strong>true</strong>, если используется встроенное окно.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "lead_action",
+    "data": {
+        "source": "auto",
+        "action": "send",
+        "is_embedded": true
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события lead_action:</p>
+<pre class="brush: js">
+LiveTex.on("lead_action", function(e){
+    if(e.data.action == "decline"){
+        alert("Посетитель свернул окно генератора лидов по ссылке \"Нет, спасибо\"!");
+    }
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="lead_open">Событие lead_open</h3>
+
+            <p>Возникает при открытии окна генератора лида.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события lead_open:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события. Возможные значения:
+                  <ul>
+                    <li><strong>auto</strong> - окно открыто автоматически по настроенному в Личном кабинете сценарию;</li>
+                    <li><strong>visitor</strong> - окно открыто по инициативе посетителя;</li>
+                    <li><strong>api</strong> - окно открыто путем вызова метода Client API.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>is_embedded</td>
+                <td>boolean</td>
+                <td>Тип окна. Значение <strong>true</strong>, если открыто встроенное окно.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "lead_open",
+    "data": {
+        "source": "visitor",
+        "is_embedded": true
+    }
+}
+</pre>
+
+            <p class="caption">Пример обработки события lead_open:</p>
+<pre class="brush: js">
+LiveTex.on("lead_open", function(e){
+    if(e.data.source == "visitor" && e.data.is_embedded){
+        alert("Посетитель вручную открыл встроенное окно генератора лидов!");
+    }
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="offline_action">Событие offline_action</h3>
+
+            <p>Возникает при выполнении посетителем действия в окне офлайн-сообщения.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события offline_action:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник открытия окна. Возможные значения:
+                  <ul>
+                    <li><strong>visitor</strong> - окно открыто по инициативе посетителя;</li>
+                    <li><strong>api</strong> - окно открыто путем вызова метода Client API.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>action</td>
+                <td>string</td>
+                <td>Действие посетителя. Возможные значения:
+                  <ul>
+                    <li><strong>send</strong> - посетитель ввел текст вопроса и нажал на кнопку «Отправить».</li>
+                    <li><strong>hide</strong> - посетитель свернул окно офлайн-сообщения или оно свернулось автоматически под воздействием какого-то другого события;</li>
+                    <li><strong>show</strong> - посетитель повторно развернул окно офлайн-сообщения после сворачивания.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>is_embedded</td>
+                <td>boolean</td>
+                <td>Тип окна. Значение <strong>true</strong>, то используется встроенное окно.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "offline_action",
+    "data": {
+        "source": "visitor",
+        "action": "send",
+        "is_embedded": true
+    }
+}
+</pre>
+
+
+            <p class="caption">Пример обработки события offline_action:</p>
+<pre class="brush: js">
+LiveTex.on("offline_action", function(e){
+    if(e.data.action == "send"){
+        alert("Посетитель отправил офлайн-сообщение!");
+    }
+});
+</pre>
+
+
+
+            <!-- ----------------------------------------- -->
+
+
+
+            <h3 id="offline_open">Событие offline_open</h3>
+
+            <p>Возникает при открытии окна оффлан-сообщения.</p>
+
+            <table class="table params">
+              <caption class="caption">Свойства события offline_open:</caption>
+              <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Описание</th>
+              </tr>
+              <tr>
+                <td>source</td>
+                <td>string</td>
+                <td>Источник возникновения события. Возможные значения:
+                  <ul>
+                    <li><strong>visitor</strong> - окно открыто по инициативе посетителя;</li>
+                    <li><strong>api</strong> - окно открыто путем вызова метода Client API.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>is_embedded</td>
+                <td>boolean</td>
+                <td>Тип окна. Значение <strong>true</strong>, если открыто встроенное окно.</td>
+              </tr>
+            </table>
+
+            <p class="caption">Пример объекта Event, передаваемого обработчику:</p>
+<pre class="brush: js">
+{
+    "type": "offline_open",
+    "data": {
+        "source": "visitor",
+        "is_embedded": true
+    }
+}
+</pre>
+
+
+            <p class="caption">Пример обработки события offline_open:</p>
+<pre class="brush: js">
+LiveTex.on("offline_open", function(e){
+    if(e.data.source == "visitor" && e.data.is_embedded){
+        alert("Посетитель вручную открыл встроенное окно офлайн-сообщения!");
+    }
+});
+</pre>
+
+            <!-- ----------------------------------------- -->
+
+
+          </div> <!-- /help-page-content -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+
+  <div class="copyright">&copy; 2010&ndash;2014 Компания
+    <div class="info"><a class="footer-btn-info">LiveTex</a>
+      <div class="info-wrapper">
+        <div class="info-content">
+          <p>Онлайн-консультант позволяет вашим операторам всегда быть на&nbsp;связи в&nbsp;режиме 24/7, оказывая поддержку клиентам. Гибко настраиваемый мессенджер на&nbsp;сайте в&nbsp;разы увеличивает количество обращений клиентов в&nbsp;отдел продаж или технической поддержки.</p>
+          <p>Даже если ваши операторы не&nbsp;могут быть online круглосуточно, вам поможет сервис Генератор лидов, система сама предложит посетителю сайта оставить свой вопрос и&nbsp;контактные данные, чтобы вы&nbsp;в&nbsp;дальнейшем могли продолжить работу с&nbsp;потенциальным клиентом.</p>
+          <div class="bottom"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="http://livetex.ru/wp-content/themes/livetex/js/lt-scripts.js?003"></script>
+<script>
+  jQuery(document).ready(function() {
+    var offset = 700;
+    var duration = 500;
+
+    // set start position
+    $("#back-to-top").css("left", $(".column-page-container").position().left);
+
+    jQuery(window).scroll(function() {
+      if (jQuery(this).scrollTop() > offset) {
+        jQuery('#back-to-top').fadeIn(duration);
+      } else {
+        jQuery('#back-to-top').fadeOut(duration);
+      }
+    });
+
+    $( window ).resize(function(e){
+      $("#back-to-top").css("left", $(".column-page-container").position().left);
+    });
+
+    jQuery('#back-to-top').click(function(event) {
+      event.preventDefault();
+      jQuery('html, body').animate({scrollTop: 0}, duration);
+      return false;
+    })
+  });
+</script>
+</body>
+</html>
