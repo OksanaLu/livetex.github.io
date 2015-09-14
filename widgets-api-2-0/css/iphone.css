@@ -1,0 +1,83 @@
+@charset "utf-8";
+/** 
+* @package Froggy Css Framework
+* @version 1.1
+* @author Andrey Garbuzov
+* @adress Russia, Saint-Petersburg
+*/
+
+/**
+* @section styles for iPhone and iPad
+*/
+
+/**
+* Оформление страницы
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+   
+}
+
+.homepage-block .preview-container{
+	width: 800px!important;
+}
+.homepage-block .btn-big-green.btn-connect{
+	margin-top: 3px!important;
+}
+.homepage-block .benefits{
+	font-size: 12px!important;
+	margin-left: 30px!important;
+	float: left!important;
+}
+
+.page-header-bg {
+	background-image: url(../images/layout/head-bg.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+	width: 100%;
+}
+
+.column-page-bg-top {
+	padding-top: 7px;
+}
+.column-page-bg-top .column-page-bg-bottom {
+	padding-bottom: 7px;
+}
+
+/* Большие кнопки */
+.btn-big-blue {
+	background: no-repeat left top url(../images/layout/btn-blue.jpg);
+	width:200px;
+	text-align: center;
+}
+
+.btn-big-blue > div {
+	background: none;	
+}
+
+.btn-big-blue > div > div {
+	background: none;	
+	white-space: nowrap;
+}
+
+.btn-big-green {
+	background: no-repeat left top url(../images/layout/btn-green.png);
+	width:292px;
+	text-align: center;
+}
+
+.btn-big-green > div {
+	background: none;	
+}
+
+.btn-big-green > div > div {
+	background: none;
+}
+.homepage-switcher-menu {
+	width: 1100px;
+}
+.homepage .integration-example .video-link {
+	margin-left: 19px;
+}
+.landing-switcher-menu {
+	width: 1075px;
+}

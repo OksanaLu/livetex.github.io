@@ -1,0 +1,7676 @@
+/*
+Theme Name: LiveTex
+Theme URI: http://livetex.ru/
+Description: Multilanguage LiveTex template by Andrey Garbuzov
+Version: 1.0
+Author: Andrey Garbuzov, Alexey Siumkin
+Author URI: http://livetex.ru/
+Tags: blue, custom header, fixed width, two columns, widgets, multilanguage
+Text Domain: Garbuz
+*/
+/* ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ ÑÑ‚Ð¸Ð»ÐµÐ¹ */
+/*@import url("css/homepage.css");*/
+/*@import url("css/tarif.css");*/
+/*@import url("css/landing.css");   Ð¿Ñ€Ð¾Ð²ÐµÑ€Ð¸Ñ‚ÑŒ*/
+/*@import url("css/lead_bonus.css");*/
+/*@import url("css/livetex22.css");*/
+/*@import url("css/reviews.css");*/
+/*@import url("css/help0530.css");*/
+/*@import url("css/landing-chat.css");*/
+/*@import url("css/landing-chat-v3.css");*/
+/*@import url("css/tariff-v3.css");*/
+/*@import url("css/industry.css");*/
+
+/**
+* ÐžÐ±Ð½ÑƒÐ»ÐµÐ½Ð¸Ðµ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº
+* @section reset
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+html {
+  margin: 0;
+  position: relative;
+}
+body {
+  margin: 0;
+  line-height: 1;
+}
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+textarea { display: block }
+strong { font-weight: bold; }
+i { font-style: italic; }
+
+/**
+* Ð¡Ñ‚Ð¸Ð»Ð¸ Ð´Ð»Ñ Ð¾ÑÐ½Ð¾Ð²Ð½Ñ‹Ñ… Ñ‚ÐµÐ³Ð¾Ð²
+* @section default tags styles
+*/
+
+/* Ð¡ÑÑ‹Ð»ÐºÐ¸ */
+a, a:visited, a:hover, a:link {
+  color: #004184; 
+}
+/* ÐžÑ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ñ‹ Ð·Ð°Ð³Ð¾Ð»Ð¾Ð²ÐºÐ¾Ð² Ð¸ Ð¿Ð°Ñ€Ð°Ð³Ñ€Ð°Ñ„Ð¾Ð² */
+body { font-size:16px; }
+h1 { font-size:1.5em; font-weight:bold; color: #404040; /* 16x2.25=36 */ }
+h2 { font-size:1.5em;   /* 16x1.5=24 */ }
+h3 { font-size:1.125em; font-weight:bold; margin-top: 1em; color: #404040; /* 16x1.125=18 */ }
+h4 { font-size:0.875em; /* 16x0.875=14 */ }
+p  { font-size:1em;  /* 16x0.75=12 */ }
+
+/* ÐžÑ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ñ‹ Ð·Ð°Ð³Ð¾Ð»Ð¾Ð²ÐºÐ¾Ð², Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚ Ð²Ð¼ÐµÑÑ‚Ðµ Ñ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ð°Ð¼Ð¸ Ð¿Ð°Ñ€Ð°Ð³Ñ€Ð°Ñ„Ð¾Ð²*/
+h1,h2,h3,h4  {
+  word-spacing:0em; 
+  line-height: 1.286;
+  padding-top: 0.5em;
+  padding-bottom: 0.25em;
+}
+p {
+  word-spacing:0.12em; 
+  line-height: 1.5;
+  text-indent:0;
+}
+blockquote {
+  font-size: 0.8em;
+  font-style: italic;
+  margin:1.5em 
+}
+
+/* Ð“Ð¾Ñ€Ð¸Ð·Ð¾Ð½Ñ‚Ð°Ð»ÑŒÐ½Ð°Ñ Ñ‡ÐµÑ€Ñ‚Ð° */
+hr { 
+  border-style: solid;
+  border-color: #ccc;
+}
+table { border-collapse: collapse; border-spacing: 0;}
+th {text-align: left;}
+caption {
+  line-height: 2em;
+  text-align: right;
+  font-style: italic;
+}
+table {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 0.8em;
+}
+td,th {
+  line-height: 1.5em;
+  padding: 0.5em;
+}
+ol { list-style-type: decimal; }
+ul,ol {
+  margin-left: 1.5em;
+  line-height: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: inherit;
+}
+ul  ul, ol ol, ul ol, ol ul {
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  
+}
+ul  ul  ul, ul ul ol, ul ol ul, ul ol ol, ol ol ol, ol ul ul, ol ul ol, ol ol ul { margin-left: 2.8em; }
+
+/* 
+* ÐžÐ±Ñ‰Ð¸Ðµ ÐºÐ»Ð°ÑÑÑ‹
+* @section general class
+*/
+
+*:focus { outline: none; }
+.hidden { display: none; }
+.show { display: block!important; }
+.no-margin { margin: 0!important; }
+.no-padding { padding: 0!important; }
+.no-bg { background: none!important; }
+.no-border { border: none!important; }
+.img-repl { text-indent: -9999px; overflow: hidden; display: block; }
+.clear { clear: both; }
+.left { float: left; }
+.right { float: right; }
+.squish { letter-spacing: -0.1em } /* Ð¡Ð¶Ð¸Ð¼Ð°ÐµÑ‚ Ñ€Ð°Ð·ÑŠÐµÑ…Ð°Ð²ÑˆÐ¸ÐµÑÑ Ð·Ð°Ð³Ð¾Ð»Ð¾Ð²ÐºÐ¸ */
+.text-align-left { text-align: left; }
+.text-align-right { text-align: right; }
+.text-align-justify { text-align: justify; }
+.text-align-center { text-align: center; }
+.hr { height: 1px; background-color: #BBB; clear: both; font-size: 0px; }
+.green {color: #5bc842}
+/* Ð—Ð°Ñ‰Ð¸Ñ‚Ð° Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð½Ñ‹Ñ… Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð² Ð¾Ñ‚ Ð¿Ð»Ð°Ð³Ð¸Ð½Ð° ÑÐºÐ°Ð¹Ð¿Ð° */
+span.skype_pnh_container {display:none !important;} 
+span.skype_pnh_print_container {display:inline !important;}
+
+
+/* Clearfix - use when block contains float elements
+* @bugfix clearfix
+*/
+.copyright {
+  color: #FFFFFF;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 20px 0 0;
+    text-align: left;
+    width: 980px;
+}
+.agreement {
+  margin-left: 530px;
+  margin-top:3px;
+}
+.agreement a {
+  color: #fff;
+}
+.agreement a:hover {
+  text-decoration: none;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  zoom: 1;     /* triggers hasLayout */
+  display: block;     /* resets display for IE/Win */
+}
+
+/**
+* ÐžÑ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñ‹
+* @section styles for layout
+*/
+
+/**
+* ÐžÐ±Ñ‰Ð¸Ðµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ ÑÐ°Ð¹Ñ‚Ð°
+*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #142036;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/body-bg.jpg);
+  background-repeat: repeat;
+}
+@font-face {
+    font-family: 'pf_dindisplay_pro';
+    src: url('http://livetex.ru/wp-content/themes/livetex/fonts/pfdindisplaypro-regular-webfont.eot?001');
+    src: url('http://livetex.ru/wp-content/themes/livetex/fonts/pfdindisplaypro-regular-webfont.eot?#iefix&001') format('embedded-opentype'),
+         url('http://livetex.ru/wp-content/themes/livetex/fonts/pfdindisplaypro-regular-webfont.woff?001') format('woff'),
+         url('http://livetex.ru/wp-content/themes/livetex/fonts/pfdindisplaypro-regular-webfont.ttf?001') format('truetype'),
+         url('http://livetex.ru/wp-content/themes/livetex/fonts/pfdindisplaypro-regular-webfont.svg#pf_dindisplay_proregular?001') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/**
+* ÐšÐ»Ð°ÑÑ Ð´Ð»Ñ Ñ†ÐµÐ½Ñ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð»ÑŽÐ±Ñ‹Ñ… Ð±Ð»Ð¾ÐºÐ¾Ð²
+*/ 
+.wrapper {
+  width: 980px;
+  margin: 0 auto; 
+}
+/**
+* ÐšÐ»Ð°ÑÑ Ð´Ð»Ñ Ð±Ð»Ð¾ÐºÐ¾Ð² ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚Ð° Ñ Ð½ÐµÑ€Ð°Ð·Ñ€Ñ‹Ð²Ð½Ñ‹Ð¼Ð¸ Ð¿Ñ€Ð¾Ð±ÐµÐ»Ð°Ð¼Ð¸
+*/ 
+.nowrap {
+  white-space: nowrap;
+}
+
+/**
+* Ð¨Ð°Ð¿ÐºÐ° / Header
+*/ 
+header{
+  width: 1000px;
+  margin: 0 auto!important;
+  font-size: 14px!important;
+}
+header .home{
+  margin: 26px 115px 26px 0;
+  float: left;
+}
+header .home h1{
+  text-indent: -9999px; 
+}
+header .social-btns{
+  margin: 34px 15px 0 0;
+  float: left;
+}
+header .social-btns a + a{
+  margin-left: 5px;
+}
+header .phone-number{
+  font-family: 'pf_dindisplay_pro', arial;
+  margin-top: 11px; 
+  color: #fff;
+  line-height: 40px;
+  float: left;
+}
+header .call_us{
+  padding: 0 23px 0 30px;
+  margin: 37px 0 0 20px;
+  color: #cee1ff;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px #000000;
+  float: left;
+  display: none;
+}
+header .call_us a{
+  border-bottom: dashed 1px white;
+  color: #fff;
+  text-decoration: none;
+}
+header .call_us.active{
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/call_btn.png) no-repeat left top;
+  display: block;
+}
+header .login{
+  margin-top: 10px; 
+  float: right;
+  position: relative;
+}
+header .lang{
+  float: right;
+  padding-bottom: 5px;
+}
+header .lang li{
+  float: left;
+}
+header .lang li + li{
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: solid 1px #fff;
+}
+header .lang .divided{
+  border-left: solid 1px #fff;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+header .lang li a{
+  font-size: 14px;
+  color: #fff;
+  text-decoration: underline;
+}
+header .lang .current-lang a{
+  color: #61769e;
+  text-decoration: none;
+}
+header .enter-link{
+  color: #fff;
+  display: block;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/lock-icon.png) no-repeat;
+  background-position: left center;
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+
+/**
+* ÐÐ°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ñ / Navigation
+*/ 
+nav {
+  width: 1008px;
+  height: 41px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+}
+nav .livetex-nav-menu{
+  width: 1014px;
+  margin: 0 auto;
+  position: relative;
+}
+nav .livetex-nav-menu > li{
+  width: 110px;
+  height: 28px;
+  margin-bottom: 1px;
+  padding: 13px 0 0 15px;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height: 12px;
+  background: #5580af;
+  border-top: solid 1px #709dcd;
+  position: relative;
+  float: left;
+  vertical-align: top;
+  display: block;
+}
+nav .livetex-nav-menu > li.double{
+  height: 34px;
+  padding: 7px 0 0 15px;
+}
+nav .livetex-nav-menu > li a{
+  font-size: 13px;
+  text-decoration: none;
+  color: #b1e1ff;
+  display: block;
+  height: 100%;
+}
+nav .livetex-nav-menu > li:hover{
+  background: #0f345b;
+  border-top: solid 1px #0f345b;
+}
+nav .livetex-nav-menu li + li{
+  margin-left: 1px;
+}
+nav .livetex-nav-menu > li > ul{
+  border-top: solid 1px #0e1e38;
+  background: #0f345b;
+  position: absolute;
+  top: 33px;
+  left: -24px;
+  display: none;
+}
+nav .livetex-nav-menu > li:hover > ul{
+  display: block;
+}
+nav .livetex-nav-menu > li > ul:hover{
+  display: block;
+}
+
+
+/* 
+* ÐÐ°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ñ ÐŸÐ¾Ð´Ð¼ÐµÐ½ÑŽ / Navigation sub-menu 
+*/
+nav .livetex-nav-menu .sub-menu li{
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  line-height: 12px;
+  margin-left: 0;
+}
+nav .livetex-nav-menu .sub-menu li:hover{ background: #468ab1; }
+nav .livetex-nav-menu .sub-menu li:hover a { background: #468ab1; }
+nav .livetex-nav-menu .sub-menu li a{
+  padding: 8px 15px;
+  color: #fff;
+  height: 12px;
+  display: block;
+  float: none;
+}
+nav .livetex-nav-menu .sub-menu p{
+  padding: 10px 0 0 15px;
+  font-size: 12px;
+  color: #fff;
+}
+nav .livetex-nav-menu .sub-menu .divided{
+  margin-bottom: 20px;
+}
+nav .livetex-nav-menu .sub-menu .post-divided{
+  border-top: solid 1px #fff;
+}
+nav .livetex-nav-menu .sub-menu a.video{
+  height: 119px;
+  margin: 20px auto;
+  text-align: center;
+  width: 231px;
+  display: block;
+  background: none;
+  -webkit-transform: translateZ(0px);
+}
+nav .livetex-nav-menu .sub-menu a.video img{
+  height: 119px;
+  width: 200px;
+}
+nav .livetex-nav-menu .reg-btn{
+  width: 124px;
+  height: 41px;
+  padding: 0;
+  background: #008c00;
+  border-top: solid 1px #19b119;
+  border-radius: 2px;
+}
+nav .livetex-nav-menu .reg-btn:hover{
+  background: #008c00;
+  border-top: solid 1px #19b119;
+}
+nav .livetex-nav-menu .reg-btn a{
+  padding: 8px 0 0 0px;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* Ð”Ð»Ñ touch ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð² */
+nav .livetex-nav-menu li.touchable ul { display: none; }
+nav .livetex-nav-menu > li.touchable.active > ul { display: block; }
+
+
+/**
+* ÐŸÐ¾Ð´Ð²Ð°Ð» / Footer
+*/ 
+footer{
+  width: 100%;
+  margin: 0;
+  padding: 15px 0 0 0;
+  background: #070f1c;
+}
+footer .homepage-block{
+  width: 1015px;
+  margin: 0 auto;
+}
+footer .homepage-block li a {
+  text-decoration: none;
+}
+footer .footer-widget{
+  width: 164px;
+  padding: 5px 0px 0px 0px;
+  float: left;
+}
+footer .footer-widget + .footer-widget{
+  margin-left: 48px;
+} 
+footer .footer-widget h5{
+  border-bottom: solid 1px #3B456B;
+  padding-bottom: 8px;
+  margin-bottom: 22px;
+}
+footer .footer-widget h5 > a{
+  font-size: 14px;
+  font-weight: bold;
+  color: #C3D5E4!important;
+  text-decoration: none;  
+  border-bottom: none;
+}
+footer .footer-widget h5 a:hover{
+  border-bottom: none;
+}
+footer .footer-widget ul{
+  margin: 10px 0px 0px 0px;
+    line-height: 18px;
+}
+footer .footer-widget ul li{
+  line-height: 10px;
+  margin: 10px 0;
+}
+footer .footer-widget a{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #8d9eac;
+  border-bottom: none;
+}
+footer .footer-widget a:hover{
+  border-bottom: solid 1px #8d9eac;
+}
+footer .social-block{
+  padding:0!important;
+  float: left;
+}
+footer .social-block + .social-block{
+  margin-left: 47px;
+}
+footer .social-block p{
+  color: #fff;
+}
+footer .social-block.small{
+  width: 84px;
+  padding-left: 0;
+}
+footer .social-block.medium{
+  width: 107px;
+}
+footer .social-block.large{
+  width: 200px;
+}
+footer .social-block.last{
+  width: 128px;
+  font-size: 11px;
+}
+footer .social-n-labels{
+  width: 1015px;
+  padding-top: 55px;
+  padding-left: 45px;
+  padding-bottom: 20px;
+}
+footer #vk_like{
+  padding-left: 0;
+}
+footer #fb-likes{
+  padding-left: 0;
+  margin-top: 0!important;
+}
+footer .copyright{
+  color: #FFFFFF;
+  font-size: 13px;
+  margin: 0 auto;
+  padding: 20px 0 30px;
+  text-align: left;
+  width: 1015px;
+}
+footer .copyright .info {
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0 0 2px 0;
+}
+footer .copyright .info .info-wrapper {
+  background: #fff;
+  position: absolute;
+  bottom: 30px;
+  right: -41px;
+  width: 275px;
+  color: #000;
+  text-shadow: 0 0;
+  font-size: 12px;
+  line-height: 1,2em;
+  display: none;
+  z-index: 201;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+}
+footer .info-wrapper .info-content {
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 11px;
+}
+footer .copyright .info .info-wrapper .bottom {
+  width: 0;
+  height: 0;
+  border: 10px solid;
+  border-color: transparent;
+  border-top-color: white;
+  position: absolute;
+  bottom: -19px;
+  left: 201px;
+}
+footer .footer-btn-info{
+  color: #fff;
+}
+
+
+/**
+* Ð¡Ñ‚Ñ€ÐµÐ»Ð¾Ñ‡ÐºÐ¸ Ðº Ð¿Ð¾Ð¿Ð°Ð¿Ð°Ð¼
+*/
+.popup:before, .popup:after {
+    content: "";
+    position: absolute;
+}
+.popup.left:before {
+    border-left: 10px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: -10px;
+    top: 20px;
+}
+.popup.left:after {
+    border-left: 10px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: -9px;
+    top: 20px;
+}
+.popup.right:before {
+    border-right: 10px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: -10px;
+    top: 20px;
+}
+.popup.right:after {
+    border-right: 10px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: -9px;
+    top: 20px;
+}
+.popup.top:before {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffffff;
+    left: 20px;
+    bottom: -10px;
+}
+.popup.top:after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffffff;
+    left: 20px;
+    bottom: -9px;
+}
+.popup.bottom:before {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+    left: 20px;
+    top: -10px;
+}
+.popup.bottom:after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+    left: 20px;
+    top: -9px;
+}
+
+/**
+* ÐžÑ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñ‹
+*/
+.page-header-bg {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/head-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;  
+}
+
+/**
+* Ð¡Ñ‚Ð¸Ð»ÑŒ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° ÑˆÐ°Ð±Ð»Ð¾Ð½Ð° page-noheader-wide
+**/
+
+.page-noheader-wide{
+  width: 1075px;
+  margin: 30px auto 0px;
+  min-height: 500px;
+  background-color: #fff; 
+}
+
+/**
+* Ð¡Ñ‚Ð¸Ð»ÑŒ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° ÑˆÐ°Ð±Ð»Ð¾Ð½Ð° page-noheader-full-size
+**/
+.page-full-size{
+  width: 1007px;
+  margin: 30px auto 0;
+  min-height: 500px;
+  background: #fff;
+}
+
+/**
+* Ð¡Ñ‚Ð¸Ð»ÑŒ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° ÑˆÐ°Ð±Ð»Ð¾Ð½Ð° page-blank
+**/
+.content-fullsize{
+  width: 980px;
+  margin: 0 auto;
+  background: #fff;
+}
+.content-fullsize .header{
+  text-align: center;
+}
+.content-fullsize .header img{
+  margin: 30px 0;
+}
+
+/* Ð¡Ñ‚Ð¸Ð»ÑŒ Ð´Ð»Ñ ÑˆÐ°Ð±Ð»Ð¾Ð½Ð° page-special-page */
+.special-page-header{
+  width: 1075px;
+  margin: 25px auto 0px;
+}
+.special-page-header a{
+  width: 93px;
+  margin: 0 auto;
+  display: block;
+}
+.special-page-noheader-nofooter{
+  width: 1075px;
+  margin: 25px auto 30px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  min-height: 500px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/**
+* Ð¡Ñ‚Ð¸Ð»ÑŒ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° ÑˆÐ°Ð±Ð»Ð¾Ð½Ð° page-mail
+**/
+.page-mail{
+  width: 700px;
+  margin: 25px auto 0px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  min-height: 500px;
+  background-color: #fff;
+  overflow: hidden; 
+}
+.page-mail table{
+  margin:0;
+}
+.page-mail th, td{
+  line-height: normal;
+  padding: 0;
+}
+.page-mail p{
+    margin:10px 0;
+    line-height: 1.4em;    
+}
+
+/**
+* Ð’ÐµÑ€Ñ…Ð½Ð¸Ð¹ Ð±Ð»Ð¾Ðº Ð¼ÐµÐ½ÑŽ
+*/
+#liveTextSoundLabel_38 {
+  right: auto !important;
+  top: 0 !important;
+  left: 50% !important;
+  width: 123px !important;
+  height: 39px !important;
+  margin-left: -250px !important;
+  opacity: 0 !important;
+  filter: alpha(opacity=0) !important;
+  position: absolute !important;
+}
+.top-bar {
+  height: 40px;
+  width: 1015px;
+  margin: auto; 
+  overflow: hidden;
+}
+.top-bar .top-small-menu {
+  margin: 0;
+  height: 40px;
+  float: left;
+}
+.top-bar .top-small-menu li {
+  float:  left;
+  padding-top: 10px;
+  padding-right: 20px;
+  line-height: 1em;
+}
+.top-bar .top-small-menu a{
+  color: #FFF;
+  text-decoration: underline; 
+  font-size: 12px;
+}
+.top-bar .phone-number {
+  color: #cee1ff;
+  font-size: 0.8125em;
+  float: left;
+  height: 40px;
+  width: 233px;
+  line-height: 40px;
+  text-shadow:0px -1px 0px #000000;
+}
+.top-bar .call_us{
+  padding: 0 23px 0 30px;
+  margin: 12px 0 0 0;
+  float: left;
+  height: 40px;
+  color: #cee1ff;
+  font-size: 0.8125em;
+  text-shadow:0px -1px 0px #000000;
+  width: 120px;
+}
+.top-bar .call_us a{
+  border-bottom: dashed 1px white;
+  color: white;
+  text-decoration: none;
+  display: none;
+}
+.top-bar .call_us.active { background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/call_btn.png) no-repeat left top; }  
+.top-bar .call_us.active a { display: inline; }
+.top-bar .right-cont { float: right; }
+.top-bar .download-link {
+  height: 40px;
+  display: block;
+  line-height: 40px;
+  float: left;
+  color:#c1ff7b;
+  font-size: 12px;
+  text-shadow:0px -1px 0px #000000;
+  margin-right: 13px;
+  padding-left: 28px;
+}
+.top-bar .download-link:hover {
+  color: #adda33;
+}
+.top-bar .separator {
+  line-height: 40px;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/top-bar-separator.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  float: left;
+  height: 29px;
+  padding-right: 21px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+  
+}
+.top-bar .lang {
+  float: left;
+  margin-left: 25px;
+}
+.top-bar .lang ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 12px;
+}
+.top-bar .lang ul li {
+  margin: 0px 3px;
+  padding: 0px 3px; 
+  display: block;
+  float: left;
+  line-height: 1em;
+}
+.top-bar .lang ul li a {
+  color: #fff;
+  font-size: 12px;
+}
+.top-bar .lang .current-lang {
+  opacity:1;
+  filter: alpha(opacity=100);
+}
+.top-bar .lang .current-lang a {
+  text-decoration: none;
+}
+.page-bg-top .button-large-green {
+  background: url('images/homepage/green-large-button.png') repeat-x;
+  height: 55px;
+  border: 1px solid #334709;
+  padding: 0px 43px;
+  line-height: 55px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 21px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+  box-shadow: 0 3px 3px #87AC75;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.top-bar .enter-link {
+  color: #FFF;
+  font-size: 0.8125em;
+  display: block;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/lock-icon.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 40px;
+  padding-left: 18px;
+  margin-left: 20px;
+  float: left;
+}
+.top-bar .enter-link:hover { color: #cee1ff; }
+.top-bar .top-small-menu a:hover { color: #cee1ff; }
+
+
+/* Ð›Ð¾Ð³Ð¾Ñ‚Ð¸Ð¿ Ð¸ Ð²ÐµÑ€Ñ…Ð½ÐµÐµ Ð¾ÑÐ½Ð¾Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ */
+#metaseopack { display: none; }
+/*
+
+
+/*
+* ÐšÐ½Ð¾Ð¿ÐºÐ¸ (Ð—Ð°Ð³Ð¾Ñ‚Ð¾Ð²Ð»ÐµÐ½Ð½Ñ‹Ðµ)
+*/
+/* ÐºÐ½Ð¾Ð¿ÐºÐ° */
+.live-btn{
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+  padding: 10px 20px;
+  border-top: solid 1px #64b9f3;
+  border-radius: 2px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+/* Ñ†Ð²ÐµÑ‚Ð° */
+.live-btn.blue{
+  color: #ffffff;
+  background: #4096ee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+}
+.live-btn.blue:hover{
+  background: #1981eb;
+  color: #fff;
+}
+.live-btn.main-green{
+  background: #008c00;
+  border-top: solid 1px #19b119;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+  color: #fff;
+}
+.live-btn.main-green:hover{
+  background: #008700;
+  color: #fff;
+  cursor: pointer;
+}
+.live-btn.blue-alt{
+  font-size: 16px;
+  padding: 10px 40px;
+  background: #4096ee;
+  border: solid 1px #64b9f3;
+  border-radius: 7px;
+  background: rgb(122,188,255);
+  background: linear-gradient(to bottom, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%);
+  box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.75);
+}
+.live-btn.green{
+  padding: 14px 30px;
+  font-size: 18px;
+  background: rgb(74,166,20);
+  background: linear-gradient(to bottom,  rgba(74,166,20,1) 0%,rgba(2,141,0,1) 100%);
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);  
+}
+.live-btn.green:hover{
+  background: rgb(113,184,71); 
+  background: linear-gradient(to bottom,  rgba(113,184,71,1) 0%,rgba(53,162,51,1) 100%); 
+}
+
+/* Ñ€Ð°Ð·Ð¼ÐµÑ€Ñ‹ */
+.live-btn.small { width: 160px; }
+.live-btn.medium { width: 200px; }
+.live-btn.large {
+  padding: 20px 40px;
+  font-size: 24px;
+}
+
+
+/**
+ * Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° ÐžÐ½Ð»Ð°Ð¹Ð½-ÐºÐ¾Ð½ÑÑƒÐ»ÑŒÑ‚Ð°Ð½Ñ‚Ð°
+ * @page http://livetex.ru/landing-chat
+ */
+ .page_with_right_column
+{
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/two_colums_back.png);
+    background-position:left top;
+    background-repeat:repeat-y;
+    background-color: #fff;
+    width: 1075px;
+    margin: 30px auto 0;
+}
+.page_content 
+{
+    width:792px;
+    float:left;
+}
+.page_right 
+{
+    float:right;
+    width: 282px;
+}
+
+.page_content .landing {
+ 
+}
+.page_content .text {
+    padding: 27px 30px 33px;
+}
+.page_content .landing .text h1, .page_content .landing .text h2 {
+  font-family: "Open Sans";
+  font-size: 32px;
+  font-weight: 900;
+  font-weight: bold\0/;
+  *font-weight: bold;
+  color: #353535;
+  text-align: center;
+  padding: 30px 0px 15px 0px;
+}
+.page_content .text p
+{
+    margin: 15px;
+    line-height: 22px;
+}
+.page_content .two-column-list
+{
+    background-image: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/landing_back.png);
+    background-position: left top;
+    background-repeat: repeat;
+  overflow: hidden;
+}
+.page_content .landing h2 {
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight:bold;
+    color: #010101;
+    text-align:center;
+  padding: 36px 0px 38px 0px;
+
+}
+.page_content .two-column-list > div {
+    margin: 0px 32px 35px;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    width: 300px;
+    vertical-align: top;
+}
+.page_content .two-column-list > div {
+    margin: 0px 12px 35px 55px;
+}
+.page_content .two-column-list div  img {
+    float:left;
+    margin-right: 20px;
+}
+.page_content .two-column-list .text {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: auto;
+    overflow:hidden;
+    font-size: 13px;
+    color: #665;
+    line-height: 16px;
+}
+.page_content .landing.leads .two-column-list a {
+  margin: 15px auto 55px;
+  display: block;
+  width: 220px;
+  height: 40px;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_all_option.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+.page_content .text h3 {
+    font-weight:bold;
+    font-size: 16px;
+    margin: 0px 0px 18px;
+    padding:0px;
+    color: #000;
+}
+.page_content .chat_work {
+    padding-bottom: 40px;
+  clear: both;
+}
+.page_content .chat_work h2 {
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight:bold;
+    color: #0e1e38;
+    text-align:center;
+  padding: 40px 0px 20px 0px;
+
+}
+.page_content .chat_work > p {
+    padding: 0px 30px 0px 45px;
+    margin: 14px 0px;
+    font-size: 16px;
+    line-height:19px;
+}
+.page_content .chat_work ul {
+    margin: 30px 80px 30px 53px;
+}
+.page_content .chat_work li {
+    color: #585858;
+    font-size: 13px;
+    margin: 25px 0px;
+}
+.blue_dot {
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/landing_dot.png);
+    background-position: left top;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width: 26px;
+    height: 27px;
+    color: #fff;
+    text-align:center;
+    line-height: 27px;
+    font-weight:bold;
+    font-size: 16px;
+    margin: 3px 15px 0px 0px;
+    float:left;
+}
+.landing.leads .blue_dot {
+    height: 47px;
+}
+.page_content .chat_work li p {
+    overflow:hidden;
+}
+.page_content .landing-screen {
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+.page_content .landing-screen h2 {
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight:bold;
+    color: #0e1e38;
+    text-align:center;
+  padding: 40px 0px 20px 0px;
+
+}
+.landing_carusel {
+  /*background-image:url(http://livetex.ru/wp-content/themes/livetex/images/about/about_carousel_bg.jpg);*/
+  /*background-position:center 317px;*/
+  /*background-repeat:no-repeat;*/
+  height: 390px;
+}
+.landing_carusel .carusel_left {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/carousel-btn.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  float: left;
+  left: 30px;
+  margin-top: 120px;
+  position: relative;
+  z-index: 20;
+}
+.landing_carusel .carusel_left:hover {
+  background-position: left center;
+}
+.landing_carusel .carusel_right {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/carousel-btn.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  float: right;
+  margin-top: 120px;
+  right: 30px;
+  position: relative;
+  z-index: 20;
+}
+.landing_carusel .carusel_right:hover {
+  background-position: right center;
+}
+.landing_carusel .landing_carusel_box {
+  position:relative;
+  width: 395px;
+  height: 320px;
+  margin: auto; 
+  left: -14px;
+}
+.landing_carusel .landing_carusel_box > div {
+  width:395px;
+  position:absolute;
+  font-size: 18px;
+  z-index: 10;
+  bottom:0px;
+  left: 15px;
+}
+.landing_carusel .landing_carusel_box .landing_carusel_left {
+  width: 220px;
+  position:absolute;
+  bottom:70px;
+  left:-120px;
+  z-index: 1;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 16px;
+}
+.landing_carusel .landing_carusel_box .landing_carusel_right {
+  width: 220px;
+  bottom: 70px;
+  right:-120px;
+  position:absolute;
+  z-index: 1;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 16px;
+}
+.landing_carusel_item_img {
+  text-align:center;
+
+}
+.landing_carusel_item_img img {
+  max-width: 90%;
+  border: 5px solid #90c4ff;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px -6px #000;
+}
+.landing_carusel_item_img img {
+  box-shadow: 0 10px 30px -10px #000;
+}
+
+.landing_carusel_item_text {
+  color:#1d1d1e;
+  text-align:center;
+  margin-top:15px;
+}
+.landing_carusel .landing_carusel_box .landing_carusel_left {
+  width: 220px;
+  position:absolute;
+  bottom:70px;
+  left:-100px;
+  z-index: 1;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 16px;
+    display:block;
+    margin:0px;
+}
+.landing_carusel .landing_carusel_box .landing_carusel_right {
+  width: 220px;
+  bottom: 70px;
+    left: 307px;
+  position:absolute;
+  z-index: 1;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 16px;
+    display:block;
+    margin:0px;
+}
+.landing_carusel_item_img {
+  text-align:center;
+
+}
+.landing_carusel_item_img img {
+  max-width: 90%;
+  border: 5px solid #90c4ff;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px -6px #000;
+}
+.landing_carusel_item_img img {
+  box-shadow: 0 10px 30px -10px #000;
+}
+.landing_carusel_item_text {
+  color:#1d1d1e;
+  text-align:center;
+  margin-top:15px;
+}
+.page_content .landing.calls .main_option {
+    padding: 0;
+}
+.page_content .main_option {
+    padding: 0px 30px 30px 35px;
+    border-bottom: 1px solid #ebebeb;      
+}
+.page_content .main_option_item {
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+  margin: 20px 0px 20px 25px;
+  vertical-align: top;
+  width: 149px;
+  font-size: 12px;
+}
+.page_content .landing.calls .main_option_item {
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+  margin: 4px 0px 20px 55px;
+  vertical-align: top;
+  width: 321px;
+  font-size: 12px;
+  line-height: 16px;
+}
+.page_content .landing.calls .main_option_item img {
+  margin: 3px 10px 20px 0;
+}
+.page_content .main_option_item img {
+    float: left;
+    margin: 0 10px 20px 0;
+}
+.page_content .main_option_link {
+    text-align:center;
+}
+.page_content .main_option_link a {
+    display:inline-block;
+    width: 220px;
+    height: 40px;
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_all_option.png);
+    background-position: left top;
+    background-repeat:no-repeat;
+  margin: 10px 0px;
+}
+.page_content .landing.calls .main_option_link a {
+  margin: 20px 0px 40px;
+}
+.page_content .try h2 {
+  padding: 50px 0px 10px;
+}
+.page_content .try p {
+    margin: 20px 50px 20px 47px;
+    line-height: 20px;
+}
+.page_content .try ul {
+    margin: 40px 30px 35px 150px;
+}
+.page_content .try li {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 12px 0px;
+}
+.page_content .try li img {
+    margin-right: 23px;
+}
+.page_content .our_clients {
+    text-align: center;
+    padding: 0px 0px 20px;
+    border-bottom: 1px solid #ebebeb; 
+}
+.page_content .our_clients img {
+    margin: 10px 15px;
+}
+
+.page_content .try_free {
+    padding: 60px 0px;
+    text-align: center;
+}
+.page_content .try_free a {
+    display:inline-block;
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_try_free.png);
+    background-position: left top;
+    background-repeat:no-repeat;
+    width: 365px;
+    height: 66px;
+}
+.page_right .right_header_block {
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 54px;
+    padding: 0px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing/separator.png) no-repeat;
+}
+.page_right .right_header_block.rounded {
+    border-radius: 0px 5px 0px 0px;
+}
+.page_right .right_header_block + a {
+  display: block;
+  width: 282px;
+  height: 160px;
+  border-bottom: 1px solid #e4e4e4;
+  margin: 28px 0px 0px;
+  text-align: center;
+  text-decoration: none;
+}
+.page_right h3 {
+  color: #4094e9;
+  font-size: 18px;
+  line-height: 19px;
+  padding-top: 5px;
+  text-align: left;
+  margin-left: 37px;
+}
+.page_right .livetex_update {
+    font-size: 23px;
+    color: #626262;
+    text-align:center;
+    padding: 20px 0px 0px 0px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.page_right .livetex_update span {
+    color: #000;
+    font-weight:bold;
+    line-height: 25px;
+}
+
+.page_right .right_menu {
+    font-size: 12px;
+    margin: 20px 10px 20px 30px;
+    text-align:left;
+}
+.page_right .right_menu li{
+    margin: 3px 0px;
+    
+}
+.page_right .right_menu a {
+    color: #1767be;
+    text-decoration:none;
+}
+.page_right .reviews_text {
+    padding: 25px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.page_right .reviews_text_item {
+}
+.page_right .reviews_man {
+    position:relative;
+
+}
+.page_right .reviews_man img {
+    float:left;
+    margin-right: 15px;
+}
+.page_right .reviews_man_name {
+    overflow:hidden;
+    font-size: 11px;
+  height: 46px;
+}
+.page_right .reviews_man_name span {
+    display:block;
+    padding-bottom: 10px;
+    font-size:14px;
+    font-weight:bold;
+}
+.page_right .reviews_man_text {
+    background-color:#fff;
+    border: 1px solid #d4cec5;
+    border-radius: 6px;
+    margin-top: 17px;
+    font-size:13px;
+    color: #545454;
+    line-height: 16px;
+    padding: 15px;
+    position:relative;
+    height: 110px;
+    overflow: hidden;
+}
+.page_right .reviews_man_text_overlay {
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/text-grad.png);
+    background-position:left bottom;
+    background-repeat:repeat-x;
+    position:absolute;
+    bottom: 0px;
+    left:0px;
+    right: 0px;
+    top:0px;
+    border-radius: 6px;
+}
+.page_right .arrow {
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/text-arrow.png);
+    background-position:left top;
+    background-repeat:no-repeat;
+    bottom: -18px;
+    height: 9px;
+    left: 15px;
+    position: absolute;
+    width: 17px;
+    z-index: 1;
+}
+.page_right .reviews_video {
+    padding: 0px 30px 50px;
+  position: relative;
+}
+.page_right .reviews_video img {
+  display: block;
+    border: 1px solid #c5beb2;
+  padding: 8px;
+  background-color: #f1ece4;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.07);
+}
+.page_right .reviews_video a.play {
+  display: block;
+  position: absolute;
+  height: 120px;
+  width: 209px;
+    background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/play.png) no-repeat center center;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  bottom: 53px;
+  left: 39px;
+}
+.page_right .reviews_video_name {
+    color: #7f786d;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.page_right .reviews_video_name img.logo{
+    width: 150px;
+  padding: 0;
+  margin: 10px auto;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+.page_right .reviews_video_name span {
+    color: #000;
+    font-size: 14px;
+    display:block;
+    padding-bottom: 7px;
+    font-weight:bold; 
+}
+.page_right .industry_solutions {
+  border-bottom: 1px solid #e4e4e4;
+}
+.page_right .updates-banner {
+    text-align:center;
+  padding: 0px;
+}
+.page_right .updates-banner a {
+    text-decoration: none;
+}
+.page_right .banner {
+    text-align:center;
+  padding: 35px 0px 0px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing/separator.png) no-repeat;
+}
+.page_right .banner a {
+    text-decoration: none;
+}
+.page_right .baner_name {
+    font-size: 18px;
+  font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.page_right .baner_text {
+    color: #1767be;
+    font-size: 13px;
+    text-align:left;
+    padding: 0px 30px 40px;
+}
+.page_right .baner_text a {
+    color: #1767be;
+    text-decoration:none;
+}
+.page_right #sendEmail{
+  margin-top: 15px;
+}
+.page_right .buttons {
+  padding-top: 50px;
+  text-align: center;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing/separator.png) no-repeat;
+}
+.page_right .buttons .lt-button {
+  text-align: left;
+}
+
+.page_right .buttons .button {
+  margin: 0px auto 28px;
+  width: 222px;
+  height: 98px;
+}
+.page_right .buttons img {
+  margin: 0px 0px 28px 0;
+}
+.page_right .pdf {
+  text-align: center;
+  padding: 15px 0px 28px;
+  position: relative;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing/separator.png) no-repeat;
+}
+.page_right .pdf .new, .page_right span.new{
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/research/new.png) no-repeat;
+  width: 101px;
+  height: 101px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.page_right .pdf .label_new_sidebar{
+  width: 69px;
+  height: 69px;
+  background: url(http://livetex.ru/images/new_label_r.png) no-repeat;
+  position: absolute;
+  top: -2px;
+  right: -1px;
+}
+.page_right .pdf p {
+  font-size: 15px;
+  line-height: 16px;
+  margin: 10px 0px 15px 45px;
+  text-align: left;
+}
+.page_right .pdf input {
+  height: 33px;
+  width: 200px;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  padding: 0px 5px 0px 10px;
+  margin-top: 10px;
+}
+.page_right .pdf a{
+  text-decoration: none;
+  color: #000;
+}
+.page_right .pdf a.research {
+  display: block;
+  width: 164px;
+  height: 19px;
+  margin: 45px auto 0;
+  padding: 10px 25px;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 0px 1px 0px rgba(0,0,0,1);
+  text-decoration: none;
+  -webkit-border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
+  -moz-border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
+  border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
+  background-color: #9fd077;
+  -webkit-box-shadow: 0 1px rgba(0,0,0,.75);
+  -moz-box-shadow: 0 1px rgba(0,0,0,.75);
+  box-shadow: 0 1px rgba(0,0,0,.75);
+  background-image: -webkit-linear-gradient(bottom, #96c56f, #a9db80);
+  background-image: -moz-linear-gradient(bottom, #96c56f, #a9db80);
+  background-image: -o-linear-gradient(bottom, #96c56f, #a9db80);
+  background-image: -ms-linear-gradient(bottom, #96c56f, #a9db80);
+  background-image: linear-gradient(to top, #96c56f, #a9db80);
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.page_right .pdf a.research.active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.landing-switcher{
+  height: 320px;  
+  position: relative;
+  overflow: hidden;
+  width: 1000px !important;
+  margin-left: -10px;
+  margin-top: 20px !important;
+}
+.landing-switcher-container {
+  margin-left: 0px;
+}
+.landing-switcher .btn-connect {
+  position: absolute;
+  right: 0px;
+  bottom: 25px;
+}
+.landing-switcher .switcher-block {
+  padding: 10px 0px 20px; 
+  display: block;
+  height: 280px;
+  width: 1000px;
+  float: left;
+  position: relative;
+}
+.landing-switcher .switcher-block  .btn-blue {
+  width: 183px;
+  height: 26px;
+  position: absolute;
+  right: 6px;
+  top: 119px;
+  padding-top: 29px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #000;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/slider/slider-btn-blue.png) no-repeat right top;
+}
+.landing-switcher .switcher-block  .btn-green {
+  width: 183px;
+  height: 32px;
+  position: absolute;
+  right: 6px;
+  top: 174px;
+  padding-top: 18px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #000;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/slider/slider-btn-green.png) no-repeat right top;
+}
+.landing-switcher .switcher-block  .btn-gray {
+  width: 183px;
+  height: 43px;
+  position: absolute;
+  right: 6px;
+  top: 224px;
+  padding-top: 14px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #000;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/slider/slider-btn-gray.png) no-repeat right top;
+}
+.landing-switcher .switcher-block .onelineword {
+    padding-top: 20px;
+}
+.landing-switcher-menu {
+  height: 83px;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/slider/switcher-menu.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+    margin: 0px 0px 20px;
+}
+.landing-switcher-menu .switcher-list{
+  margin: auto;
+  padding-left: 0px;
+  width: 725px;
+  height: 90px;
+    background-image: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/slider/slider_border.png);
+    background-position: left top;
+    background-repeat:no-repeat;
+}
+.landing-switcher-menu .switcher-list li {
+  float: left;  
+    width: 240px;
+    background-image: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/slider/slider_border.png);
+    background-position: right top;
+    background-repeat:no-repeat;
+}
+.landing-switcher-menu .switcher-list li a {
+  display: block;
+  height: 58px;
+  cursor: pointer;
+    font-size: 14px;
+    color: #cee1ff;
+    text-shadow: 1px 1px 1px #000;
+    line-height: normal;
+    padding: 30px 0px 0px 70px;
+    position: relative;
+  width: 170px;
+}
+.landing-switcher-menu .switcher-list li a:hover {
+  text-shadow: 1px 1px 1px #000, 0px 0px 6px rgba(255,255,255,0.7);
+  color: #FFF;
+}
+.landing-switcher-menu .switcher-list li a.active {
+    background:  url(http://livetex.ru/wp-content/themes/livetex/images/homepage/slider/switcher-list-button-active.png) no-repeat 0% 0%; 
+  width: 178px;
+    margin: -4px 0px 0px -4px;
+  
+}
+.landing-switcher-menu .switcher-list li a div {
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  top: 29px;
+    left: 22px;
+}
+.landing-switcher-menu .switcher-list li a.btn-chat  div {
+    background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_slider_icon1.png) no-repeat 0% 0%;
+}
+.landing-switcher-menu .switcher-list li a.btn-leads div {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_slider_icon2.png) no-repeat 0% 0%; 
+}
+.landing-switcher-menu .switcher-list li a.btn-calls div {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_slider_icon3.png) no-repeat 0% 0%;
+}
+.landing-switcher-menu .switcher-list li a.btn-calls div.support {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/calls-slider-icon3.png) no-repeat 0% 0%;
+}
+
+.landing-switcher .switcher-block .header {
+    position: absolute;
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: 32px;
+  font-weight: 800;
+    z-index: 1;
+    text-shadow: 0px 1px 0px #000;
+    
+}
+.landing-switcher.chat .switcher-block .header.konv {
+  left: 400px;
+    top: 50px;
+}
+.landing-switcher.leads .switcher-block .header.clients {
+  left: 365px;
+    top: 65px;
+}
+.landing-switcher.calls .switcher-block .header.money {
+  left: 320px;
+    top: 45px;
+}
+.landing-switcher.leads .switcher-block .header.fulltime {
+  left: 315px;
+    top: 50px;
+}
+.landing-switcher.calls .switcher-block .header.support {
+  left: 315px;
+    top: 50px;
+}
+.landing-switcher .switcher-block .header.loyality {
+    left: 345px;
+    top: 50px;
+}
+.landing-switcher.chat .switcher-block .header.money {
+    left: 315px;
+    top: 50px;
+}
+.landing-switcher .switcher-block .text {
+    position:absolute;
+    color: #FFFFFF;
+    font-size: 16px;
+    z-index: 1;    
+    line-height: 21px;
+    text-shadow: 0px 1px 0px #000;
+    
+}
+.landing-switcher.chat .switcher-block .text.konv {
+    left: 400px;
+    top: 135px;
+    width: 360px;
+}
+.landing-switcher.leads .switcher-block .text.clients {
+    left: 365px;
+    top: 155px;
+    width: 360px;
+}
+.landing-switcher.calls .switcher-block .text.money {
+    left: 320px;
+    top: 135px;
+    width: 420px;
+}
+.landing-switcher .switcher-block .text.loyality {
+    left: 345px;
+    top: 135px;
+    width: 400px;
+}
+.landing-switcher.leads .switcher-block .text.fulltime {
+    left: 315px;
+    top: 173px;
+    width: 400px;
+}
+.landing-switcher.calls .switcher-block .text.support {
+    left: 315px;
+    top: 138px;
+    width: 400px;
+}
+.landing-switcher.chat .switcher-block .text.money {
+    left: 315px;
+    top: 166px;
+    width: 405px;
+} 
+.landing .results {
+  background-color: #fcfcfc;
+  padding-bottom: 10px;
+  background-image: url('http://livetex.ru/wp-content/themes/livetex/images/landing-calls/calls-results-bg.png');
+}
+.landing .results h2 {
+  font-family: "Open Sans";
+  font-size: 32px;
+  font-weight: 900;
+  font-weight: bold\0/;
+  *font-weight: bold;
+  color: #353535;
+  text-align: center;
+  padding: 30px 0px 0px 0px;
+}
+.landing .results .results-menu {
+  margin: 50px auto 42px;
+  /*width: 540px;*/
+  width: 399px;
+  padding-left: 12px;
+  overflow: hidden;
+}
+.landing .results .results-menu a {
+  color: #4094e9;
+  font-size: 18px;
+  float: left;
+  border-bottom: 2px dotted #74aced;
+  text-decoration: none;
+  padding: 15px 0px 0px 0px;
+  margin: 0px 40px;
+}
+.landing .results .results-menu a.active {
+  color: #fff;
+  background-color: #4094e9;
+  padding: 15px 15px;
+  border-radius: 6px;
+  border-bottom: 0;
+  margin: 0px 25px;
+}
+.landing .results .items-container {
+  clear: both;
+}
+.landing .results .block {
+  width: 348px!important;
+  float: left;
+  margin: 0px 0px 0px 42px;
+}
+.landing .results .block.long-text p {
+  margin-top: 13px;
+}
+.landing .results .items-container.large-headers .block.long-text p {
+  margin-top: 33px!important;
+}
+.landing .results .block.sales {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-add-database.png) no-repeat 0 0;
+  clear: both;
+}
+.landing.calls .results .block.sales {
+  clear: none;
+}
+.landing .results .block.bill {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-bill.png) no-repeat 0 0;
+}
+.landing .results .block.basket {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-basket.png) no-repeat 0 0;
+  width: 215px;
+  clear: both;
+}
+.landing .results .block.loyality {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-add-client.png) no-repeat 0 0;
+}
+.landing .results .block.settings {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-settings.png) no-repeat 0 0;
+  clear: both;
+}
+.landing .results .block.info {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-info.png) no-repeat 0 0;
+  width: 215px;
+}
+.landing .results .block.isgood {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-isgood.png) no-repeat 0 0;
+  clear: both;
+}
+.landing .results .block.baloons {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-baloons.png) no-repeat 0 0;
+}
+.landing .results .block h3 {
+  font-size: 16px;
+  color: #000;
+  margin: 0px 0px 0px 80px;
+  line-height: 19px;
+  padding: 0;
+  height: 38px;
+}
+.landing .results .block p {
+  width: 333px;
+  height: 72px;
+  margin: 33px 0px 40px 0px;
+  font-size: 12px;
+  color: #656565;
+}
+.landing .results .items-container.large-headers .block p {
+  font-size: 12px;
+  color: #656565;
+  margin: 52px 0px 40px 0px;
+}
+.landing.leads .results {
+  height: auto;
+  padding: 25px 0px 0px 0px;
+}
+.landing.leads .results h2 {
+  font-family: "Open Sans";
+  font-size: 32px;
+  font-weight: bold;
+  color: #010101;
+  text-align: center;
+  padding: 0px;
+}
+.landing.leads .results div {
+  padding-left: 80px;
+  width: 600px;
+  margin: 30px 50px;
+}
+.landing.leads .results div.chart {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-leads/icon-chart.png) no-repeat 0 15px;
+}
+.landing.leads .results div.v-card {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-leads/icon-v-card.png) no-repeat 0 15px;
+}
+.landing.leads .results div.phone {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-leads/icon-phone.png) no-repeat 0 15px;
+  margin-bottom: 0;
+  padding-bottom: 35px;
+}
+.landing.leads .results h3 {
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.landing.leads .results p {
+  font-size: 14px;
+  color: #444;
+  line-height: 20px;
+}
+.landing.leads .how-it-works h2 {
+  font-family: "Open Sans";
+  font-size: 32px;
+  font-weight: bold;
+  color: #010101;
+  text-align: center;
+  padding: 0px;
+  margin: 40px 0px 30px 0px;
+}
+.landing.leads .how-it-works p {
+  width: 610px;
+  margin: 5px 0px 5px 110px;
+  font-size: 15px;
+  color: #000;
+  line-height: 20px;
+}
+.landing.leads .how-it-works p.help {
+  width: 570px;
+  margin: 35px 0px 25px 110px;
+  font-size: 12px;
+  color: #000;
+  line-height: 18px;
+}
+.landing.leads .how-it-works img {
+  display: block;
+  margin: auto;
+}
+.landing.leads .how-it-works div {
+  border-bottom: 1px solid #ebebeb;
+  margin: 35px 0px 50px 0px;
+}
+.landing.leads .landing-screen {
+  margin-top: 50px;
+}
+
+.landing.calls .transfer {
+  
+}
+.landing.calls .transfer h2 {
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight: 900;
+  font-weight: bold\0/;
+  *font-weight: bold;
+    color: #0e1e38;
+    text-align: center;
+  padding: 40px 0px 20px 0px;
+}
+.landing.calls .transfer .transfer-menu {
+  margin: 36px 0px 0px 15px;
+}
+.landing.calls .transfer .transfer-menu a {
+  display: block;
+  width: 193px;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 12px;
+  color: #4094e9;
+  border: 1px solid #b1b1b1;
+  border-radius: 10px;
+  padding: 20px 22px 19px;
+  line-height: 17px;
+  cursor: pointer;
+}
+.landing.calls .transfer .transfer-menu a.large-text {
+  padding: 11px 24px;
+}
+.landing.calls .transfer .transfer-menu a.active {
+  color: #000;
+  box-shadow: 0px 0px 6px #757575 inset;
+}
+.landing.calls .transfer .transfer-menu a.console.active {
+  background-color: #80bfe0;
+}
+.landing.calls .transfer .transfer-menu a.number.active {
+  background-color: #c6e080;
+}
+.landing.calls .transfer .transfer-menu a.ats.active {
+  background-color: #9adae6;
+}
+.landing.calls .transfer .transfer-holder {
+  clear: both;
+  height: 655px;
+  overflow: hidden;
+}
+.landing.calls .transfer .transfer-holder .transfer-container {
+
+}
+
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block {
+  width: 792px;
+  margin: auto;
+  overflow: hidden;
+  float: left;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block p.info {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/icon-calls-info-green.png) no-repeat 30px 14px;
+  padding-left: 80px;
+  width: 640px;
+  line-height: 19px;
+  margin: 25px 0px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block.console p.info {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/icon-calls-info-blue.png) no-repeat 30px 14px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block.ats p.info {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/icon-calls-info-cyan.png) no-repeat 30px 14px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block.console .slide {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/calls-tarifs-blue.png) no-repeat 0 0;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block.number .slide{
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/calls-tarifs-green.png) no-repeat 0 0;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block.ats .slide {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/calls-tarifs-cyan.png) no-repeat 0 0;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide {
+  margin: auto;
+  width: 733px;
+  height: 415px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .top-side {
+  overflow: hidden;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .top-side p {
+  margin: 146px 16px 0px 13px;
+  width: 215px;
+  float: left;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide h3 {
+  font-size: 24px;
+  text-shadow: 0px 1px 0px #fff;
+  text-align: center;
+  width: 730px;
+  color: #000;
+  padding: 10px 0px 30px 0px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .free {
+  width: 418px;
+  float: left;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .free p {
+  font-size: 39px;
+  color: #000;
+  text-shadow: 0px 1px 0px #fff;
+  text-align: center;
+  text-indent: 20px;
+  margin-top: 27px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .counter {
+  width: 245px;
+  float: left;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .counter p {
+  margin-top: 11px;
+  font-size: 18px;
+  text-shadow: 0px 1px 0px #fff;
+  text-align: center;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .counter .minus {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/calls-minus.png) no-repeat 0 0;
+  height: 45px;
+  width: 44px;
+  margin: 11px 0px 0px 40px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .counter .number {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  height: 41px;
+  width: 77px;
+  margin: 12px 0px 0px 0px;
+  border-width: 1px 0px 1px 0px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .counter .number p {
+  color: #000;
+  font-size: 33px;
+  margin-top: -4px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .counter .plus {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-calls/calls-plus.png) no-repeat 0 0;
+  height: 45px;
+  width: 44px;
+  margin: 11px 0px 0px -1px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .result {
+  float: left;
+  width: 175px;
+  text-align: center;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .result p {
+  font-size: 22px;
+  color: #000;
+  line-height: 25px;
+  margin-top: 30px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .result p span {
+  font-size: 40px;
+  text-shadow: 0px 1px 0px #fff;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .result p span.cost {
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .result p span.rouble {
+  font-family: 'Rouble';  
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .result p span.grn {
+  font-size: 30px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .details {
+  width: 252px;
+  float: left;
+  margin: 19px 0px 0px 43px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .details p {
+  font-size: 12px;
+  margin: 0px 0px 10px 0px;
+  line-height: 16px;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block .slide .details a {
+  font-size: 16px;
+  color: #000;
+}
+.landing.calls .transfer .transfer-holder .transfer-container .transfer-block p.conditions {
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+  margin: 30px 0px 40px;
+  line-height: 15px;
+}
+.landing-chat .heading{
+  height: 410px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/heading-bg.jpg);
+  -moz-border-radius-topleft: 7px;
+  -webkit-border-top-left-radius: 7px;
+  border-top-left-radius: 7px;
+  -moz-border-radius-topright: 7px;
+  -webkit-border-top-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.landing-chat .heading h2{
+  font-family: "Open Sans";
+  font-size: 40px;
+  font-weight: 900;
+  font-weight: bold\0/;
+  *font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding:70px 110px 15px 110px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+.landing-chat .heading p{
+  color: #fff;
+  text-align: center;
+    margin: 15px;
+    font-size: 24px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+.landing-chat .heading .try-free{
+      padding: 30px 0; 
+}
+.landing-chat .heading .try-free a{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_try_free.png);
+    background-position: left top;
+    background-repeat:no-repeat;
+    width: 365px;
+    height: 66px;
+}
+.landing-chat h2 {
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight:bold;
+    color: #010101;
+    text-align:center;
+  padding: 36px 0px 38px 0px;
+
+}
+.landing-chat .chat-work {
+    padding: 0 175px 40px 220px;
+  clear: both;
+}
+.landing-chat .chat-work h2, .landing-chat .main-option h2, .landing-chat .try h2 {
+    font-family: "Open Sans";
+    font-size: 48px;
+    font-weight:900;
+    color: #0e1e38;
+    text-align:left;
+}
+.landing-chat .padd{
+  padding-left: 145px;
+}
+.landing-chat .chat-work > p {
+    margin: 14px 0px;
+    font-size: 16px;
+    line-height:19px;
+}
+.landing-chat .chat-work ul {
+    margin: 30px 80px 30px -40px;
+}
+.landing-chat .chat-work li {
+    color: #585858;
+    font-size: 13px;
+    margin: 25px 0px;
+}
+.landing-chat .blue-dot {
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/landing_dot.png);
+    background-position: left top;
+    background-repeat:no-repeat;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    width: 26px;
+    height: 27px;
+    color: #fff;
+    text-align:center;
+    line-height: 27px;
+    font-weight:bold;
+    font-size: 16px;
+    margin: 3px 15px 0px 0px;
+    float:left;
+}
+.landing-chat .chat-work li p {
+    overflow:hidden;
+}
+.landing-chat .main-option {
+    padding: 0px 30px 30px 70px;
+    border-bottom: 1px solid #ebebeb;      
+}
+.landing-chat .main-option_item {
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+  margin: 20px 0px 20px 65px;
+  vertical-align: top;
+  width: 149px;
+  font-size: 12px;
+}
+.landing-chat .main-option_item img {
+    float: left;
+    margin: 0 10px 20px 0;
+}
+.landing-chat .main-option_link {
+    text-align:center;
+}
+.landing-chat .main-option_link a {
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    width: 220px;
+    height: 40px;
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_all_option.png);
+    background-position: left top;
+    background-repeat:no-repeat;
+  margin: 10px 0px;
+}
+.landing-chat .landing.calls .main-option_link a {
+  margin: 20px 0px 40px;
+}
+.landing-chat .try{
+  padding: 0 175px 40px 220px;
+  clear: both;
+}
+.landing-chat .try p {
+    margin: 20px 50px 20px 0;
+    line-height: 20px;
+    
+}
+.landing-chat .try ul {
+    margin: 40px 30px 35px 45px;
+}
+.landing-chat .try li {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 12px 0px;
+}
+.landing-chat .try li img {
+    margin-right: 23px;
+}
+.landing-chat .our-clients {
+    text-align: center;
+    padding: 0px 0px 20px;
+    border-bottom: 1px solid #ebebeb;
+    width: 800px;
+  margin-left: -85px; 
+     
+}
+.landing-chat .our-clients img {
+    margin: 10px 15px;
+}
+
+.landing-chat .try-free {
+    padding: 60px 0px;
+    text-align: center;
+}
+.landing-chat .try-free a {
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    background-image:url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/chat_try_free.png);
+    background-position: left top;
+    background-repeat:no-repeat;
+    width: 365px;
+    height: 66px;
+}
+.landing-chat .results {
+  background-color: #fcfcfc;
+  padding-bottom: 10px;
+  background-image: url('http://livetex.ru/wp-content/themes/livetex/images/landing-calls/calls-results-bg.png');
+}
+.landing-chat .results h2 {
+  font-family: "Open Sans";
+  font-size: 48px;
+  font-weight: 900;
+  font-weight: bold\0/;
+  *font-weight: bold;
+  color: #353535;
+  text-align: center;
+  padding: 30px 0px 0px 0px;
+}
+.landing-chat .results .results-menu {
+  margin: 50px auto 42px;
+  width: 399px;
+  padding-left: 12px;
+  overflow: hidden;
+}
+.landing-chat .results .results-menu a {
+  color: #4094e9;
+  font-size: 18px;
+  float: left;
+  border-bottom: 2px dotted #74aced;
+  text-decoration: none;
+  padding: 15px 0px 0px 0px;
+  margin: 0px 40px;
+}
+.landing-chat .results .results-menu a.active {
+  color: #fff;
+  background-color: #4094e9;
+  padding: 15px 15px;
+  border-radius: 6px;
+  border-bottom: 0;
+  margin: 0px 25px;
+}
+.landing-chat .results .items-container {
+  clear: both;
+  margin: 0 auto;
+  width: 785px;
+}
+.landing-chat .results .block {
+
+  width: 348px!important;
+  float: left;
+  margin: 0px 0px 0px 42px;
+}
+.landing-chat .results .block.sales {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-add-database.png) no-repeat 0 0;
+  clear: both;
+}
+.landing.calls .results .block.sales {
+  clear: none;
+}
+.landing-chat .results .block.bill {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-bill.png) no-repeat 0 0;
+}
+.landing-chat .results .block.basket {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-basket.png) no-repeat 0 0;
+  width: 215px;
+
+}
+.landing-chat .results .block.loyality {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-add-client.png) no-repeat 0 0;
+  clear: both;
+}
+.landing-chat .results .block.settings {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-settings.png) no-repeat 0 0;
+  clear: both;
+}
+.landing-chat .results .block.info {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-info.png) no-repeat 0 0;
+  width: 215px;
+}
+.landing-chat .results .block.isgood {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-isgood.png) no-repeat 0 0;
+  clear: both;
+}
+.landing-chat .results .block.baloons {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/icon-baloons.png) no-repeat 0 0;
+}
+.landing-chat .results .block h3 {
+  font-size: 16px;
+  color: #000;
+  margin: 0px 0px 0px 80px;
+  line-height: 19px;
+  padding: 0;
+  height: 38px;
+}
+.landing-chat .results .block p {
+  width: 333px;
+  height: 72px;
+  margin: 33px 0px 40px 0px;
+  font-size: 12px;
+  color: #656565;
+}
+
+
+
+
+/* ÐžÑ‚Ð·Ñ‹Ð²Ñ‹ */
+.press-preview.reviews .name .info {
+  margin: 10px 0px 0px 15px;
+  font-size: 12px
+}
+.press-preview.reviews .name .info p {
+  margin: 0px;
+  line-height: 18px
+}
+.press-preview.reviews .name div {
+  float: left
+}
+.press-preview.reviews .name .info .name {
+  font-weight: bold;
+  width: 340px;
+}
+.press-preview.reviews .name .info .post {
+  color: #707070;
+  width: 345px;
+}
+.press-preview.reviews .name .info .company {
+  color: #707070
+}
+.press-preview.reviews .name .info a {
+  display: inline
+}
+.press-preview.reviews .name .image img {
+  display: block;
+  margin: 0px
+}
+.press-preview.reviews .name .image .border1 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f5f4f4 #cccccc #cccccc #cccccc; 
+  display: block;
+  float: left;
+}
+.press-preview.reviews .name .image .border2 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f4f3f3 #f4f3f3 #949494 #f4f3f3;
+  display: block;
+  float: left
+}
+.press-preview.reviews .name .image .border3 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f5f4f4;
+  display: block;
+  float: left
+}
+.press-preview.reviews .name .image .border4 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c1c1c1 #f4f4f4 #f4f4f4 #f4f4f4;
+  display: block;
+  float: left
+}
+
+/*
+**  ÐšÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¸
+*/
+.commentz{
+  width: 560px;
+  margin: 20px auto 50px;
+}
+.commentz h3{
+  font-weight: normal;
+  font-size: 18px;
+  color: #6b6c6d;
+}
+.commentz .comment-meta{
+  padding-bottom: 5px;
+}
+.commentz .comment-text{
+  font-size: 14px;
+  color: #000;
+}
+.commentz .comment-author{
+  font-weight: bold;
+}
+.commentz .comment-date{
+  font-size: 12px;
+  color: #939393;
+}
+.commentz .comment_list ul{
+  margin-top: 25px;
+  margin-left: 0;
+}
+.commentz .comment_list ul.children{
+  margin-left: 40px;
+}
+.commentz .comment_list ul li{
+  border-top: solid 1px #c4c4c4;
+  padding: 15px 0;
+}
+.commentz .comment_list ol li{
+  border-top: none;
+  padding: 0;
+}
+.commentz .comment_list p{
+  font-size: 14px;
+}
+.commentz .comment_form input{
+  border: solid 1px #c4c4c4;
+  padding: 8px 13px;
+  background: #ffffff;
+  margin-top: 10px;
+  margin-left: 0;
+  box-shadow: inset 0px 0px 15px rgba(0,0,0,0.1);
+}
+.commentz .comment_form textarea{
+  width: 537px;
+  border: solid 1px #c4c4c4;
+  background: #ffffff;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  box-shadow: inset 0px 0px 15px rgba(0,0,0,0.1);
+}
+.commentz .comment_form{
+  font-size: 18px;
+  color: #6b6c6d;
+}
+.commentz .comment_form #author{
+  width: 240px;
+}
+.commentz .comment_form #submit{
+  margin: 20px auto 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: middle;
+  padding: 10px 40px;
+  border-top: solid 1px #64b9f3;
+  border-radius: 1px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.8);
+  background: #4096ee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+  border-style: none;
+  cursor: pointer;
+}
+.commentz .recaptcha-error{
+  font-size: 18px;
+  padding-bottom: 8px;
+  color: #cc3333;
+}
+
+/* ÐšÐ½Ð¾Ð¿ÐºÐ¸ Ð´Ð»Ñ ÐºÐ°Ñ€ÑƒÑÐµÐ»ÐµÐ¹ */
+.carousel .btn-left, .about-company-page .company-gallery .btn-prev, .vacancy-gallery .btn-prev {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/carousel-btn.png) no-repeat;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  float: left;
+  margin-top: 10px;
+}
+.about-company-page .company-gallery .btn-prev.white {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/carousel-btn-white.png) no-repeat;
+}
+.carousel .btn-left.disable, .about-company-page .company-gallery .btn-prev.disable, .vacancy-gallery .btn-prev.disable {
+  background-position: 0px -92px;
+  cursor: default;
+}
+.carousel .btn-left.disable:hover, .about-company-page .company-gallery .btn-prev.disable:hover, .vacancy-gallery .btn-prev.disable:hover {
+  background-position: 0px -92px;
+  cursor: default;
+}
+.carousel .btn-left:hover, .about-company-page .company-gallery .btn-prev:hover, .vacancy-gallery .btn-prev:hover {
+  background-position: 0px -46px;
+}
+.carousel .btn-right, .about-company-page .company-gallery .btn-next, .vacancy-gallery .btn-next {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/carousel-btn.png) no-repeat scroll 100% 0px;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  float: left;
+  margin-top: 10px;
+}
+.about-company-page .company-gallery .btn-next.white {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/carousel-btn-white.png) no-repeat scroll 100% 0px;
+}
+
+.carousel .btn-right.disable, .about-company-page .company-gallery .btn-next.disable, .vacancy-gallery .btn-next.disable {
+  background-position: 100% -92px;
+  cursor: default;  
+}
+.carousel .btn-right.disable:hover, .about-company-page .company-gallery .btn-next.disable:hover, .vacancy-gallery .btn-next.disable:hover {
+  background-position: 100% -92px;
+  cursor: default;
+}
+.carousel .btn-right:hover, .about-company-page .company-gallery .btn-next:hover, .vacancy-gallery .btn-next:hover {
+  background-position: 100% -46px;
+}
+
+.about-company-page .company-gallery .btn-prev{
+  margin: 40px 10px 0px -10px;
+} 
+.about-company-page .company-gallery .btn-next{
+  margin: 40px -10px 0px 10px;
+}
+.vacancy-gallery .btn-prev{
+  margin: 40px 40px 0px 10px;
+}
+.vacancy-gallery .btn-next{
+  margin: 40px 0px 0px 17px;
+  
+}
+
+/* ÐšÐ¾Ð½ÐµÑ† ÐºÐ½Ð¾Ð¿Ð¾Ðº ÐºÐ°Ñ€ÑƒÑÐµÐ»Ð¸*/
+
+.carousel {
+  width: 940px;
+  clear: both;
+  margin: 30px 0px;
+  overflow: hidden
+}
+.content-bg-top .separator {
+  width: 980px;
+  height: 1px;
+  background: #CCCCCC;
+  margin-left: -20px;
+  margin-top: 30px
+}
+.carousel h3 {
+  text-align: center; 
+  margin: 10px 0; 
+  color: #404040;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0;
+  position: relative;
+  top: -12px;
+  left: 0px
+}
+.carousel .carousel-container {
+  width: 818px;
+  margin: 0 15px;
+  float: left;
+  height: 80px;
+  overflow: hidden; 
+  position: relative;
+  -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -khtml-user-select: none;
+}
+.carousel .carousel-container .carousel-list {
+  width: 3000px;
+  height: 85px;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+  position: relative;
+  left: 0;
+  -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -khtml-user-select: none;
+}
+.carousel .carousel-container .carousel-list li {
+  float: left;
+  padding: 0px 10px 
+}
+
+
+/**
+* ÐžÑ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñ‹
+* @section styles for layout
+*/
+
+/**
+* Ð¡Ñ‚Ð¸Ð»Ð¸ Ð´Ð»Ñ Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ñ‹Ñ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²
+*/
+
+/* Ð‘Ð¾Ð»ÑŒÑˆÐ¸Ðµ ÐºÐ½Ð¾Ð¿ÐºÐ¸ */
+.btn-big-blue {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  height: 44px;
+  padding-left: 20px;
+  background: no-repeat left top url(http://livetex.ru/wp-content/themes/livetex/images/layout/btn-big-blue.png);
+  text-decoration: none;  
+}
+.btn-big-blue > div {
+  padding-right: 20px;
+  background: no-repeat right center url(http://livetex.ru/wp-content/themes/livetex/images/layout/btn-big-blue.png); 
+  height: 44px;
+}
+.btn-big-blue > div > div {
+  padding: 0 5px;
+  background: repeat-x center bottom url(http://livetex.ru/wp-content/themes/livetex/images/layout/btn-big-blue.png); 
+  height: 44px;
+  line-height: 42px;
+  text-shadow: 0px -1px 0px #204b77;
+  color: #FFF;
+  font-size: 16px;
+}
+.btn-big-blue:hover > div > div{
+  text-shadow: 0px -1px 0px #000; 
+}
+.btn-big-green {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  height: 52px;
+  padding-left: 20px;
+  background: no-repeat left top url(http://livetex.ru/wp-content/themes/livetex/images/layout/btn-big-green.png);
+  text-decoration: none;
+}
+.btn-big-green > div {
+  padding-right: 20px;
+  background: no-repeat right center url(http://livetex.ru/wp-content/themes/livetex/images/layout/btn-big-green.png);  
+  height: 52px;
+  cursor: pointer;
+}
+.btn-big-green > div > div {
+  padding: 0 35px;
+  background: repeat-x center bottom url(http://livetex.ru/wp-content/themes/livetex/images/layout/btn-big-green.png);  
+  height: 52px;
+  line-height: 50px;
+  text-shadow: 0px -1px 0px #2f5912;
+  color:#eaf8d7;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-big-green:hover > div > div{
+  color: #FFF;
+  text-shadow: 0px -1px 0px #000; 
+}
+
+/* Ð¡ÐµÑ€Ð°Ñ Ñ‡Ð°ÑÑ‚ÑŒ */
+.grey-line {
+  height: 1px;
+  border-top: 1px solid #CCC;
+  margin: 25px 0px 0px; 
+}
+
+/**
+* ÐžÑ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†
+* @section styles for pages
+*/
+/* ÐžÑÐ½Ð¾Ð²Ð½Ð¾Ð¹ ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚ */
+.content-bg-top {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/content-white-bg.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 980px;
+  padding-top: 8px;
+  clear: both;
+  margin: 10px auto;  
+  -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -khtml-user-select: none;
+}
+.content-bg-top .content-bg-bottom {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/content-white-bg.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-bottom: 8px;
+}
+.content-container {
+  background-color: #FFF;
+  padding: 12px 20px;
+}
+.content-container a {
+  color: #004184;
+}
+.content-container a:hover {
+  color: #356ea8;
+}
+
+/* ÐŸÑ€Ð¾ÑÑ‚Ð¾ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° */
+.page-bg-wrapper {
+  width: 1075px;
+  margin: 30px auto 0;
+}
+.page-bg-top {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/content-white-bg.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 980px;
+  clear: both;
+  margin: 30px auto 0px;
+}
+.page-container {
+  background-color: #FFF;
+  padding: 12px 15px;
+  color: #333;
+  min-height: 500px;
+}
+.page-container-nopadding {
+  background-color: #FFF;
+  color: #333;
+  min-height: 500px;
+}
+.page-container a { color: #004184; }
+.page-container a:hover { color: #356ea8; }
+
+/* Ð›ÐµÐ²Ð°Ñ ÐºÐ¾Ð»Ð¾Ð½ÐºÐ° Ñ Ñ‚ÐµÐ½ÑŒÑŽ (ÐÐ°Ð¿Ñ€Ð¸Ð¼ÐµÑ€ Ñ€Ð°Ð·Ð´ÐµÐ» ÐŸÐ¾Ð¼Ð¾Ñ‰ÑŒ) */
+.column-page-bg-top {
+  width: 980px;
+  clear: both;
+  margin: 30px auto 0;
+}
+.column-page-container {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/column-page-bg.png);
+  background-repeat: repeat-y;
+  background-position: center top;
+  padding: 0px 10px;
+  color: #333;
+  min-height: 500px;
+}
+.column-page-container .right-column {
+    margin-left: 240px;
+    padding: 0 10px 30px;
+  position: relative
+}
+.column-page-container .left-column {
+    float: left;
+    padding: 20px 10px 0;
+    width: 200px;
+}
+.column-page-container a { color: #004184; }
+.column-page-container a:hover { color: #356ea8; }
+
+/* Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ñ‹ */
+.page { padding: 10px 20px; }
+.page p{
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-bottom: 10px;
+  color: #404040;
+}
+.page > h1{ padding-top: 0.2em; }
+
+/* Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ñ Ð´Ð²ÑƒÐ¼Ñ ÐºÐ¾Ð»Ð¾Ð½ÐºÐ°Ð¼Ð¸ (ÐºÐ°Ðº Ð½Ð¾Ð²Ð¾ÑÑ‚Ð¸)*/
+.page-container .left-column {
+  float: left;
+  width: 160px;
+  padding: 20px 10px 0;
+}
+.page-container .right-column {
+  margin-left: 180px;
+  padding: 0 10px 30px; 
+}
+.page-container .left-menu {
+  margin-top: 120px;
+  font-size: 14px;
+}
+
+/* ÐšÐ½Ð¾Ð¿ÐºÐ¸ Ð´Ð»Ñ ÑÐ¾Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ñ… ÑÐµÑ‚ÐµÐ¹ */
+.share-links {
+  height: 30px;
+  text-align: right;
+  padding-bottom: 10px;
+}
+.share-links .yashare-auto-init {
+  display: inline;
+}
+.share-links .IN-widget {
+  vertical-align: middle !important;
+  display: inline-block;
+}
+.vacancy-single-page .share-links {
+  margin-top: -20px;
+  padding-bottom: 0px;
+}
+
+/* Ð¡Ñ‚Ñ€Ð°Ð½Ñ†Ð° Ðž ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸ */
+#about_pic {
+  padding: 20px;
+  border: 1px solid #D6D6D6;
+  background: #F9F7F3;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+.about-gallery {
+  width: 150px;
+  padding: 20px;
+  border: 1px solid #D6D6D6;
+  background: #F9F7F3;  
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+/* ÐœÐµÐ½ÑŽ Ð¿Ð¾Ð¼Ð¾Ñ‰Ð¸ */
+
+.help-menu .menu-header {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+}
+.help-menu + .help-menu {
+  margin-top: 15px;
+}
+.help-menu a {
+  color: #004184;
+  font-size: 14px;
+  line-height: 1.5em; 
+}
+.help-menu ul {
+  margin: 0;
+  padding: 0; 
+  list-style: none;
+}
+.help-menu ul li {
+  padding: 5px 0; 
+  color: #707070;
+  font-size: 16px;
+  line-height: 1em;
+}
+.help-menu .current-menu-item  > a, .help-menu .current-menu-ancestor .current-menu-item > a, .help-menu .current-page-ancestor{
+  background-color: #142036;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: -10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+.help-menu .current-menu-item a, .help-menu .current-page-ancestor a{
+  color: #fff;
+  text-decoration: none;
+  display: block
+}
+.help-menu .sub-menu {
+  display: none;
+}
+.help-menu .sub-menu {
+  margin-left: 15px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.help-menu .current-menu-ancestor .sub-menu {
+  display:block;
+}
+.help-menu  li.current-menu-item .sub-menu {
+ display: block
+} 
+.help-menu .sub-menu a {
+ color: #004184;
+ font-size: 13px;
+ text-decoration: underline
+}
+/* ÐžÑ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ† Ð¿Ð¾Ð¼Ð¾Ñ‰Ð¸ */
+
+.help-page .left-column {
+  float: left;
+  width:  200px;
+  padding: 20px 10px 0;
+}
+.help-page .right-column {
+  margin-left: 240px;
+  padding: 20px 10px 0 10px;
+}
+.help-page .video-block{
+  float: left;
+  height: 260px;
+  width: 300px;
+  color: #404040;
+  font-size: 13px;  
+}
+.help-page .video-block + .video-block {
+  margin-left: 40px;  
+}
+.help-page .video-block > a {font-size: 16px; }
+.help-page-content h3 {
+  margin-top: 2em;
+}
+.help-page-content ul {
+  list-style: disc;
+  padding-left: 25px;
+}
+.nolist {
+  list-style-type: none!important;
+  padding-left: 0;  
+}
+.help-page-content {
+  line-height: 1.5em;
+  font-size: 14px;
+}
+.help-page-content p{
+  margin-bottom: 1em;
+  line-height: 1.4em;
+}
+.help-page-content ul {
+  margin: 0.5em 0em 1em;  
+}
+.help-page-content ul li {
+  line-height: 1.3em;
+  font-size: 14px;
+  margin-bottom: 0.5em; 
+
+}
+.help-page-content img {
+  margin-bottom: 10px;
+  
+}
+.help-page-content img{
+  /*border: 1px solid #999;*/
+  
+}
+.help-page-content .wp-caption .wp-caption-text {
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+  color: #666;
+  padding: 0;
+  line-height: 1em;
+}
+.help-page-content .gallery {
+  float: right; 
+}
+.help-page-content ol li {
+  margin-bottom: 0.2em;
+}
+.help-page-content .help-main {
+  position: relative;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/frame-greyline-center-bg.png) left top repeat-y;
+  width: 700px;
+  height: 320px;
+  margin-bottom: 20px;
+}
+.help-page-content .help-main > .top{
+  background:url(http://livetex.ru/wp-content/themes/livetex/images/help/frame-greyline-top-bg.png) left top no-repeat;
+  height:4px;
+  top:-4px;
+  position:absolute;
+  left:0px;
+  width:700px;
+}
+.help-page-content .help-main > .bottom{
+  background:url(http://livetex.ru/wp-content/themes/livetex/images/help/frame-greyline-bottom-bg.png) left top no-repeat;
+  height:5px;
+  bottom:-5px;
+  position:absolute;
+  left:0px;
+  width:700px;
+}
+.help-page-content .help-main > .block{
+  float: left;
+  width:240px;
+  height: 70px;
+  margin: 20px 10px 20px 30px;
+  border:none;
+  padding-left:60px;
+  font-size:13px;
+  color:#404040;
+  background-position:left top;
+  background-repeat:no-repeat;
+}
+.help-page-content .help-main > .b1 { background-image: url(http://livetex.ru/wp-content/themes/livetex/images/help/icon-help-1.png);}
+.help-page-content .help-main > .b2 { background-image: url(http://livetex.ru/wp-content/themes/livetex/images/help/icon-help-2.png);}
+.help-page-content .help-main > .b3 { background-image: url(http://livetex.ru/wp-content/themes/livetex/images/help/icon-help-3.png);}
+.help-page-content .help-main > .b4 { background-image: url(http://livetex.ru/wp-content/themes/livetex/images/help/icon-help-4.png);}
+.help-page-content .help-main > .b5 { background-image: url(http://livetex.ru/wp-content/themes/livetex/images/help/icon-help-5.png);}
+.help-page-content .help-main > .b6 { background-image: url(http://livetex.ru/wp-content/themes/livetex/images/help/icon-help-6.png);}
+.help-page-content #accordion div{
+  margin-top: 5px;
+}
+.help-page-content .attention-bg-t {
+  margin: 20px 0;
+  background-color: #f0efb9;  
+  border-radius: 10px
+}
+.help-page-content .attention {
+  padding: 15px 20px 20px 60px;
+  margin: 20px 0;
+  font-size: 13px;
+  line-height: 1.25em;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/layout/attention-icon.png) 20px 12px no-repeat; 
+}
+.help-page-content .attention  p {
+  margin-bottom: 0px;
+}
+.help-page-content .attention .red {
+  color: #F00;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+.help-page-content .information {
+  padding: 15px 20px 20px 60px;
+  margin: 20px 0;
+  font-size: 13px;
+  line-height: 1.25em;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/layout/info-icon.png) 20px 12px no-repeat; 
+}
+.help-page-content .information p {
+  margin-bottom: 0px;
+}
+.help-page-content .information .blue {
+  color: #024f97;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+.help-page-content .breadcrumbs {
+  margin-bottom: 1.5em;
+  margin-top: -3px;
+}
+
+/*
+* @subsection Vacancy Single Page
+*/
+.vacancy-single-page {
+  color: #404040; 
+  padding: 20px 0px 20px 30px;
+}
+.vacancy-single-page a {
+  font-size: inherit; 
+}
+.vacancy-single-page .breadcrumbs{
+  color: #404040; 
+  font-size: 14px;  
+}
+.vacancy-single-page .breadcrumbs .current {
+  font-size: 18px;  
+}
+.vacancy-single-page .vacancy-left-column {
+  float: left;
+  width: 420px;
+  margin-right: 20px;
+}
+.vacancy-single-page .vacancy-right-column {
+  float: left;
+  width: 440px;
+}
+.vacancy-single-page .vacancy-right-column h3{
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 1em;
+  padding: 5px 0; 
+}
+.vacancy-single-page .vacancy-right-column p{
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+.vacancy-single-page .style-block{
+  margin-bottom: 30px;
+  padding-left: 60px;
+  clear: both;
+}
+.vacancy-single-page .style-block h3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 0; 
+}
+.vacancy-single-page .style-block ul {
+  padding-left: 20px;
+  margin: 0;  
+  list-style-type: disc;
+}
+.vacancy-single-page .style-block ul li{
+  padding: 3px 0;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+.vacancy-single-page .style-block span{
+  white-space: nowrap;
+}
+.vacancy-single-page .responsibility{
+  background: left top no-repeat url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/icon-responsibility.png);
+}
+.vacancy-single-page .requirements{
+  background: left top no-repeat url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/icon-requirements.png);
+}
+.vacancy-single-page .conditions{
+  background: left top no-repeat url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/icon-conditions.png);
+}
+.vacancy-single-page .leader-block {
+  float: left;
+  width: 450px;
+  margin-top: 20px;
+}
+.vacancy-single-page .leader-block .photo-bg {
+  float: left;
+  height: 123px;
+  width: 150px;
+  margin-top: 20px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/photo-bg.png) no-repeat left top;
+}
+.vacancy-single-page .leader-block img {
+  margin: 6px;
+} 
+.vacancy-single-page .leader-block .summary {
+  width: 272px;
+  height: 144px;
+  margin-left: 127px;
+  margin-top: 10px;
+  background: left top no-repeat url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/leader-bg.png);
+  padding: 10px 15px 10px 35px;
+  font-size: 13px;
+  line-height: 1.25em;
+}
+.vacancy-single-page .leader-block  .summary.min {
+  margin-top: 65px;
+  background: left top no-repeat url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/leader-bg-min.png);
+  line-height: 24px;
+}
+.vacancy-single-page .leader-block  .summary.small {
+  background: left top no-repeat url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/leader-bg-small.png);
+}
+.vacancy-single-page .leader-block  .summary.medium {
+  background: left top no-repeat url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/leader-bg-medium.png);
+}
+.vacancy-single-page .leader-block  .summary.large {
+  background: left top no-repeat url(http://livetex.ru/wp-content/themes/livetex/images/vacancy/leader-bg-large.png);
+  height: 155px;
+}
+.vacancy-single-page .leader-block .name {
+  font-size: 13px;
+  line-height: 1.8em; 
+  font-weight: bold;  
+}
+.vacancy-single-page .leader-block .post{
+  font-size: 12px;
+  line-height: 1em; 
+}
+.vacancy-single-page .need {
+  margin:0;
+  font-size: 12px;
+  line-height: 2em; 
+}
+.vacancy-single-page input, .vacancy-single-page textarea { color: #999; }
+.vacancy-single-page #textarea-message.placeholder { font-style: italic; }
+.vacancy-single-page .fileupload{
+  position: relative; 
+  margin-left: 120px;
+}
+.vacancy-single-page .ltx-upload-resume {
+  position:absolute;
+  z-index: 10;
+  margin-top: 10px;
+  height: 33px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+  margin-left: -90px;
+}
+.vacancy-single-page .ltx-btn-upload {
+  position: absolute;
+  z-index: 1; 
+}
+
+#about_system_ticket1, #about_system_ticket2 { left: -1000px; }
+#about_system_ticket3, #about_system_ticket4 { right: -1000px; }
+
+
+/* Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ðž ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸ */
+
+.about_company .about_company_top_slider {
+    position: relative;
+    top: -8px;
+    height: 399px;
+}
+.about_company .top_slider_holder {
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.about_company .top_slider_holder ul {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    margin: 0 0 0 -61px;
+}
+.about_company .top_slider_holder li {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    background: url("http://livetex.ru/wp-content/themes/livetex/images/about_company/reviews-dot.png") no-repeat left top;
+    cursor: pointer;
+}
+.about_company .top_slider_holder li.active {
+    background: url("http://livetex.ru/wp-content/themes/livetex/images/about_company/reviews-dot.png") no-repeat left bottom;
+}
+.about_company .top_slider_item {
+    float: left;
+}
+.about_company .about_company_top_slider h1 {
+    color: #000000;
+    font-size: 40px;
+    position: absolute;
+    top: 100px;
+    left:  190px;
+    background-color: rgba(255, 255, 255, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#C8ffffff', endColorstr='#C8ffffff');
+    padding: 2px 5px;
+    margin: 0;
+}
+.about_company .top_slider_item_text {
+    font-size: 16px;
+    position: absolute;
+    left: 190px;
+    top: 176px;
+    line-height: 24px;
+}
+.about_company .top_slider_item_text span {
+    display: inline-block;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#C8ffffff', endColorstr='#C8ffffff');
+    padding: 2px 5px;
+}
+.about_company .about_company_middle_slider {
+    background-image: url("http://livetex.ru/wp-content/themes/livetex/images/about_company/middle_slider_fon.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    height: 320px;
+    padding-top: 122px;
+}
+.about_company .middle_slider_item .ceo_block {
+    background-color: #fff;
+    position: relative;
+    border-radius: 4px;
+    width: 675px;
+    height: 172px;
+    margin: 0 auto;
+    padding: 68px 40px 0 40px;
+    font-size: 16px;
+}
+.about_company .middle_slider_item .ceo_block .photo {
+    position: absolute;
+    top: -84px;
+    left: 50%;
+    margin-left: -68px;
+}
+.about_company .middle_slider_item .ceo_block p {
+    line-height: 21px;
+
+}
+.about_company .middle_slider_item .ceo_block .name {
+    color: #274d8c;
+    text-align: center;
+    margin-top: 30px;
+}
+.about_company .middle_slider_item .ceo_block .name b {
+    font-weight: bold;
+}
+.about_company .about_company_clients {
+    padding: 70px 165px 45px 190px;
+    border-bottom: 1px solid #ededed;
+    line-height: 21px;
+}
+.about_company .about_company_clients_img {
+    margin: 45px 0px 0px 0px;
+    text-align: center;
+}
+.about_company .about_company_clients_img img {
+    margin: 6px;
+    vertical-align: top;
+}
+.about_company .about_company_partner {
+    padding: 40px 0px 40px 0px;
+}
+.about_company .about_company_conferens {
+    padding: 40px 165px 40px 190px;
+    line-height: 21px;
+}
+.about_company .about_company_conferens_img {
+    margin-top: 35px;
+}
+.about_company .about_company_conferens_img img {
+    margin: 0 30px 0px 0px;
+    vertical-align: top;
+}
+
+/* ÐœÐµÐ½ÑŽ */
+.company-menu .menu-header {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px; 
+}
+.company-menu a {
+  color: #004184;
+  font-size: 14px;
+  line-height: 1.5em; 
+}
+.company-menu ul {
+  margin: 0;
+  padding: 0; 
+  list-style: none;
+}
+.company-menu ul li {
+  padding: 5px 0; 
+  color: #707070;
+  font-size: 16px;
+  line-height: 1em;
+}
+.company-menu .current-menu-item {
+  background-color: #142036;
+  -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: -10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.company-menu .current-menu-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð²Ñ‹Ð±Ð¾Ñ€Ð° Ñ‚Ð°Ñ€Ð¸Ñ„Ð¾Ð² */
+.tarif-page .https {
+  font-size: 12px; 
+  color: #fff;
+  text-shadow: 0px -1px 0px #444;
+  position: relative;
+  display: none;
+  height: 40px;
+  line-height: 40px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/https-bg.png) repeat-x;
+}
+.tarif-page .more-options {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/https-radius.jpg) no-repeat scroll 0px 100% #589C35;
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 0 1px 2px #333333;
+  cursor: pointer;
+  height: 27px;
+  line-height: 27px;
+  position: relative;
+}
+.tarif-page .more-options span {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/arrow-bottom.png) no-repeat;
+  display: block;
+  width: 14px;
+  height: 16px;
+  position: absolute;
+  right: 80px;
+  top: 7px;
+}
+.tarif-page .more-options span.top {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/arrow-top.png) no-repeat;
+}
+.tarif-page .more-options div.opening {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/more-options-bg.png) repeat-x;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.tarif-page .https input {
+  margin: 0px;
+  vertical-align: middle;
+}
+.tarif-page .https span {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 5px;
+}
+.tarif-page .https .help {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/tt.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.tarif-page .https .help .content {
+  padding: 5px 15px;
+  text-align: left;
+  font-size: 11px;
+}
+.tarif-page .https .help .help-wrapper {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/help-bg.png) repeat-y;
+  position: absolute;
+  bottom: 40px;
+  right: -12px;
+  width: 275px;
+  color: #000;
+  text-shadow: 0 0;
+  font-size: 12px;
+  line-height: 16px;
+  display: none;
+  z-index: 201;
+}
+.tarif-page .https .help:hover .help-wrapper {
+  display: block
+}
+.tarif-page .https .help .help-wrapper .top {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/help-top.png) no-repeat;
+  width: 275px;
+  height: 7px;
+  position: absolute;
+  top: -7px;
+  left: 0px;
+}
+.tarif-page .https .help .help-wrapper .bottom {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/help-bottom.png) no-repeat;
+  width: 275px;
+  height: 15px;
+  position: absolute;
+  bottom: -15px;
+  left: 0px;
+}
+.tarif-block {
+  width: 670px;
+  height: 321px;
+  margin: 20px auto;  
+}
+.tarif-block .tarif-item{
+  float: left;
+  width: 161px;
+  height:82px;  
+  cursor: pointer;
+  padding-left: 150px;
+}
+
+.tarif-block  .tarif-item  span.grey {
+  font-weight: bold;
+  font-size: 12px;
+  color: #707070;
+  line-height: 1.4em;
+  display: block;
+  margin-top: 15px; 
+}
+
+.tarif-block .tarif-item span.month {
+  font-size: 18px;      
+  font-weight: bold;
+  color: #004184;
+  text-decoration: underline;
+}
+.tarif-block .tarif-item.discount-no {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/discount-no.png) left bottom no-repeat;
+}
+.tarif-block .tarif-item.discount-10 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/discount-10.png) left bottom no-repeat;
+}
+.tarif-block .tarif-item.discount-15 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/discount-15.png) left bottom no-repeat;
+}
+.tarif-block .tarif-item.discount-25 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/discount-25.png) left bottom no-repeat;
+}
+.tarif-block .tarif-item.active {
+  background-position: left top;
+  width: 176px;
+  height: 102px;
+  position: relative;
+  z-index: 200;
+  padding-top: 10px;
+}
+.tarif-block .tarif-item.active span.grey {
+  margin-top: 20px;
+  line-height: 2em;
+}
+.tarif-block .tarif-item.discount-no.active {
+  margin-top: -7px;
+  margin-bottom: -29px;
+}
+.tarif-block .tarif-item.discount-10.active {
+  margin-top: -18px;
+  margin-bottom: -18px;
+}
+.tarif-block .tarif-item.discount-15.active {
+  margin-top: -18px;
+  margin-bottom: -18px;
+}
+.tarif-block .tarif-item.discount-25.active {
+  margin-top: -30px;
+}
+
+.tarif-page h1{
+  text-align: center;
+  font-size: 36px;
+}
+.tarif-page p{
+  font-size: 20px;
+  color: #404040; 
+  text-align: center;
+}
+
+/* Ð’Ñ‹Ð±Ð¾Ñ€ Ñ‚Ð°Ñ€Ð¸Ñ„Ð° */
+.tarif-page .tarif {
+  position: relative;
+  float: left;
+  width: 232px;
+  height: 338px;
+  margin: 8px 3px 0px 0px;
+  text-align: center;
+}
+.tarif-page .tarif h1{      
+  font-size: 26px;
+  font-weight: bold;
+  color: #404040;
+  margin-top: 20px;   
+  padding: 0;
+  text-shadow: 0px 1px 1px #333;
+}
+.tarif-page .tarif .count{
+  font-size: 38px;
+  color: #3b833c;
+  font-weight: bold;
+  margin-top: 60px; 
+  text-shadow: 0px 1px 1px #333;  
+}
+.tarif-page .tarif .infocount{
+  font-size: 16px;
+  color: #707070;
+  font-weight: bold;  
+  text-shadow: 0px 1px 1px #333;  
+}
+.tarif-page .tarif .price {
+  font-size: 26px;
+  color: #404040;
+  font-weight: bold;
+  margin-top: 28px; 
+  text-shadow: 0px 1px 1px #333;
+}
+.tarif-page .tarif .rub{
+  font-size: 16px;
+  color: #707070; 
+  text-shadow: 0px 1px 1px #333;
+}
+.tarif-block  .full-price {
+  color: #fff;
+  margin: 25px 0px 40px 0px;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 18px;
+  text-shadow: 0px 1px 1px #333;
+}
+.tarif-block  .full-price .full-money {
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #333;
+}
+
+.tarif-page .tarif-self{
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/tarif-green-block.png) left top no-repeat;
+  width: 340px;
+  padding-top: 12px;
+  text-align: center;
+  float: left;
+}
+.tarif-page .tarif-self h3 {
+  color: #fff;
+  text-shadow: 0px -1px 2px #666;
+  margin-bottom: 13px;
+}
+
+.tarif-page .tarif-self h3 .help {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/tt.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.tarif-page .tarif-self h3 .help .content {
+  padding: 5px 15px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: normal;
+}
+.tarif-page .tarif-self h3 .help .help-wrapper {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/help-bg.png) repeat-y;
+  position: absolute;
+  bottom: 30px;
+  right: -39px;
+  width: 275px;
+  color: #000;
+  text-shadow: 0 0;
+  font-size: 12px;
+  line-height: 16px;
+  display: none;
+  z-index: 201;
+}
+.tarif-page .tarif-self h3 .help:hover .help-wrapper {
+  display: block
+}
+.tarif-page .tarif-self h3 .help .help-wrapper .top {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/help-top.png) no-repeat;
+  width: 275px;
+  height: 7px;
+  position: absolute;
+  top: -7px;
+  left: 0px;
+}
+.tarif-page .tarif-self h3 .help .help-wrapper .bottom {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/help-bottom.png) no-repeat;
+  width: 275px;
+  height: 15px;
+  position: absolute;
+  bottom: -15px;
+  left: 0px;
+}
+
+.tarif-page .tarif-self > .count{
+  text-align: center;
+  margin-left: 78px;
+}
+
+.tarif-page .tarif-self > .count > .center
+{
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/control-plusminus-center-bg.png) left top no-repeat;
+  font-size: 36px;
+  float:left;
+  color: #3b833c;
+  font-weight: bold;
+  width: 110px;
+  height: 37px;   
+  vertical-align: top;      
+}
+
+.tarif-page .tarif-self > .count > .left{
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/control-plusminus-minus-bg.png) left top no-repeat;
+  width: 36px;  
+  height: 37px;   
+  cursor: pointer;
+  float: left;
+}
+  
+.tarif-page .tarif-self > .count > .right{
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/control-plusminus-plus-bg.png) left top no-repeat;
+  float:left;
+  width: 36px;  
+  height: 37px;   
+  cursor: pointer;
+}
+
+.tarif-page .tarif-self > .infocount{
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;  
+  text-shadow: 0px 1px 2px #333;
+}
+  
+.tarif-page .tarif-self > .price{
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 25px; 
+  text-shadow: 0px 1px 2px #333;
+}
+  
+.tarif-page .tarif-self > .rub{
+  font-size: 16px;
+  color: #ffffff; 
+  text-shadow: 0px 1px 2px #333;
+}
+
+/* Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ð½Ð¾Ð¹ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸ */
+.contacts-page {
+  padding: 10px 20px;
+}
+.contacts-page h1 {
+  font-size: 36px;
+  font-weight: normal;
+  color: #404040;
+}
+.contacts-page table{
+  margin-top: 0;  
+}
+.contacts-page table tr td{
+  border: none;
+  padding: 3px 2em 0px 0px;
+}
+
+.contacts-page .tabs {
+  
+}
+
+.contacts-page .tabs .tab-header {
+  height: 17px;
+  z-index: 120;
+  float: left;
+  padding: 12px 20px;
+  margin-bottom:  -1px;
+  font-size: 16;
+  font-weight: normal;
+  position: relative;
+  background:  url('images/layout/tab-header.png') 0px -41px repeat-x;
+  cursor: pointer;
+}
+.contacts-page .tabs .tab-header .left-bg {
+  width: 4px;
+  height: 41px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background:  url('images/layout/tab-header.png') 0px 0px no-repeat;
+}
+.contacts-page .tabs .tab-header .right-bg {
+  width: 4px;
+  height: 41px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background:  url('images/layout/tab-header.png') 0px -82px no-repeat;
+}
+.contacts-page .tabs .tab-header.active, .contacts-page .tabs .tab-header.active .left-bg, .contacts-page .tabs .tab-header.active .right-bg{
+  font-weight: bold;
+  background-image :  url('images/layout/tab-header-active.png');
+}
+
+.contacts-page .tabs .tab-content {
+  clear: left;
+  z-index: 10;
+  width: 861px;
+  background: url('images/layout/tab-content-bg.png') center top repeat-y;
+  padding: 20px;
+  position: relative;
+  display: none;
+}
+.contacts-page .tabs .tab-content h3 {
+  margin-top: 0;
+}
+.contacts-page .tabs .tab-content.active {
+  display: block;
+}
+.contacts-page .tabs .tab-content .top-bg{
+  height: 5px;
+  width: 901px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('images/layout/tab-content-bg.png') left top no-repeat;
+}
+.contacts-page .tabs .tab-content .bottom-bg{
+  height: 5px;
+  width: 901px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: url('images/layout/tab-content-bg.png') right top no-repeat;
+}
+.contacts-page .YMaps td {
+  padding: 0px
+}
+/* @section Download page */
+.download-page {
+  padding: 7px; 
+}
+.download-page h1 {
+  font-size: 36px;
+  padding-bottom: 0.3em;  
+}
+.download-page h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+}
+
+.download-page > p {
+  font-size: 16px;  
+}
+
+.download-page > ol {
+  margin: 0 20px;   
+}
+
+.download-page strong {
+  font-weight: bold;
+  font-size: 16px;  
+}
+
+.download-page > ol  li {
+  font-size: 16px;
+  line-height: 1.4em; 
+  margin-bottom: 0.5em; 
+}
+
+.download-page .download-grey-block {
+  width: 889px;
+  height: 112px;
+  margin: 20px 0;
+  background:url(http://livetex.ru/wp-content/themes/livetex/images/download/download-block.png);
+  padding: 10px 20px;
+}
+
+.download-page .download-grey-block .btn-download{
+  display: block;
+  margin-top: 35px;
+  margin-bottom: 7px;
+  text-decoration: none;
+}
+
+.download-page .download-grey-block .system-desc{
+  
+  margin-left: 140px;
+  font-size: 18px;
+  margin-top: 20px; 
+  color: #464646;
+}
+
+.download-page .download-grey-block .filesize {
+  font-size:12px; 
+  color: #464646; 
+}
+
+/* Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Demopage */
+.demo-page {
+  text-align: center; 
+  padding: 0 10px;
+}
+.demo-page h1{
+  font-size:36px;
+}
+.demo-page p{
+  font-size: 20px;  
+  line-height: 1.2em;
+}
+
+.demo-page  .block-left{
+  float: left;
+  width: 300px;
+  height: 285px;
+  text-align: left;
+}
+
+.demo-page  > .margin{
+  margin-left: 15px;
+}
+
+.demo-page  > .block-left > h1{
+  float: left;
+  font-weight: bold;
+  font-size: 60px;
+  color: #cccccc;
+  top: 0px;
+  width: 35px;  
+  line-height: 1em;
+}
+
+.demo-page  .block-left .head{
+  font-size:  16px;
+  margin-left: 40px;
+  margin-top: 38px;
+  font-weight: bold;
+  color: #404040;
+  width: 230px;
+  line-height: 1.5em;
+  height: 45px; 
+}
+
+.demo-page  > .block-left > img{
+  clear: left;
+  height: 224px;
+  width: 300px;
+}
+/* ÐŸÑ€ÐµÑÑÐ° */
+.press-block {
+  display: block;
+  margin: 0px 0 40px; 
+}
+.press-block .press-preview {
+  width: 700px;
+  padding-top: 15px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/press/press_bottom.png) no-repeat;
+  overflow: hidden
+}
+.press-container {
+  border-width: 0px 1px 0px 1px;
+  border-style: solid;
+  border-color: #d0d0d0;
+  visibility: visible;
+  overflow: hidden;
+  padding: 10px 20px 5px 20px
+}
+.press-top {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/press/press_top.png) no-repeat;
+  width: 700px;
+  height: 4px;
+}
+.press-image {
+  margin: 0px 0px 0px 55px;
+  float: left
+}
+.press-link {
+  float: right;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/press/press_link.png) no-repeat 0 50%;
+  padding-left: 18px
+}
+.press-link a {
+  font-size: 12px
+}
+.press_release {
+  margin-bottom: 40px
+}
+.press_release a {
+  display: block;
+  margin: 7px 0px
+}
+/* ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸ */ 
+.news-left-menu {
+  float: left;
+  width: 170px;
+  padding-top: 20px;
+  margin-left: 30px;
+}
+.news-left-menu a{
+  color: #3d3d3d!important;
+  text-decoration: none;
+  border-bottom: solid 1px #3d3d3d;
+}
+.news-left-menu a:hover{
+  color: #5580af!important;
+  border-bottom: solid 1px #5580af;
+}
+.news-left-menu .news-image{
+  width: 102px;
+  height: 62px;
+  margin-top: 30px;
+  overflow: hidden;
+  border-radius: 7px;
+  border: solid 1px #ccc;
+}
+.news-left-menu .news-image img{
+  width: 102px;
+  height: auto;
+}
+.news-single-text {
+  font-size: 14px;
+  margin-left: 200px; 
+}
+.news-single-text h1 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-top: 0;
+}
+.news-single-text ul {
+  list-style-type: disc;
+  padding-left: 0.5em;
+}
+.news-single-text ol {
+list-style-type: decimal;
+  padding-left: 0.5em;
+}
+.news-single-text p {
+  color: #464646;
+  margin-bottom: 17px;
+  clear: both;  
+}
+.news-single-text img {
+  margin-bottom: 10px;
+}
+.news-single-text a{
+  color: #5580af;
+}
+.news-single-text a:hover{
+  color: #8eb6e1;
+}
+.news-single-text .post-meta{
+  margin-top: 20px;
+  height: 40px;
+}
+.news-single-text .post-meta .news-date{
+  padding-bottom: 0;
+  float: left;
+}
+.news-single-text .post-meta .share-links{
+  margin-top: -7px;
+}
+.news-single-text .news-date{
+  font-size: 14px;
+    line-height: 1.4em;
+    padding-bottom: 2em;
+    display:  block;
+}
+.news-single-text .wp-caption-text {
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+  color: #666;
+  padding: 0;
+  line-height: 1em;
+}
+.news-single-text  .alignleft {
+  float: left;  
+  margin: 10px 0;
+}
+.alignleft + .alignleft {
+  margin-left: 20px;  
+}
+
+/* Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð½Ð¾Ð²Ð¾ÑÑ‚ÐµÐ¹ */
+.news-category .news-block:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.news-category .news-block{
+  margin: 20px 0;
+  zoom: 1;     /* triggers hasLayout */
+  display: block;
+  overflow: hidden; /* Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ðµ Ð¿Ð¾ÑÐ²Ð»ÑÐ»Ð°ÑÑŒ Ð¸Ð·Ð»Ð¸ÑˆÐ½ÑÑ Ð²Ñ‹ÑÐ¾Ñ‚Ð° Ð±Ð»Ð¾ÐºÐ° */ 
+}
+.news-category .news-block .news-preview {
+  float: left;
+  width: 140px;
+  height: 100px;
+  text-align: left;
+}
+.news-block .news-preview .date-container{
+  width: 103px;
+  text-align: center;
+}
+.news-category .news-block .news-date {
+  color: #464646;
+  font-size: 12px;
+  line-height: 2em;
+}
+.news-category .news-image {
+  position: relative;
+  width: 102px;
+  height: 62px;
+  overflow: hidden;
+  border-radius: 7px;
+  border: solid 1px #ccc;
+}
+.news-category .news-image a:hover{
+  opacity: 0.7;
+}
+.news-category .news-image img {
+  width: 102px;
+  position: relative;
+  z-index: 1;
+}
+.news-category .news-image .image-mask {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 102px;
+  height: 72px;
+  z-index: 10;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/news/news-img-wide-mask.png);
+  background-repeat: no-repeat;
+  background-position: left top;  
+}
+.news-category .news-container {
+  margin-left: 140px; 
+  padding-top: 3px;
+}
+.news-category h1 {
+  font-size: 36px;
+  font-weight: normal;  
+}
+.news-category .news-container .news-link{
+  text-decoration: none;
+}
+.news-category .news-container .news-link:hover{
+  color: #5580af;
+  text-decoration: underline;
+}
+.news-category .news-container .read-more{
+  font-size: 14px;
+  color: #5580af;
+}
+.news-category .news-container .read-more:hover{
+  color: #8eb6e1;
+}
+.news-category .news-container .news-link:hover h3{
+  color: #5580af;
+}
+.news-category .news-container h3 {
+  font-size: 18px;
+  padding-bottom: 0.5em;
+  padding-top: 20px;
+  margin-top: 0px;
+} 
+.news-category .news-container h3 a{
+  font-size: 18px;
+}
+.news-category  .news-container  {
+  font-size: 12px;
+  color: #464646;
+  line-height: 1.5em;
+}
+.news-category .news-container ul {
+  list-style-type: disc;
+  padding-left: 0.5em;
+}
+.news-category .news-container ol {
+  list-style-type: decimal;
+}
+.news-category .news-container p {
+  margin: 13px 0;
+}
+.news-category .news-container p + p {
+  margin-top: 1em;  
+}
+.news-category .news-container img {
+  max-width: 550px;
+  width: 550px\0/;
+  *width: 550px;
+  height: auto;
+}
+.news-category .news-preview {
+  position: relative; 
+}
+.news-category .news-navigation  {
+  padding: 10px 20px; 
+}
+.news-category .news-navigation  .alignleft{
+  float: left;
+}
+.news-category .news-navigation  .alignright{
+  float: right;
+}
+
+/*
+ * ÐÑ€Ñ…Ð¸Ð² Ñ€Ð°ÑÑÑ‹Ð»ÐºÐ¸ - mailing
+ */
+.mailing-container{
+  width: 920px;
+  margin: 35px auto 0;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/column-page-bg.png);
+  background-repeat: repeat-y;
+  background-position: -1000px 0;
+}
+.mailing-container .left-menu{
+  width: 220px;
+  float: left;
+}
+.mailing-container .left-menu h3{
+  margin: 10px;
+  color: #111;
+  padding-top: 0;
+  text-align: center;
+}
+.mailing-container .left-menu .separator{
+  background: url('images/updates/separator-line.gif') center center repeat-x;
+  line-height: 24px;
+  text-align: center;
+  margin: 10px;
+}
+.mailing-container .left-menu .separator .year {
+  background-color: #f5f1ee;
+  padding: 0 10px;
+  color: #bab7b5;
+  font-size:  14px;
+}
+.mailing-container .left-menu .updates-menu ul {
+  margin: 0;
+  padding: 0;
+}
+.mailing-container .left-menu .updates-menu ul li a{
+  line-height: 1.2em;
+  display: block;
+  padding: 3px 10px;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 10px 0;
+}
+.mailing-container .left-menu .updates-link .underlined {
+  text-decoration: underline;
+  font-size: 14px;
+}
+.mailing-container .left-menu .current-menu-item {
+  line-height: 29px;
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 20px;
+  width: 180px;
+  /*height: 29px;*/
+  /*background: url('images/updates/left-menu-selected.png') right top no-repeat;*/
+  background: url('http://livetex.ru/wp-content/themes/livetex/images/homepage/blue-bg.png') repeat-x;
+}
+.mailing-container .left-menu  .updates-menu .current-menu-item a {
+  color: #fff;
+  padding: 3px 0px;
+}
+.mailing-container .right-content{
+  width: 700px;
+  margin-left: 220px;
+  overflow: hidden; 
+}
+.mailing-container .grey{
+  background: #f7f7f7;
+  padding-bottom: 19px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: -16px;
+}
+.mailing-container h5{
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  padding: 20px 0 0 100px;
+}
+.mailing-container #subscribe-me{
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: solid 1px #dfdfdf;
+}
+.mailing-container #sign_up_email_address{
+  color: #858585;
+  font-size: 14px;
+  padding: 9px 7px;
+  border: none;
+  margin-left: 25px;
+  width: 153px;
+}
+.mailing-container #sign_up_button{
+  background: #febf01;
+  padding: 8px 15px;
+  border-top: solid 1px #fed41a;
+  -webkit-box-shadow: 0px 1px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 1px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 1px 0px rgba(50, 50, 50, 0.3);
+  margin: 10px 0 10px 25px;
+  border-left: solid 1px #cc9a00;
+  border-right: solid 1px #cc9a00;
+  border-bottom: solid 1px #cc9a00;
+  display: block;
+  width: 135px;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: bold;
+  color: #6e4704;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+
+/* ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸ Ð¾Ð± Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ð¸ */
+.updates-container .left-menu {
+  width: 220px;
+  float: left;
+}
+.updates-container .left-menu h3 {
+  margin: 10px;
+  color: #111;
+  padding-top: 0;
+}
+
+.updates-container .left-menu .separator{
+  background: url('images/updates/separator-line.gif') center center repeat-x;
+  line-height: 24px;
+  text-align: center;
+  margin: 10px;
+}
+.updates-container .left-menu .separator .year {
+  background-color: #f5f1ee;
+  padding: 0 10px;
+  color: #bab7b5;
+  font-size:  14px;
+}
+.updates-container .left-menu .updates-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.updates-container .left-menu .updates-menu ul li a{
+  line-height: 20px;
+  display: block;
+  padding: 3px 10px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px 0;
+}
+.updates-container .left-menu .updates-link .underlined {
+  text-decoration: underline;
+  font-size: 14px;
+}
+.updates-container .left-menu .current-menu-item {
+  line-height: 29px;
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 20px;
+  width: 200px;
+  height: 29px;
+  background: url('images/updates/left-menu-selected.png') left top no-repeat;
+  margin-left: -10px;
+}
+.updates-container .left-menu  .updates-menu .current-menu-item a {
+  color: #fff;
+  padding: 3px 0px;
+}
+.updates-container  .right-content {
+  margin-left: 240px;
+}
+.updates-page {
+  padding-top: 20px;
+}
+.updates-container  .right-content.updates-page {
+  padding-top: 0;
+}
+.updates-page h1{
+  text-align: center;
+  font-size: 22px;
+  font-weight:bold;
+  margin-bottom: 20px;
+}
+.updates-page h2{
+  font-size: 18px;
+  font-weight:bold;
+  margin-bottom: 10px;
+}
+.updates-page h3{
+  font-size: 14px;
+  font-weight:bold;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.updates-page p{
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
+.updates-page i {
+  display: block;
+  margin-top: 10px;
+}
+.updates-page .ol-list li{
+  font-size: 14px;
+  line-height: 1.4em;
+  padding-bottom: 1em;
+}
+
+.updates-page .left-column{
+  float:left;
+  width: 210px;
+  
+  text-align: right;
+  padding-top: 10px;
+  font-size:12px;
+  color: #a7a7a7;
+}
+
+.updates-page .right-column {
+  margin-left: 240px;
+  padding: 0px;
+  clear: right;
+}
+.updates-page .right-column em {
+  margin-top: 1em;
+  display: block;
+  font-size: 12px;
+}
+.updates-page .right-column img {
+  margin-top: 10px;
+}
+
+.updates-page .right-column  ul  li{
+  font-size: 14px;
+  list-style-type: disc;
+}
+.updates-page .description{
+  font-size:12px;
+  color: #a7a7a7;
+}
+.updates-page .description img{
+  margin-left: 10px;
+  float: right;
+  margin-top: -3px;
+}
+.updates-page .develop-name {
+  padding: 5px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  float: left;
+  margin-top: 15px;
+  margin-left: 25px;
+}
+
+.updates-page .develop-spec {
+  padding: 5px 25px;
+  font-size: 16px;
+  border-left: 1px solid #d6d6d6;
+  float: left;
+  margin-top: 15px;
+}
+.updates-page .greyline {
+  height: 1px;
+  background-color: #e3e3e3;
+  clear: both;
+  margin: 20px 0;
+}
+
+.updates-page .big-balloon{
+  width:366px;
+  height: 109px;
+  background: url('images/updates/balloon-big.png') left top no-repeat;
+  padding: 15px 10px 15px 35px;
+  font-size: 16px;
+  line-height: 1.4em;
+  margin-top: 20px;
+}
+
+.updates-page .small-balloon {
+  width:431px;
+  height: 35px;
+  background: url('images/updates/balloon-small.png') left top no-repeat;
+  padding: 10px 10px 10px 25px;
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-left: -25px;
+}
+/* RSS */
+.references .rss-small {
+  background: url('images/rss/rss_small.png') no-repeat;
+  height: 14px;
+  text-decoration: none;
+  font-size: 12px;
+  padding-left: 20px;
+  line-height: 14px;
+  display: inline-block;
+  color: #707070;
+  margin-left: 192px
+}
+.rss-big {
+  background: url('images/rss/rss_big.png');
+  height: 32px;
+  width: 32px;
+  display: block;
+  text-decoration: none;
+}
+.right-column .rss-big {
+  position: absolute;
+  top: 22px;
+  right: 10px
+} 
+/* ÐšÐ½Ð¾Ð¿ÐºÐ¸ ÑÐ¾Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ñ… ÑÐµÑ‚ÐµÐ¹ */
+#vk_like iframe {
+
+}
+#fb-likes {
+  margin-top: 5px;
+}
+#fb-likes iframe {
+}
+/* Page demo */
+
+.demopage {
+  width: 586px;
+  margin: 0 auto;
+  text-align: center
+}
+.demopage h1 {
+  color: #fff;
+  padding: 0px;
+  font-size: 35px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+  font-weight: normal;
+  margin-top: 50px;
+}
+.demopage input[type="text"] {
+  height: 48px;
+  width: 357px;
+  font-size: 24px;
+  color: #898989;
+  line-height: 48px;
+  padding: 0px 15px;
+  border-radius: 5px;
+  border: 1px solid #bcbbbb;
+  margin-top: 30px;
+  float: left
+}
+.demopage .btn-big-green {
+  margin: 30px 0px 0px 10px
+}
+.demopage .btn-big-green > div > div {
+  padding: 0px 10px;
+}
+
+.help-page-content .accordion .ul-help li {
+  padding-left: 0px
+}
+.help-page-content .accordion {
+  list-style: none;
+  padding: 0px
+}
+.help-page-content .accordion > li > a {
+  text-decoration: none;
+  border-bottom: 1px dashed #004184
+}
+.help-page-content .accordion > li > a:hover {
+  border-bottom: 1px dashed #356EA8
+}
+.help-page-content .accordion li span {
+  margin-right: 4px;
+  margin-bottom: -1px;
+  width: 12px;
+  height: 13px;
+  display: inline-block;
+}
+.help-page-content .accordion li span {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/up.png) no-repeat scroll 50% 50%;
+  color: #004184
+}
+.help-page-content .accordion li.active span {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/down.png) no-repeat scroll 50% 4px;
+  color: #004184
+}
+.help-page-content .accordion div {
+  display: none;
+  margin-top: 10px;
+  padding-left: 17px
+}
+.help-page-content .accordion ul {
+  padding-left: 0px
+}
+.help-page-content .accordion li {
+  list-style: none;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+.help-page-content .accordion > li {
+  border: 1px solid #dedede;
+  padding: 8px;
+  border-radius: 5px;
+}
+.help-page-content .accordion div li {
+  padding-left: 30px;
+}
+.help-page-content .toolbar li {
+  padding: 5px 0 5px 40px;
+  list-style: none
+}
+.help-page-content .online-options li {
+  list-style: none;
+  padding-left: 30px;
+}
+.help-page-content .online-options li.online {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/op-online.png) no-repeat;
+}
+.help-page-content .online-options li.out {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/op-out.png) no-repeat;
+}
+.help-page-content .online-options li.none {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/op-none.png) no-repeat;
+}
+.help-page-content .online-options li.close {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/op-close.png) no-repeat;
+}
+.help-page-content .toolbar li.visitors {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/visitors.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .toolbar li.review {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/review.png) no-repeat scroll 2px 50%;
+}
+.help-page-content .toolbar li.setings {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/setings.png) no-repeat scroll 2px 50%;
+}
+.help-page-content .toolbar li.write {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/write.png) no-repeat scroll 6px 50%;
+}
+.help-page-content .toolbar li.support {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/support.png) no-repeat scroll 5px 50%;
+}
+.help-page-content .switch-chat li {
+  list-style: none;
+  padding-left: 55px;
+  height: 23px;
+  line-height: 23px;
+}
+.help-page-content .switch-chat .operator {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/mode-operator.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .switch-chat .user {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/mode-user.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-badge li {
+  list-style: none;
+  padding-left: 45px;
+  height: 33px;
+  line-height: 33px;
+}
+.help-page-content .visitor-badge .badge-1 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/badge-1.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-badge .badge-2 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/badge-2.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-badge .badge-3 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/badge-3.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat li {
+  padding-left: 20px;
+  list-style: none;
+}
+.help-page-content .visitor-chat.ico li {
+  padding-left: 43px;
+  list-style: none;
+  height: 19px;
+  line-height: 19px;
+}
+.help-page-content .visitor-chat .ico-1 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-1.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-2 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-2.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-3 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-3.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-4 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-4.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-5 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-5.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-6{
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-6.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-7 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-7.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-8 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-8.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-9 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-9.png) no-repeat scroll 0px 50%;
+}
+.help-page-content .visitor-chat .ico-10 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/ico-visitor-chat/ico-10.png) no-repeat scroll 0px 50%;
+}
+.help-page-content span.screenshot-manual-link {
+  border-bottom: 1px dashed #356ea8;
+  color: #356ea8;
+  cursor: pointer;
+}
+.help-page-content div.screenshot-manual {
+  display: none;
+  margin-top: 15px;
+}
+.error404 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/404/404.jpg) no-repeat 50% 65%;
+  height: 480px;
+  width: 980px;
+  margin-left: -35px;
+  text-align: center
+}
+.error404 h1 {
+  font-family: Arial;
+  font-size: 150px;
+  line-height: 150px;
+  margin: 0px;
+  padding: 0px;
+  text-shadow: -1px -1px 1px #000;
+}
+.error404 h2 {
+  
+}
+.error404 div {
+  line-height: 24px
+}
+/* Ð¦ÐµÐ½Ñ‚Ñ€Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð±Ð»Ð¾Ðº */
+.frontpage-rewiews {
+  float: left;
+  margin-left: 20px;
+  width: 365px;
+  position: relative
+}
+/* ÐšÐ°Ñ€ÑƒÑÐµÐ»ÑŒ Ð½Ð° Ð³Ð»Ð°Ð²Ð½Ð¾Ð¹ */
+.rewiews-carusel {
+  width: 365px;
+  overflow: hidden;
+  position: relative
+}
+.rewiews-carusel ul.rewiews-slider {
+  margin: 0px;
+  line-height: normal;
+  width: 1460px;
+  overflow: hidden;
+}   
+.rewiews-slider > li {
+  float: left
+}
+.frontpage-rewiews .comment {
+  width: 365px
+}
+.frontpage-rewiews .comment > .name {
+  overflow: hidden;
+  margin: -10px 0px 0px 2px
+}
+.frontpage-rewiews .comment .name .info {
+  margin: 10px 0px 0px 15px;
+  font-size: 12px
+}
+.frontpage-rewiews .comment .name .info .name {
+  font-weight: bold
+}
+.frontpage-rewiews .comment .name .info .post {
+  color: #707070
+}
+.frontpage-rewiews .comment .name .info .company {
+  color: #707070
+}
+.frontpage-rewiews .comment .name .info a {
+  display: inline
+}
+.frontpage-rewiews .comment .name .image img {
+  display: block
+}
+.frontpage-rewiews .comment .name .image .border1 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f5f4f4 #cccccc #cccccc #cccccc; 
+  display: block;
+  float: left;
+}
+.frontpage-rewiews .comment .name .image .border2 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f4f3f3 #f4f3f3 #949494 #f4f3f3;
+  display: block;
+  float: left
+}
+.frontpage-rewiews .comment .name .image .border3 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f5f4f4;
+  display: block;
+  float: left
+}
+.frontpage-rewiews .comment .name .image .border4 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c1c1c1 #f4f4f4 #f4f4f4 #f4f4f4;
+  display: block;
+  float: left
+}
+.frontpage-rewiews .comment .name div {
+  float: left
+}
+.frontpage-rewiews .rewiews-sale {
+  width: 365px;
+  position: relative;
+  padding: 4px 0px 24px 0px
+}
+.frontpage-rewiews .rewiews-sale .rewiews-content {
+  border-width: 0px 1px;
+  border-style: solid;
+  border-color: #ccc;
+  padding: 15px;
+  font-size: 13px
+}
+.frontpage-rewiews .rewiews-sale .rewiews-content .more-link {
+  display: block;
+  margin-top: 4px
+}
+.frontpage-rewiews .rewiews-sale .top-border {
+  background: url("images/homepage/top-banner.png") no-repeat;
+  width: 365px;
+  height: 5px;
+  position: absolute;
+  top: 0px;
+  left: 0px
+}
+.frontpage-rewiews .rewiews-sale .bottom-border {
+  background: url("images/homepage/bottom-banner.png") no-repeat;
+  width: 365px;
+  height: 24px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px
+}
+
+.frontpage-reviews-new {
+  background: url(http://www.livetex.ru/wp-content/themes/livetex/images/homepage/reviews-bg.png) scroll no-repeat 0 0;
+  height: 360px;
+  width: 980px;
+  margin-left: -20px;
+  margin-top: 40px;
+  overflow: hidden;
+}
+.frontpage-reviews-new  .comment {
+  width: 365px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+}
+.frontpage-reviews-new.comment > .name {
+  overflow: hidden;
+  margin: -10px 0px 0px 2px
+}
+.frontpage-reviews-new .comment .name .info {
+  margin: 10px 0px 0px 15px;
+  font-size: 13px;
+  text-align: left
+}
+.frontpage-reviews-new .comment .name .info .name {
+  font-weight: bold;
+}
+.frontpage-reviews-new .comment .name .info .post {
+  color: #707070
+}
+.frontpage-reviews-new .comment .name .info .company {
+  color: #707070
+}
+.frontpage-reviews-new .comment .name .info a {
+  display: inline
+}
+.frontpage-reviews-new .comment .name .image img {
+  display: block
+}
+.frontpage-reviews-new .comment .name .image .border1 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f5f4f4 #cccccc #cccccc #cccccc; 
+  display: block;
+  float: left;
+}
+.frontpage-reviews-new .comment .name .image .border2 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f4f3f3 #f4f3f3 #949494 #f4f3f3;
+  display: block;
+  float: left
+}
+.frontpage-reviews-new .comment .name .image .border3 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f5f4f4;
+  display: block;
+  float: left
+}
+.frontpage-reviews-new .comment .name .image .border4 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c1c1c1 #f4f4f4 #f4f4f4 #f4f4f4;
+  display: block;
+  float: left
+}
+.frontpage-reviews-new .comment .name div {
+  float: left
+}
+.frontpage-reviews-new .rewiews-sale {
+  width: 365px;
+  position: relative;
+  padding: 4px 0px 24px 0px
+}
+.frontpage-reviews-new .rewiews-sale .rewiews-content {
+  border-width: 0px 1px;
+  border-style: solid;
+  border-color: #ccc;
+  background-color: #fff;
+  padding: 15px;
+  font-size: 13px;
+  text-align: left;
+  
+}
+.frontpage-reviews-new .rewiews-sale .rewiews-content .more-link {
+  display: block;
+  margin-top: 4px
+}
+.frontpage-reviews-new  .rewiews-sale .top-border {
+  background: url("images/homepage/top-banner.png") no-repeat;
+  width: 365px;
+  height: 5px;
+  position: absolute;
+  top: 0px;
+  left: 0px
+}
+.frontpage-reviews-new .rewiews-sale .bottom-border {
+  background: url("images/homepage/bottom-banner.png") no-repeat;
+  width: 365px;
+  height: 24px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px
+}
+/*ÐšÐ¾Ð½ÐµÑ† Ñ‚ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ñ… Ð¾Ñ‚Ð·Ñ‹Ð²Ð¾Ð²*/
+.references {
+  position: relative;
+  overflow: hidden;
+  height: 18px;
+  margin: 10px 0px
+}
+.references a.all-reviews {
+  position: absolute;
+  top: 0px;
+  left: 245px;
+  font-size: 12px;
+  line-height: 14px;
+  height: 14px;
+  margin-top: 2px
+}
+.references .links {
+  float: right
+}
+.references .reviews-left-button {
+  position: absolute;
+  left: 330px;
+  top: -2px;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 20px;
+  color: #004184
+}
+.references .reviews-right-button {
+  position: absolute;
+  left: 345px;
+  top: -2px;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 20px;
+  color: #004184
+}
+.references .reviews-left-button:hover, .references .reviews-right-button:hover {
+  color:#356EA8
+}
+.footer.demo {
+  position: absolute;
+  bottom: 17px;
+  left: 50%;
+  margin-left: -490px;
+}
+
+.update-quote {
+  background: url('images/updates/quote-top.png') no-repeat;
+  width: 411px;
+  padding: 20px 0px 0px 19px; 
+}
+.update-quote div {
+  background: url('images/updates/quote-bottom.png') no-repeat scroll 0 100% #eee6cd;
+  padding: 0px 15px 15px 15px;
+  width: 362px;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+.homepage-switcher .button-setting {
+  
+}
+.homepage-switcher .button-setting a {
+  display: inline-block;
+  height: 39px;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+.homepage-switcher .button-setting {
+  text-align: left;
+}
+.homepage-switcher .button-setting .button-connect {
+  background: url('images/homepage/button-connect.png') no-repeat;
+  width: 220px;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 1px #000;
+}
+.homepage-switcher .button-setting .button-more {
+  margin-left: 50px;
+  background: url('images/homepage/button-more.png') no-repeat;
+  width: 172px;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+}
+.homepage-switcher .button-setting a:hover {
+  text-shadow: 1px 1px #000, 0px 0px 6px rgba(255,255,255,0.7);
+  
+}
+.homepage-switcher .button-setting .button-subscribe {
+  background: url('images/homepage/button-subscribe.png') no-repeat;
+  width: 230px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+}
+.homepage-switcher .button-setting .mail {
+  background: #CFD1D3;
+  border-radius: 5px;
+  width: 300px;
+  position: absolute;
+  bottom: -125px;
+  right: -40px;
+  padding: 10px 5px;
+  display: none;
+}
+.homepage-switcher .button-setting .mail table {
+  margin: 0px;
+}
+.homepage-switcher .button-setting .mail button {
+  background: url('images/homepage/mail.png') no-repeat;
+  width: 97px;
+  height: 28px;
+  border: 0px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: arial;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+}
+.homepage-switcher .button-setting .mail form {
+  position: relative;
+}
+.homepage-switcher .button-setting .mail .arrow {
+  background: url('images/homepage/button-arrow.png') no-repeat 50% 0px;
+  width: 100%;
+  height: 11px;
+  position: absolute;
+  top: -11px;
+  left: 0px;
+}
+.homepage-switcher .button-setting .mail input {
+  height: 25px;
+  padding: 0px 10px;
+  border: 1px solid #98999b;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #000;
+  width: 157px;
+}
+.homepage-switcher .button-setting .mail p {
+  text-shadow: 1px 1px #fff;
+  line-height: normal;
+}
+  button::-moz-focus-inner { 
+  padding:0;
+  border:0;
+}
+.homepage-switcher .button-setting .mail table td, .homepage-switcher .button-setting .mail table th {
+  border: 0px;
+  padding: 5px;
+  line-height: normal;
+}
+.homepage-switcher .email {
+    position: relative;
+  display: inline-block;
+  margin-left: 15px;
+    z-index: 1;
+  *display: inline;
+  *zoom: 1;
+}
+.mail .list1 td p {
+    font-size: 12px;
+    color: #000;
+}
+.homepage-switcher .email .clos {
+  background: url('images/homepage/clos.png') no-repeat;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  cursor: pointer;
+}
+.mail input[type="text"]:-moz-placeholder { color:#a2a2a2; }
+::-webkit-input-placeholder { color:#a2a2a2; }
+
+.homepage-switcher .list2 {
+  font-size: 12px;
+  color: #000;
+  text-shadow: 1px 1px #fff;
+  line-height: 16px;
+  padding: 24px 20px 24px 70px;
+  display: none;
+} 
+
+table.no-border td {
+  border: 0px;
+}
+.live-chat {
+  position: relative;
+}
+.live-chat .online_consultant .head-decor {
+  height: 390px;
+}
+.live-chat .head-decor {
+  background: url("images/live-chat/decor.png") repeat;
+  width: 980px; 
+  height: 340px; 
+  position: relative;
+    top: -8px;
+  text-align: center;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+}
+.live-chat .head-decor.medium {
+  height: 330px; 
+}
+.live-chat .head-decor.large {
+  height: 390px!important; 
+}
+.live-chat .head-decor.small {
+  height: 220px;
+}
+.live-chat .head-decor h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  /*color: #242424;*/
+  line-height: normal;
+  padding: 35px 0px;
+/*  text-shadow: 0px 2px 0px #000;*/
+}
+.live-chat .head-decor h1 span.cc {
+  /*background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/cc.png) no-repeat 0px 3px;*/
+  width: 183px;
+  padding: 0px 10px 3px;
+  color: #fff;
+  /*text-shadow: 0px 1px 0px #000;*/
+}
+.live-chat .head-decor h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  /*color: #242424;*/
+  line-height: normal;
+  padding: 0px 0px 10px 0px;
+/*  text-shadow: 0px 1px 0px #000;*/
+}
+.live-chat .head-decor h2 span {
+  /*color: #456d12;*/
+  color: #efe;
+}
+.live-chat .head-decor p {
+  font-size: 16px;
+  line-height: normal;
+  padding: 0px;
+  color:#fff;
+/*  text-shadow: 0px 1px 1px #000;*/
+}
+.live-chat .head-decor a {
+  font-weight: bold;
+}
+.live-chat span.minute {
+  background: url("images/live-chat/minute.png") no-repeat;
+  width: 75px;
+  height: 46px;
+  color: #fff;
+  font-weight: normal;
+  line-height: 46px;
+  text-shadow: 1px 1px #000;
+  display: inline-block;
+}
+.live-chat .button {
+  font-size: 24px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  padding-top: 2px;
+  height: 64px;
+  text-shadow: 0px 1px 1px #000;
+  background-color: transparent;
+  -webkit-border-radius: 7px 8px 8px 7px/7px 7px 8px 8px;
+  -moz-border-radius: 7px 8px 8px 7px/7px 7px 8px 8px;
+  border-radius: 7px 8px 8px 7px/7px 7px 8px 8px;
+  -webkit-box-shadow: 0 4px rgba(48,94,11,.75);
+  -moz-box-shadow: 0 4px rgba(48,94,11,.75);
+  box-shadow: 0 4px rgba(48,94,11,.75);
+  background-image: -webkit-linear-gradient(bottom, #8ac000, #91cb00);
+  background-image: -moz-linear-gradient(bottom, #8ac000, #91cb00);
+  background-image: -o-linear-gradient(bottom, #8ac000, #91cb00);
+  background-image: -ms-linear-gradient(bottom, #8ac000, #91cb00);
+  background-image: linear-gradient(to top, #8ac000, #91cb00);
+}
+.live-chat .button:hover{
+  -webkit-border-radius: 8px 7px 7px 8px/8px 8px 7px 7px;
+  -moz-border-radius: 8px 7px 7px 8px/8px 8px 7px 7px;
+  border-radius: 8px 7px 7px 8px/8px 8px 7px 7px;
+  /*background-color: #8fc702;*/
+  -webkit-box-shadow: 0 4px rgba(48,94,11,.75), inset 0 0 29px rgba(201,255,134,.48);
+  -moz-box-shadow: 0 4px rgba(48,94,11,.75), inset 0 0 29px rgba(201,255,134,.48);
+  box-shadow: 0 4px rgba(48,94,11,.75), inset 0 0 29px rgba(201,255,134,.48);
+  background-image: -webkit-linear-gradient(bottom, #8ac000, #91cb00);
+  background-image: -moz-linear-gradient(bottom, #8ac000, #91cb00);
+  background-image: -o-linear-gradient(bottom, #8ac000, #91cb00);
+  background-image: -ms-linear-gradient(bottom, #8ac000, #91cb00);
+  background-image: linear-gradient(to top, #8ac000, #91cb00);  
+}
+.live-chat .button:active{
+  -webkit-border-radius: 7px 8px 8px 7px/8px 8px 7px 7px;
+  -moz-border-radius: 7px 8px 8px 7px/8px 8px 7px 7px;
+  border-radius: 7px 8px 8px 7px/8px 8px 7px 7px;
+  -webkit-box-shadow: inset 0 5px rgba(0,0,0,.43), inset 0 0 29px rgba(201,255,134,.48);
+  -moz-box-shadow: inset 0 5px rgba(0,0,0,.43), inset 0 0 29px rgba(201,255,134,.48);
+  box-shadow: inset 0 5px rgba(0,0,0,.43), inset 0 0 29px rgba(201,255,134,.48);
+  border: solid 1px rgba(0,0,0,.46);
+}
+.live-chat .blue-frame {
+  margin: 4px auto;
+  border: 3px solid #587493;
+  border: 0px\0/;
+  *border: 0px;
+  height: 70px;
+  width: 365px;
+  border-radius: 10px;
+}
+.live-chat .gray-frame {
+  margin: 70px auto;
+  border: 3px solid #d6d6d6;
+  border: 0px\0/;
+  *border: 0px;
+  height: 70px;
+  width: 365px;
+  border-radius: 10px;
+}
+.live-chat .advantages {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/advantages-bg.png) scroll repeat 0 0;
+  padding: 50px 0px 0px 70px;
+  margin-top: -8px;
+  height: 330px;
+}
+.live-chat .advantages div {
+  height: 130px;
+  width: 338px;
+  float: left;
+}
+.live-chat .advantages div img{
+}
+/* Ñƒ Ñ‡ÐµÑ‚Ñ‹Ñ€Ñ‘Ñ… Ð±Ð»Ð¾ÐºÐ¾Ð² Ð±Ñ‹Ð» 40px padding-left*/
+.live-chat .advantages .sales {
+  margin-left: 120px;
+}
+.live-chat .advantages .increase {
+  margin-left: 120px;
+}
+*
+.live-chat .features {
+  padding: 15px 0px 35px 60px;
+  margin-top: -8px;
+  height: 330px;
+  font-family: 'Open Sans', sans-serif;
+}
+.live-chat .features h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 47px;
+  text-align: center;
+  padding-bottom: 40px;
+  margin-left: -60px;
+}
+.live-chat .features div {
+  margin: 5px 10px 5px 10px;
+  width: 160px;
+  height: 65px;
+  float: left;
+  padding: 4px 0px 0px 40px;
+  font-size: 14px;
+}
+.live-chat .features .chat { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-chat.png) scroll no-repeat 0 0; }
+.live-chat .features .calls { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-calls.png) scroll no-repeat 0 0; top: 0px }
+.live-chat .features .transfer { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-transfer.png) scroll no-repeat 0 0; }
+.live-chat .features .involve { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-involve.png) scroll no-repeat 0 0; }
+.live-chat .features .active { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-active.png) scroll no-repeat 0 5px; }
+.live-chat .features .offline { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-offline.png) scroll no-repeat 0 0; }
+.live-chat .features .history { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-history.png) scroll no-repeat 0 0; }
+.live-chat .features .info { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-info.png) scroll no-repeat 0 0; }
+.live-chat .features .stat { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-stat.png) scroll no-repeat 0 0; }
+.live-chat .features .interconnect { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-interconnect.png) scroll no-repeat 0 0; }
+.live-chat .features .leadgen { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-leadgen.png) scroll no-repeat 0 0; top: 0px; }
+.live-chat .features .design { background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/icon-pos-design.png) scroll no-repeat 0 0; }
+.live-chat .how-it-works {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/live-chat/how-it-works-bg.png) scroll repeat 40px 40px ;
+  height: 700px;
+  text-align: center;
+}
+.live-chat .how-it-works.small {
+  height: 560px;
+}
+.live-chat .how-it-works h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 47px;
+  text-align: center;
+  padding: 35px 0px 65px 0px;
+}
+.live-chat .how-it-works img { text-align: center; }
+.live-chat .button-frame { margin: auto; }
+.live-chat div.arrow {
+  background: url("images/live-chat/arrow.png") no-repeat scroll 50% 50%;
+  width: 100%;
+  height: 13px;
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+}
+.live-chat .effect {
+  text-align: center;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #ced2d9;
+  background: #e2e7ef;
+  margin: -8px 0px 0px 0px;
+  padding: 25px 0px 30px 0px;
+}
+.live-chat .effect img {
+  margin: 0px 0px 20px 0px;
+}
+.live-chat .effect div {
+  width: 220px;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 14px;
+  color: #1c232e;
+  *display: inline;
+  *zoom: 1;
+}
+.live-chat b {
+  font-weight: bold;
+}
+.live-chat .success {
+  text-align: center;
+  padding: 27px 0px;
+}
+.live-chat .success div {
+  width: 232px;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 16px;
+  margin: 13px 42px 13px 42px;
+  color: #1c232e;
+  line-height: 20px;
+  *display: inline;
+  *zoom: 1;
+}
+.live-chat .main-features table td {
+  border: 0px;
+  font-size: 14px;
+    font-weight: bold;
+  vertical-align: middle;
+}
+.live-chat .main-features table {
+  width: 100%;
+  margin: 0px;
+}
+.live-chat .main-features  {
+  padding: 10px 40px;
+}
+.live-chat .main-features h1 {
+  line-height: normal;
+  font-size: 27px;
+  color: #304151;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+.live-chat .vista {
+  padding: 25px 0px;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #dbdbdb;
+  font-size: 14px;
+  text-align: center;
+}
+.live-chat .vista  h1 {
+  font-size: 27px;
+  font-weight: bold;
+  color: #343434;
+  line-height: normal;
+  padding: 0px 0px 20px 0px;
+}
+.live-chat .vista  div {
+  width: 215px;
+  vertical-align: top;
+  display: inline-block;
+  margin: 13px 5px 13px 5px;
+  *display: inline;
+  *zoom: 1;
+}
+.live-chat .vista  div p {
+  line-height: 18px;
+}
+.live-chat .vista b {
+  display: block;
+  margin: 25px 0px 7px 0px;
+}
+a.button {
+  background: url("images/free-calls/button.png") no-repeat scroll center top transparent;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+    height: 73px;
+    line-height: 63px;
+    margin: 0 0 -10px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 #213B0A;
+    width: 365px;
+}
+.live-chat .free {
+  background: url("images/free-calls/shadow-gray.png") no-repeat scroll center top transparent;
+    padding: 35px 0px 25px 0px;
+    text-align: center;
+}
+.online_consultant .head-decor h1 {
+  font-size: 30px;
+  padding-bottom: 25px;
+}
+
+.online_consultant .head-decor h1 span{
+  color: #3b852e;
+}
+.online_consultant .head-decor p {
+  font-size: 24px;
+  margin: 0px 0px 40px 0px;
+}
+.online_consultant .head-decor {
+  height: 306px;
+}
+.online_consultant .head-decor h1 span.cc {
+  margin-right: -37px; 
+  height: 38px;
+  display: inline-block;
+  color: #fff;
+}
+.online_consultant .benefits .conversion {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/icon-conversion.png) no-repeat scroll 22px top;
+}
+.online_consultant .benefits .sales {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/icon-sales.png) no-repeat scroll 22px top;
+}
+.online_consultant .benefits .loyality {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/icon-loyality.png) no-repeat scroll 22px top;
+}
+.online_consultant .benefits .capacity {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/icon-capacity.png) no-repeat scroll 22px top;
+}
+.online_consultant .benefits {
+  background: none repeat scroll 0 0 #E2E7EF;
+    border-color: #CED2D9;
+    border-style: solid;
+    border-width: 1px 0;
+    margin: -8px 0 0;
+    padding: 25px 0 30px;
+    text-align: center;
+}
+.online_consultant .benefits div {
+  width: 180px;
+  display: inline-block;
+  padding: 122px 22px 0px 22px;
+  font-size: 13px;
+  vertical-align: top;
+  text-align: left;
+  *display: inline;
+  *zoom: 1;
+}
+.online_consultant .benefits div b {
+  color: #1C232E;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 18px;
+}
+.online_consultant .main-features table td {
+  border: 0px;
+  font-size: 14px;
+    font-weight: bold;
+  vertical-align: middle;
+}
+.online_consultant .main-features table {
+  width: 100%;
+  margin: 0px;
+}
+.online_consultant .main-features  {
+  padding: 10px 40px;
+  height: 320px;
+}
+.online_consultant .main-features h1 {
+  line-height: normal;
+  font-size: 27px;
+  color: #304151;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+.online_consultant .success div {
+  width: 240px;
+  margin: 5px 40px;
+}
+.online_consultant .success {
+  border-color: #dbdbdb;
+  border-style: solid;
+  border-width: 1px 0px;
+  padding: 10px 0px 30px 0px;
+}
+.online_consultant .success h1 {
+  font-size: 27px;
+  color: #57604b;
+  margin: 0px 0px 20px 0px;
+}
+.online_consultant .head-decor p  {
+  color: #fff;
+}
+.online_consultant .head-decor p.client  {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0px 0px 0px 0px;
+}
+.online_consultant .head-decor p.client span {
+  color: #efe;
+}
+.online_consultant .head-decor span.client {
+  font-size: 16px;
+  color: #fff;
+}
+.online_consultant.client .head-decor.small{
+  height: 220px;
+}
+.online_consultant.client .head-decor  {
+  height: 314px;
+}
+.online_consultant.client .head-decor h1 {
+  font-size: 34px;
+  padding-top: 45px;
+}
+.online_consultant.client .head-decor h1 span.cc2 {
+  width: 182px;
+  padding: 0px 12px;
+  color: #fff;
+}
+.linkedin {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/linkedin/linkedin.png) repeat-x;
+  width: 100%;
+  height: 66px;
+}
+.linkedin .linkedin-content {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/linkedin/linkedin-arrow.png) no-repeat scroll 0% 50%;
+  width: 730px;
+  height: 66px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 66px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 1px #2f4c0e;
+}
+.linkedin .linkedin-content  span {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/linkedin/linkedin-in.png) no-repeat;
+  width: 20px;
+  height: 21px;
+  display: inline-block;
+  line-height: 21px;
+}
+.linkedin .linkedin-content  b {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/linkedin/linkedin-month.png) no-repeat;
+  width: 86px;
+  height: 25px;
+  display: inline-block;
+  line-height: 25px;
+}
+/* Select */
+.select-decor {
+  height: 31px;
+}
+.select-popup {
+  position: relative;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  height: 42px;
+  color: #000;
+  cursor: pointer;
+  width: 100%;
+}
+.select-popup .select-header {
+  height: 31px;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/select.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-left: 3px;
+}
+
+.select-popup .select-header-arrow {
+  height: 31px;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/select.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  padding-right: 33px;
+}
+.select-popup .select-header.noselect {
+  padding: 4px;
+}
+.select-popup .select-header .select-text {
+  height: 31px;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/select.png);
+  background-repeat: repeat-x;
+  background-position: left center;
+  padding: 0 10px 0 5px;
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 13px;
+  color: #222
+}
+.select-popup .select-content{
+  display: none;
+  position: relative;
+  z-index: 9999;
+}
+.select-popup .select-list {
+  padding: 0px;
+  margin: -1px 2px 0 2px;
+  overflow: auto;
+  max-height:200px;
+  background-color: #fff;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-color: #999;
+  border-bottom-color: #999;
+  border-left-color: #999;
+
+}
+.select-popup .select-list li {
+  line-height: 1.4em;
+  cursor: pointer;
+  font-size: 13px;
+  color: #222;
+  padding-top: 3px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+}
+
+.select-popup .select-list li:hover {
+  background-color: #EFEFEF;
+}
+.select-popup .select-list li.selected {
+  background-color: #abdbf5;
+}
+/* ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»Ñ‹ Ð´Ð»Ñ Ð¿Ñ€ÐµÑÑÑ‹ */
+.table_logo {
+  width: 100%
+}
+.table_logo td {
+  border: 0px;
+  width: 50%
+}
+
+.wallpaper-block {
+  float: left;
+  padding: 10px 20px 10px 0;
+}
+.wallpaper-block img{
+  margin-bottom: 10px;
+}
+/* ÐšÐ°ÑÑ‚Ð¾Ð¼Ð½Ñ‹Ð¹ ÑÑ€Ð»Ñ‹Ðº Ð´Ð»Ñ Ð½Ð°ÑˆÐµÐ³Ð¾ ÑÐ°Ð¹Ñ‚Ð° */
+/*
+#content_liveTextLabel_4 {
+  background-image: url('images/homepage/label-bg.png') !important; 
+}
+#label_liveTextLabel_4 {
+  background-image: url('images/homepage/label.png') !important;
+  margin-left: -2px;
+  margin-top: -1px;
+}
+#liveTex_logoAnim {
+  display: none;
+}
+*/
+
+.rebranding .head {
+  background: url("images/landing/rebranding-head.png") no-repeat;
+  width: 980px;
+  height: 192px;
+  position: relative;
+  top: -8px;
+}
+.rebranding .head a {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+.rebranding .head .private-payment {
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+.rebranding  .top-text {
+  padding: 20px 40px 30px 40px;
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+}
+.rebranding  .top-text h4 {
+  font-size: 24px;
+  line-height: normal;
+  margin: 0px 0px 10px 0px;
+}
+.rebranding  .top-text h4 span {
+  color: #109FEA;
+}
+.rebranding  .top-text p {
+  line-height: normal;
+}
+.rebranding .why-cc {
+  background: none repeat scroll 0 0 #E2E7EF;
+    border-top: 1px solid #CBCFD7;
+  border-bottom: 1px solid #CBCFD7;
+    padding: 30px 40px;
+    position: relative;
+}
+.rebranding .why-cc .arrow {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/arrow.png") no-repeat scroll 0 0 transparent;
+    height: 13px;
+    left: 50%;
+    margin: 0 0 0 -12px;
+    position: absolute;
+    top: -13px;
+    width: 24px;
+}
+.rebranding table {
+  margin: 0px;
+}
+.rebranding table td {
+  border: 0px;
+  vertical-align: top;
+  font-size: 12px;
+}
+.rebranding table td b {
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+  margin: 0px 0px 5px 0px;
+}
+.rebranding h5 {
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+.rebranding h5 b {
+  font-weight: bold;
+}
+.rebranding h5 span {
+  color: #588239;
+}
+.rebranding  .button {
+  padding: 30px 0px;
+  text-align: center;
+}
+.rebranding .condition {
+  background: #eef5f7;
+  border-top: 1px solid #dbe2e4;
+  border-bottom: 1px solid #dbe2e4;
+  padding: 30px 40px;
+}
+.rebranding  .condition table td {
+  padding: 0px 0px 20px 0px;
+}
+.question-livetex {
+  width: 430px; 
+  border-radius: 3px; 
+  border: 1px solid #c1c1c1; 
+  padding: 10px; 
+  font-size: 13px; 
+  color: #404040; 
+  margin: 20px 0px 0px 0px;
+  float: right;
+}
+.bonus2012 .head {
+  background: url("images/live-chat/decor.png") no-repeat scroll 0 0 transparent;
+    height: 222px;
+    position: relative;
+    text-align: center;
+    top: -8px;
+    width: 980px;
+  padding: 20px 0px;
+  border-bottom: 1px solid #c1c1c1;
+}
+.bonus2012 .head .amount { 
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/amount.png") no-repeat;
+  width: 352px;
+  height: 37px;
+  line-height: 37px;
+  text-align: center;
+  color: #335060;
+  font-size: 19px;
+  margin: 10px auto;
+}
+.bonus2012 .head .data-september { 
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/data-september.png") no-repeat;
+  width: 273px;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  right: 45px;
+  bottom: -16px;
+}
+.bonus2012 .head h1 {
+  font-size: 26px;
+  color: #242424;
+}
+.bonus2012 .head b {
+  font-weight: bold;
+}
+.bonus2012 .head p {
+  font-size: 15px;
+  color: #242424;
+  margin: 0px 0px 20px 0px;
+}
+.all-bonus {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/bg-1.png") repeat-x;
+  padding: 15px 50px;
+  margin: -8px 0px 0px 0px;
+  border-bottom: 1px solid #C1C1C1;
+}
+.bonus2012 .all-bonus h1, .gifts h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #252d31;
+}
+.bonus2012 .gifts {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/bg-2.png") repeat-x;
+  text-align: center;
+  padding: 20px 0px;
+}
+.bonus2012 .gifts > div {
+  width: 271px;
+  margin: 20px 18px 0px 18px;
+  font-size: 12px;
+  line-height: 18px;
+  background: #fff;
+  vertical-align: top;
+  display: inline-block;
+  text-align: left;
+  *display: inline;
+  *zoom: 1;
+}
+.bonus2012 .gifts .middle {
+  border-left: 1px solid #c7c7c7;
+  border-right: 1px solid #c7c7c7;
+  padding: 20px;
+  height: 144px;
+}
+.bonus2012 .gifts .top {
+  text-align: center;
+  border: 1px solid #c7c7c7;
+  padding: 25px 0px;
+  border-radius: 5px 5px 0px 0px;
+  height: 70px;
+}
+.bonus2012 .gifts .block-1 .bottom {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/img-1.png") no-repeat;
+}
+.bonus2012 .gifts .block-2 .bottom {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/img-2.png") no-repeat;
+  width: 272px;
+}
+.bonus2012 .gifts .block-3 .bottom {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/img-3.png") no-repeat;
+}
+.bonus2012 .gifts .bottom {
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  padding: 15px 0px 0px 0px;
+}
+.bonus2012 .gifts .bottom  b {
+  font-weight: bold;
+}
+.bonus2012 .gifts > p span {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/img-4.png") no-repeat;
+  display: block;
+  margin: 0px 0px 0px 195px;
+  width: 289px;
+  height: 45px;
+  font-size: 12px;
+  color: #30657d;
+  font-style: italic;
+  padding: 15px 0px 0px 0px;
+  text-align: center;
+}
+.bonus2012 .button {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/bg-3.png") repeat-x;
+    padding: 30px 0;
+    text-align: center;
+  border-top: 1px solid #ccc;
+}
+.bonus2012 .footer-bonus {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/footer.png") no-repeat;
+  height: 154px;
+  position: relative;
+    bottom: -8px;
+}
+.bonus2012 .footer-bonus .title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  position: absolute;
+  top: 30px;
+  left: 377px;
+}
+.bonus2012 .footer-bonus .text {
+  font-size: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  text-align: center;
+  padding: 90px 0px 0px 0px;
+  line-height: 20px;
+}
+.bonus2012 .footer-bonus .text b {
+  font-weight: bold;
+}
+.cc-21 {
+  color: #509717;
+}
+.shadow-greyline {
+  background: url("http://livetex.ru/wp-content/uploads/2012/09/shadow.png") no-repeat;
+  height: 30px;
+  width: 740px;
+  margin: 20px 0px 0px -10px;
+}
+.update-1 p {
+  margin: 0px 0px 10px 0px;
+}
+.ico-list {
+    margin: 0px 0px 30px 0px;
+}
+.ico-list li {
+    padding: 0px 0px 0px 30px;
+    font-size: 13px;
+    color: #fff;
+    line-height: normal;
+    margin: 0px 0px 15px 0px;
+}
+.ico-list-1 { background: url('images/homepage/ico/ico-list-1.png') no-repeat; }
+.ico-list-2 { background: url('images/homepage/ico/ico-list-2.png') no-repeat; }
+.ico-list-3 { background: url('images/homepage/ico/ico-list-3.png') no-repeat; }
+.ico-list-4 { background: url('images/homepage/ico/ico-list-4.png') no-repeat; }
+.ico-list-5 { background: url('images/homepage/ico/ico-list-5.png') no-repeat; }
+.ico-list-6 { background: url('images/homepage/ico/ico-list-6.png') no-repeat scroll 0px 2px; }
+.ico-list-7 { background: url('images/homepage/ico/ico-list-7.png') no-repeat; }
+.calls {
+  top: -8px;
+  position: relative;
+}
+.calls .head {
+  background: url("images/partner/header-bg.png") repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #C1C1C1;
+  height: 340px;
+    padding: 20px 0;
+    text-align: center;
+    width: 980px;
+  border-radius: 10px 10px 0px 0px;
+}
+.calls .head h1 {
+  margin: 6px 0px;
+  padding: 0;
+  font-size: 36px;
+  color: #242424;
+  line-height: 65px;
+  letter-spacing: -1px;
+}
+.calls .head h1 span {
+  color: #3b852e;
+}
+.calls .head div.text {
+  float:left;
+  width: 860px;
+  margin: 0px 60px;
+  text-align: center;
+  color: #242424;
+  font-size: 17px;
+  font-weight: 100;
+  text-shadow: 1px 1px 1px #fff;
+}
+.calls .head div.text p {
+  margin-bottom: 10px;
+  line-height: 24px;
+}
+.calls .benefits .applications {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/benefits-applications.png) no-repeat scroll center top;
+}
+.calls .benefits .support {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/benefits-support.png) no-repeat scroll center top;
+}
+.calls .benefits .telephony {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/benefits-telephony.png) no-repeat scroll center top;
+}
+.calls .benefits .loyalty {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/benefits-loyalty.png) no-repeat scroll center top;
+}
+.calls .benefits {
+  background: #e2e8ef;
+  text-align: center;
+  padding: 30px 0px;
+  border-bottom: 1px solid #cbd0d7;
+}
+.calls .benefits div {
+  width: 180px;
+  display: inline-block;
+  padding: 100px 26px 0px 26px;
+  font-size: 13px;
+  vertical-align: top;
+  text-align: left;
+  *zoom: 1;
+  *display: inline;
+}
+.calls .benefits div p {
+  line-height: 17px;
+}
+.calls .benefits div b {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  color: #1c232e;
+  margin: 0px 0px 18px 0px;
+  line-height: 20px;
+}
+.calls .three-types {
+  margin-top: 22px;
+  padding: 0px 30px;
+  text-align: center;
+  border-bottom: 3px solid #96a7b3;
+}
+.calls .three-types h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #313131;
+  margin: 18px 0px 28px 0px;
+}
+.calls .three-types .forward-container {
+  height: 102px;
+  overflow: hidden;
+}
+.calls .three-types .forward {
+  margin: 5px 10px 5px 10px;
+  float: left;
+  height: 98px;
+  background-position: top;
+  background-repeat: no-repeat;
+  font-size: 13px;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+}
+.calls .three-types .forward1 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/forward1.png);
+  width: 298px;
+}
+.calls .three-types .forward2 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/forward2.png);
+  width: 288px;
+}
+.calls .three-types .forward3 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/forward3.png);
+  width: 276px;
+  margin-right: 0px;
+}
+.calls .three-types .forward1.active {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/forward1-active.png);
+  background-position: 4px 4px;
+  color: #fff;
+}
+.calls .three-types .forward2.active {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/forward2-active.png);
+  background-position: 4px 4px;
+  color: #fff;
+}
+.calls .three-types .forward3.active {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/forward3-active.png);
+  background-position: 4px 4px;
+  color: #fff;
+}
+.calls .three-types .forward p {
+  margin: 20px 10px 5px 85px;
+  line-height: 17px;
+}
+.calls .three-types .forward1 p {
+  margin-top: 25px;
+}
+.calls .three-types .steps-slider-wrapper {
+  width: 918px;
+  overflow: hidden;
+  height: 355px;
+  margin-bottom: 30px;
+}
+.calls .three-types .steps-container {
+  width: 2940px;
+}
+.calls .three-types .steps {
+  margin: 30px 10px 0px 10px;
+  height: 355px;
+  background-repeat: no-repeat;
+  float: left;
+}
+.calls .three-types .steps1 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/steps1.png);
+}
+.calls .three-types .steps2 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/steps2.png);
+  
+}
+.calls .three-types .steps3 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/steps3.png);
+  
+}
+.calls .three-types .steps .step {
+  float: left;
+  width: 230px;
+  margin: 170px 25px 42px 45px;
+  font-weight: bold;
+}
+.calls .three-types .steps .step p {
+  font-weight: bold;
+  font-size: 12px;
+}
+.calls .three-types .steps .step3 { 
+  margin-left: 43px;
+}
+.calls .three-types .steps .notify {
+  width: 835px;
+  padding-left: 50px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/calls/notify.png) no-repeat scroll 18px 4px;
+  color: #4c585f;
+  clear: both;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: left;
+}
+.calls .three-types .arrow {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/arrow-grey.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 14px;
+  margin-bottom: -4px;
+  clear: both;
+}
+.calls .try-for-free {
+  min-height: 90px;
+  padding: 30px 0px 20px;
+  text-align: center;
+  background: rgb(186,198,212); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(186,198,212,1) 0%, rgba(213,217,221,1) 60%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(186,198,212,1)), color-stop(60%,rgba(213,217,221,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(186,198,212,1) 0%,rgba(213,217,221,1) 60%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(186,198,212,1) 0%,rgba(213,217,221,1) 60%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(186,198,212,1) 0%,rgba(213,217,221,1) 60%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(186,198,212,1) 0%,rgba(213,217,221,1) 60%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bac6d4', endColorstr='#d5d9dd',GradientType=0 ); /* IE6-9 */
+}
+.calls .try-for-free a.button {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/button.png) no-repeat scroll center top;
+  width: 365px;
+  height: 73px;
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  text-align: center;
+  color: whiteSmoke;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 63px;
+  text-shadow: 0px -1px 0px #213B0A;
+  text-decoration: none;
+  margin: 0px 0px -10px 0px;
+}
+.calls .try-for-free a.button:hover {
+  color: #fff;
+}
+.calls .try-for-free p {
+  padding-top: 20px;
+}
+.calls .try-for-free .forward-conditions1 p {
+  margin-top: 15px; padding-top: 0px;
+}
+.calls .try-for-free .forward-conditions2 p {
+  margin-top: 15px; padding-top: 0px;
+}
+.calls .try-for-free .forward-conditions2 p {
+  margin-top: 15px; padding-top: 0px;
+}
+.calls .rewiews-carusel {
+  width: 625px;
+  margin: 0 auto;
+}
+.calls .rewiews-carusel div.comment {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/comment.png) no-repeat;
+  width: 448px;
+  height: 98px;
+  display: inline-block;
+  padding: 10px 10px 10px 30px;
+  font-size: 16px;
+  margin-left: 10px;
+  color: #000;
+  *display: inline;
+  *zoom: 1;
+}
+.calls .rewiews-carusel img {
+  display: inline-block;
+  vertical-align: top;
+}
+.calls .rewiews-carusel .post {
+  font-size: 14px;
+  color: #000;
+  padding: 10px 0 0 155px;
+  width: 460px;
+}
+.calls .rewiews-carusel .post  b {
+  font-weight: bold;
+}
+.calls .rewiews-carusel li {
+  padding: 0px;
+  width: 625px;
+}
+.calls .carusel-calls {
+  padding: 40px 0px;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #ccc;
+  position: relative;
+}
+.calls .reviews-left-button {
+  background: url("images/homepage/carousel-btn.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 46px;
+    width: 46px;
+  position: absolute;
+  top: 70px;
+  left: 50px;
+}
+.calls .reviews-left-button:hover {
+  background-position: 0px -46px;
+}
+.calls .reviews-right-button {
+  background: url("images/homepage/carousel-btn.png") no-repeat scroll 100% 0px transparent;
+    cursor: pointer;
+    height: 46px;
+    width: 46px;
+  position: absolute;
+  top: 70px;
+  right: 50px;
+}
+.calls .reviews-right-button:hover {
+  background-position: 100% -46px;
+}
+.calls .count {
+  text-align: center;
+  margin: auto;
+  margin: 0px 180px 30px;
+}
+.calls .count h2 {
+  color: #343d4b;
+  font-weight: bold;
+  margin: 15px 0px 25px 0px;
+}
+.calls .count .forward-container {
+  width: 337px;
+  height: 307px;
+  float: left;
+}
+.calls .count .count-forward {
+  height: 92px;
+  width: 330px;
+  margin-bottom: 12px;
+  text-align: left;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.calls .count .count-forward p {
+  padding: 26px 15px 12px 70px;
+  font-size: 13px;
+  line-height: 19px;
+}
+.calls .count .count-forward2 p {
+  padding-top: 17px;
+}
+.calls .count .count-forward.active p {
+  color: #fff;
+  font-weight: bold;
+}
+.calls .count .count-forward1 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/count-forward1.png);
+}
+.calls .count .count-forward2 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/count-forward2.png);
+}
+.calls .count .count-forward3 {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/calls/count-forward3.png);
+}
+.calls .count .count-forward1.active {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/calls/count-forward1-active.png) no-repeat 4px 4px;
+}
+.calls .count .count-forward2.active {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/calls/count-forward2-active.png) no-repeat 4px 4px;
+}
+.calls .count .count-forward3.active {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/calls/count-forward3-active.png) no-repeat 4px 4px;
+}
+.calls .count .counter {
+  display: none;
+  float: left;
+  height: 277px;
+  width: 281px;
+  text-align: center;
+  background-color: #ededed;
+  border-radius: 4px;
+  margin-top: 2px;  
+  padding-top: 20px;/*70px*/
+  line-height: 10px;
+  box-shadow: 5px 5px 12px #bbb inset, -5px -5px 12px #bbb inset;
+}
+.calls .count .counter.counter1 {
+  background-color: #2d91d1;
+  box-shadow: 5px 5px 12px #2d7eb1 inset, -5px -5px 12px #2d7eb1 inset;
+}
+.calls .count .counter.counter1 p {
+  margin: 20px 20px;
+  font-size: 15px;
+  color: #fff;
+}
+.calls .count .counter.counter1 strong{
+  font-size: 20px;
+  color: #fff;
+}
+.calls .count .counter.counter1 a{
+  margin-top: 30px;
+  font-size: 14px;
+  color: #fff;
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+.calls .count .counter.counter2 {
+  background-color: #d46b32;
+  box-shadow: 5px 5px 12px #a85020 inset, -5px -5px 12px #a85020 inset;
+}
+.calls .count .counter.counter3 {
+  background-color: #5c9210;
+  box-shadow: 5px 5px 12px #4e7517 inset, -5px -5px 12px #4e7517 inset;
+}
+.calls .count .counter p {
+  clear: both;
+  color: #f3f3f3;
+}
+.calls .count .counter p:first {
+  color: #fff;
+  text-shadow: 0px 1px 2px #333;
+}
+.calls .count .counter p.details {
+  margin: 15px;
+  font-size: 12px;
+}
+.calls .count .counter.counter2 p.details {
+  margin: 25px 15px 0px;
+  font-size: 12px;
+}
+.calls .count .counter.counter3 p.details {
+  margin: 35px 15px 0px;
+  font-size: 12px;
+}
+.calls .count .counter span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 28px;
+  text-shadow: 0px 1px 2px #777;
+}
+.calls .counter .minus {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/control-plusminus-minus-bg.png) left top no-repeat;
+  width: 36px;
+  height: 37px;
+  margin: 19px 0px 25px 78px;
+  cursor: pointer;
+  float: left;
+}
+.calls .counter .number {
+  margin: 19px 0px 25px 0px;
+  background: #fff;
+  border: 1px solid #999;
+  border-width: 1px 0px 1px 0px;
+  font-size: 22px;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  width: 51px;
+  height: 35px;
+  float: left;
+}
+.calls .counter .number p {
+  color: #655;
+}
+.calls .counter .plus {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/tarif/control-plusminus-plus-bg.png) left top no-repeat;
+  width: 36px;
+  height: 37px;
+  margin: 19px 50px 25px 0px;
+  cursor: pointer;
+  float: left;
+}
+.calls .counter-note {
+  display: none;
+  margin: 10px 300px 30px;
+  font-size: 12px;
+  color: #555;
+}
+.calls .possibilities {
+  padding: 15px 0px 35px;
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: #ddd;
+}
+.calls .possibilities h2 {
+  color: #343434;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.calls .possibilities .column {
+   width: 420px;
+   height: 260px;
+   float: left;
+   margin: 0px 0px 0px 50px;
+}
+.calls .possibilities .column li {
+   padding-left: 60px;
+   font-size: 12px;
+   margin: 10px 0px;
+   min-height: 32px;
+   line-height: 14px;
+}
+.calls .possibilities .column .icon1 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-2.png) no-repeat 3px 9px;
+  padding-top: 15px;
+  margin: 4px 0px;
+}
+.calls .possibilities .column .icon2 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-4.png) no-repeat left center;
+  padding-top: 15px;
+  margin: 4px 0px;
+}
+.calls .possibilities .column .icon3 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-6.png) no-repeat 5px center;
+  padding-top: 15px;
+  margin: 4px 0px;
+}
+.calls .possibilities .column .icon4 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-8.png) no-repeat left center;
+  margin: 15px 0px;
+}
+.calls .possibilities .column .icon5 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-0.png) no-repeat left center;
+  margin: 19px 0px;
+}
+.calls .possibilities .column .icon6 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-3.png) no-repeat left 0px;
+  margin: 13px 0px;
+}
+.calls .possibilities .column .icon7 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-5.png) no-repeat 0px center;
+  margin: 18px 0px;
+}
+.calls .possibilities .column .icon8 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-7.png) no-repeat -5px center;
+  margin: 15px 0px;
+}
+.calls .possibilities .column .icon9 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-9.png) no-repeat -5px center;
+  padding-top: 15px;
+  margin: 0px;
+}
+.calls .possibilities .column .icon0 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/ico-11.png) no-repeat left center;
+  padding-top: 15px;
+  margin: 2px 0px;
+}
+.calls .try-for-free.default {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/calls/try-for-free-bg.png) no-repeat center top; 
+  padding: 40px 0px;
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: #ddd;
+}
+.calls .footnotes {
+  margin: 0px 100px;
+  padding: 20px 0px 50px;
+  font-size: 12px;
+  color: #505050;
+  text-align: center;
+}
+.calls .try-for-free .line {
+  padding: 0px 40px 0px 40px;
+  float: left;
+}
+.calls .try-for-free .line {
+  padding: 0px 40px 0px 40px;
+  float: left;
+}
+.calls .try-for-free .line div {
+  background: #B7B7B7;
+  width: 1px;
+  height: 100px;
+}
+.calls .try-for-free a.button {
+  float: left;
+  margin-left: 85px!important;
+  margin-top: 10px!important;
+}
+.calls .try-for-free a.private {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/free-calls/private.png) no-repeat;
+  display: block;
+  float: left;
+  width: 324px;
+  height: 42px;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: left;
+  padding-top: 14px!important;
+  margin-top: 10px!important;
+}
+.calls .try-for-free a.private b {
+  color: #6F490E;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px;
+  text-shadow: 0 1px white;
+}
+.calls .try-for-free a.private:hover b {
+  text-shadow: 0px 1px #fff, 0px 0px 6px #fff;
+}
+.calls .try-for-free a.private span {
+  font-size: 13px;
+  color: #472D04;
+  text-shadow: 0px 1px white;
+}
+.calls .try-for-free a.private:hover span {
+  text-shadow: 0px 1px #fff, 0px 0px 6px #fff;
+}
+.november {
+  width: 740px;
+}
+.november .head {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/november-header-bg.jpg) scroll no-repeat 0 0 #fff;
+  height: 485px;
+  width: 740px;
+  margin: -8px 0px 0px -10px;
+  border-radius: 0px 11px 0px 0px;
+}
+.november .head h1 {
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding-top: 35px;
+  text-shadow: 0px 1px 8px #444;
+}
+.november .head h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: normal;
+  padding-top: 0px;
+}
+.november .linked-in {
+  margin-left: 500px;
+  margin-top: 10px;
+}
+.november .november-share {
+  margin: -26px 60px 0px 0px;
+  height: 30px;
+  text-align: right;
+  padding-bottom: 10px;
+  clear: both;
+}
+.november .yashare-auto-init {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  margin-bottom: 6px;
+}
+.november .develop-block {
+  padding-left: 20px;
+  height: 250px;
+  position: relative;
+}
+.november .develop-block .develop-photo{
+  margin-top: 20px;
+  float: left;
+  width: 700px;
+}
+.november .develop-block .develop-name{
+  float: left;
+  margin-left: 100px;
+}
+.november .develop-block .develop-photo img {
+  margin: 0px 20px 25px 0px;
+  float: left;
+}
+.november .develop-block .comment {
+  padding: 10px 25px 0px 20px ;
+  font-size: 14px;
+  color: #333;
+}
+.november .develop-block .major {
+  position: absolute;
+  height: 50px;
+  width: 262px;
+  left: 230px;
+  bottom: -26px;
+  text-align: center;
+  padding-top: 14px;
+  font-weight: bold;
+  background: url('images/updates/major.png') scroll no-repeat center center;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px #444;
+}
+.november .update-block {
+  border-top: 1px solid #ccc;
+  width: 740px;
+  margin-left: -10px;
+}
+.november .update-block h3 {
+  margin: 44px 0px 9px 0px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.november .update-block p {
+  font-size: 14px;
+  color: #000;
+  margin: 9px 40px;
+}
+.november .update-block span.widget {
+  margin: 27px 0px 15px 80px;
+  display: inline-block;
+  color: #555;
+  *zoom: 1;
+  *display: inline;
+}
+.november .update-block span.window {
+  margin: 0px 0px 15px 90px;
+  display: inline-block;
+  color: #555;
+  *zoom: 1;
+  *display: inline;
+}
+.november .update-block span.billing-point {
+  color: #004184;
+}
+.november .update-block.first {
+  border-top: 0px;
+}
+.november .update-block.first h3 {
+  margin-top: 49px;
+}
+.november .update-block.first p.left {
+  margin: 0px 0px 0px 40px!important;
+}
+.november .update-block.first p.right {
+  margin: 0px 32px 0px 0px!important;
+}
+.november .update-block.mobile {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/november6.png) scroll no-repeat 490px 65px;
+  height: 373px;
+}
+.november .update-block.mobile p {
+  width: 400px;
+}
+.november .update-block.mobile p img {
+  margin-top: -160px 0px 0px 490px!important;
+}
+.november .update-block.keyboard {
+  height: 414px;
+}
+.november .update-block.keyboard p {
+  width: 330px;
+  margin-bottom: 0px;
+  display: inline-block;
+  float: left;
+  *zoom: 1;
+  *display: inline;
+}
+.november .update-block.keyboard p img {
+  margin: 0px!important;
+}
+.november .update-block.sound {
+  padding-bottom: 30px;
+  margin-bottom: -23px;
+  min-height: 170px;
+  border-radius: 0px 0px 10px 0px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/sound.png) scroll no-repeat 545px 64px;
+}
+.november .update-block.sound p.left {
+  width: 450px;
+  margin: 0px 20px 10px 40px!important;
+}
+.november .update-block.keyboard .keyboard-img-block {
+  float: right;
+}
+.november .update-block.grey {
+  width: 740px;
+  margin-left: -10px;
+  background-color: #E2E8EF;
+}
+.november .update-block.grey h1 {
+  color: #655;
+  font-size: 31px;
+  font-weight: bold;
+  margin: 25px 0px 10px 0px;
+}
+.november .update-block.grey h2 {
+  text-align: center;
+  color: #444;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px 0px 10px 0px;
+}
+.november .update-block.grey h3 {
+  color: #333;
+  margin: 44px 0px 9px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.november .update-block p.bottom-img-fix {
+  line-height: 1px;
+}
+.november .update-block p.bottom-img-fix img{
+  margin-left: 35px;
+}
+.november .update-block ul.column {
+  float: right;
+  width: 310px;
+  font-size: 13px;
+  margin: 0px 20px 0px 40px;
+  
+}
+.november .update-block ul.column li {
+  padding-left: 40px;
+  min-height: 50px;
+  padding-top: 3px;
+}
+.november .update-block ul.column .icon1 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/november-icon1.png) scroll no-repeat left center;
+  padding-top: 30px;
+}
+.november .update-block ul.column .icon2 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/november-icon2.png) scroll no-repeat left center;
+}
+.november .update-block ul.column .icon3 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/november-icon3.png) scroll no-repeat left 20px;
+  padding-top: 23px;
+}
+.november .update-block ul.column .icon4 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/november-icon4.png) scroll no-repeat left center;
+  padding-top: 30px;
+}
+.november .update-block ul.column .icon5 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/november-icon5.png) scroll no-repeat left 13px;
+}
+.november .update-block ul.column .icon6 {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/november-icon6.png) scroll no-repeat left center;
+  margin-top: 10px;
+}
+
+
+/* ÐÐ¾Ð²Ð¾Ð³Ð¾Ð´Ð½ÐµÐµ Ð¾Ñ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ðµ */
+.snow-globe {
+  position: relative;
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  margin-left: 10px;
+  top: -20px;
+}
+.snow-globe img {
+  display: block;
+}
+.snow-globe #globe {
+  position: relative;
+  z-index: 1;
+}
+.snow-globe #snow {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display:none;
+}
+.happy-new-year {
+  width: 991px;
+  height: 62px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/layout/snow-menu.png) left top no-repeat;
+  position: absolute;
+  top: 87px;
+  left: -6px;
+  z-index: 200;
+}
+.happy-new-year .yollopukki {
+  width: 76px;
+  height: 48px;
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/layout/yollopukki.png);
+  background-position: left top;
+  background-repeat: repeat-x;
+  position: absolute;
+  top: -2px;
+  left: 860px;
+}
+.new-year-banner {
+  float: left;
+  width: 365px;
+  height: 220px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/new-year/new-year-banner.png) no-repeat 0 0;
+}
+.leadgen {
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+  top: -8px;
+}
+.leadgen .head {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/partner/header-bg.png) repeat 0 -4px;
+  text-align: center;
+  padding: 20px 0px;
+}
+.leadgen .head h1 {
+  font-size: 34px;
+  color: #000;
+}
+.leadgen .head p {
+  font-size: 24px;
+  margin: 20px 60px 30px 60px;
+  line-height: 29px;
+}
+.leadgen .appeal-block {
+  padding: 55px 0px 30px 0px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/white-blue-bg.png) repeat 0 0;
+}
+.leadgen .appeal-block img {
+  float: left;
+  margin-left: 40px;
+}
+.leadgen .appeal-block .comment {
+  padding-top: 10px; 
+  width: 671px;
+  height: 175px;
+  margin-left: 237px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/baloon.png) scroll no-repeat 0 0;
+}
+.leadgen .appeal-block .comment p {
+  font-size: 15px;
+  margin: 10px 15px 15px 57px;
+  
+}
+.leadgen .appeal-block .appeal-info {
+  text-align: left;
+  margin: 10px 0px 10px 293px;
+  font-size: 14px;
+}
+.leadgen .overview {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/smart-bg.png) scroll repeat 0 0;
+}
+.leadgen .overview h3 {
+  margin-top: 165px;
+  text-align: center;
+  font-size: 15px;
+}
+.leadgen .overview p {
+  font-size: 12px;
+  margin-bottom: 35px;
+}
+.leadgen .overview-item {
+  width: 280px;
+  float: left;
+  margin-left: 35px;
+}
+.leadgen .overview-item.maximum {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-basket.png) scroll no-repeat center 60px;
+}
+.leadgen .overview-item.full-time {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-open.png) scroll no-repeat center 10px;
+}
+.leadgen .overview-item.loyality {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-increase.png) scroll no-repeat center 50px;
+}
+.leadgen .possibilities {
+  padding: 0px 0px 50px 30px;
+}
+.leadgen .possibilities h2 {
+  margin: 30px 0px 30px 0px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+}
+.leadgen .possibilities h3 {
+  margin-left: 145px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.leadgen .possibilities p {
+  margin: 0px 0px 30px 145px;
+  font-size: 12px;
+}
+.leadgen .possibilities-item {
+  margin-left: 30px;
+  float: left;
+  width: 397px;
+}
+.leadgen .possibilities-item.contacts-picker {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-contact.png) scroll no-repeat 10px 25px;
+}
+.leadgen .possibilities-item.intellectual {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-lamp.png) scroll no-repeat 34px 28px;
+}
+.leadgen .possibilities-item.color {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-color.png) scroll no-repeat 10px 28px;
+}
+.leadgen .possibilities-item.connect {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-letter.png) scroll no-repeat -17px 28px;
+}
+.leadgen .possibilities-item.stock {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-attract.png) scroll no-repeat 12px 28px;
+  clear: both;
+}
+.leadgen .possibilities-item.interview {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/icon-interview.png) scroll no-repeat 35px 28px;
+  margin-left: 30px;
+}
+.leadgen .try-for-free {
+  padding: 40px 80px;
+  height: 60px;
+}
+.leadgen .try-for-free.grey {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/stripy-bg.png) scroll repeat 10px 10px;
+}
+.leadgen .leadgen-how-it-works div {
+  height: 220px;
+}
+.leadgen .leadgen-how-it-works h2 {
+  margin: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+.leadgen .leadgen-how-it-works p {
+  width: 420px;
+  margin-left: 480px;
+  font-size: 14px;
+  line-height: 2em;
+}
+.leadgen .leadgen-how-it-works .block1 {
+  margin-bottom: 10px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/screen2.png) scroll no-repeat 130px 0;
+}
+.leadgen .leadgen-how-it-works .block2 {
+  margin-bottom: 40px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/screen1.png) scroll no-repeat 130px 0;
+}
+.leadgen .setup {
+  text-align: center;
+}
+.leadgen .setup h2 {
+  margin: 20px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.leadgen .setup p {
+  margin: 0px 0px 15px 90px;
+  width: 800px;
+  font-size: 14px;
+  text-align: left;
+}
+.leadgen .setup img {
+  margin: 40px;
+}
+.leadgen a img {
+  width: 680px;
+  display: block;
+  margin: 35px auto;
+}
+.leadgen .final {
+  padding: 60px 0px 45px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/try-for-free-bg.png) repeat 0 0;
+  margin-bottom: -8px;
+}
+.leadgen .final h2 {
+  font-family: Trebuchet MS, Arial;
+  font-weight: bold;
+  color: #5f9722;
+  font-size: 28px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #393939;
+  margin-bottom: 30px;  
+}
+.leadgen .final p {
+  margin: 0px 110px 15px 135px;
+  width: 770px;
+  font-size: 15px;
+}
+.leadgen .button.lime {
+  height: 65px;
+  width: 400px;
+  padding-top: 7px;
+  font-size: 18px;
+  line-height: 17px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/leadgen/button-lk.png) scroll no-repeat 0 0;
+  margin: 1px 0px 0px 50px;
+  text-shadow: 1px 1px 1px #444;
+}
+.leadgen .button.lime span {
+  font-size: 12px;
+  text-shadow: 0px 0px 0px #000;
+  color: #000;
+  font-weight: normal;
+}
+.leadgen-banner {
+  display: block;
+  width: 363px;
+  height: 241px;
+  background: url(http://www.livetex.ru/wp-content/themes/livetex/images/homepage/banner/leadgen.png) scroll no-repeat 0 0;
+}
+
+/* Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¡Ð¿Ð¾ÑÐ¾Ð±Ñ‹ ÐžÐ¿Ð»Ð°Ñ‚Ñ‹ */
+.pay ul h3 {
+  font-size: 21px;
+}
+.pay ul {
+  list-style-type: disc;
+  font-size: 14px;
+}
+.pay ul li a {
+  display: block;
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+.pay ul li a:visited {
+  color: #004184;
+}
+.pay  img {
+  margin: 25px;
+  height: 80px;
+}
+
+/* ÐŸÑ€Ð¸Ð¼ÐµÑ€Ñ‹ Ð²Ð¾Ð²Ð»ÐµÑ‡ÐµÐ½Ð¸Ñ (Ñ€Ð°Ð·Ð´ÐµÐ» Ð¿Ð¾Ð¼Ð¾Ñ‰Ð¸) */
+.help-page-content .involving-menu {
+  list-style: none!important;
+  margin: 30px 0px 20px 0px; 
+}
+.involving-menu li {
+  height: 30px; 
+  line-height: 30px;
+  padding: 0px 7px 0px;  
+  cursor: pointer;
+  line-height: 16px;
+}
+.involving-menu li a {
+  display: block;
+  height: 17px;
+  padding-top: 6px;
+  color: #2893c4;
+  font-weight: bold;
+  border-bottom: 2px dotted #2893c4;
+  font-size: 16px;
+}
+.involving-menu li.active {
+  background-color: #2893c4;
+  border-radius: 8px;
+}
+.involving-menu li.active a {
+  color: #fff;
+  border-bottom: none;
+} 
+.help-page-content ul.legend {
+  height: 50px;
+  list-style: none!important;
+  margin: 30px 0px 15px 0px; 
+}
+.help-page-content ul.legend  li {
+  float: left;
+  font-weight: bold;
+  color: #000;
+  padding-left: 52px;
+  margin-right: 35px;
+  line-height: 16px;
+}
+.legend .yellow { background: url(http://livetex.ru/wp-content/themes/livetex/images/help/involve/yellow-rect.png) no-repeat left center; }
+.legend .green { background: url(http://livetex.ru/wp-content/themes/livetex/images/help/involve/green-rect.png) no-repeat left center; }
+.legend .red {
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/help/involve/red-rect.png) no-repeat left center;
+  line-height: 35px!important;
+  height: 35px;
+  margin-right: 0;
+}
+/* Ð¨Ð¸Ñ€Ð¾ÐºÐ°Ñ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° */
+.page_wide {
+  background-image: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/.png);
+  background-position: left top;
+  background-repeat: repeat-y;
+  background-color: #fff;
+  width: 1075px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+/* Ñ€ÐµÐ»Ð¸Ð· 2.3 */
+.may {
+  width: 740px;
+}
+.may .header {
+  width: 740px;
+  margin: -8px 0px 0px -10px;
+  border-radius: 0px 6px 0px 0px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/release_2_3/header.png) repeat-x 0 0;
+  color: #fff;
+  text-align: center;
+  height: 220px;
+}
+.may .header h1 {
+  color: #f4f9ff;
+  font-size: 46px;
+  text-shadow: 0px 1px 0px #000;
+  margin-bottom: 10px;
+  padding-top: 35px;
+}
+.may .header p {
+  color: #f4f9ff;
+  font-size: 24px;
+  text-shadow: 0px 1px 0px #000;
+}
+.may .subheader {
+  background-color: #17406e;
+  margin-left: -10px;
+  width: 740px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/updates/release_2_3/subheader.jpg) no-repeat center top;
+  padding: 130px 0px 20px;
+  
+}
+.may .subheader .preamble {
+  width: 600px;
+  padding: 60px 40px 20px;
+  background-color: #fff;
+  border-radius: 7px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+.may .subheader .photo {
+  position: absolute;
+  left: 50%;
+  top: -80px;
+  margin-left: -71px;
+}
+.may .subheader .preamble p {
+  margin-top: 1em;
+  text-align: left;
+  margin-bottom: 25px;
+}
+.may .subheader .signature {
+  color: #274d8c;
+  text-align: center;
+}
+.may .subheader .signature b {
+  font-weight: bold;
+}
+.may table {
+  margin: 0px;
+}
+.may tr, .may td {
+  padding: 0px;
+  line-height: 1em;
+}
+.may .bottom-blue {
+  background: #eefbff;
+  height: 20px;
+  width: 740px;
+  margin: 0 0 -23px -10px;
+  border-radius: 0px 0px 6px 0px;
+}
+.may .box_shadow {
+  -webkit-box-shadow: 0px 0px 25px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    0px 0px 25px rgba(50, 50, 50, 0.5);
+  box-shadow:         0px 0px 25px rgba(50, 50, 50, 0.5);
+}
+.may .margin_bottom { margin-bottom: 25px; }
+.may .share-links { margin-right: 35px; }
+.may .important_icon {  margin: 0px 5px -3px -28px; }
+
+/* ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° /research */
+.oprosnik{margin: 0 0 0 30px; padding-top: 20px;} 
+
+/* ÑÐ°Ð¹Ð´Ð±Ð°Ñ€ - Ð±Ð»Ð¾Ðº Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ð¹ */
+.sidebar-updates-block{
+  width: 282px;
+  margin: 0;
+  padding: 28px 0px 0px;
+  text-align: center;
+}
+.sidebar-updates-block h3{
+  font-size: 36px;
+  color: #ffffff;
+  margin: 0 10px 0 10px;
+  text-align: center;
+}
+.sidebar-updates-block h3 span{
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 1.4em;
+  color: #fff;
+  display: block;
+  margin-top: 15px;
+}
+.sidebar-updates-block a{
+  width: 180px;
+  margin: 14px auto;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px;
+  background: #4096ee;
+  border-top: solid 1px #64b9f3;
+  border-radius: 2px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* ÑÐ°Ð¹Ð´Ð±Ð°Ñ€ - Ð±Ð»Ð¾Ðº Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð° ÐºÐ¾ Ð²ÑÐµÐ¼ Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ‚Ð°Ð¼ */
+.sidebar-register-block{
+  width: 282px;
+  margin: 0;
+  padding: 40px 0px 10px 0px;
+  text-align: center;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing/separator.png) no-repeat;
+}
+.sidebar-register-block .pattern{
+  width: 240px;
+  height: 210px;
+  margin: 0 auto 30px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing/pattern.png) no-repeat;
+}
+.sidebar-register-block h3{
+  padding-top: 10px;
+  margin: 0 auto;
+  font-size: 20px;
+  color: #000000;
+  width: 230px;
+  text-align: center;
+  line-height: 1.0em;
+}
+.sidebar-register-block input{
+  width: 210px;
+  height: 45px;
+  margin: 10px 0 15px;
+  font-size: 18px;
+  color: #858585;
+  text-align: center;
+}
+/* ÑÐ°Ð¹Ð´Ð±Ð°Ñ€ - Ð±Ð»Ð¾Ðº Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´Ð° Ð½Ð° Ð±Ð»Ð¾Ð³ */
+.sidebar-blog-block {
+  width: 282px;
+  margin: 0;
+  padding: 30px 0 30px;
+  text-align: center;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing/separator.png) no-repeat;
+}
+
+/*Ð‘Ð°Ð½Ð½ÐµÑ€*/
+.homepage .home-banner{
+  width: 849px;
+  height: 225px;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/banner/bg.png) no-repeat;
+  position: relative;
+  margin: 0 auto 40px;
+}
+.homepage .home-banner h3{
+  padding: 17px 0 0 305px;
+  font-family: 'pf_dindisplay_pro', Arial, sans-serif;
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 41px;
+  margin: 0;
+}
+.homepage .home-banner p{
+  padding: 30px 0 0 275px;
+  font-size: 12px;
+  color: #4e4d4d;
+}
+.homepage .home-banner p span{
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+}
+.homepage .home-banner a{
+  width: 197px;
+  height: 32px;
+  display: block;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/homepage/banner/btn-seminar.png) no-repeat;
+  position: absolute;
+  top: 131px;
+  right: 17px;
+  color: #fff;
+  padding-top: 12px;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.9;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.9);
+}
+.homepage .home-banner a:hover{
+  opacity: 1;
+}
+
+/*
+* Reviews Page
+*/
+.reviews-page {
+  width: 740px;
+  margin-left: -20px;
+}
+.reviews-page h1 {
+  color: #4d739e;
+  font-size: 49px;
+  padding-bottom: 0;
+  margin-left: 25px;
+}
+.reviews-page .review {
+  padding: 22px 0px 55px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.reviews-page .review .left_col{
+  width: 245px;
+  float: left;
+}
+.reviews-page .review .right_col{
+  width: 465px;
+  float: left;
+  margin-left: 30px;
+}
+.reviews-page .review .right_col .speech{
+  margin-top: 17px;
+}
+.reviews-page .review img.logo{
+  float: left;
+  margin: 0px 39px 0px 44px;
+}
+.reviews-page .review h2 {
+  color: #000;
+  font-size: 38px;
+  font-weight: bold;
+  padding-bottom: 0;
+}
+
+.reviews-page .review a {
+  color: #5488ce;
+  font-size: 13px;
+}
+.reviews-page .review a.video-link {
+  display: block;
+  position: relative;
+  margin: 4px 30px 0px 35px;
+  clear: both;
+  float: left;
+}
+.reviews-page .review img{
+  width: 208px;
+}
+.reviews-page .review img.review-image {
+  display: block;
+  position: relative;
+  margin: 4px 30px 0px 35px;
+  clear: both;
+  float: left;
+}
+.reviews-page .review a.play {
+  display: block;
+  height: 120px;
+  float: left;
+  width: 205px;
+  margin-left: -235px;
+    background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/play.png) no-repeat center center;
+  background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/play-ie.gif) no-repeat center center \0/;
+  *background: url(http://livetex.ru/wp-content/themes/livetex/images/landing-chat/play-ie.gif) no-repeat center center;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  position: relative;
+  z-index: 100;
+}
+.reviews-page .review p {
+  float: left;
+  width: 440px;
+}
+.reviews-page .review p + p {
+  clear: both;
+  text-align: right;
+  width: auto;
+  float: right;
+  margin: 5px 98px 0px 0px
+}
+.reviews-page .review p.job {
+  font-size: 12px;
+  color: #656565;
+  float: right;
+}
+
+
+
+/* 
+* Ð¡Ñ‚Ð¸Ð»Ð¸ Shadowbox 
+*/
+#sb-title-inner,#sb-info-inner,#sb-loading-inner,div.sb-message{font-family:"HelveticaNeue-Light","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:200;color:#fff;}
+#sb-container{position:fixed;margin:0;padding:0;top:0;left:0;z-index:999999;text-align:left;visibility:hidden;display:none;}
+#sb-overlay{position:relative;height:100%;width:100%;}
+#sb-wrapper{position:absolute;visibility:hidden;width:100px;}
+#sb-wrapper-inner{position:relative;border:1px solid #303030;overflow:hidden;height:100px;}
+#sb-body{position:relative;height:100%;}
+#sb-body-inner{position:absolute;height:100%;width:100%;}
+#sb-player.html{height:100%;overflow:auto;}
+#sb-body img{border:none;}
+#sb-loading{position:relative;height:100%;}
+#sb-loading-inner{position:absolute;font-size:14px;line-height:24px;height:24px;top:50%;margin-top:-12px;width:100%;text-align:center;}
+#sb-loading-inner span{background:no-repeat;padding-left:34px;display:inline-block;}
+#sb-body,#sb-loading{background-color:#060606;}
+#sb-title,#sb-info{position:relative;margin:0;padding:0;overflow:hidden;}
+#sb-title,#sb-title-inner{height:26px;line-height:26px; display: none}
+#sb-title-inner{font-size:16px;}
+#sb-info,#sb-info-inner{height:20px;line-height:20px;}
+#sb-info-inner{font-size:12px;}
+#sb-nav{float:right;height:16px;padding:2px 0;width:45%;}
+#sb-nav a{display:block;float:right;height:16px;width:16px;margin-left:3px;cursor:pointer;background-repeat:no-repeat;}
+#sb-nav-close{display:block;float:right;height:16px;width:16px;margin-left:3px;cursor:pointer;background-repeat:no-repeat;margin-top: -16px;}
+#sb-counter{float:left;width:45%;}
+#sb-counter a{padding:0 4px 0 0;text-decoration:none;cursor:pointer;color:#fff;}
+#sb-counter a.sb-counter-current{text-decoration:underline;}
+div.sb-message{font-size:12px;padding:10px;text-align:center;}
+div.sb-message a:link,div.sb-message a:visited{color:#fff;text-decoration:underline;}

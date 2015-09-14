@@ -1,0 +1,173 @@
+/* Lead Autoinvite Check */
+  .lt-lead-invite .lt-content .lt-cancel.lt-ask-form {
+    font-size: 12px !important;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    width: auto;
+    margin: 0;
+  }
+  .lt-lead-invite .lt-content .lt-back-link {
+    margin: 22px 0 0 53px;
+    padding: 0;
+    display: block;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    text-decoration: underline;
+    color: #fff;
+    width: 91px;
+    cursor: pointer;
+    float: left;
+  }
+  .lt-lead-invite .lt-content .lt-msg-form .lt-back-link {
+    margin-top: 12px; 
+  }
+  .lt-lead-invite .lt-content .lt-send {
+    margin: 4px 15px 0 0;   
+    float: right;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #224b00;
+    text-shadow: 0 1px rgba(255,255,255,.49);
+    width: 130px;
+    height: 31px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #72b127;
+    -webkit-box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    -moz-box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    border: solid 1px #26740b;
+    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: -o-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: linear-gradient(to top, rgba(0,0,0,.26), rgba(255,255,255,.26));
+  }
+  .lt-lead-invite .lt-content .btn-call-later {
+    margin-top: 0px;
+    margin-left: 13px;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #694600;
+    text-shadow: 0 1px rgba(255,255,255,.49);
+    width: 140px;
+    height: 31px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #72b127;
+    -webkit-box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    -moz-box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    border: solid 1px #b46600;
+    background-image: -webkit-linear-gradient(bottom, #eb9128, #f9c845);
+    background-image: -moz-linear-gradient(bottom, #eb9128, #f9c845);
+    background-image: -o-linear-gradient(bottom, #eb9128, #f9c845);
+    background-image: linear-gradient(to top, #eb9128, #f9c845);
+  } 
+  .lt-lead-invite .lt-content .btn-start-chat {
+    margin-top: 0px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #224b00;
+    text-shadow: 0 1px rgba(255,255,255,.49);
+    width: 130px;
+    height: 31px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #72b127;
+    -webkit-box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    -moz-box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    border: solid 1px #26740b;
+    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: -o-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: linear-gradient(to top, rgba(0,0,0,.26), rgba(255,255,255,.26));
+  }
+  .lt-lead-invite .lt-content .btn-send-lead {
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #224b00;
+    text-shadow: 0 1px rgba(255,255,255,.49);
+    width: 130px;
+    height: 31px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #72b127;
+    -webkit-box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    -moz-box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    box-shadow: 0 1px 1px rgba(2,2,2,.61), inset 0 1px rgba(255,255,255,.63);
+    border: solid 1px #26740b;
+    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: -o-linear-gradient(bottom, rgba(0,0,0,.26), rgba(255,255,255,.26));
+    background-image: linear-gradient(to top, rgba(0,0,0,.26), rgba(255,255,255,.26));
+  }
+  .lt-lead-invite .lt-content label {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,.46);
+    display: block;
+    padding: 15px 15px 0 15px; 
+  }
+  .lt-lead-invite .lt-content label input {
+    width: 270px;
+    height: 30px;
+    margin: 5px 0;
+    padding: 0 5px;
+    display: inline-block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px rgba(255,255,255,.2), inset 0 1px rgba(96,131,151,.22);
+    -moz-box-shadow: 0 1px rgba(255,255,255,.2), inset 0 1px rgba(96,131,151,.22);
+    box-shadow: 0 1px rgba(255,255,255,.2), inset 0 1px rgba(96,131,151,.22);
+    border: solid 1px rgba(65,127,160,.7);
+  }
+  .lt-lead-invite .lt-content  input.error {
+    border: solid 1px #b22424;
+    background-color: #ffd7d7;
+  }
+  .lt-lead-invite .lt-confirm .lt-invite-message{
+	display: none;
+  }
+  .lt-lead-invite .lt-confirm-block {
+	display: none;
+  }
+  .lt-lead-invite .lt-confirm .lt-confirm-block {
+	display: block;
+    width: 100%;
+    height: 95px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,.46);
+    text-align: center;
+    padding-top: 190px;
+    background-image:url(//livetex.ru/images/invitation/lid_tick.png);
+    background-position:center center;
+    background-repeat:no-repeat;
+    text-align:center;
+    position:relative;
+    z-index: 100;
+  }
