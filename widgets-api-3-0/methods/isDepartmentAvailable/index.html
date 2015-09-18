@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>ConversationAttributeType - Livetex Widgets API 3.0</title>
+	<title>isDepartmentAvailable - Livetex Widgets API 3.0</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -86,79 +86,79 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Methods <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../methods/addEventListener/">addEventListener</a>
+    <a href="../addEventListener/">addEventListener</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/getDepartmentStatus/">getDepartmentStatus</a>
+    <a href="../getDepartmentStatus/">getDepartmentStatus</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/getDepartments/">getDepartments</a>
+    <a href="../getDepartments/">getDepartments</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/hideChatLabel/">hideChatLabel</a>
+    <a href="../hideChatLabel/">hideChatLabel</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">isDepartmentAvailable</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/isDepartmentAvailable/">isDepartmentAvailable</a>
+    <a href="../isDepartmentOnline/">isDepartmentOnline</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/isDepartmentOnline/">isDepartmentOnline</a>
+    <a href="../openWelcomeWindow/">openWelcomeWindow</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/openWelcomeWindow/">openWelcomeWindow</a>
+    <a href="../reinit/">Reinit</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/reinit/">Reinit</a>
+    <a href="../removeEventListener/">removeEventListener</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/removeEventListener/">removeEventListener</a>
+    <a href="../setConversationAttributes/">setConversationAttributes</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/setConversationAttributes/">setConversationAttributes</a>
+    <a href="../setWelcomeDepartments/">setWelcomeDepartments</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../methods/setWelcomeDepartments/">setWelcomeDepartments</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../methods/showChatLabel/">showChatLabel</a>
+    <a href="../showChatLabel/">showChatLabel</a>
 </li>
 
                         
@@ -182,25 +182,25 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enums <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">ConversationAttributeType</a>
+<li >
+    <a href="../../enums/ConversationAttributeType/">ConversationAttributeType</a>
 </li>
 
                         
                             
 <li >
-    <a href="../Event/">Event</a>
+    <a href="../../enums/Event/">Event</a>
 </li>
 
                         
                             
 <li >
-    <a href="../Source/">Source</a>
+    <a href="../../enums/Source/">Source</a>
 </li>
 
                         
@@ -219,12 +219,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../../typedefs/ConversationAttribute/">
+                        <a rel="next" href="../hideChatLabel/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../Event/">
+                        <a rel="prev" href="../isDepartmentOnline/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -240,59 +240,63 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#conversationattributetype">ConversationAttributeType</a></li>
+        <li class="main active"><a href="#isdepartmentavailable">isDepartmentAvailable</a></li>
         
             <li><a href="#_1">Описание</a></li>
+        
+            <li><a href="#_2">Параметры</a></li>
+        
+            <li><a href="#_3">Пример</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="conversationattributetype">ConversationAttributeType</h2>
+<h2 id="isdepartmentavailable">isDepartmentAvailable</h2>
 <h3 id="_1">Описание</h3>
-<p>Типы аттрибутов обращения</p>
+<p>Возвращает флаг доступности отдела.
+ Если в отделе нет операторов онлайн или
+ все операторы имеют очередь обращений, достигшую установленного лимита,
+ метод вернёт false.</p>
+<h3 id="_2">Параметры</h3>
 <table>
 <thead>
 <tr>
-<th>Ключ</th>
-<th>Значение</th>
+<th>Имя</th>
+<th>Тип</th>
 <th>Описание</th>
+<th>Опциональность</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>STRING</td>
-<td>0</td>
-<td>Строка</td>
+<td>deptId</td>
+<td>string</td>
+<td>Идентификатор отдела.</td>
+<td>Опциональный</td>
 </tr>
 <tr>
-<td>NUMBER</td>
-<td>1</td>
-<td>Число</td>
+<td>complete</td>
+<td>!function(boolean)</td>
+<td>Обработчик, который получает</td>
+<td></td>
 </tr>
 <tr>
-<td>LIST</td>
-<td>2</td>
-<td>Список</td>
-</tr>
-<tr>
-<td>PHONE</td>
-<td>3</td>
-<td>Номер телефона</td>
-</tr>
-<tr>
-<td>EMAIL</td>
-<td>4</td>
-<td>Адрес электронной почты</td>
-</tr>
-<tr>
-<td>MASK</td>
-<td>5</td>
-<td>Маска (Регулярное выражение)</td>
+<td>доступность операторов в отделе</td>
+<td>Опциональный</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h3 id="_3">Пример</h3>
+<pre><code class="javascript">LiveTex.isDepartmentAvailable('123123', function(isAvailable) {
+    if (isAvailable) {
+      alert('Операторы отдела 123123 доступны для нового обращения');
+    }
+ });
+</code></pre></div>
             
         </div>
 

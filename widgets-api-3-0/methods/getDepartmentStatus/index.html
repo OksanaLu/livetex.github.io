@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>getDepartmentStatus - LiveTex API</title>
+	<title>getDepartmentStatus - Livetex Widgets API 3.0</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -43,7 +43,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href="../..">LiveTex API</a>
+            <a class="navbar-brand" href="../..">Livetex Widgets API 3.0</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -111,6 +111,18 @@
                             
 <li >
     <a href="../hideChatLabel/">hideChatLabel</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../isDepartmentAvailable/">isDepartmentAvailable</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../isDepartmentOnline/">isDepartmentOnline</a>
 </li>
 
                         
@@ -243,7 +255,8 @@
 
 <h2 id="getdepartmentstatus">getDepartmentStatus</h2>
 <h3 id="_1">Описание</h3>
-<p>Принимает статус отдела.</p>
+<p>Возвращает статус отдела.
+ Если в отделехотя бы один оператор online - вернёт true</p>
 <h3 id="_2">Параметры</h3>
 <table>
 <thead>
@@ -268,7 +281,7 @@
 <td></td>
 </tr>
 <tr>
-<td>доступность операторов в отделе</td>
+<td>статус отдела</td>
 <td>Опциональный</td>
 <td></td>
 <td></td>
