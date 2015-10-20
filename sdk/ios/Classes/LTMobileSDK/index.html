@@ -273,6 +273,8 @@ function disclosure_triangle(elt) {
 <dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/confirmTextMessageWithId:success:failure:" target="_top">-confirmTextMessageWithId:success:failure:</a></tt></dt>
 <dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:" target="_top">-createOfflineConversationForVisitor:forDepartmentId:success:failure:</a></tt></dt>
+<dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/getDepartmentEmployees:success:failure:" target="_top">-getDepartmentEmployees:success:failure:</a></tt></dt>
 <dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/getDepartments:success:failure:" target="_top">-getDepartments:success:failure:</a></tt></dt>
@@ -282,6 +284,10 @@ function disclosure_triangle(elt) {
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/getStateWithSuccess:failure:" target="_top">-getStateWithSuccess:failure:</a></tt></dt>
 <dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/messageHistory:offset:success:failure:" target="_top">-messageHistory:offset:success:failure:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/messageListForConversationId:success:failure:" target="_top">-messageListForConversationId:success:failure:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/offlineConversationsListWithSuccess:failure:" target="_top">-offlineConversationsListWithSuccess:failure:</a></tt></dt>
 <dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/requestWithDepartment:dialodAttributes:success:failure:" target="_top">-requestWithDepartment:dialodAttributes:success:failure:</a></tt></dt>
 <dd></dd>
@@ -297,11 +303,17 @@ function disclosure_triangle(elt) {
 <dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/sendMessage:success:failure:" target="_top">-sendMessage:success:failure:</a></tt></dt>
 <dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:" target="_top">-sendOfflineMessageWithText:conversationId:success:failure:</a></tt></dt>
+<dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/setVisitorName:success:failure:" target="_top">-setVisitorName:success:failure:</a></tt></dt>
 <dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/stop" target="_top">-stop</a></tt></dt>
 <dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/typingWithTypingMessage:success:failure:" target="_top">-typingWithTypingMessage:success:failure:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/uploadFileData:recipientId:success:failure:" target="_top">-uploadFileData:recipientId:success:failure:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/uploadOfflineFileData:conversationId:success:failure:" target="_top">-uploadOfflineFileData:conversationId:success:failure:</a></tt></dt>
 <dd></dd>
 <dt><tt><a href="index.html#//apple_ref/occ/instm/LTMobileSDK/voteWithVote:success:failure:" target="_top">-voteWithVote:success:failure:</a></tt></dt>
 <dd></dd>
@@ -321,7 +333,10 @@ function disclosure_triangle(elt) {
 <code>abuse</code></dt><dd><p>данные жалобы</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, параметром у которого является объект типа LTSDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK.
+ChatException ошибка сервиса чата. Может возникать в
 случае отсутствия текущего диалога.
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
@@ -335,7 +350,10 @@ function disclosure_triangle(elt) {
 <pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/closeWithSuccess:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/closeWithSuccess //apple_ref/occ/clm/LTMobileSDK/closeWithSuccess //apple_ref/occ/intfcm/LTMobileSDK/closeWithSuccess //apple_ref/occ/intfm/LTMobileSDK/closeWithSuccess //apple_ref/occ/func/closeWithSuccess //apple_ref/occ/ftmplt/LTMobileSDK/closeWithSuccess //apple_ref/occ/defn/closeWithSuccess //apple_ref/occ/macro/closeWithSuccess //apple_ref/doc/anysymbol/closeWithSuccess" machineGenerated="true" --><span class="function">closeWithSuccess</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/LTSDialogState //apple_ref/occ/tdef/LTSDialogState //apple_ref/occ/tag/LTSDialogState //apple_ref/occ/struct/LTSDialogState //apple_ref/occ/intf/LTSDialogState //apple_ref/doc/anysymbol/LTSDialogState" machineGenerated="true" --><span class="type">LTSDialogState</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/state //apple_ref/occ/tdef/state //apple_ref/occ/tag/state //apple_ref/occ/struct/state //apple_ref/occ/intf/state //apple_ref/doc/anysymbol/state" machineGenerated="true" --><span class="type">state</span><!-- /a -->))<span class="param">success</span> 
         <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/ChatException //apple_ref/occ/tdef/ChatException //apple_ref/occ/tag/ChatException //apple_ref/occ/struct/ChatException //apple_ref/occ/intf/ChatException //apple_ref/doc/anysymbol/ChatException" machineGenerated="true" --><span class="type">ChatException</span><!-- /a -->))<!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/closeWithSuccess:failure:;name=end --></pre>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, параметром у которого является объект типа LTSDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата. Может возникать в
 случае отсутствия текущего диалога.
 </p>
 
@@ -358,18 +376,47 @@ function disclosure_triangle(elt) {
 <code>textMessageId</code></dt><dd><p>индетификатор полученного сообщеиня.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK.
+ChatException ошибка сервиса чата.
 </p>
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
 <!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/confirmTextMessageWithId:success:failure:;name=start --><p>Подтверждение получения сообщения.
 </p>
 <!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/confirmTextMessageWithId:success:failure:;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:;   name=LTMobileSDK::createOfflineConversationForVisitor:forDepartmentId:success:failure: -->
+<a name="//apple_ref/occ/instm/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:"></a>
+<h3><a name="createOfflineConversationForVisitor:forDepartmentId:success:failure:">createOfflineConversationForVisitor:forDepartmentId:success:failure:</a></h3>
+<hr class="afterName"><div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/createOfflineConversationForVisitor //apple_ref/occ/clm/LTMobileSDK/createOfflineConversationForVisitor //apple_ref/occ/intfcm/LTMobileSDK/createOfflineConversationForVisitor //apple_ref/occ/intfm/LTMobileSDK/createOfflineConversationForVisitor //apple_ref/occ/func/createOfflineConversationForVisitor //apple_ref/occ/ftmplt/LTMobileSDK/createOfflineConversationForVisitor //apple_ref/occ/defn/createOfflineConversationForVisitor //apple_ref/occ/macro/createOfflineConversationForVisitor //apple_ref/doc/anysymbol/createOfflineConversationForVisitor" machineGenerated="true" --><span class="function">createOfflineConversationForVisitor</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/LTSOfllineVisitorContacts //apple_ref/occ/tdef/LTSOfllineVisitorContacts //apple_ref/occ/tag/LTSOfllineVisitorContacts //apple_ref/occ/struct/LTSOfllineVisitorContacts //apple_ref/occ/intf/LTSOfllineVisitorContacts //apple_ref/doc/anysymbol/LTSOfllineVisitorContacts" machineGenerated="true" --><span class="type">LTSOfllineVisitorContacts</span><!-- /a --> <span class="type">*</span>)<span class="param">contacts</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/forDepartmentId //apple_ref/occ/clm/LTMobileSDK/forDepartmentId //apple_ref/occ/intfcm/LTMobileSDK/forDepartmentId //apple_ref/occ/intfm/LTMobileSDK/forDepartmentId //apple_ref/occ/func/forDepartmentId //apple_ref/occ/ftmplt/LTMobileSDK/forDepartmentId //apple_ref/occ/defn/forDepartmentId //apple_ref/occ/macro/forDepartmentId //apple_ref/doc/anysymbol/forDepartmentId" machineGenerated="true" --><span class="function">forDepartmentId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/intf/NSString //apple_ref/doc/anysymbol/NSString" machineGenerated="true" --><span class="type">NSString</span><!-- /a --> <span class="type">*</span>)<span class="param">depId</span> <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/success //apple_ref/occ/clm/LTMobileSDK/success //apple_ref/occ/intfcm/LTMobileSDK/success //apple_ref/occ/intfm/LTMobileSDK/success //apple_ref/occ/func/success //apple_ref/occ/ftmplt/LTMobileSDK/success //apple_ref/occ/defn/success //apple_ref/occ/macro/success //apple_ref/doc/anysymbol/success" machineGenerated="true" --><span class="function">success</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/intf/NSString //apple_ref/doc/anysymbol/NSString" machineGenerated="true" --><span class="type">NSString</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/conversationId //apple_ref/occ/tdef/conversationId //apple_ref/occ/tag/conversationId //apple_ref/occ/struct/conversationId //apple_ref/occ/intf/conversationId //apple_ref/doc/anysymbol/conversationId" machineGenerated="true" --><span class="type">conversationId</span><!-- /a -->))<span class="param">success</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/ChatException //apple_ref/occ/tdef/ChatException //apple_ref/occ/tag/ChatException //apple_ref/occ/struct/ChatException //apple_ref/occ/intf/ChatException //apple_ref/doc/anysymbol/ChatException" machineGenerated="true" --><span class="type">ChatException</span><!-- /a -->))<!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=methodparam;  uid=//apple_ref/doc/methodparam/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:/LTSOfllineVisitorContacts;   name=createOfflineConversationForVisitor:forDepartmentId:success:failure:::LTSOfllineVisitorContacts -->
+<a name="//apple_ref/doc/methodparam/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:/LTSOfllineVisitorContacts"></a>
+<code>LTSOfllineVisitorContacts</code></dt><dd><p>структура контактов для посетителя, поля струткуры опциональны</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK.
+ChatException ошибка сервиса чата.
+</p>
+
+<!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:;name=start --><p>Создание оффлайн обращения с указанием контактных данных.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/createOfflineConversationForVisitor:forDepartmentId:success:failure:;name=end --><!-- end discussion -->
 <hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/getDepartmentEmployees:success:failure:;   name=LTMobileSDK::getDepartmentEmployees:success:failure: -->
 <a name="//apple_ref/occ/instm/LTMobileSDK/getDepartmentEmployees:success:failure:"></a>
 <h3><a name="getDepartmentEmployees:success:failure:">getDepartmentEmployees:success:failure:</a></h3>
 <hr class="afterName"><div class='declaration_indent'>
-<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/getDepartmentEmployees:success:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/clm/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/intfcm/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/intfm/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/func/getDepartmentEmployees //apple_ref/occ/ftmplt/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/defn/getDepartmentEmployees //apple_ref/occ/macro/getDepartmentEmployees //apple_ref/doc/anysymbol/getDepartmentEmployees" machineGenerated="true" --><span class="function">getDepartmentEmployees</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/LTSDepartment //apple_ref/occ/tdef/LTSDepartment //apple_ref/occ/tag/LTSDepartment //apple_ref/occ/struct/LTSDepartment //apple_ref/occ/intf/LTSDepartment //apple_ref/doc/anysymbol/LTSDepartment" machineGenerated="true" --><span class="type">LTSDepartment</span><!-- /a --><span class="type">*</span>)<span class="param">department</span> 
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/getDepartmentEmployees:success:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/clm/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/intfcm/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/intfm/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/func/getDepartmentEmployees //apple_ref/occ/ftmplt/LTMobileSDK/getDepartmentEmployees //apple_ref/occ/defn/getDepartmentEmployees //apple_ref/occ/macro/getDepartmentEmployees //apple_ref/doc/anysymbol/getDepartmentEmployees" machineGenerated="true" --><span class="function">getDepartmentEmployees</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/LTSDepartment //apple_ref/occ/tdef/LTSDepartment //apple_ref/occ/tag/LTSDepartment //apple_ref/occ/struct/LTSDepartment //apple_ref/occ/intf/LTSDepartment //apple_ref/doc/anysymbol/LTSDepartment" machineGenerated="true" --><span class="type">LTSDepartment</span><!-- /a --> <span class="type">*</span>)<span class="param">department</span> 
         <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/success //apple_ref/occ/clm/LTMobileSDK/success //apple_ref/occ/intfcm/LTMobileSDK/success //apple_ref/occ/intfm/LTMobileSDK/success //apple_ref/occ/func/success //apple_ref/occ/ftmplt/LTMobileSDK/success //apple_ref/occ/defn/success //apple_ref/occ/macro/success //apple_ref/doc/anysymbol/success" machineGenerated="true" --><span class="function">success</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSArray //apple_ref/occ/tdef/NSArray //apple_ref/occ/tag/NSArray //apple_ref/occ/struct/NSArray //apple_ref/occ/intf/NSArray //apple_ref/doc/anysymbol/NSArray" machineGenerated="true" --><span class="type">NSArray</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/operators //apple_ref/occ/tdef/operators //apple_ref/occ/tag/operators //apple_ref/occ/struct/operators //apple_ref/occ/intf/operators //apple_ref/doc/anysymbol/operators" machineGenerated="true" --><span class="type">operators</span><!-- /a -->))<span class="param">success</span> <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/error //apple_ref/occ/tdef/error //apple_ref/occ/tag/error //apple_ref/occ/struct/error //apple_ref/occ/intf/error //apple_ref/doc/anysymbol/error" machineGenerated="true" --><span class="type">error</span><!-- /a -->))<!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/getDepartmentEmployees:success:failure:;name=end --></pre>
 </div>
 <h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
@@ -380,7 +427,11 @@ function disclosure_triangle(elt) {
 <code>department</code></dt><dd><p>депертамент, операторы которого будут получены</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+operators список операторов для указанного депертамента.
+ChatException ошибка сервиса чата.
 </p>
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
@@ -402,7 +453,11 @@ function disclosure_triangle(elt) {
 <code>status</code></dt><dd><p>интересующий статус.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+departments список департаментов с указанным статусом.
+ChatException ошибка сервиса чата.
 </p>
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
@@ -424,7 +479,11 @@ function disclosure_triangle(elt) {
 <code>status</code></dt><dd><p>интересующий статус.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+operators список операторов с указанным статусом.
+ChatException ошибка сервиса чата.
 </p>
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
@@ -438,7 +497,11 @@ function disclosure_triangle(elt) {
 <pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/getStateWithSuccess:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/getStateWithSuccess //apple_ref/occ/clm/LTMobileSDK/getStateWithSuccess //apple_ref/occ/intfcm/LTMobileSDK/getStateWithSuccess //apple_ref/occ/intfm/LTMobileSDK/getStateWithSuccess //apple_ref/occ/func/getStateWithSuccess //apple_ref/occ/ftmplt/LTMobileSDK/getStateWithSuccess //apple_ref/occ/defn/getStateWithSuccess //apple_ref/occ/macro/getStateWithSuccess //apple_ref/doc/anysymbol/getStateWithSuccess" machineGenerated="true" --><span class="function">getStateWithSuccess</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/LTSDialogState //apple_ref/occ/tdef/LTSDialogState //apple_ref/occ/tag/LTSDialogState //apple_ref/occ/struct/LTSDialogState //apple_ref/occ/intf/LTSDialogState //apple_ref/doc/anysymbol/LTSDialogState" machineGenerated="true" --><span class="type">LTSDialogState</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/state //apple_ref/occ/tdef/state //apple_ref/occ/tag/state //apple_ref/occ/struct/state //apple_ref/occ/intf/state //apple_ref/doc/anysymbol/state" machineGenerated="true" --><span class="type">state</span><!-- /a -->))<span class="param">success</span> 
         <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/ChatException //apple_ref/occ/tdef/ChatException //apple_ref/occ/tag/ChatException //apple_ref/occ/struct/ChatException //apple_ref/occ/intf/ChatException //apple_ref/doc/anysymbol/ChatException" machineGenerated="true" --><span class="type">ChatException</span><!-- /a -->))<!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/getStateWithSuccess:failure:;name=end --></pre>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK.
+state текущее состояние интерфейса клиента сервиса диалога.
+ChatException ошибка сервиса чата.
 </p>
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
@@ -464,13 +527,62 @@ function disclosure_triangle(elt) {
 <code>offset</code></dt><dd><p>количество пропускаемых сообщений истории.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+messages список сообщений истории чата
+ChatException ошибка сервиса чата.
 </p>
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
 <!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/messageHistory:offset:success:failure:;name=start --><p>Получение истории сообщений диалога.
 </p>
 <!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/messageHistory:offset:success:failure:;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/messageListForConversationId:success:failure:;   name=LTMobileSDK::messageListForConversationId:success:failure: -->
+<a name="//apple_ref/occ/instm/LTMobileSDK/messageListForConversationId:success:failure:"></a>
+<h3><a name="messageListForConversationId:success:failure:">messageListForConversationId:success:failure:</a></h3>
+<hr class="afterName"><div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/messageListForConversationId:success:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/messageListForConversationId //apple_ref/occ/clm/LTMobileSDK/messageListForConversationId //apple_ref/occ/intfcm/LTMobileSDK/messageListForConversationId //apple_ref/occ/intfm/LTMobileSDK/messageListForConversationId //apple_ref/occ/func/messageListForConversationId //apple_ref/occ/ftmplt/LTMobileSDK/messageListForConversationId //apple_ref/occ/defn/messageListForConversationId //apple_ref/occ/macro/messageListForConversationId //apple_ref/doc/anysymbol/messageListForConversationId" machineGenerated="true" --><span class="function">messageListForConversationId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/intf/NSString //apple_ref/doc/anysymbol/NSString" machineGenerated="true" --><span class="type">NSString</span><!-- /a --> <span class="type">*</span>)<span class="param">conversationId</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/success //apple_ref/occ/clm/LTMobileSDK/success //apple_ref/occ/intfcm/LTMobileSDK/success //apple_ref/occ/intfm/LTMobileSDK/success //apple_ref/occ/func/success //apple_ref/occ/ftmplt/LTMobileSDK/success //apple_ref/occ/defn/success //apple_ref/occ/macro/success //apple_ref/doc/anysymbol/success" machineGenerated="true" --><span class="function">success</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSArray //apple_ref/occ/tdef/NSArray //apple_ref/occ/tag/NSArray //apple_ref/occ/struct/NSArray //apple_ref/occ/intf/NSArray //apple_ref/doc/anysymbol/NSArray" machineGenerated="true" --><span class="type">NSArray</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/messages //apple_ref/occ/tdef/messages //apple_ref/occ/tag/messages //apple_ref/occ/struct/messages //apple_ref/occ/intf/messages //apple_ref/doc/anysymbol/messages" machineGenerated="true" --><span class="type">messages</span><!-- /a -->))<span class="param">success</span> <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/ChatException //apple_ref/occ/tdef/ChatException //apple_ref/occ/tag/ChatException //apple_ref/occ/struct/ChatException //apple_ref/occ/intf/ChatException //apple_ref/doc/anysymbol/ChatException" machineGenerated="true" --><span class="type">ChatException</span><!-- /a -->))<!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/messageListForConversationId:success:failure:;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=methodparam;  uid=//apple_ref/doc/methodparam/LTMobileSDK/messageListForConversationId:success:failure:/cid;   name=messageListForConversationId:success:failure:::cid -->
+<a name="//apple_ref/doc/methodparam/LTMobileSDK/messageListForConversationId:success:failure:/cid"></a>
+<code>cid</code></dt><dd><p>индетификатор оффлайн диалога</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success с параметром messages (список оффлайн сообщений) для оффлайн обращения,
+тип данных одного элемента LTSOfflineMessage, в противном случае вызывается failure,
+параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата.
+</p>
+
+<!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/messageListForConversationId:success:failure:;name=start --><p>Получение списка оффлайн сообщений для оффлайн обращения.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/messageListForConversationId:success:failure:;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/offlineConversationsListWithSuccess:failure:;   name=LTMobileSDK::offlineConversationsListWithSuccess:failure: -->
+<a name="//apple_ref/occ/instm/LTMobileSDK/offlineConversationsListWithSuccess:failure:"></a>
+<h3><a name="offlineConversationsListWithSuccess:failure:">offlineConversationsListWithSuccess:failure:</a></h3>
+<hr class="afterName"><div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/offlineConversationsListWithSuccess:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/offlineConversationsListWithSuccess //apple_ref/occ/clm/LTMobileSDK/offlineConversationsListWithSuccess //apple_ref/occ/intfcm/LTMobileSDK/offlineConversationsListWithSuccess //apple_ref/occ/intfm/LTMobileSDK/offlineConversationsListWithSuccess //apple_ref/occ/func/offlineConversationsListWithSuccess //apple_ref/occ/ftmplt/LTMobileSDK/offlineConversationsListWithSuccess //apple_ref/occ/defn/offlineConversationsListWithSuccess //apple_ref/occ/macro/offlineConversationsListWithSuccess //apple_ref/doc/anysymbol/offlineConversationsListWithSuccess" machineGenerated="true" --><span class="function">offlineConversationsListWithSuccess</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSArray //apple_ref/occ/tdef/NSArray //apple_ref/occ/tag/NSArray //apple_ref/occ/struct/NSArray //apple_ref/occ/intf/NSArray //apple_ref/doc/anysymbol/NSArray" machineGenerated="true" --><span class="type">NSArray</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/conversations //apple_ref/occ/tdef/conversations //apple_ref/occ/tag/conversations //apple_ref/occ/struct/conversations //apple_ref/occ/intf/conversations //apple_ref/doc/anysymbol/conversations" machineGenerated="true" --><span class="type">conversations</span><!-- /a -->))<span class="param">success</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/ChatException //apple_ref/occ/tdef/ChatException //apple_ref/occ/tag/ChatException //apple_ref/occ/struct/ChatException //apple_ref/occ/intf/ChatException //apple_ref/doc/anysymbol/ChatException" machineGenerated="true" --><span class="type">ChatException</span><!-- /a -->))<!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/offlineConversationsListWithSuccess:failure:;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success с параметром conversations (список оффлайн обращений) для посетителя,
+тип данных одного элемента LTSOfflineConversation, в противном случае вызывается failure,
+параметром у которого явлется объект типа NSExeption пойманый при выполнии операции в параллельном потоке очереди SDK.
+ChatException ошибка сервиса чата.
+</p>
+
+<!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/offlineConversationsListWithSuccess:failure:;name=start --><p>Получение списка оффлайн обращений для текщего авторизованного в сдк пользователя.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/offlineConversationsListWithSuccess:failure:;name=end --><!-- end discussion -->
 <hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/requestWithDepartment:dialodAttributes:success:failure:;   name=LTMobileSDK::requestWithDepartment:dialodAttributes:success:failure: -->
 <a name="//apple_ref/occ/instm/LTMobileSDK/requestWithDepartment:dialodAttributes:success:failure:"></a>
 <h3><a name="requestWithDepartment:dialodAttributes:success:failure:">requestWithDepartment:dialodAttributes:success:failure:</a></h3>
@@ -490,7 +602,10 @@ function disclosure_triangle(elt) {
 <code>attributes</code></dt><dd><p>данные сопутствующие диалогу.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, параметром у которого является объект типа LTSDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата. Может возникать в
 случае неверных атрибутов диалога или при указании невалидного депертамента.
 </p>
 
@@ -513,7 +628,10 @@ function disclosure_triangle(elt) {
 <code>department</code></dt><dd><p>департамент, с оператом которого необходимо начать диалог.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать при указании невалидного депертамента.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, параметром у которого является объект типа LTSDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата. Может возникать при указании невалидного депертамента.
 </p>
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
@@ -535,7 +653,10 @@ function disclosure_triangle(elt) {
 <code>attributes</code></dt><dd><p>данные сопутствующие диалогу.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в случае неверных атрибутов диалога.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, параметром у которого является объект типа LTSDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата. Может возникать в случае неверных атрибутов диалога.
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
 <!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/requestWithDialogAttributes:success:failure:;name=start --><p>Запрос диалога с конкретным оператором.
@@ -560,7 +681,10 @@ function disclosure_triangle(elt) {
 <code>attributes</code></dt><dd><p>данные сопутствующие диалогу.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, параметром у которого является объект типа LTSDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата. Может возникать в
 случае неверных атрибутов диалога или при указании невалидного оператора.
 </p>
 
@@ -583,7 +707,10 @@ function disclosure_triangle(elt) {
 <code>mOperator</code></dt><dd><p>оператор, к которым необходимо начать диалог.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, параметром у которого является объект типа LTSDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата. Может возникать в
 случае неверных атрибутов диалога или при указании невалидного оператора.
 </p>
 
@@ -621,13 +748,46 @@ function disclosure_triangle(elt) {
 <code>message</code></dt><dd><p>текст сообщения.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+message созданое сервером сообщение.
+ChatException ошибка сервиса чата. Может возникать в
 случае отсутствия текущего диалога.
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
 <!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/sendMessage:success:failure:;name=start --><p>Отправка текстового сообщения.
 </p>
 <!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/sendMessage:success:failure:;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:;   name=LTMobileSDK::sendOfflineMessageWithText:conversationId:success:failure: -->
+<a name="//apple_ref/occ/instm/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:"></a>
+<h3><a name="sendOfflineMessageWithText:conversationId:success:failure:">sendOfflineMessageWithText:conversationId:success:failure:</a></h3>
+<hr class="afterName"><div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/sendOfflineMessageWithText //apple_ref/occ/clm/LTMobileSDK/sendOfflineMessageWithText //apple_ref/occ/intfcm/LTMobileSDK/sendOfflineMessageWithText //apple_ref/occ/intfm/LTMobileSDK/sendOfflineMessageWithText //apple_ref/occ/func/sendOfflineMessageWithText //apple_ref/occ/ftmplt/LTMobileSDK/sendOfflineMessageWithText //apple_ref/occ/defn/sendOfflineMessageWithText //apple_ref/occ/macro/sendOfflineMessageWithText //apple_ref/doc/anysymbol/sendOfflineMessageWithText" machineGenerated="true" --><span class="function">sendOfflineMessageWithText</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/intf/NSString //apple_ref/doc/anysymbol/NSString" machineGenerated="true" --><span class="type">NSString</span><!-- /a --> <span class="type">*</span>)<span class="param">text</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/conversationId //apple_ref/occ/clm/LTMobileSDK/conversationId //apple_ref/occ/intfcm/LTMobileSDK/conversationId //apple_ref/occ/intfm/LTMobileSDK/conversationId //apple_ref/occ/func/conversationId //apple_ref/occ/ftmplt/LTMobileSDK/conversationId //apple_ref/occ/defn/conversationId //apple_ref/occ/macro/conversationId //apple_ref/doc/anysymbol/conversationId" machineGenerated="true" --><span class="function">conversationId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/intf/NSString //apple_ref/doc/anysymbol/NSString" machineGenerated="true" --><span class="type">NSString</span><!-- /a --> <span class="type">*</span>)<span class="param">conversationId</span> <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/success //apple_ref/occ/clm/LTMobileSDK/success //apple_ref/occ/intfcm/LTMobileSDK/success //apple_ref/occ/intfm/LTMobileSDK/success //apple_ref/occ/func/success //apple_ref/occ/ftmplt/LTMobileSDK/success //apple_ref/occ/defn/success //apple_ref/occ/macro/success //apple_ref/doc/anysymbol/success" machineGenerated="true" --><span class="function">success</span><!-- /a -->:(void(^)())<span class="param">success</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/ChatException //apple_ref/occ/tdef/ChatException //apple_ref/occ/tag/ChatException //apple_ref/occ/struct/ChatException //apple_ref/occ/intf/ChatException //apple_ref/doc/anysymbol/ChatException" machineGenerated="true" --><span class="type">ChatException</span><!-- /a -->))<!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=methodparam;  uid=//apple_ref/doc/methodparam/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:/text;   name=sendOfflineMessageWithText:conversationId:success:failure:::text -->
+<a name="//apple_ref/doc/methodparam/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:/text"></a>
+<code>text</code></dt><dd><p>текст сообщения</dd>
+<dt><!-- headerDoc=methodparam;  uid=//apple_ref/doc/methodparam/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:/conversationId;   name=sendOfflineMessageWithText:conversationId:success:failure:::conversationId -->
+<a name="//apple_ref/doc/methodparam/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:/conversationId"></a>
+<code>conversationId</code></dt><dd><p>идентификатор оффлайн диалога</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK.
+ChatException ошибка сервиса чата.
+</p>
+
+<!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:;name=start --><p>Отправка оффлайн сообщения для оффлайн обращения.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/sendOfflineMessageWithText:conversationId:success:failure:;name=end --><!-- end discussion -->
 <hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/setVisitorName:success:failure:;   name=LTMobileSDK::setVisitorName:success:failure: -->
 <a name="//apple_ref/occ/instm/LTMobileSDK/setVisitorName:success:failure:"></a>
 <h3><a name="setVisitorName:success:failure:">setVisitorName:success:failure:</a></h3>
@@ -643,7 +803,10 @@ function disclosure_triangle(elt) {
 <code>name</code></dt><dd><p>имя посетителя.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата.
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата.
 </p>
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
@@ -657,7 +820,7 @@ function disclosure_triangle(elt) {
 <pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/stop;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/stop //apple_ref/occ/data/LTMobileSDK/stop //apple_ref/occ/data/stop //apple_ref/occ/clconst/LTMobileSDK/stop " machineGenerated="true" --><span class="var">stop</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/stop;name=end --></pre>
 </div>
 <h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
-<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/stop;name=start --><p>Остановка SDK
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/stop;name=start --><p>Остановка SDK, прекращение работы с realtime нотификациями. После вызова этого метода следует перезапустить sdk методом runWithSuccess
 <!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/stop;name=end --><!-- end discussion -->
 <hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/typingWithTypingMessage:success:failure:;   name=LTMobileSDK::typingWithTypingMessage:success:failure: -->
 <a name="//apple_ref/occ/instm/LTMobileSDK/typingWithTypingMessage:success:failure:"></a>
@@ -674,7 +837,10 @@ function disclosure_triangle(elt) {
 <code>message</code></dt><dd><p>набранное сообщение.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата. Может возникать в
 случае отсутствия текущего диалога.
 </p>
 
@@ -682,6 +848,28 @@ function disclosure_triangle(elt) {
 <!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/typingWithTypingMessage:success:failure:;name=start --><p>Оповещение о наборе текста.
 </p>
 <!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/typingWithTypingMessage:success:failure:;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/uploadFileData:recipientId:success:failure:;   name=LTMobileSDK::uploadFileData:recipientId:success:failure: -->
+<a name="//apple_ref/occ/instm/LTMobileSDK/uploadFileData:recipientId:success:failure:"></a>
+<h3><a name="uploadFileData:recipientId:success:failure:">uploadFileData:recipientId:success:failure:</a></h3>
+<hr class="afterName"><div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/uploadFileData:recipientId:success:failure:;name=start -->- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/uploadFileData //apple_ref/occ/clm/LTMobileSDK/uploadFileData //apple_ref/occ/intfcm/LTMobileSDK/uploadFileData //apple_ref/occ/intfm/LTMobileSDK/uploadFileData //apple_ref/occ/func/uploadFileData //apple_ref/occ/ftmplt/LTMobileSDK/uploadFileData //apple_ref/occ/defn/uploadFileData //apple_ref/occ/macro/uploadFileData //apple_ref/doc/anysymbol/uploadFileData" machineGenerated="true" --><span class="function">uploadFileData</span><!-- /a -->: (<!-- a logicalPath="//apple_ref/occ/cl/LTSFile //apple_ref/occ/tdef/LTSFile //apple_ref/occ/tag/LTSFile //apple_ref/occ/struct/LTSFile //apple_ref/occ/intf/LTSFile //apple_ref/doc/anysymbol/LTSFile" machineGenerated="true" --><span class="type">LTSFile</span><!-- /a --> <span class="type">*</span>) <span class="param">file</span> <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/recipientId //apple_ref/occ/clm/LTMobileSDK/recipientId //apple_ref/occ/intfcm/LTMobileSDK/recipientId //apple_ref/occ/intfm/LTMobileSDK/recipientId //apple_ref/occ/func/recipientId //apple_ref/occ/ftmplt/LTMobileSDK/recipientId //apple_ref/occ/defn/recipientId //apple_ref/occ/macro/recipientId //apple_ref/doc/anysymbol/recipientId" machineGenerated="true" --><span class="function">recipientId</span><!-- /a -->: (<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/intf/NSString //apple_ref/doc/anysymbol/NSString" machineGenerated="true" --><span class="type">NSString</span><!-- /a --> <span class="type">*</span>) <span class="param">resId</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/success //apple_ref/occ/clm/LTMobileSDK/success //apple_ref/occ/intfcm/LTMobileSDK/success //apple_ref/occ/intfm/LTMobileSDK/success //apple_ref/occ/func/success //apple_ref/occ/ftmplt/LTMobileSDK/success //apple_ref/occ/defn/success //apple_ref/occ/macro/success //apple_ref/doc/anysymbol/success" machineGenerated="true" --><span class="function">success</span><!-- /a -->: (void(^)()) <span class="param">success</span> <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->: (void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/ChatException //apple_ref/occ/tdef/ChatException //apple_ref/occ/tag/ChatException //apple_ref/occ/struct/ChatException //apple_ref/occ/intf/ChatException //apple_ref/doc/anysymbol/ChatException" machineGenerated="true" --><span class="type">ChatException</span><!-- /a -->)) <!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/uploadFileData:recipientId:success:failure:;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/uploadFileData:recipientId:success:failure:;name=start --><p>Отправка файла в режиме онлайн.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/uploadFileData:recipientId:success:failure:;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/uploadOfflineFileData:conversationId:success:failure:;   name=LTMobileSDK::uploadOfflineFileData:conversationId:success:failure: -->
+<a name="//apple_ref/occ/instm/LTMobileSDK/uploadOfflineFileData:conversationId:success:failure:"></a>
+<h3><a name="uploadOfflineFileData:conversationId:success:failure:">uploadOfflineFileData:conversationId:success:failure:</a></h3>
+<hr class="afterName"><div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/uploadOfflineFileData:conversationId:success:failure:;name=start -->-(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/uploadOfflineFileData //apple_ref/occ/clm/LTMobileSDK/uploadOfflineFileData //apple_ref/occ/intfcm/LTMobileSDK/uploadOfflineFileData //apple_ref/occ/intfm/LTMobileSDK/uploadOfflineFileData //apple_ref/occ/func/uploadOfflineFileData //apple_ref/occ/ftmplt/LTMobileSDK/uploadOfflineFileData //apple_ref/occ/defn/uploadOfflineFileData //apple_ref/occ/macro/uploadOfflineFileData //apple_ref/doc/anysymbol/uploadOfflineFileData" machineGenerated="true" --><span class="function">uploadOfflineFileData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/LTSFile //apple_ref/occ/tdef/LTSFile //apple_ref/occ/tag/LTSFile //apple_ref/occ/struct/LTSFile //apple_ref/occ/intf/LTSFile //apple_ref/doc/anysymbol/LTSFile" machineGenerated="true" --><span class="type">LTSFile</span><!-- /a --> <span class="type">*</span>) <span class="param">file</span> <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/conversationId //apple_ref/occ/clm/LTMobileSDK/conversationId //apple_ref/occ/intfcm/LTMobileSDK/conversationId //apple_ref/occ/intfm/LTMobileSDK/conversationId //apple_ref/occ/func/conversationId //apple_ref/occ/ftmplt/LTMobileSDK/conversationId //apple_ref/occ/defn/conversationId //apple_ref/occ/macro/conversationId //apple_ref/doc/anysymbol/conversationId" machineGenerated="true" --><span class="function">conversationId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/intf/NSString //apple_ref/doc/anysymbol/NSString" machineGenerated="true" --><span class="type">NSString</span><!-- /a --> <span class="type">*</span>) <span class="param">resId</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/success //apple_ref/occ/clm/LTMobileSDK/success //apple_ref/occ/intfcm/LTMobileSDK/success //apple_ref/occ/intfm/LTMobileSDK/success //apple_ref/occ/func/success //apple_ref/occ/ftmplt/LTMobileSDK/success //apple_ref/occ/defn/success //apple_ref/occ/macro/success //apple_ref/doc/anysymbol/success" machineGenerated="true" --><span class="function">success</span><!-- /a -->:(void(^)()) <span class="param">success</span> <!-- a logicalPath="//apple_ref/occ/instm/LTMobileSDK/failure //apple_ref/occ/clm/LTMobileSDK/failure //apple_ref/occ/intfcm/LTMobileSDK/failure //apple_ref/occ/intfm/LTMobileSDK/failure //apple_ref/occ/func/failure //apple_ref/occ/ftmplt/LTMobileSDK/failure //apple_ref/occ/defn/failure //apple_ref/occ/macro/failure //apple_ref/doc/anysymbol/failure" machineGenerated="true" --><span class="function">failure</span><!-- /a -->:(void(^)(<!-- a logicalPath="//apple_ref/occ/cl/NSException //apple_ref/occ/tdef/NSException //apple_ref/occ/tag/NSException //apple_ref/occ/struct/NSException //apple_ref/occ/intf/NSException //apple_ref/doc/anysymbol/NSException" machineGenerated="true" --><span class="type">NSException</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/cl/ChatException //apple_ref/occ/tdef/ChatException //apple_ref/occ/tag/ChatException //apple_ref/occ/struct/ChatException //apple_ref/occ/intf/ChatException //apple_ref/doc/anysymbol/ChatException" machineGenerated="true" --><span class="type">ChatException</span><!-- /a -->)) <!-- a logicalPath="//apple_ref/occ/econst/failure //apple_ref/occ/data/LTMobileSDK/failure //apple_ref/occ/data/failure //apple_ref/occ/clconst/LTMobileSDK/failure " machineGenerated="true" --><span class="var">failure</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instm/LTMobileSDK/uploadOfflineFileData:conversationId:success:failure:;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/uploadOfflineFileData:conversationId:success:failure:;name=start --><p>Отправка файла в режиме оффлайн.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/uploadOfflineFileData:conversationId:success:failure:;name=end --><!-- end discussion -->
 <hr class="betweenAPIEntries"><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/LTMobileSDK/voteWithVote:success:failure:;   name=LTMobileSDK::voteWithVote:success:failure: -->
 <a name="//apple_ref/occ/instm/LTMobileSDK/voteWithVote:success:failure:"></a>
 <h3><a name="voteWithVote:success:failure:">voteWithVote:success:failure:</a></h3>
@@ -697,15 +885,35 @@ function disclosure_triangle(elt) {
 <code>vote</code></dt><dd><p>оценка собеседника.</dd>
 </dl>
 </div>
-<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>ChatException ошибка сервиса чата. Может возникать в
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value --><p>Вызов колбек-блока соответствующего результату. При успешном выполнении запроса вызывается
+колбек-блок success, параметром у которого является объект типа LTSDialogState - состояние текущего обращения, в противном случае вызывается failure, параметром у которого явлется объект типа NSExeption
+пойманый при выполнии операции в параллельном потоке очереди SDK. 
+ChatException ошибка сервиса чата. Может возникать в
 случае отсутствия текущего диалога.
 
 <!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
 <!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/voteWithVote:success:failure:;name=start --><p>ПОценка диалога с собеседником.
 </p>
 <!-- headerDoc=discussion;uid=//apple_ref/occ/instm/LTMobileSDK/voteWithVote:success:failure:;name=end --><!-- end discussion -->
+<hr class="betweenSections">
+<a name="HeaderDoc_props"></a>
+<h2 class="h2tight">Properties</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/LTMobileSDK/delegate" target="_top">delegate</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries"><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/LTMobileSDK/delegate;   name=LTMobileSDK::delegate -->
+<a name="//apple_ref/occ/instp/LTMobileSDK/delegate"></a>
+<h3><a name="delegate">delegate</a></h3>
+<hr class="afterName"><div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/instp/LTMobileSDK/delegate;name=start -->@property(<span class="param">nonatomic</span>,
+    <span class="param">weak</span>) <!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/struct/id //apple_ref/occ/intf/id //apple_ref/doc/anysymbol/id" machineGenerated="true" --><span class="type">id</span><!-- /a --> &lt;<span class="template">LTMobileSDKNotificationHandlerProtocol</span>&gt; <!-- a logicalPath="//apple_ref/occ/econst/delegate //apple_ref/occ/data/LTMobileSDK/delegate //apple_ref/occ/data/delegate //apple_ref/occ/clconst/LTMobileSDK/delegate " machineGenerated="true" --><span class="var">delegate</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/instp/LTMobileSDK/delegate;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/occ/instp/LTMobileSDK/delegate;name=start --><p>Делегат для получения уведомлений сервисов offline/online обращений при рабочем состоянии SDK. Делегат должен реализовать методы LTMobileSDKNotificationHandlerProtocol
+<!-- headerDoc=discussion;uid=//apple_ref/occ/instp/LTMobileSDK/delegate;name=end --><!-- end discussion -->
 <p class="gapBeforeFooter">&nbsp;</p><hr class="afterFooter"><div class="hd_copyright_and_timestamp">
-<p class="hd_timestamp">Last Updated: Friday, December 12, 2014
+<p class="hd_timestamp">Last Updated: Monday, August 31, 2015
 </p></div>
 </td></tr></table>
 </body></html>
