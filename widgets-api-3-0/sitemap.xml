@@ -76,12 +76,6 @@
     </url>
 
     <url>
-     <loc>None/methods/showConversationWindow/</loc>
-     <lastmod>2015-11-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-
-    <url>
      <loc>None/methods/reinit/</loc>
      <lastmod>2015-09-18</lastmod>
      <changefreq>daily</changefreq>
@@ -110,6 +104,18 @@
      <lastmod>2015-09-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
+
+    <url>
+        <loc>None/methods/showConversationWindow/</loc>
+        <lastmod>2015-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+        <loc>None/methods/showOfflineWindow/</loc>
+        <lastmod>2015-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
         
     
 
@@ -136,6 +142,12 @@
      <lastmod>2015-09-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
+
+    <url>
+        <loc>None/enums/EmployeeStatus/</loc>
+        <lastmod>2015-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
         
     <url>
      <loc>None/enums/Event/</loc>
@@ -146,12 +158,6 @@
     <url>
      <loc>None/enums/Source/</loc>
      <lastmod>2015-09-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-
-    <url>
-     <loc>None/enums/EmployeeStatus/</loc>
-     <lastmod>2015-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
