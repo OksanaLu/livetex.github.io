@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Source - Livetex Widgets API 3.0</title>
+	<title>Schedule - Livetex Widgets API 3.0</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -185,24 +185,24 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Typedefs <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../typedefs/ConversationAttribute/">ConversationAttribute</a>
+    <a href="../ConversationAttribute">ConversationAttribute</a>
 </li>
 
 
-                            <li >
-                                <a href="../../typedefs/Employee">Employee</a>
-                            </li>
+<li >
+    <a href="../Employee">Employee</a>
+</li>
 
 
-                            <li >
-                                <a href="../../typedefs/Schedule">Schedule</a>
-                            </li>
+<li class="active">
+    <a href="./">Schedule</a>
+</li>
 
                         
                         </ul>
@@ -210,31 +210,31 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enums <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../ConversationAttributeType/">ConversationAttributeType</a>
+    <a href="../../enums/ConversationAttributeType/">ConversationAttributeType</a>
 </li>
 
 
 
+                            <li >
+                                <a href="../../enums/EmployeeStatus/">EmployeeStatus</a>
+                            </li>
+
+                        
+                            
 <li >
-    <a href="../EmployeeStatus/">EmployeeStatus</a>
+    <a href="../../enums/Event/">Event</a>
 </li>
 
                         
                             
 <li >
-    <a href="../Event/">Event</a>
-</li>
-
-                        
-                            
-<li class="active">
-    <a href="./">Source</a>
+    <a href="../../enums/Source/">Source</a>
 </li>
 
                         
@@ -253,12 +253,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../Event/">
+                        <a rel="next" href="../Employee/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
+                    <li >
+                        <a rel="prev" href="../../enums/ConversationAttributeType/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -274,46 +274,51 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#source">Source</a></li>
+        <li class="main active"><a href="#schedule">Schedule</a></li>
         
             <li><a href="#_1">Описание</a></li>
+        
+            <li><a href="#_2">Тип</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="source">Source</h2>
+<h2 id="employee">Schedule</h2>
 <h3 id="_1">Описание</h3>
-<p>Источник</p>
+<p>График работы</p>
+<h3 id="_2">Тип</h3>
+<p>{ from: number,
+    to: number,
+    days: Array.&lt;number&gt; }</p>
 <table>
 <thead>
 <tr>
-<th>Ключ</th>
-<th>Значение</th>
+<th>Параметр</th>
+<th>Тип</th>
 <th>Описание</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>VISITOR</td>
-<td>'visitor'</td>
-<td>Посетитель</td>
+<td>from</td>
+<td>number</td>
+<td>начало работы, время в секундах от начала дня</td>
+<td></td>
 </tr>
 <tr>
-<td>EMPLOYEE</td>
-<td>'employee'</td>
-<td>Работник организации (Приглашение)</td>
+<td>to</td>
+<td>number</td>
+<td>конец работы, время в секундах от начала дня</td>
+<td></td>
 </tr>
 <tr>
-<td>SYSTEM</td>
-<td>'system'</td>
-<td>Система вовлечения (Автоприглашение)</td>
-</tr>
-<tr>
-<td>API</td>
-<td>'api'</td>
-<td>API</td>
+<td>days</td>
+<td>Array.&lt;number&gt;</td>
+<td>дни недели  от 0 до 6, например [0,1,2,3,4]</td>
+<td></td>
 </tr>
 </tbody>
 </table></div>

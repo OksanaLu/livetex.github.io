@@ -116,6 +116,12 @@
         <lastmod>2015-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
+
+    <url>
+        <loc>None/methods/showXWindow/</loc>
+        <lastmod>2015-11-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
         
     
 
@@ -130,6 +136,12 @@
     <url>
      <loc>None/typedefs/Employee/</loc>
      <lastmod>2015-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+     <loc>None/typedefs/Schedule/</loc>
+     <lastmod>2015-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>showOfflineWindow - Livetex Widgets API 3.0</title>
+    <title>showXWindow - Livetex Widgets API 3.0</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -169,14 +169,14 @@
 
 
 
-                        <li class="active">
-                            <a href="./">showOfflineWindow</a>
+                        <li >
+                            <a href="../showOfflineWindow">showOfflineWindow</a>
                         </li>
 
 
 
-                        <li >
-                            <a href="../showXWindow">showXWindow</a>
+                        <li class="active">
+                            <a href="./">showXWindow</a>
                         </li>
 
 
@@ -253,12 +253,12 @@
                 </li>
 
                 <li >
-                    <a rel="next" href="../showConversationWindow/">
+                    <a rel="next" href="../showOfflineWindow/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../showXWindow/">
+                    <a rel="prev" href="../../typedefs/ConversationAttribute/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -285,14 +285,83 @@
     </div></div>
     <div class="col-md-9" role="main">
 
-        <p><a name="showOfflineWindow"></a></p>
-        <h2 id="showofflinewindow">showOfflineWindow</h2>
-        <p><a name="Описание"></a></p>
-        <h3 id="_1">Описание</h3>
-        <p>Открывает offline окно.</p>
-        <p><a name="Пример"></a></p>
-        <h3 id="_2">Пример</h3>
-<pre><code class="js">LiveTex.showOfflineWindow();</code></pre></div>
+        <a name="LiveTex.showXWindow"></a>
+        <h2 id="livetexshowxwindow">LiveTex.showXWindow</h2>
+        <p>Открывает модальное окно X-Window</p>
+        <strong>Throws</strong>:
+        <ul>
+            <li><code>'Неверные аргументы запроса'</code> </li>
+        </ul>
+        <h3 id="params">Параметры</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>complete</td>
+                <td><code>!function()</code></td>
+                <td>Обработчик успешного результата</td>
+            </tr>
+            <tr>
+                <td>cancel</td>
+                <td><code>!function(string)</code></td>
+                <td>Обработчик ошибки</td>
+            </tr>
+            <tr>
+                <td>schedule</td>
+                <td><code><a href="../../typedefs/Schedule/">!LiveTex.Schedule</a></code></td>
+                <td>Часы работы, когда можно звонить</td>
+            </tr>
+            <tr>
+                <td>[opt_operators]</td>
+                <td><code>Array.&lt;number&gt;</code></td>
+                <td>Операторы, которые получат звонок</td>
+            </tr>
+            <tr>
+                <td>[opt_message]</td>
+                <td><code>string</code></td>
+                <td>Сообщение в модальном окне</td>
+            </tr>
+            <tr>
+                <td>[opt_phone]</td>
+                <td><code>string</code></td>
+                <td>Введённый номер телефона</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3 id="example">Пример</h3>
+<pre><code class="js">// открывает X-Window, звонит только с пн-пт с 9 до 18 часов
+LiveTex.showXWindow(
+    function(){console.log('X-Window открыто')},
+    function(error){console.error(error)},
+    { days: [0,1,2,3,4], from: 9*3600, to: 18*3600}
+);
+</code></pre>
+<pre><code class="js">// открывает X-Window с назначением на определённого оператора
+// с указанным сообщением
+LiveTex.showXWindow(
+    function(){console.log('X-Window открыто')},
+    function(error){console.error(error)},
+    { days: [0,1,2,3,4], from: 9*3600, to: 18*3600},
+    [21572],
+    'Оставьте свой номер телефона и мы перезвоним Вам'
+);
+</code></pre>
+<pre><code class="js">// открывает X-Window с предустановленным телефоном
+LiveTex.showXWindow(
+    function(){console.log('X-Window открыто')},
+    function(error){console.error(error)},
+    { days: [0,1,2,3,4], from: 9*3600, to: 18*3600},
+    null, null,
+    '+7(912)654-54-54'
+);
+</code></pre>
+    </div>
 
 </div>
 
