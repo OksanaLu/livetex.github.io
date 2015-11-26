@@ -50,6 +50,12 @@
      <lastmod>2015-09-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
+
+    <url>
+     <loc>None/methods/getEmployees/</loc>
+     <lastmod>2015-11-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
         
     <url>
      <loc>None/methods/hideChatLabel/</loc>
@@ -136,6 +142,12 @@
     <url>
      <loc>None/typedefs/Employee/</loc>
      <lastmod>2015-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+     <loc>None/typedefs/EmployeeFilter/</loc>
+     <lastmod>2015-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
 
