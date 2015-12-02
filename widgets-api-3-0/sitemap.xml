@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,19 +13,19 @@
         
     <url>
      <loc>None/events/conversation-started/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/events/employee-message/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/events/offline-message/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -35,97 +35,103 @@
         
     <url>
      <loc>None/methods/addEventListener/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/getDepartmentStatus/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/getDepartments/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 
     <url>
      <loc>None/methods/getEmployees/</loc>
-     <lastmod>2015-11-26</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/hideChatLabel/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/isDepartmentAvailable/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/isDepartmentOnline/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/openWelcomeWindow/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 
     <url>
      <loc>None/methods/reinit/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/removeEventListener/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/setConversationAttributes/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+     <loc>None/methods/setVisitorAttributes/</loc>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/setWelcomeDepartments/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/methods/showChatLabel/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 
     <url>
         <loc>None/methods/showConversationWindow/</loc>
-        <lastmod>2015-11-11</lastmod>
+        <lastmod>2015-12-02</lastmod>
         <changefreq>daily</changefreq>
     </url>
 
     <url>
         <loc>None/methods/showOfflineWindow/</loc>
-        <lastmod>2015-11-11</lastmod>
+        <lastmod>2015-12-02</lastmod>
         <changefreq>daily</changefreq>
     </url>
 
     <url>
         <loc>None/methods/showXWindow/</loc>
-        <lastmod>2015-11-26</lastmod>
+        <lastmod>2015-12-02</lastmod>
         <changefreq>daily</changefreq>
     </url>
         
@@ -134,26 +140,44 @@
     
         
     <url>
+     <loc>None/typedefs/Contact/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+
+    <url>
      <loc>None/typedefs/ConversationAttribute/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 
     <url>
      <loc>None/typedefs/Employee/</loc>
-     <lastmod>2015-11-11</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 
     <url>
      <loc>None/typedefs/EmployeeFilter/</loc>
-     <lastmod>2015-11-26</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 
     <url>
      <loc>None/typedefs/Schedule/</loc>
-     <lastmod>2015-11-26</lastmod>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+     <loc>None/typedefs/VisitorAttributes/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+     <loc>None/typedefs/VisitorDisplayedName/</loc>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -162,26 +186,32 @@
     
         
     <url>
+     <loc>None/enums/ContactType/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+
+    <url>
      <loc>None/enums/ConversationAttributeType/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 
     <url>
         <loc>None/enums/EmployeeStatus/</loc>
-        <lastmod>2015-11-11</lastmod>
+        <lastmod>2015-12-02</lastmod>
         <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/enums/Event/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/enums/Source/</loc>
-     <lastmod>2015-09-18</lastmod>
+     <lastmod>2015-12-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

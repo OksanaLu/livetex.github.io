@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Offline message - Livetex Widgets API 3.0</title>
+	<title>Contact - Livetex Widgets API 3.0</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -59,25 +59,25 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../conversation-started/">Conversation started</a>
+    <a href="../../events/conversation-started/">Conversation started</a>
 </li>
 
                         
                             
 <li >
-    <a href="../employee-message/">Employee message</a>
+    <a href="../../events/employee-message/">Employee message</a>
 </li>
 
                         
                             
-<li class="active">
-    <a href="./">Offline message</a>
+<li >
+    <a href="../../events/offline-message/">Offline message</a>
 </li>
 
                         
@@ -197,43 +197,43 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Typedefs <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-
-
-                            <li >
-                                <a href="../../typedefs/Contact/">Contact</a>
-                            </li>
                         
                             
+<li class="active">
+    <a href="./">Contact</a>
+</li>
+
+
 <li >
-    <a href="../../typedefs/ConversationAttribute/">ConversationAttribute</a>
+    <a href="../ConversationAttribute/">ConversationAttribute</a>
+</li>
+
+
+<li >
+    <a href="../Employee">Employee</a>
 </li>
 
 
                             <li >
-                                <a href="../../typedefs/Employee">Employee</a>
+                                <a href="../EmployeeFilter">EmployeeFilter</a>
                             </li>
 
 
                             <li >
-                                <a href="../../typedefs/EmployeeFilter">EmployeeFilter</a>
+                                <a href="../Schedule">Schedule</a>
                             </li>
 
 
                             <li >
-                                <a href="../../typedefs/Schedule">Schedule</a>
+                                <a href="../VisitorAttributes/">VisitorAttributes</a>
                             </li>
 
 
                             <li >
-                                <a href="../../typedefs/VisitorAttributes/">VisitorAttributes</a>
-                            </li>
-
-
-                            <li >
-                                <a href="../../typedefs/VisitorDisplayedName/">VisitorDisplayedName</a>
+                                <a href="../VisitorDisplayedName/">VisitorDisplayedName</a>
                             </li>
 
                         
@@ -258,9 +258,9 @@
 
 
 
-<li >
-    <a href="../../EmployeeStatus/">EmployeeStatus</a>
-</li>
+                            <li >
+                                <a href="../../enums/EmployeeStatus/">EmployeeStatus</a>
+                            </li>
 
                         
                             
@@ -290,12 +290,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../employee-message/">
+                        <a rel="next" href="../../methods/showXWindow/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../../methods/addEventListener/">
+                        <a rel="prev" href="../ConversationAttribute/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -311,20 +311,22 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#offline-message">offline-message</a></li>
+        <li class="main active"><a href="#contact">Contact</a></li>
         
-            <li><a href="#_1">Данные</a></li>
+            <li><a href="#_1">Описание</a></li>
+        
+            <li><a href="#_2">Тип</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="offline-message">offline-message</h2>
-<h3 id="_1">Данные</h3>
-<h4 id="event">event</h4>
-<p>'offline-message'</p>
-<h4 id="data">data</h4>
+<h2 id="contact">Contact</h2>
+<h3 id="_1">Описание</h3>
+<p>Контакт для обратной связи</p>
+<h3 id="_2">Тип</h3>
+<p>{value: string, type: <a href="../../enums/ContactType/">LiveTex.ContactType</a>}</p>
 <table>
 <thead>
 <tr>
@@ -336,21 +338,15 @@
 </thead>
 <tbody>
 <tr>
-<td>message_id</td>
+<td>value</td>
 <td>string</td>
-<td>Идентификатор обращения</td>
+<td>Значение контакта</td>
 <td></td>
 </tr>
 <tr>
-<td>source</td>
-<td>{type: LiveTex.Source, id: string}</td>
-<td>Источник сообщения</td>
-<td></td>
-</tr>
-<tr>
-<td>text</td>
-<td>string</td>
-<td>Текст обращения</td>
+<td>type</td>
+<td><a href="../../enums/ContactType/">LiveTex.ContactType</a></td>
+<td>Тип контакта</td>
 <td></td>
 </tr>
 </tbody>
