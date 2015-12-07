@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>openWelcomeWindow - Livetex Widgets API 3.0</title>
+	<title>hideLabel - Livetex Widgets API 3.0</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -71,13 +71,13 @@
                         
                             
 <li >
-    <a href="../../events/employee-message/">Employee message</a>
+    <a href="../../events/employee-message-sent/">Employee message sent</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../events/offline-message/">Offline message</a>
+    <a href="../../events/offline-message-sent/">Offline message sent</a>
 </li>
 
                         
@@ -115,8 +115,8 @@
 
                         
                             
-<li >
-    <a href="../hideChatLabel/">hideChatLabel</a>
+<li class="active">
+    <a href="./">hideLabel</a>
 </li>
 
                         
@@ -133,8 +133,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">openWelcomeWindow</a>
+<li >
+    <a href="../showWelcomeWindow/">showWelcomeWindow</a>
 </li>
 
                         
@@ -170,7 +170,7 @@
                         
                             
 <li >
-    <a href="../showChatLabel/">showChatLabel</a>
+    <a href="../showLabel/">showLabel</a>
 </li>
 
 
@@ -271,7 +271,7 @@
                         
                             
 <li >
-    <a href="../../enums/Source/">Source</a>
+    <a href="../../enums/SourceType/">SourceType</a>
 </li>
 
                         
@@ -290,12 +290,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../isDepartmentOnline/">
+                        <a rel="next" href="../getEmployees/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../reinit/">
+                        <a rel="prev" href="../isDepartmentAvailable/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -311,7 +311,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#openwelcomewindow">openWelcomeWindow</a></li>
+        <li class="main active"><a href="#hidechatlabel">hideLabel</a></li>
         
             <li><a href="#_1">Описание</a></li>
         
@@ -322,15 +322,12 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="openwelcomewindow">openWelcomeWindow</h2>
+<h2 id="hidechatlabel">hideLabel</h2>
 <h3 id="_1">Описание</h3>
-<p>Открывает внешнее окно приветствия.
- Метод не имеет параметров и не возвращает значения.</p>
-<p>На использование метода существует ограничение,
- метод должен вызываться не из консоли,
- а должен быть привязан к элементу страницы, например кнопке.</p>
+<p>Скрывает ярлык чата.</p>
+<p>Метод не имеет параметров и не возвращает значения.</p>
 <h3 id="_2">Пример</h3>
-<pre><code class="javascript">LiveTex.openWelcomeWindow();
+<pre><code class="javascript">LiveTex.hideLabel();
 </code></pre></div>
             
         </div>

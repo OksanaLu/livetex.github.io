@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Offline message - Livetex Widgets API 3.0</title>
+	<title>SourceType - Livetex Widgets API 3.0</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -59,26 +59,26 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../conversation-started/">Conversation started</a>
+    <a href="../../events/conversation-started/">Conversation started</a>
 </li>
 
-                        
-                            
-<li >
-    <a href="../employee-message/">Employee message</a>
-</li>
 
-                        
-                            
-<li class="active">
-    <a href="./">Offline message</a>
-</li>
+
+                          <li >
+                            <a href="../../events/employee-message-sent/">Employee message sent</a>
+                          </li>
+
+
+
+                          <li >
+                            <a href="../../events/offline-message-sent/">Offline message sent</a>
+                          </li>
 
                         
                         </ul>
@@ -116,7 +116,7 @@
                         
                             
 <li >
-    <a href="../../methods/hideChatLabel/">hideChatLabel</a>
+    <a href="../../methods/hideLabel/">hideLabel</a>
 </li>
 
                         
@@ -134,7 +134,7 @@
                         
                             
 <li >
-    <a href="../../methods/openWelcomeWindow/">openWelcomeWindow</a>
+    <a href="../../methods/showWelcomeWindow/">showWelcomeWindow</a>
 </li>
 
                         
@@ -170,7 +170,7 @@
                         
                             
 <li >
-    <a href="../../methods/showChatLabel/">showChatLabel</a>
+    <a href="../../methods/showLabel/">showLabel</a>
 </li>
 
 
@@ -242,36 +242,36 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enums <b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
 
                             <li >
-                                <a href="../../enums/ContactType/">ContactType</a>
+                                <a href="../ContactType/">ContactType</a>
                             </li>
                         
                             
 <li >
-    <a href="../../enums/ConversationAttributeType/">ConversationAttributeType</a>
+    <a href="../ConversationAttributeType/">ConversationAttributeType</a>
 </li>
 
 
 
 <li >
-    <a href="../../EmployeeStatus/">EmployeeStatus</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../enums/Event/">Event</a>
+    <a href="../EmployeeStatus/">EmployeeStatus</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../enums/Source/">Source</a>
+    <a href="../Event/">Event</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">SourceType</a>
 </li>
 
                         
@@ -290,12 +290,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../employee-message/">
+                        <a rel="next" href="../Event/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../../methods/addEventListener/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -311,47 +311,46 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#offline-message">offline-message</a></li>
+        <li class="main active"><a href="#sourcetype">SourceType</a></li>
         
-            <li><a href="#_1">Данные</a></li>
+            <li><a href="#_1">Описание</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="offline-message">offline-message</h2>
-<h3 id="_1">Данные</h3>
-<h4 id="event">event</h4>
-<p>'offline-message'</p>
-<h4 id="data">data</h4>
+<h2 id="sourcetype">SourceType</h2>
+<h3 id="_1">Описание</h3>
+<p>Источник</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
+<th>Ключ</th>
+<th>Значение</th>
 <th>Описание</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>message_id</td>
-<td>string</td>
-<td>Идентификатор обращения</td>
-<td></td>
+<td>VISITOR</td>
+<td>'visitor'</td>
+<td>Посетитель</td>
 </tr>
 <tr>
-<td>source</td>
-<td>{type: LiveTex.Source, id: string}</td>
-<td>Источник сообщения</td>
-<td></td>
+<td>EMPLOYEE</td>
+<td>'employee'</td>
+<td>Работник организации (Приглашение)</td>
 </tr>
 <tr>
-<td>text</td>
-<td>string</td>
-<td>Текст обращения</td>
-<td></td>
+<td>SYSTEM</td>
+<td>'system'</td>
+<td>Система вовлечения (Автоприглашение)</td>
+</tr>
+<tr>
+<td>API</td>
+<td>'api'</td>
+<td>API</td>
 </tr>
 </tbody>
 </table></div>

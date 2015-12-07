@@ -71,13 +71,13 @@
                         
                             
 <li >
-    <a href="../employee-message/">Employee message</a>
+    <a href="../employee-message-sent/">Employee message sent</a>
 </li>
 
                         
                             
 <li >
-    <a href="../offline-message/">Offline message</a>
+    <a href="../offline-message-sent/">Offline message sent</a>
 </li>
 
                         
@@ -116,7 +116,7 @@
                         
                             
 <li >
-    <a href="../../methods/hideChatLabel/">hideChatLabel</a>
+    <a href="../../methods/hideLabel/">hideLabel</a>
 </li>
 
                         
@@ -134,7 +134,7 @@
                         
                             
 <li >
-    <a href="../../methods/openWelcomeWindow/">openWelcomeWindow</a>
+    <a href="../../methods/showWelcomeWindow/">showWelcomeWindow</a>
 </li>
 
                         
@@ -170,7 +170,7 @@
                         
                             
 <li >
-    <a href="../../methods/showChatLabel/">showChatLabel</a>
+    <a href="../../methods/showLabel/">showLabel</a>
 </li>
 
 
@@ -271,7 +271,7 @@
                         
                             
 <li >
-    <a href="../../enums/Source/">Source</a>
+    <a href="../../enums/SourceType/">SourceType</a>
 </li>
 
                         
@@ -295,7 +295,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../employee-message/">
+                        <a rel="prev" href="../employee-message-sent/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -311,17 +311,19 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#conversation-started">conversation-started</a></li>
-        
-            <li><a href="#_1">Данные</a></li>
-        
+      <li class="main active"><a href="#conversation-started">CONVERSATION_STARTED</a></li>
+      <li><a href="#_1">Описание</a></li>
+      <li><a href="#_2">Данные</a></li>
+      <li><a href="#_3">Пример</a></li>
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="conversation-started">conversation-started</h2>
-<h3 id="_1">Данные</h3>
+<h2 id="conversation-started">LiveTex.Event.CONVERSATION_STARTED</h2>
+<h3 id="_1">Описание</h3>
+Событие начала обращения.
+<h3 id="_2">Данные</h3>
 <h4 id="event">event</h4>
 <p>'conversation-started'</p>
 <h4 id="data">data</h4>
@@ -337,7 +339,7 @@
 <tbody>
 <tr>
 <td>source</td>
-<td>{type: LiveTex.Source, id: string}</td>
+<td>{type: LiveTex.SourceType, id: string}</td>
 <td>Источник обращения</td>
 <td></td>
 </tr>
@@ -348,7 +350,30 @@
 <td></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h3 id="_3">Пример</h3>
+<pre>
+  <code class="javascript">
+    function onConversationStarted(data) {
+      var source = data['source'] || {};
+      var sourceType = source['type'];
+
+      if (sourceType === LiveTex.SourceType.VISITOR) {
+        alert('Обращение началось с сообщения посетителя');
+      } else if (sourceType === LiveTex.SourceType.EMPLOYEE) {
+        alert('Обращение началось с приглашения оператора');
+      } else  if (sourceType === LiveTex.SourceType.SYSTEM) {
+        alert('Обращение началось с автоприглашения');
+      } else if (sourceType === LiveTex.SourceType.API) {
+        alert('Обращение началось после вызова метода API');
+      }
+    }
+
+    var descriptor = LiveTex.addEventListener(
+      LiveTex.Event.CONVERSATION_STARTED, onConversationStarted);
+  </code>
+</pre>
+                </div>
             
         </div>
 
