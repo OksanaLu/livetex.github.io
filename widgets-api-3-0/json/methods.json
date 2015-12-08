@@ -1,0 +1,193 @@
+[
+  {
+    "name": "LiveTex.showXWindow",
+    "description": "Открывает модальное окно X-Window",
+    "params": [
+      {
+        "name": "complete",
+        "type": "!function()",
+        "is_optional": false,
+        "description": "Обработчик успешного результата"
+      },
+      {
+        "name": "cancel",
+        "type": "!function(Error)",
+        "is_optional": false,
+        "description": "Обработчик ошибки"
+      },
+      {
+        "name": "schedule",
+        "type": "!LiveTex.Schedule",
+        "is_optional": false,
+        "description": "Расписание"
+      },
+      {
+        "name": "opt_employeeIds",
+        "type": "?Array.<number>",
+        "is_optional": true,
+        "description": "Список идентификаторов операторов, на которых можно назначить звонок"
+      },
+      {
+        "name": "opt_message",
+        "type": "?string",
+        "is_optional": true,
+        "description": "Сообщение"
+      },
+      {
+        "name": "opt_phone",
+        "type": "?string",
+        "is_optional": true,
+        "description": "Номер телефона для подстановки в placeHolder"
+      }
+    ],
+    "example": "// открывает X-Window, звонит только с пн-пт с 9 до 18 часов\nLiveTex.showXWindow(\n\tfunction() {console.log('X-Window открыто')},\n\tfunction(error) {console.error(error)},\n\t{ days: [0, 1, 2, 3, 4], from: 9 * 3600, to: 18 * 3600}\n\t);\n\n// открывает X-Window с назначением на определённого оператора\n// с указанным сообщением\nLiveTex.showXWindow(\n\tfunction() {console.log('X-Window открыто')},\n\tfunction(error) {console.error(error)},\n\t{'days': [0, 1, 2, 3, 4], 'from': 9 * 3600, 'to': 18 * 3600},\n\t[21572],\n\t'Оставьте свой номер телефона и мы перезвоним Вам'\n);"
+  },
+  {
+    "name": "LiveTex.showConversationWindow",
+    "description": "Открывает диалоговое окно обращения.\nМожно рекомендовать определённого оператора или отдел.\nПри указании '*' вместо departmentId или employeeId выберется любой оператор/группа.\nЕсли в момент вызова метода на сайте нет ни одного доступного оператора, откроется offline-окно. При этом в complete вернётся null.",
+    "params": [
+      {
+        "name": "complete",
+        "type": "!function(employee: ?LiveTex.Employee)",
+        "is_optional": false,
+        "description": "Обработчик успешного результата. Принимает объект назначенного оператора."
+      },
+      {
+        "name": "cancel",
+        "type": "!function(error: Error)",
+        "is_optional": false,
+        "description": "Обработчик ошибки"
+      },
+      {
+        "name": "employeeId",
+        "type": "string",
+        "is_optional": false,
+        "description": "Рекомендуемый оператор. Для выбора любого передать ‘*’"
+      },
+      {
+        "name": "departmentId",
+        "type": "string",
+        "is_optional": false,
+        "description": "Рекомендуемый отдел. Для выбора любого передать ‘*’"
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "is_optional": false,
+        "description": "Первое сообщение обращения"
+      }
+    ],
+    "example": "LiveTex.showConversationWindow(\n\tfunction(employee) {\n\t\tconsole.log(employee ? 'Открыт диалог с оператором ' + employee.name : 'Открыто оффлайн окно');\n\t},\n\tfunction(error) { console.error(error); },\n\t'*', '16429',\n\t'Первое сообщение'\n);"
+  },
+  {
+    "name": "LiveTex.showOfflineWindow",
+    "description": "Открывает offline окно",
+    "example": "LiveTex.showOfflineWindow();"
+  },
+  {
+    "name": "LiveTex.showWelcomeWindow",
+    "description": "Открывает внешнее окно приветствия",
+    "example": "LiveTex.showWelcomeWindow();"
+  },
+  {
+    "name": "LiveTex.getEmployees",
+    "description": "Возвращает список операторов.\nМожет возвращать список, отфильтрованный по определенным критериям",
+    "params": [
+      {
+        "name": "complete",
+        "type": "!function(employees: !Array.<!LiveTex.Employee>)",
+        "is_optional": false,
+        "description": "Обработчик успешного результата. Принимает список отфильтрованных операторов"
+      },
+      {
+        "name": "cancel",
+        "type": "!function(error: Error)",
+        "is_optional": false,
+        "description": "Обработчик ошибки"
+      },
+      {
+        "name": "opt_filter",
+        "type": "!LiveTex.EmployeeFilter",
+        "is_optional": true,
+        "description": "Фильтр операторов. Если данный параметр не указан - фильтрации нет"
+      }
+    ],
+    "example": "// выбрать всех онлайн операторов\nLiveTex.getEmployees(\n\tfunction(employeeList) { console.log(employeeList) },\n\t\tconsole.warn.bind(console),\n\t\t{'status': [LiveTex.EmployeeStatus.ONLINE, LiveTex.EmployeeStatus.BUSY]}\n);\n\n// выбрать всех доступных операторов в отделе\nLiveTex.getEmployees(\n\tfunction(employeeList) {console.log(employeeList)},\n\tconsole.warn.bind(console),\n\t{'is_available': true, 'department_id': '16429' }\n);"
+  },
+  {
+    "name": "LiveTex.setVisitorAttributes",
+    "description": "Устанавливает атрибуты посетителя, заполняет валидные значения в формы",
+    "params": [
+      {
+        "name": "complete",
+        "type": "!function()",
+        "is_optional": false,
+        "description": "Обработчик успешного результата"
+      },
+      {
+        "name": "cancel",
+        "type": "!function(error: Error)",
+        "is_optional": false,
+        "description": "Обработчик ошибки"
+      },
+      {
+        "name": "attributes",
+        "type": "!LiveTex.VisitorAttributes",
+        "is_optional": false,
+        "description": "Атрибуты посетителя"
+      }
+    ],
+    "example": "LiveTex.setVisitorAttributes(\n\tfunction() { console.log('атрибуты сохранены'); },\n\tfunction(error) { console.log('Ошибка: ' + error); },\n\t{\n\t\t\t'name': { 'name': 'Покупатель', 'is_editable': true },\n\t\t\t'contacts': [{\n\t\t\t'value': 'mail@example.ru',\n\t\t\t'type': LiveTex.ContactType.EMAIL\n\t\t}, {\n\t\t\t'value': '+7(912)765-4321',\n\t\t\t'type': LiveTex.ContactType.PHONE\n\t\t}]\n\t}\n);"
+  },
+  {
+    "name": "LiveTex.showInvitationWindow",
+    "description": "Отображает окно вовлечения",
+    "params": [
+      {
+        "name": "complete",
+        "type": "!function(employee: !LiveTex.Employee)",
+        "is_optional": false,
+        "description": "Обработчик успешного результата. Принимает объект назначенного оператора."
+      },
+      {
+        "name": "cancel",
+        "type": "!function(error: Error)",
+        "is_optional": false,
+        "description": "Обработчик ошибки"
+      },
+      {
+        "name": "employeeId",
+        "type": "string",
+        "is_optional": false,
+        "description": "Рекомендуемый оператор. Для выбора любого передать ‘*’"
+      },
+      {
+        "name": "departmentId",
+        "type": "string",
+        "is_optional": false,
+        "description": "Рекомендуемый отдел. Для выбора любого передать ‘*’"
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "is_optional": false,
+        "description": "Первое сообщение обращения"
+      }
+    ],
+    "example": "LiveTex.showInvitationWindow(\n\tfunction(employee) {console.log('Окно вовлечения открыто')},\n\tfunction(error) {console.error(error)},\n\t'*',\n\t'*',\n\t'Нужна помощь?'\n);"
+  },
+  {
+    "name": "LiveTex.hideInvitationWindow",
+    "description": "Закрывает окно вовлечения",
+    "example": "LiveTex.hideInvitationWindow()"
+  },
+  {
+    "name": "LiveTex.isInvitationShown",
+    "description": "Проверяет состояние окна вовлечения отображено/скрыто",
+    "return": {
+      "type": "boolean",
+      "description": "true, если окно вовлечение отображено, false - если окно вовлечения скрыто"
+    },
+    "example": "var isShown = LiveTex.isInvitationShown();"
+  }
+]

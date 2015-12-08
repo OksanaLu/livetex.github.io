@@ -1,0 +1,108 @@
+[
+  {
+    "name": "LiveTex.Event.CALL_STARTED",
+    "description": "Событие начала звонка",
+    "data": [
+      {
+        "name": "visitor_attributes",
+        "type": "!LiveTex.VisitorAttributes",
+        "description": "Атрибуты посетителя"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Event.CALL_ESTABLISHED",
+    "description": "Событие установки звонка",
+    "data": [
+      {
+        "name": "visitor_attributes",
+        "type": "!LiveTex.VisitorAttributes",
+        "description": "Атрибуты посетителя"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Event.X_WINDOW_SHOWN",
+    "description": "Событие показа X-Window",
+    "data": []
+  },
+  {
+    "name": "LiveTex.Event.CONVERSATION_STARTED",
+    "description": "Событие начала обращения",
+    "data": [
+      {
+        "name": "source",
+        "type": "!LiveTex.Source",
+        "description": "Источник обращения"
+      },
+      {
+        "name": "widget_type",
+        "type": "!LiveTex.WidgetType",
+        "description": "Тип виджета, с которого начато обращение"
+      },
+      {
+        "name": "conversation_attributes",
+        "type": "!Array.<!LiveTex.ConversationAttribute>",
+        "description": "Атрибуты обращения"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Event.INVITATION_WINDOW_SHOWN",
+    "description": "Событие открытия окна вовлечения",
+    "data": [
+      {
+        "name": "message",
+        "type": "string",
+        "description": "Сообщение вовлечения"
+      },
+      {
+        "name": "employee",
+        "type": "!LiveTex.Employee",
+        "description": "Оператор, выбранный для формы приглашения"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Event.EMPLOYEE_MESSAGE_SENT",
+    "description": "Событие отправки сообщения оператором",
+    "data": [
+      {
+        "name": "message_id",
+        "type": "string",
+        "description": "Идентификатор сообщения"
+      },
+      {
+        "name": "sender_id",
+        "type": "string",
+        "description": "Идентификатор отправителя"
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "description": "Текст обращения"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Event.OFFLINE_MESSAGE_SENT",
+    "description": "Событие отправки сообщения через Окно Offline Обращения",
+    "data": [
+      {
+        "name": "message_id",
+        "type": "string",
+        "description": "Идентификатор сообщения"
+      },
+      {
+        "name": "sender_id",
+        "type": "string",
+        "description": "Идентификатор отправителя"
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "description": "Текст обращения"
+      }
+    ]
+  }
+]

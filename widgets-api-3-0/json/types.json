@@ -1,0 +1,164 @@
+[
+  {
+    "name": "LiveTex.ConversationAttribute",
+    "description": "Аттрибут обращения",
+    "fields": [
+      {
+        "name": "key",
+        "type": "string",
+        "is_optional": false,
+        "description": "Название атрибута"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "is_optional": false,
+        "description": "Значение атрибута"
+      },
+      {
+        "name": "is_hidden",
+        "type": "boolean",
+        "is_optional": false,
+        "description": "Флаг видимости атрибута.\nСкрытый атрибут - атрибут обращения, не отображающийся оператору. Доступен только в Личном Кабинете"
+      },
+      {
+        "name": "type",
+        "type": "LiveTex.ConversationAttributeType",
+        "is_optional": false,
+        "description": "Тип атрибута"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Employee",
+    "description": "Работник организации",
+    "fields": [
+      {
+        "name": "id",
+        "type": "string",
+        "is_optional": false,
+        "description": "Идентификатор оператора"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "is_optional": false,
+        "description": "Имя оператора (Имя + Фамилия)"
+      },
+      {
+        "name": "avatar_url",
+        "type": "string",
+        "is_optional": false,
+        "description": "Ссылка на аватар"
+      },
+      {
+        "name": "status",
+        "type": "LiveTex.EmployeeStatus",
+        "is_optional": false,
+        "description": "Статус оператора"
+      },
+      {
+        "name": "is_available",
+        "type": "boolean",
+        "is_optional": false,
+        "description": "Флаг занятости оператора.\ntrue, если оператор online и не достиг ограничений по количеству чатов. Во всех других случаях is_available = false"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.EmployeeFilter",
+    "description": "Фильтр операторов",
+    "fields": [
+      {
+        "name": "status",
+        "type": "!Array.<LiveTex.EmployeeStatus>",
+        "is_optional": true,
+        "description": "Фильтрация по статусу оператора. Указываются все допустимые статусы операторов.\n\nЕсли указан пустой массив или поле отсутствует - фильтрации по данному параметру нет"
+      },
+      {
+        "name": "is_available",
+        "type": "boolean",
+        "is_optional": true,
+        "description": "Фильтрация по флагу занятости оператора.\n\nЕсли поле отсутствует - фильтрации по данному параметру нет"
+      },
+      {
+        "name": "department_id",
+        "type": "string",
+        "is_optional": true,
+        "description": "Фильтрация по отделу, в котором находится оператор.\n\nЕсли поле отсутствует или соответствует “*”- фильтрации по данному параметру нет"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.VisitorDisplayedName",
+    "description": "Имя посетителя, отображаемое на сайте",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "is_optional": false,
+        "description": "Имя посетителя "
+      },
+      {
+        "name": "is_editable",
+        "type": "boolean",
+        "is_optional": false,
+        "description": "Флаг возможности посетителя изменить установленное имя"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.VisitorAttributes",
+    "description": "Атрибуты посетителя",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "is_optional": false,
+        "description": "Отображаемое в виджете имя посетителя"
+      },
+      {
+        "name": "contacts",
+        "type": "!Array.<!LiveTex.Contact>",
+        "is_optional": false,
+        "description": "Контактные данные"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Source",
+    "description": "Источник (обращения, сообщения итп)",
+    "fields": [
+      {
+        "name": "id",
+        "type": "string",
+        "is_optional": false,
+        "description": ""
+      },
+      {
+        "name": "type",
+        "type": "LiveTex.SourceType",
+        "is_optional": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Contact",
+    "description": "Контактные данные",
+    "fields": [
+      {
+        "name": "value",
+        "type": "string",
+        "is_optional": false,
+        "description": "Тип источника"
+      },
+      {
+        "name": "type",
+        "type": "LiveTex.ContactType",
+        "is_optional": false,
+        "description": "Тип контакта"
+      }
+    ]
+  }
+]

@@ -1,0 +1,188 @@
+[
+  {
+    "name": "LiveTex.ConversationAttributeType",
+    "description": "Типы атрибутов обращения",
+    "fields": [
+      {
+        "key": "STRING",
+        "value": 0,
+        "description": "Строка"
+      },
+      {
+        "key": "NUMBER",
+        "value": 1,
+        "description": "Число"
+      },
+      {
+        "key": "LIST",
+        "value": 2,
+        "description": "Список"
+      },
+      {
+        "key": "PHONE",
+        "value": 3,
+        "description": "Номер телефона"
+      },
+      {
+        "key": "EMAIL",
+        "value": 4,
+        "description": "Адрес электронной почты"
+      },
+      {
+        "key": "MASK",
+        "value": 5,
+        "description": "Маска (Регулярное выражение)"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.EmployeeStatus",
+    "description": "Статус оператора",
+    "fields": [
+      {
+        "key": "OFFLINE",
+        "value": 0,
+        "description": "Не в сети"
+      },
+      {
+        "key": "ONLINE",
+        "value": 1,
+        "description": "В сети"
+      },
+      {
+        "key": "BUSY",
+        "value": 2,
+        "description": "Нет на месте"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.Event",
+    "description": "Событие",
+    "fields": [
+      {
+        "key": "CONVERSATION_STARTED",
+        "value": "conversation-started",
+        "description": "Событие начала обращения"
+      },
+      {
+        "key": "EMPLOYEE_MESSAGE_SENT",
+        "value": "employee-message-sent",
+        "description": "Событие отправки сообщения оператором"
+      },
+      {
+        "key": "OFFLINE_MESSAGE_SENT",
+        "value": "offline-message-sent",
+        "description": "Событие отправки сообщения через Окно Offline Обращения"
+      },
+      {
+        "key": "CALL_STARTED",
+        "value": "call-started",
+        "description": "Cобытие начала звонка"
+      },
+      {
+        "key": "CALL_ESTABLISHED",
+        "value": "call-established",
+        "description": "Событие ответа на звонок"
+      },
+      {
+        "key": "INVITATION_WINDOW_SHOWN",
+        "value": "invitation-window-shown",
+        "description": "Событие открытия окна вовлечения"
+      },
+      {
+        "key": "X_WINDOW_SHOWN",
+        "value": "x-window-shown",
+        "description": "Событие открытия окна X"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.SourceType",
+    "description": "Тип источника",
+    "fields": [
+      {
+        "key": "VISITOR",
+        "value": "visitor",
+        "description": "Посетитель"
+      },
+      {
+        "key": "EMPLOYEE",
+        "value": "employee",
+        "description": "Работник организации"
+      },
+      {
+        "key": "SYSTEM",
+        "value": "system",
+        "description": "Система LiveTex (автоматические вовлечения)"
+      },
+      {
+        "key": "API",
+        "value": "api",
+        "description": "LiveTex Widgets API"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.WidgetType",
+    "description": "Тип виджета",
+    "fields": [
+      {
+        "key": "WELCOME_WINDOW",
+        "value": "welcome-window",
+        "description": "Окно приветствия"
+      },
+      {
+        "key": "CONVERSATION_WINDOW",
+        "value": "conversation-window",
+        "description": "Окно Online обращения"
+      },
+      {
+        "key": "OFFLINE_WINDOW",
+        "value": "offline-window",
+        "description": "Окно Offline обращения"
+      },
+      {
+        "key": "INVITATION_WINDOW",
+        "value": "invitation-window",
+        "description": "Окно вовлечения"
+      },
+      {
+        "key": "X_WINDOW",
+        "value": "x-window",
+        "description": "Окно X"
+      },
+      {
+        "key": "X_BUTTON",
+        "value": "x-button",
+        "description": "Кнопка X"
+      },
+      {
+        "key": "BUTTON",
+        "value": "button",
+        "description": "Кнопка"
+      },
+      {
+        "key": "LABEL",
+        "value": "label",
+        "description": "Ярлык"
+      }
+    ]
+  },
+  {
+    "name": "LiveTex.ContactType",
+    "description": "Тип контакта",
+    "fields": [
+      {
+        "key": "EMAIL",
+        "value": "email",
+        "description": "Адрес электронной почты"
+      },
+      {
+        "key": "PHONE",
+        "value": "phone",
+        "description": "Номер телефона"
+      }
+    ]
+  }
+]
