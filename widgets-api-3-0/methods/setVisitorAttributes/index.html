@@ -327,10 +327,6 @@
 <h2 id="setvisitorattributes">setVisitorAttributes</h2>
 <h3 id="_1">Описание</h3>
 <p>Устанавливает атрибуты посетителя, заполняет валидные значения в формы</p>
-<strong>Throws</strong>:
-<ul>
-    <li><code>'Неверные аргументы запроса'</code> </li>
-</ul>
 <h3 id="_2">Параметры</h3>
 <table>
 <thead>
@@ -338,6 +334,7 @@
 <th>Имя</th>
 <th>Тип</th>
 <th>Описание</th>
+<th>Опциональность</th>
 </tr>
 </thead>
 <tbody>
@@ -345,16 +342,19 @@
 <td>complete</td>
 <td>!function()</td>
 <td>Обработчик успешного результата</td>
+  <td>Обязательный</td>
 </tr>
 <tr>
 <td>cancel</td>
 <td>!function(string)</td>
 <td>Обработчик ошибки</td>
+  <td>Обязательный</td>
 </tr>
 <tr>
 <td>attributes</td>
 <td>!<a href="../../typedefs/VisitorAttributes">LiveTex.VisitorAttributes</a></td>
 <td>Атрибуты посетителя</td>
+  <td>Обязательный</td>
 </tr>
 </tbody>
 </table>
@@ -363,13 +363,13 @@
   function() { console.log('атрибуты сохранены'); },
   function(error) { console.log('Ошибка: ' + error); },
   {
-    name: { name: 'Покупатель', is_editable: false },
+    name: { 'name': 'Покупатель', 'is_editable': false },
     contacts: [{
-      value: 'mail@example.ru',
-      type: LiveTex.ContactType.EMAIL
+      'value': 'mail@example.ru',
+      'type': LiveTex.ContactType.EMAIL
     }, {
-      value: '+7(912)765-4321',
-      type: LiveTex.ContactType.PHONE
+      'value': '+7(912)765-4321',
+      'type': LiveTex.ContactType.PHONE
     }]
   }
 );

@@ -328,10 +328,6 @@
 <h3 id="_1">Описание</h3>
 <p>Возвращает список операторов.
     Может возвращать список, отфильтрованный по определенным критериям</p>
-<strong>Throws</strong>:
-<ul>
-<li><code>'Неверные аргументы запроса'</code> </li>
-</ul>
 <h3 id="_2">Параметры</h3>
 <table>
 <thead>
@@ -347,19 +343,19 @@
 <td>complete</td>
 <td>!function(!Array.&lt;<a href="../../typedefs/Employee/">!LiveTex.Employee</a>&gt;)</td>
 <td>Обработчик, который вызывается при успешном выполнении операции</td>
-<td></td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>cancel</td>
 <td>!function(string)</td>
 <td>Обработчик ошибки</td>
-<td></td>
+<td>Обязательный</td>
 </tr>
 <tr>
-<td>filter</td>
-<td><a href="../../typedefs/EmployeeFilter/">!LiveTex.EmployeeFilter</a></td>
+<td>opt_filter</td>
+<td><a href="../../typedefs/EmployeeFilter/">!LiveTex.EmployeeFilter=</a></td>
 <td>Критерии фильтрации</td>
-<td></td>
+<td>Опциональный</td>
 </tr>
 </tbody>
 </table>

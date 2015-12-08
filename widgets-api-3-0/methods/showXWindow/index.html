@@ -325,17 +325,14 @@
         <a name="LiveTex.showXWindow"></a>
         <h2 id="livetexshowxwindow">LiveTex.showXWindow</h2>
         <p>Открывает модальное окно X-Window</p>
-        <strong>Throws</strong>:
-        <ul>
-            <li><code>'Неверные аргументы запроса'</code> </li>
-        </ul>
         <h3 id="params">Параметры</h3>
         <table>
             <thead>
             <tr>
-                <th>Param</th>
-                <th>Type</th>
-                <th>Description</th>
+                <th>Имя</th>
+                <th>Тип</th>
+                <th>Описание</th>
+                <th>Опциональность</th>
             </tr>
             </thead>
             <tbody>
@@ -343,31 +340,37 @@
                 <td>complete</td>
                 <td><code>!function()</code></td>
                 <td>Обработчик успешного результата</td>
+                <td>Обязательный</td>
             </tr>
             <tr>
                 <td>cancel</td>
                 <td><code>!function(string)</code></td>
                 <td>Обработчик ошибки</td>
+                <td>Обязательный</td>
             </tr>
             <tr>
                 <td>schedule</td>
                 <td><code><a href="../../typedefs/Schedule/">!LiveTex.Schedule</a></code></td>
                 <td>Часы работы, когда можно звонить</td>
+                <td>Обязательный</td>
             </tr>
             <tr>
-                <td>[opt_operators]</td>
-                <td><code>Array.&lt;number&gt;</code></td>
-                <td>Операторы, которые получат звонок</td>
+                <td>opt_employeeIds</td>
+                <td><code>?Array.&lt;number&gt;</code></td>
+                <td>Идентификаторы операторов, которые получат звонок</td>
+                <td>Опциональный</td>
             </tr>
             <tr>
-                <td>[opt_message]</td>
-                <td><code>string</code></td>
+                <td>opt_message</td>
+                <td><code>?string</code></td>
                 <td>Сообщение в модальном окне</td>
+                <td>Опциональный</td>
             </tr>
             <tr>
-                <td>[opt_phone]</td>
-                <td><code>string</code></td>
+                <td>opt_phone</td>
+                <td><code>?string</code></td>
                 <td>Введённый номер телефона</td>
+                <td>Опциональный</td>
             </tr>
             </tbody>
         </table>
