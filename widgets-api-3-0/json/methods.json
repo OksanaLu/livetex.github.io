@@ -159,13 +159,13 @@
         "name": "employeeId",
         "type": "string",
         "is_optional": false,
-        "description": "Рекомендуемый оператор. Для выбора любого передать ‘*’"
+        "description": "Оператор. Для выбора любого передать ‘*’"
       },
       {
         "name": "departmentId",
         "type": "string",
         "is_optional": false,
-        "description": "Рекомендуемый отдел. Для выбора любого передать ‘*’"
+        "description": "Отдел. Для выбора любого передать ‘*’"
       },
       {
         "name": "message",
