@@ -316,6 +316,12 @@
     <a href="../../enums/SourceType/">SourceType</a>
 </li>
 
+
+
+                            <li >
+                                <a href="../../enums/WidgetType/">WidgetType</a>
+                            </li>
+
                         
                         </ul>
                     </li>
@@ -373,16 +379,12 @@
 <h4 id="data">data</h4>
 <p>-</p>
 <h3 id="_3">Пример</h3>
-<pre>
-  <code class="javascript">
-    function onCallEstablished() {
-      console.log('С клиентом созвонились');
-    }
+<pre><code class="javascript">function onCallEstablished() {
+  console.log('С клиентом созвонились');
+}
 
-    var descriptor = LiveTex.addEventListener(
-      LiveTex.Event.CALL_ESTABLISHED, onCallEstablished);
-  </code>
-</pre>
+var descriptor = LiveTex.addEventListener(
+  LiveTex.Event.CALL_ESTABLISHED, onCallEstablished);</code></pre>
                 </div>
             
         </div>

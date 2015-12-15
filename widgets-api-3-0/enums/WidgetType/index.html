@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Call started - Livetex Widgets API 3.0</title>
+	<title>WidgetType - Livetex Widgets API 3.0</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -59,49 +59,49 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
 
                             <li >
-                                <a href="../call-established/">Call established</a>
-                            </li>
-
-
-
-                            <li class="active">
-                                <a href="./">Call started</a>
+                                <a href="../../events/call-established/">Call established</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../conversation-started/">Conversation started</a>
+                                <a href="../../events/call-started/">Call started</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../employee-message-sent/">Employee message sent</a>
+                                <a href="../../events/conversation-started/">Conversation started</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../invitation-window-shown/">Invitation window shown</a>
+                                <a href="../../events/employee-message-sent/">Employee message sent</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../offline-message-sent/">Offline message sent</a>
+                                <a href="../../events/invitation-window-shown/">Invitation window shown</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../x-window-shown/">X-Window shown</a>
+                                <a href="../../events/offline-message-sent/">Offline message sent</a>
+                            </li>
+
+
+
+                            <li >
+                                <a href="../../events/x-window-shown/">X-Window shown</a>
                             </li>
 
                         
@@ -284,43 +284,43 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enums <b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
 
                             <li >
-                                <a href="../../enums/ContactType/">ContactType</a>
+                                <a href="../ContactType/">ContactType</a>
                             </li>
                         
                             
 <li >
-    <a href="../../enums/ConversationAttributeType/">ConversationAttributeType</a>
+    <a href="../ConversationAttributeType/">ConversationAttributeType</a>
 </li>
 
 
 
 <li >
-    <a href="../../enums/EmployeeStatus/">EmployeeStatus</a>
+    <a href="../EmployeeStatus/">EmployeeStatus</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../enums/Event/">Event</a>
+    <a href="../Event/">Event</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../enums/SourceType/">SourceType</a>
+    <a href="../SourceType/">SourceType</a>
 </li>
 
 
 
-                            <li >
-                                <a href="../../enums/WidgetType/">WidgetType</a>
-                            </li>
+<li class="active">
+    <a href="./">WidgetType</a>
+</li>
 
                         
                         </ul>
@@ -338,12 +338,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../call-established/">
+                        <a rel="next" href="../Event/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../conversation-started/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -359,33 +359,69 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-      <li class="main active"><a href="#call-started">CALL_STARTED</a></li>
-      <li><a href="#_1">Описание</a></li>
-      <li><a href="#_2">Данные</a></li>
-      <li><a href="#_3">Пример</a></li>
+        <li class="main active"><a href="#widgettype">WidgetType</a></li>
+        
+            <li><a href="#_1">Описание</a></li>
+        
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="call-started">LiveTex.Event.CALL_STARTED</h2>
+<h2 id="widgettype">WidgetType</h2>
 <h3 id="_1">Описание</h3>
-<p>Cобытие начала звонка</p>
-<p>Уведомляет о начале звонка. Обычно событие возникает по нажатию кнопки
-"Да, позвоните мне" в окне X-Widget или по нажатию на X-кнопку</p>
-<h3 id="_2">Данные</h3>
-<h4 id="event">event</h4>
-<p>'call-started'</p>
-<h4 id="data">data</h4>
-<p>-</p>
-<h3 id="_3">Пример</h3>
-<pre><code class="javascript">function onCallStarted() {
-  console.log('Клиент хочет, чтоб ему позвонили');
-}
-
-var descriptor = LiveTex.addEventListener(
-  LiveTex.Event.CALL_STARTED, onCallStarted);</code></pre>
-                </div>
+<p>Тип виджета</p>
+<table>
+<thead>
+<tr>
+<th>Ключ</th>
+<th>Значение</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WELCOME_WINDOW</td>
+<td>'welcome-window'</td>
+<td>Окно приветствия</td>
+</tr>
+<tr>
+<td>CONVERSATION_WINDOW</td>
+<td>'conversation-window'</td>
+<td>Окно Online обращения</td>
+</tr>
+<tr>
+<td>OFFLINE_WINDOW</td>
+<td>'offline-window'</td>
+<td>Окно Offline обращения</td>
+</tr>
+<tr>
+<td>INVITATION_WINDOW</td>
+<td>'invitation-window'</td>
+<td>Окно вовлечения</td>
+</tr>
+<tr>
+<td>X_WINDOW</td>
+<td>'x-window'</td>
+<td>Окно X</td>
+</tr>
+<tr>
+<td>X_BUTTON</td>
+<td>'x-button'</td>
+<td>Кнопка X</td>
+</tr>
+<tr>
+<td>BUTTON</td>
+<td>'button'</td>
+<td>Кнопка</td>
+</tr>
+<tr>
+<td>LABEL</td>
+<td>'label'</td>
+<td>Ярлык</td>
+</tr>
+</tbody>
+</table></div>
             
         </div>
 

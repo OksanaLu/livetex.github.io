@@ -316,6 +316,12 @@
     <a href="../../enums/SourceType/">SourceType</a>
 </li>
 
+
+
+                            <li >
+                                <a href="../../enums/WidgetType/">WidgetType</a>
+                            </li>
+
                         
                         </ul>
                     </li>
@@ -394,18 +400,14 @@
 </tbody>
 </table>
 <h3 id="_3">Пример</h3>
-<pre>
-  <code class="javascript">
-    function onInvitationWindowShown(data) {
-      var message = data['message'] || {};
-      var employee = source['employee'];
-      console.log(employee['name'] + ' отправил приглашение: ' + message);
-    }
+<pre><code class="javascript">function onInvitationWindowShown(data) {
+  var message = data['message'] || {};
+  var employee = source['employee'];
+  console.log(employee['name'] + ' отправил приглашение: ' + message);
+}
 
-    var descriptor = LiveTex.addEventListener(
-      LiveTex.Event.INVITATION_WINDOW_SHOWN, onInvitationWindowShown);
-  </code>
-</pre>
+var descriptor = LiveTex.addEventListener(
+  LiveTex.Event.INVITATION_WINDOW_SHOWN, onInvitationWindowShown);</code></pre>
                 </div>
             
         </div>

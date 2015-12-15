@@ -316,6 +316,12 @@
     <a href="../../enums/SourceType/">SourceType</a>
 </li>
 
+
+
+                            <li >
+                                <a href="../../enums/WidgetType/">WidgetType</a>
+                            </li>
+
                         
                         </ul>
                     </li>
@@ -373,16 +379,12 @@
 <p>-</p>
 
 <h3 id="_3">Пример</h3>
-<pre>
-  <code class="javascript">
-    function onXWindowShown(data) {
-      console.log('X-Window показано');
-    }
+<pre><code class="javascript">function onXWindowShown(data) {
+  console.log('X-Window показано');
+}
 
-    var descriptor = LiveTex.addEventListener(
-      LiveTex.Event.X_WINDOW_SHOWN, onXWindowShown);
-  </code>
-</pre>
+var descriptor = LiveTex.addEventListener(
+  LiveTex.Event.X_WINDOW_SHOWN, onXWindowShown);</code></pre>
 </div>
             
         </div>

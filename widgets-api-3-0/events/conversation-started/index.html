@@ -316,6 +316,12 @@
     <a href="../../enums/SourceType/">SourceType</a>
 </li>
 
+
+
+                            <li >
+                                <a href="../../enums/WidgetType/">WidgetType</a>
+                            </li>
+
                         
                         </ul>
                     </li>
@@ -381,13 +387,13 @@
 <tbody>
 <tr>
 <td>source</td>
-<td>{type: LiveTex.SourceType, id: string}</td>
+<td>{type: <a href="../../enums/SourceType/">LiveTex.SourceType</a>, id: string}</td>
 <td>Источник обращения</td>
 <td></td>
 </tr>
 <tr>
 <td>widget_type</td>
-<td>LiveTex.WidgetType</td>
+<td><a href="../../enums/WidgetType/">LiveTex.WidgetType</a></td>
 <td>Тип виджета, с которого начато обращение</td>
 <td></td>
 </tr>
@@ -400,27 +406,23 @@
 </tbody>
 </table>
 <h3 id="_3">Пример</h3>
-<pre>
-  <code class="javascript">
-    function onConversationStarted(data) {
-      var source = data['source'] || {};
-      var sourceType = source['type'];
+<pre><code class="javascript">function onConversationStarted(data) {
+  var source = data['source'] || {};
+  var sourceType = source['type'];
 
-      if (sourceType === LiveTex.SourceType.VISITOR) {
-        alert('Обращение началось с сообщения посетителя');
-      } else if (sourceType === LiveTex.SourceType.EMPLOYEE) {
-        alert('Обращение началось с приглашения оператора');
-      } else  if (sourceType === LiveTex.SourceType.SYSTEM) {
-        alert('Обращение началось с автоприглашения');
-      } else if (sourceType === LiveTex.SourceType.API) {
-        alert('Обращение началось после вызова метода API');
-      }
-    }
+  if (sourceType === LiveTex.SourceType.VISITOR) {
+    alert('Обращение началось с сообщения посетителя');
+  } else if (sourceType === LiveTex.SourceType.EMPLOYEE) {
+    alert('Обращение началось с приглашения оператора');
+  } else  if (sourceType === LiveTex.SourceType.SYSTEM) {
+    alert('Обращение началось с автоприглашения');
+  } else if (sourceType === LiveTex.SourceType.API) {
+    alert('Обращение началось после вызова метода API');
+  }
+}
 
-    var descriptor = LiveTex.addEventListener(
-      LiveTex.Event.CONVERSATION_STARTED, onConversationStarted);
-  </code>
-</pre>
+var descriptor = LiveTex.addEventListener(
+  LiveTex.Event.CONVERSATION_STARTED, onConversationStarted);</code></pre>
                 </div>
             
         </div>
