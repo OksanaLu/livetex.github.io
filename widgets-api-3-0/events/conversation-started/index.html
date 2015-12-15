@@ -62,23 +62,47 @@
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                        
-                            
-<li class="active">
-    <a href="./">Conversation started</a>
-</li>
 
-                        
-                            
-<li >
-    <a href="../employee-message-sent/">Employee message sent</a>
-</li>
 
-                        
-                            
-<li >
-    <a href="../offline-message-sent/">Offline message sent</a>
-</li>
+                            <li >
+                                <a href="../call-established/">Call established</a>
+                            </li>
+
+
+
+                            <li >
+                                <a href="../call-started/">Call started</a>
+                            </li>
+
+
+
+                            <li class="active" >
+                                <a href="./">Conversation started</a>
+                            </li>
+
+
+
+                            <li >
+                                <a href="../employee-message-sent/">Employee message sent</a>
+                            </li>
+
+
+
+                            <li >
+                                <a href="../invitation-window-shown/">Invitation window shown</a>
+                            </li>
+
+
+
+                            <li >
+                                <a href="../offline-message-sent/">Offline message sent</a>
+                            </li>
+
+
+
+                            <li >
+                                <a href="../x-window-shown/">X-Window shown</a>
+                            </li>
 
                         
                         </ul>
@@ -308,7 +332,7 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../..">
+                        <a rel="next" href="../call-started/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -359,6 +383,12 @@
 <td>source</td>
 <td>{type: LiveTex.SourceType, id: string}</td>
 <td>Источник обращения</td>
+<td></td>
+</tr>
+<tr>
+<td>widget_type</td>
+<td>LiveTex.WidgetType</td>
+<td>Тип виджета, с которого начато обращение</td>
 <td></td>
 </tr>
 <tr>
