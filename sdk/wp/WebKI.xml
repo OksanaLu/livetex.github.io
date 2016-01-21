@@ -11,7 +11,7 @@
   <HelpKINode Title="Abuse.Contact свойство" Url="html/a53c615c-7415-98e1-efe1-57600589cc95.htm" />
   <HelpKINode Title="Abuse.Message свойство" Url="html/4b3d91f4-6538-b1e8-d1dd-cfad50f6fc9c.htm" />
   <HelpKINode Title="AbuseAsync метод" Url="html/ee6097fe-82a9-b9bb-7ffa-5796a622c744.htm" />
-  <HelpKINode Title="Android - член перечисления" Url="html/6ce814c1-d01e-d5de-b0a2-d87b8999d9e7.htm" />
+  <HelpKINode Title="ApplicationID свойство" Url="html/96d02512-88a4-031e-9c14-dff9bfac0ce4.htm" />
   <HelpKINode Title="Avatar свойство" Url="html/73a7baef-e520-9d82-5d73-53482f10753f.htm" />
   <HelpKINode Title="Bad - член перечисления" Url="html/33a74f9d-2066-c763-807a-cd6473afacd6.htm" />
   <HelpKINode Title="Ban метод" Url="html/c72bb0d0-780d-1aad-25cf-5040bad9d304.htm" />
@@ -28,15 +28,27 @@
   </HelpKINode>
   <HelpKINode Title="ChatException.ChatException конструктор" Url="html/ee5c84ba-dba3-0dec-3edc-b6ddcb289f72.htm" />
   <HelpKINode Title="ChatException.Code свойство" Url="html/83972035-4412-8771-0603-d12c587c7ac2.htm" />
-  <HelpKINode Title="ChatException.Message свойство" Url="html/2c6c6584-cdf2-e336-5bfd-5a6c06593ab1.htm" />
+  <HelpKINode Title="Close - член перечисления" Url="html/5cee2774-4821-71d6-8ebb-f1bc4f6071a0.htm" />
   <HelpKINode Title="CloseDialogAsync метод" Url="html/d1264cd9-8fbc-9c4c-c34b-38ac7ca47da4.htm" />
   <HelpKINode Title="Cobrowse - член перечисления" Url="html/626466ba-4215-cf79-25e8-b9bec8e3b3c3.htm" />
   <HelpKINode Title="Code свойство">
     <HelpKINode Title="ChatException.Code - свойство" Url="html/83972035-4412-8771-0603-d12c587c7ac2.htm" />
     <HelpKINode Title="InvalidClientException.Code - свойство" Url="html/6b50f92b-9352-8304-2803-a2c9f3da4462.htm" />
+    <HelpKINode Title="OfflineVisitorPublicException.Code - свойство" Url="html/9b9badc4-2c6a-3b22-d1a7-e1e4749c9bc7.htm" />
   </HelpKINode>
   <HelpKINode Title="ConfirmTextMessage метод" Url="html/3d5f20dd-ec44-b5b7-de1d-0839f0003f79.htm" />
+  <HelpKINode Title="Contact - класс">
+    <HelpKINode Title="Contact - класс" Url="html/ea75e1b5-06ec-1401-78f0-790049e3c18c.htm" />
+    <HelpKINode Title="конструктор" Url="html/abfe2853-9b4b-80d0-b84b-f01c0ecedf05.htm" />
+    <HelpKINode Title="методы" Url="html/0ae42bc0-40fe-ba41-f187-68783d66a06c.htm" />
+    <HelpKINode Title="о Contact - класс" Url="html/ea75e1b5-06ec-1401-78f0-790049e3c18c.htm" />
+    <HelpKINode Title="свойства" Url="html/98b84432-b79e-2b25-6818-52603f68c5dd.htm" />
+  </HelpKINode>
   <HelpKINode Title="Contact свойство" Url="html/a53c615c-7415-98e1-efe1-57600589cc95.htm" />
+  <HelpKINode Title="Contact.Contact конструктор" Url="html/abfe2853-9b4b-80d0-b84b-f01c0ecedf05.htm" />
+  <HelpKINode Title="Contact.Type свойство" Url="html/dc1891c0-1bf0-8f42-a8b6-3797161191cf.htm" />
+  <HelpKINode Title="Contact.Value свойство" Url="html/b02ed4fd-cb3d-784e-465e-4950e3cf7f6c.htm" />
+  <HelpKINode Title="ContactType - перечисление" Url="html/2e39c7d5-580c-aa95-c03a-3910e62b157c.htm" />
   <HelpKINode Title="Conversation - класс">
     <HelpKINode Title="Conversation - класс" Url="html/fb7809e9-0af3-6b87-f885-4a416437130c.htm" />
     <HelpKINode Title="методы" Url="html/b9589e41-253a-b81b-1776-180158d38e11.htm" />
@@ -47,8 +59,17 @@
   <HelpKINode Title="Conversation.DepartmentID свойство" Url="html/b4f6cd8b-aacb-d619-862a-83c10cf3809c.htm" />
   <HelpKINode Title="Conversation.EmployeeID свойство" Url="html/6129661d-0b38-228c-7ce9-4d82dca98f7e.htm" />
   <HelpKINode Title="ConversationActive - член перечисления" Url="html/73a8ed4b-b402-dbdb-0e34-321bcbbc908a.htm" />
+  <HelpKINode Title="ConversationID свойство">
+    <HelpKINode Title="OfflineConversation.ConversationID - свойство" Url="html/89f3c050-3773-f923-d661-0a4190ec16b1.htm" />
+    <HelpKINode Title="OfflineMessage.ConversationID - свойство" Url="html/74a00bbb-34d6-12fe-1718-bd3b8067b2d7.htm" />
+  </HelpKINode>
   <HelpKINode Title="ConversationQueued - член перечисления" Url="html/73a8ed4b-b402-dbdb-0e34-321bcbbc908a.htm" />
   <HelpKINode Title="CreateAsync метод" Url="html/afa90cde-201b-4d20-8899-86ad1f0ff434.htm" />
+  <HelpKINode Title="CreateOfflineConversationAsync метод" Url="html/51f1802a-9278-7d7a-2e33-dcefa20449ea.htm" />
+  <HelpKINode Title="CreateTimeStamp свойство">
+    <HelpKINode Title="OfflineConversation.CreateTimeStamp - свойство" Url="html/841ceee0-94cb-b31d-dddc-6dc62cda899a.htm" />
+    <HelpKINode Title="OfflineRoute.CreateTimeStamp - свойство" Url="html/2f956fd8-4020-1ab5-6608-5fbb0b600055.htm" />
+  </HelpKINode>
   <HelpKINode Title="Department - класс">
     <HelpKINode Title="Department - класс" Url="html/321c98dc-49b7-0ccd-e88c-8414f0af5264.htm" />
     <HelpKINode Title="методы" Url="html/ff60a07a-795e-9493-10a4-0501a6e68bf9.htm" />
@@ -59,7 +80,6 @@
   <HelpKINode Title="Department.Name свойство" Url="html/0631a38b-f48e-fdbe-8fd9-6199c338a7e3.htm" />
   <HelpKINode Title="Department.Options свойство" Url="html/fda16c3a-bea7-cc1d-621c-431ad17bd18d.htm" />
   <HelpKINode Title="DepartmentID свойство" Url="html/b4f6cd8b-aacb-d619-862a-83c10cf3809c.htm" />
-  <HelpKINode Title="DeviceType - перечисление" Url="html/6ce814c1-d01e-d5de-b0a2-d87b8999d9e7.htm" />
   <HelpKINode Title="DialogAttributes - класс">
     <HelpKINode Title="DialogAttributes - класс" Url="html/bc308f30-674a-6dfb-93d9-1f9937b33aad.htm" />
     <HelpKINode Title="конструктор" Url="html/ca368b65-4691-4f62-3272-dce720359360.htm" />
@@ -80,6 +100,7 @@
   <HelpKINode Title="DialogState.Employee свойство" Url="html/be5a2171-8ccb-5d1e-6f2e-2cab7a4d50c9.htm" />
   <HelpKINode Title="DialogState.State свойство" Url="html/95e6bc98-e7b4-2d59-a550-6cfc9ae984e9.htm" />
   <HelpKINode Title="DialogStates - перечисление" Url="html/73a8ed4b-b402-dbdb-0e34-321bcbbc908a.htm" />
+  <HelpKINode Title="Email - член перечисления" Url="html/2e39c7d5-580c-aa95-c03a-3910e62b157c.htm" />
   <HelpKINode Title="Email свойство" Url="html/3d021730-c763-745b-f5fd-ef9fb1a644d9.htm" />
   <HelpKINode Title="Employee - класс">
     <HelpKINode Title="Employee - класс" Url="html/3ad510ac-826c-ef8b-90e8-93ef6d6fa800.htm" />
@@ -98,6 +119,7 @@
   <HelpKINode Title="Employee.Status свойство" Url="html/7e8cb13c-9cb8-ac04-8a7d-d8c2bf382a13.htm" />
   <HelpKINode Title="EmployeeId свойство" Url="html/5016ff03-a169-6c44-8c7e-41eecd86ca31.htm" />
   <HelpKINode Title="EmployeeID свойство" Url="html/6129661d-0b38-228c-7ce9-4d82dca98f7e.htm" />
+  <HelpKINode Title="File - член перечисления" Url="html/57c902db-5deb-3039-c2a6-aec861d3eca8.htm" />
   <HelpKINode Title="FileMessage - класс">
     <HelpKINode Title="FileMessage - класс" Url="html/6cfbcc2b-2e03-ba81-7feb-56e0639b8e4c.htm" />
     <HelpKINode Title="методы" Url="html/d69b245c-eb79-6f10-8cb2-ee34236ee369.htm" />
@@ -118,8 +140,11 @@
   <HelpKINode Title="GetEmployeeAsync метод" Url="html/7db0d4e0-c20b-1e3e-a315-44e1d766dcce.htm" />
   <HelpKINode Title="GetEmployeesAsync метод" Url="html/b5b49821-8d06-bad4-fcd9-3d2a384e36b1.htm" />
   <HelpKINode Title="GetMessagesHistoryAsync метод" Url="html/d1a3abdf-17fa-7819-ae4a-e5500b76fc27.htm" />
+  <HelpKINode Title="GetOfflineConversationsAsync метод" Url="html/d957f968-a75a-5e49-28e1-780b5df7e1ed.htm" />
+  <HelpKINode Title="GetOfflineMessagesAsync метод" Url="html/6525fac3-79b3-4d98-0abf-7a7ebb294b58.htm" />
   <HelpKINode Title="GetToken метод" Url="html/8abc72de-7c32-d2b3-8b20-038d7a42eebf.htm" />
   <HelpKINode Title="Good - член перечисления" Url="html/33a74f9d-2066-c763-807a-cd6473afacd6.htm" />
+  <HelpKINode Title="GroupID свойство" Url="html/608b7772-c65c-ff3b-c418-55852332b06d.htm" />
   <HelpKINode Title="Hidden свойство" Url="html/d6330100-3c10-c9db-1fb0-e00af5335096.htm" />
   <HelpKINode Title="HoldMessage - класс">
     <HelpKINode Title="HoldMessage - класс" Url="html/cf909f01-3582-69fb-db3a-1c91ba8423c0.htm" />
@@ -132,6 +157,7 @@
   <HelpKINode Title="Id свойство">
     <HelpKINode Title="Department.Id - свойство" Url="html/9d8aab4b-5640-2e04-fc46-fd21cbf30fe0.htm" />
     <HelpKINode Title="FileMessage.Id - свойство" Url="html/c4163269-e767-0c8c-1525-c6fae67fb4fe.htm" />
+    <HelpKINode Title="OfflineMessage.Id - свойство" Url="html/a97d73e9-5255-bf09-85de-4d160f9aa78f.htm" />
     <HelpKINode Title="TextMessage.Id - свойство" Url="html/b5059221-b244-1ab2-7766-bbf9eb628396.htm" />
   </HelpKINode>
   <HelpKINode Title="ILiveTexClient - интерфейс">
@@ -141,16 +167,22 @@
   </HelpKINode>
   <HelpKINode Title="ILiveTexClient.AbuseAsync метод" Url="html/ee6097fe-82a9-b9bb-7ffa-5796a622c744.htm" />
   <HelpKINode Title="ILiveTexClient.CloseDialogAsync метод" Url="html/d1264cd9-8fbc-9c4c-c34b-38ac7ca47da4.htm" />
+  <HelpKINode Title="ILiveTexClient.CreateOfflineConversationAsync метод" Url="html/51f1802a-9278-7d7a-2e33-dcefa20449ea.htm" />
   <HelpKINode Title="ILiveTexClient.GetDepartmentEmployeesAsync метод" Url="html/7f7b4f2e-38c0-b879-3a24-c4f29da79ab0.htm" />
   <HelpKINode Title="ILiveTexClient.GetDepartmentsAsync метод" Url="html/ad7aefe0-0b0b-4256-efab-0ac5f2f0a4e7.htm" />
   <HelpKINode Title="ILiveTexClient.GetDialogStateAsync метод" Url="html/7c1aa731-1839-b138-b408-9141e92c5a39.htm" />
   <HelpKINode Title="ILiveTexClient.GetEmployeeAsync метод" Url="html/7db0d4e0-c20b-1e3e-a315-44e1d766dcce.htm" />
   <HelpKINode Title="ILiveTexClient.GetEmployeesAsync метод" Url="html/b5b49821-8d06-bad4-fcd9-3d2a384e36b1.htm" />
   <HelpKINode Title="ILiveTexClient.GetMessagesHistoryAsync метод" Url="html/d1a3abdf-17fa-7819-ae4a-e5500b76fc27.htm" />
+  <HelpKINode Title="ILiveTexClient.GetOfflineConversationsAsync метод" Url="html/d957f968-a75a-5e49-28e1-780b5df7e1ed.htm" />
+  <HelpKINode Title="ILiveTexClient.GetOfflineMessagesAsync метод" Url="html/6525fac3-79b3-4d98-0abf-7a7ebb294b58.htm" />
   <HelpKINode Title="ILiveTexClient.GetToken метод" Url="html/8abc72de-7c32-d2b3-8b20-038d7a42eebf.htm" />
   <HelpKINode Title="ILiveTexClient.RequestDialogAsync метод" Url="html/2255118e-fdac-292e-9462-0fb8953d95e7.htm" />
   <HelpKINode Title="ILiveTexClient.RequestDialogByDepartmentAsync метод" Url="html/c21545e0-fbc8-5671-85c9-0d9512ef99ce.htm" />
   <HelpKINode Title="ILiveTexClient.RequestDialogByEmployeeAsync метод" Url="html/ac2b3a91-ec54-d679-237e-7738bf24e5eb.htm" />
+  <HelpKINode Title="ILiveTexClient.SendFileAsync метод" Url="html/c30ed56d-ce6e-4026-b88c-8574988c18a8.htm" />
+  <HelpKINode Title="ILiveTexClient.SendOfflineFileAsync метод" Url="html/9410e292-d8e0-df70-f1eb-390d8159e34b.htm" />
+  <HelpKINode Title="ILiveTexClient.SendOfflineMessageAsync метод" Url="html/7d9a3db0-9b97-a6f9-ae29-f518b1f5b249.htm" />
   <HelpKINode Title="ILiveTexClient.SendTextMessageAsync метод" Url="html/ef417280-586a-ce78-e390-43d9fdf27291.htm" />
   <HelpKINode Title="ILiveTexClient.SetVisitorNameAsync метод" Url="html/ce58e84b-b50a-8d2e-7fd1-b42ff2f830b2.htm" />
   <HelpKINode Title="ILiveTexClient.SubscribeToEvents метод" Url="html/4fe17a56-bb57-3b2a-b644-e42256bcfe84.htm" />
@@ -165,6 +197,7 @@
   <HelpKINode Title="ILiveTexEventsHandler.ConfirmTextMessage метод" Url="html/3d5f20dd-ec44-b5b7-de1d-0839f0003f79.htm" />
   <HelpKINode Title="ILiveTexEventsHandler.ReceiveFileMessage метод" Url="html/526a0f94-322c-7545-6f5f-ac376fba1145.htm" />
   <HelpKINode Title="ILiveTexEventsHandler.ReceiveHoldMessage метод" Url="html/f4f8d395-c5e3-cee3-1ac0-1ab53ebd3e51.htm" />
+  <HelpKINode Title="ILiveTexEventsHandler.ReceiveOfflineMessage метод" Url="html/30ad2c67-8b93-594d-d86f-1da4e68edfa0.htm" />
   <HelpKINode Title="ILiveTexEventsHandler.ReceiveTextMessage метод" Url="html/1c433e84-2a95-0810-1cc6-e8d1e95cb2c5.htm" />
   <HelpKINode Title="ILiveTexEventsHandler.ReceiveTypingMessage метод" Url="html/5307a471-9d4b-e05b-e4b3-7c64e0dca1a9.htm" />
   <HelpKINode Title="ILiveTexEventsHandler.UpdateDialogState метод" Url="html/ee800b5f-37bd-353a-2090-293a65f0f6f6.htm" />
@@ -178,9 +211,7 @@
   </HelpKINode>
   <HelpKINode Title="InvalidClientException.Code свойство" Url="html/6b50f92b-9352-8304-2803-a2c9f3da4462.htm" />
   <HelpKINode Title="InvalidClientException.InvalidClientException конструктор" Url="html/fad8811d-6ca9-61ad-a71e-7631a84ad807.htm" />
-  <HelpKINode Title="InvalidClientException.Message свойство" Url="html/6493d630-2802-b593-7c99-d10167e92f5a.htm" />
   <HelpKINode Title="Invitation - член перечисления" Url="html/626466ba-4215-cf79-25e8-b9bec8e3b3c3.htm" />
-  <HelpKINode Title="iOs - член перечисления" Url="html/6ce814c1-d01e-d5de-b0a2-d87b8999d9e7.htm" />
   <HelpKINode Title="Lastname свойство" Url="html/4c59cf50-8181-8dc7-d9b0-1e64d9ddb195.htm" />
   <HelpKINode Title="Lead - член перечисления" Url="html/626466ba-4215-cf79-25e8-b9bec8e3b3c3.htm" />
   <HelpKINode Title="LiveTex.SDK - пространство имён" Url="html/3b7c9213-1db2-1b50-6854-187e99deeb59.htm" />
@@ -188,9 +219,10 @@
   <HelpKINode Title="LiveTex.SDK.Client.Abuse - класс" Url="html/4cec7853-a526-c25d-98d0-ab07cf20a129.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.Capabilities - перечисление" Url="html/626466ba-4215-cf79-25e8-b9bec8e3b3c3.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.ChatException - класс" Url="html/1c85dfdb-7a02-0a74-b71f-c42d8fbeca5e.htm" />
+  <HelpKINode Title="LiveTex.SDK.Client.Contact - класс" Url="html/ea75e1b5-06ec-1401-78f0-790049e3c18c.htm" />
+  <HelpKINode Title="LiveTex.SDK.Client.ContactType - перечисление" Url="html/2e39c7d5-580c-aa95-c03a-3910e62b157c.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.Conversation - класс" Url="html/fb7809e9-0af3-6b87-f885-4a416437130c.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.Department - класс" Url="html/321c98dc-49b7-0ccd-e88c-8414f0af5264.htm" />
-  <HelpKINode Title="LiveTex.SDK.Client.DeviceType - перечисление" Url="html/6ce814c1-d01e-d5de-b0a2-d87b8999d9e7.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.DialogAttributes - класс" Url="html/bc308f30-674a-6dfb-93d9-1f9937b33aad.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.DialogState - класс" Url="html/a993ff7a-b4a8-015b-645d-e6607e07bd55.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.DialogStates - перечисление" Url="html/73a8ed4b-b402-dbdb-0e34-321bcbbc908a.htm" />
@@ -199,6 +231,12 @@
   <HelpKINode Title="LiveTex.SDK.Client.HoldMessage - класс" Url="html/cf909f01-3582-69fb-db3a-1c91ba8423c0.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.InvalidClientException - класс" Url="html/6491b5e4-af3f-64c9-545d-153edd0b0349.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.LiveTexException - класс" Url="html/1d85141f-3f1d-9bf8-2390-a4c13c0b87eb.htm" />
+  <HelpKINode Title="LiveTex.SDK.Client.MessageType - перечисление" Url="html/57c902db-5deb-3039-c2a6-aec861d3eca8.htm" />
+  <HelpKINode Title="LiveTex.SDK.Client.OfflineConversation - класс" Url="html/65dbfc68-f4ba-951c-00a1-a10e69f526b3.htm" />
+  <HelpKINode Title="LiveTex.SDK.Client.OfflineConversationStatus - перечисление" Url="html/5cee2774-4821-71d6-8ebb-f1bc4f6071a0.htm" />
+  <HelpKINode Title="LiveTex.SDK.Client.OfflineMessage - класс" Url="html/4ef43e1f-4841-0cbe-79de-9eeeb3f00334.htm" />
+  <HelpKINode Title="LiveTex.SDK.Client.OfflineRoute - класс" Url="html/249b778a-c645-1bb7-ede3-ca89f2dc80c1.htm" />
+  <HelpKINode Title="LiveTex.SDK.Client.OfflineVisitorPublicException - класс" Url="html/98d9bb66-7941-e8d9-a1b6-d75904c77001.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.ServiceUnavailableException - класс" Url="html/e24fca3b-b9db-f636-de89-e0cb0d633b9a.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.TextMessage - класс" Url="html/f5e63b64-7a1f-b582-1075-cc5b422d8386.htm" />
   <HelpKINode Title="LiveTex.SDK.Client.TransportException - класс" Url="html/96f50bc9-f88d-65fc-854b-292772fa8b2f.htm" />
@@ -224,27 +262,89 @@
     <HelpKINode Title="события" Url="html/605842b1-8522-4724-6754-99ac9774f748.htm" />
   </HelpKINode>
   <HelpKINode Title="LiveTexException.LiveTexException конструктор" Url="html/5824bde4-ad2c-e78b-5460-5d936a3e653d.htm" />
+  <HelpKINode Title="MemberID свойство" Url="html/428a4b69-78c6-1836-eb39-c4d281a0dff3.htm" />
   <HelpKINode Title="Message свойство">
     <HelpKINode Title="Abuse.Message - свойство" Url="html/4b3d91f4-6538-b1e8-d1dd-cfad50f6fc9c.htm" />
-    <HelpKINode Title="ChatException.Message - свойство" Url="html/2c6c6584-cdf2-e336-5bfd-5a6c06593ab1.htm" />
-    <HelpKINode Title="InvalidClientException.Message - свойство" Url="html/6493d630-2802-b593-7c99-d10167e92f5a.htm" />
+    <HelpKINode Title="OfflineMessage.Message - свойство" Url="html/50c05aab-bfcb-a31a-dc6b-118afa14c88c.htm" />
   </HelpKINode>
+  <HelpKINode Title="MessageType - перечисление" Url="html/57c902db-5deb-3039-c2a6-aec861d3eca8.htm" />
+  <HelpKINode Title="MessageType свойство" Url="html/cc84830c-a0b4-4e7e-ccce-f9f330c95c9a.htm" />
+  <HelpKINode Title="Name - член перечисления" Url="html/2e39c7d5-580c-aa95-c03a-3910e62b157c.htm" />
   <HelpKINode Title="Name свойство" Url="html/0631a38b-f48e-fdbe-8fd9-6199c338a7e3.htm" />
   <HelpKINode Title="NoConversation - член перечисления" Url="html/73a8ed4b-b402-dbdb-0e34-321bcbbc908a.htm" />
+  <HelpKINode Title="Offline - член перечисления" Url="html/626466ba-4215-cf79-25e8-b9bec8e3b3c3.htm" />
+  <HelpKINode Title="OfflineConversation - класс">
+    <HelpKINode Title="OfflineConversation - класс" Url="html/65dbfc68-f4ba-951c-00a1-a10e69f526b3.htm" />
+    <HelpKINode Title="методы" Url="html/b34cfd59-a11b-e81c-1029-8cb43da5da7c.htm" />
+    <HelpKINode Title="о OfflineConversation - класс" Url="html/65dbfc68-f4ba-951c-00a1-a10e69f526b3.htm" />
+    <HelpKINode Title="свойства" Url="html/2eb546d7-0417-79c7-5ad2-e7218907e9ed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OfflineConversation.ConversationID свойство" Url="html/89f3c050-3773-f923-d661-0a4190ec16b1.htm" />
+  <HelpKINode Title="OfflineConversation.CreateTimeStamp свойство" Url="html/841ceee0-94cb-b31d-dddc-6dc62cda899a.htm" />
+  <HelpKINode Title="OfflineConversation.Route свойство" Url="html/d5968d07-9449-633f-d364-94277a3548c2.htm" />
+  <HelpKINode Title="OfflineConversation.Status свойство" Url="html/aa1e0c50-b8d7-f0c2-5dc2-f225cdd74d8d.htm" />
+  <HelpKINode Title="OfflineConversation.Title свойство" Url="html/bd84fd9a-db5a-86c5-387a-df178b6520d3.htm" />
+  <HelpKINode Title="OfflineConversation.UpdateTimeStamp свойство" Url="html/e088b31b-360f-8403-c5a7-8a0f63e213c0.htm" />
+  <HelpKINode Title="OfflineConversation.VisitorID свойство" Url="html/27422a48-6b3f-c792-109a-64ff10e60652.htm" />
+  <HelpKINode Title="OfflineConversationStatus - перечисление" Url="html/5cee2774-4821-71d6-8ebb-f1bc4f6071a0.htm" />
+  <HelpKINode Title="OfflineMessage - класс">
+    <HelpKINode Title="OfflineMessage - класс" Url="html/4ef43e1f-4841-0cbe-79de-9eeeb3f00334.htm" />
+    <HelpKINode Title="методы" Url="html/5898707e-00d3-712c-7aea-baa00c4c0bf5.htm" />
+    <HelpKINode Title="о OfflineMessage - класс" Url="html/4ef43e1f-4841-0cbe-79de-9eeeb3f00334.htm" />
+    <HelpKINode Title="свойства" Url="html/dbdcf25a-8632-2a9e-5b85-7085c7dcf5a6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OfflineMessage.ConversationID свойство" Url="html/74a00bbb-34d6-12fe-1718-bd3b8067b2d7.htm" />
+  <HelpKINode Title="OfflineMessage.Id свойство" Url="html/a97d73e9-5255-bf09-85de-4d160f9aa78f.htm" />
+  <HelpKINode Title="OfflineMessage.Message свойство" Url="html/50c05aab-bfcb-a31a-dc6b-118afa14c88c.htm" />
+  <HelpKINode Title="OfflineMessage.MessageType свойство" Url="html/cc84830c-a0b4-4e7e-ccce-f9f330c95c9a.htm" />
+  <HelpKINode Title="OfflineMessage.SenderID свойство" Url="html/ebf6593d-bb77-6bc0-b062-30b45c5a65c8.htm" />
+  <HelpKINode Title="OfflineMessage.Timestamp свойство" Url="html/7423876b-cee7-924f-01f7-bd8e2250a088.htm" />
+  <HelpKINode Title="OfflineMessage.Url свойство" Url="html/e683e23c-4150-29f8-4386-44b7770a659d.htm" />
+  <HelpKINode Title="OfflineRoute - класс">
+    <HelpKINode Title="OfflineRoute - класс" Url="html/249b778a-c645-1bb7-ede3-ca89f2dc80c1.htm" />
+    <HelpKINode Title="методы" Url="html/68e13fb1-7f6d-e0d1-ab9c-48c0d634b411.htm" />
+    <HelpKINode Title="о OfflineRoute - класс" Url="html/249b778a-c645-1bb7-ede3-ca89f2dc80c1.htm" />
+    <HelpKINode Title="свойства" Url="html/55640346-a0eb-72c5-2b20-816acbc5b514.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OfflineRoute.ApplicationID свойство" Url="html/96d02512-88a4-031e-9c14-dff9bfac0ce4.htm" />
+  <HelpKINode Title="OfflineRoute.CreateTimeStamp свойство" Url="html/2f956fd8-4020-1ab5-6608-5fbb0b600055.htm" />
+  <HelpKINode Title="OfflineRoute.GroupID свойство" Url="html/608b7772-c65c-ff3b-c418-55852332b06d.htm" />
+  <HelpKINode Title="OfflineRoute.MemberID свойство" Url="html/428a4b69-78c6-1836-eb39-c4d281a0dff3.htm" />
+  <HelpKINode Title="OfflineRoute.UpdateTimeStamp свойство" Url="html/5bc382dc-2c50-bb3d-3b64-03c0da8f6b4e.htm" />
+  <HelpKINode Title="OfflineVisitorPublicException - класс">
+    <HelpKINode Title="OfflineVisitorPublicException - класс" Url="html/98d9bb66-7941-e8d9-a1b6-d75904c77001.htm" />
+    <HelpKINode Title="конструктор" Url="html/80192380-d5c5-2034-4fe5-ed8104988c67.htm" />
+    <HelpKINode Title="методы" Url="html/1e8121f9-2a50-4287-128d-6b3b0db91041.htm" />
+    <HelpKINode Title="о OfflineVisitorPublicException - класс" Url="html/98d9bb66-7941-e8d9-a1b6-d75904c77001.htm" />
+    <HelpKINode Title="свойства" Url="html/06aa3fae-1dd4-9517-dcae-4e90cd30cac7.htm" />
+    <HelpKINode Title="события" Url="html/ff3c441c-a9c1-7cfe-5051-b1bde19762b4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OfflineVisitorPublicException.Code свойство" Url="html/9b9badc4-2c6a-3b22-d1a7-e1e4749c9bc7.htm" />
+  <HelpKINode Title="OfflineVisitorPublicException.OfflineVisitorPublicException конструктор" Url="html/80192380-d5c5-2034-4fe5-ed8104988c67.htm" />
+  <HelpKINode Title="Open - член перечисления" Url="html/5cee2774-4821-71d6-8ebb-f1bc4f6071a0.htm" />
   <HelpKINode Title="Options свойство">
     <HelpKINode Title="Department.Options - свойство" Url="html/fda16c3a-bea7-cc1d-621c-431ad17bd18d.htm" />
     <HelpKINode Title="Employee.Options - свойство" Url="html/2cedc8b1-64c3-2f24-e3cc-6a6966b1348b.htm" />
   </HelpKINode>
+  <HelpKINode Title="Phone - член перечисления" Url="html/2e39c7d5-580c-aa95-c03a-3910e62b157c.htm" />
   <HelpKINode Title="Phone свойство" Url="html/189e93d9-2d5e-6a3d-17b8-d62033bf8fde.htm" />
   <HelpKINode Title="ReceiveFileMessage метод" Url="html/526a0f94-322c-7545-6f5f-ac376fba1145.htm" />
   <HelpKINode Title="ReceiveHoldMessage метод" Url="html/f4f8d395-c5e3-cee3-1ac0-1ab53ebd3e51.htm" />
+  <HelpKINode Title="ReceiveOfflineMessage метод" Url="html/30ad2c67-8b93-594d-d86f-1da4e68edfa0.htm" />
   <HelpKINode Title="ReceiveTextMessage метод" Url="html/1c433e84-2a95-0810-1cc6-e8d1e95cb2c5.htm" />
   <HelpKINode Title="ReceiveTypingMessage метод" Url="html/5307a471-9d4b-e05b-e4b3-7c64e0dca1a9.htm" />
   <HelpKINode Title="RequestDialogAsync метод" Url="html/2255118e-fdac-292e-9462-0fb8953d95e7.htm" />
   <HelpKINode Title="RequestDialogByDepartmentAsync метод" Url="html/c21545e0-fbc8-5671-85c9-0d9512ef99ce.htm" />
   <HelpKINode Title="RequestDialogByEmployeeAsync метод" Url="html/ac2b3a91-ec54-d679-237e-7738bf24e5eb.htm" />
+  <HelpKINode Title="Route свойство" Url="html/d5968d07-9449-633f-d364-94277a3548c2.htm" />
   <HelpKINode Title="Sender свойство" Url="html/1a4eda09-17aa-3f5b-e321-296dd9e64e4e.htm" />
-  <HelpKINode Title="SenderID свойство" Url="html/dc75f371-433d-0434-6101-e73803f71eb9.htm" />
+  <HelpKINode Title="SenderID свойство">
+    <HelpKINode Title="OfflineMessage.SenderID - свойство" Url="html/ebf6593d-bb77-6bc0-b062-30b45c5a65c8.htm" />
+    <HelpKINode Title="TextMessage.SenderID - свойство" Url="html/dc75f371-433d-0434-6101-e73803f71eb9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SendFileAsync метод" Url="html/c30ed56d-ce6e-4026-b88c-8574988c18a8.htm" />
+  <HelpKINode Title="SendOfflineFileAsync метод" Url="html/9410e292-d8e0-df70-f1eb-390d8159e34b.htm" />
+  <HelpKINode Title="SendOfflineMessageAsync метод" Url="html/7d9a3db0-9b97-a6f9-ae29-f518b1f5b249.htm" />
   <HelpKINode Title="SendTextMessageAsync метод" Url="html/ef417280-586a-ce78-e390-43d9fdf27291.htm" />
   <HelpKINode Title="ServiceUnavailableException - класс">
     <HelpKINode Title="ServiceUnavailableException - класс" Url="html/e24fca3b-b9db-f636-de89-e0cb0d633b9a.htm" />
@@ -257,8 +357,12 @@
   <HelpKINode Title="ServiceUnavailableException.ServiceUnavailableException конструктор" Url="html/dc756834-7c11-c7e3-6ec8-a8931dfc2e3e.htm" />
   <HelpKINode Title="SetVisitorNameAsync метод" Url="html/ce58e84b-b50a-8d2e-7fd1-b42ff2f830b2.htm" />
   <HelpKINode Title="State свойство" Url="html/95e6bc98-e7b4-2d59-a550-6cfc9ae984e9.htm" />
-  <HelpKINode Title="Status свойство" Url="html/7e8cb13c-9cb8-ac04-8a7d-d8c2bf382a13.htm" />
+  <HelpKINode Title="Status свойство">
+    <HelpKINode Title="Employee.Status - свойство" Url="html/7e8cb13c-9cb8-ac04-8a7d-d8c2bf382a13.htm" />
+    <HelpKINode Title="OfflineConversation.Status - свойство" Url="html/aa1e0c50-b8d7-f0c2-5dc2-f225cdd74d8d.htm" />
+  </HelpKINode>
   <HelpKINode Title="SubscribeToEvents метод" Url="html/4fe17a56-bb57-3b2a-b644-e42256bcfe84.htm" />
+  <HelpKINode Title="Text - член перечисления" Url="html/57c902db-5deb-3039-c2a6-aec861d3eca8.htm" />
   <HelpKINode Title="Text свойство">
     <HelpKINode Title="FileMessage.Text - свойство" Url="html/24d01267-a9d0-1819-7c45-0d161d6883fc.htm" />
     <HelpKINode Title="HoldMessage.Text - свойство" Url="html/086817c3-76e1-d5b2-f221-a8f52f02876f.htm" />
@@ -278,8 +382,10 @@
   <HelpKINode Title="Timestamp свойство">
     <HelpKINode Title="FileMessage.Timestamp - свойство" Url="html/e96608e8-853e-8bbf-5890-ebe58cf34c9a.htm" />
     <HelpKINode Title="HoldMessage.Timestamp - свойство" Url="html/71bd8d62-4888-d91c-cc05-0851f1a68834.htm" />
+    <HelpKINode Title="OfflineMessage.Timestamp - свойство" Url="html/7423876b-cee7-924f-01f7-bd8e2250a088.htm" />
     <HelpKINode Title="TextMessage.Timestamp - свойство" Url="html/6ded661f-342f-8e34-8465-0329948d4108.htm" />
   </HelpKINode>
+  <HelpKINode Title="Title свойство" Url="html/bd84fd9a-db5a-86c5-387a-df178b6520d3.htm" />
   <HelpKINode Title="TransportException - класс">
     <HelpKINode Title="TransportException - класс" Url="html/96f50bc9-f88d-65fc-854b-292772fa8b2f.htm" />
     <HelpKINode Title="конструктор" Url="html/16c33fe0-def8-320f-9698-16dc75edc2b8.htm" />
@@ -289,6 +395,7 @@
     <HelpKINode Title="события" Url="html/7a3420e7-beae-cc81-bb5d-bcfc8025ec35.htm" />
   </HelpKINode>
   <HelpKINode Title="TransportException.TransportException конструктор" Url="html/16c33fe0-def8-320f-9698-16dc75edc2b8.htm" />
+  <HelpKINode Title="Type свойство" Url="html/dc1891c0-1bf0-8f42-a8b6-3797161191cf.htm" />
   <HelpKINode Title="TypingMessage - класс">
     <HelpKINode Title="TypingMessage - класс" Url="html/07e5a8c8-cc7c-84a1-9496-03606767f9a6.htm" />
     <HelpKINode Title="конструктор" Url="html/0d3ecb89-fc9e-b27c-8613-7840a141ed83.htm" />
@@ -300,9 +407,17 @@
   <HelpKINode Title="TypingMessage.TypingMessage конструктор" Url="html/0d3ecb89-fc9e-b27c-8613-7840a141ed83.htm" />
   <HelpKINode Title="TypingMessageAsync метод" Url="html/fca50b6c-8e97-ef29-fdcd-98e3862a1d0a.htm" />
   <HelpKINode Title="UpdateDialogState метод" Url="html/ee800b5f-37bd-353a-2090-293a65f0f6f6.htm" />
-  <HelpKINode Title="Url свойство" Url="html/ea9837d9-9f60-1720-0490-183212bb7f95.htm" />
+  <HelpKINode Title="UpdateTimeStamp свойство">
+    <HelpKINode Title="OfflineConversation.UpdateTimeStamp - свойство" Url="html/e088b31b-360f-8403-c5a7-8a0f63e213c0.htm" />
+    <HelpKINode Title="OfflineRoute.UpdateTimeStamp - свойство" Url="html/5bc382dc-2c50-bb3d-3b64-03c0da8f6b4e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Url свойство">
+    <HelpKINode Title="FileMessage.Url - свойство" Url="html/ea9837d9-9f60-1720-0490-183212bb7f95.htm" />
+    <HelpKINode Title="OfflineMessage.Url - свойство" Url="html/e683e23c-4150-29f8-4386-44b7770a659d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Value свойство" Url="html/b02ed4fd-cb3d-784e-465e-4950e3cf7f6c.htm" />
   <HelpKINode Title="Visible свойство" Url="html/00bc309b-2247-7592-6a67-b39ad25e5b82.htm" />
+  <HelpKINode Title="VisitorID свойство" Url="html/27422a48-6b3f-c792-109a-64ff10e60652.htm" />
   <HelpKINode Title="VoteDialogAsync метод" Url="html/9f7d1287-28e0-248b-a5ca-473389882df9.htm" />
   <HelpKINode Title="VoteType - перечисление" Url="html/33a74f9d-2066-c763-807a-cd6473afacd6.htm" />
-  <HelpKINode Title="WindowsPhone - член перечисления" Url="html/6ce814c1-d01e-d5de-b0a2-d87b8999d9e7.htm" />
 </HelpKI>
