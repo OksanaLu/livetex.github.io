@@ -406,9 +406,9 @@
 </tbody>
 </table>
 <h3 id="_3">Пример</h3>
-<pre><code class="javascript">function onInvitationWindowShown(data) {
-  var message = data['message'] || {};
-  var employee = source['employee'];
+<pre><code class="javascript">function onInvitationWindowShown(event) {
+  var message = event['data']['message'] || '';
+  var employee = event['data']['employee'];
   console.log(employee['name'] + ' отправил приглашение: ' + message);
 }
 

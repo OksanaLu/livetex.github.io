@@ -412,15 +412,16 @@
 </tbody>
 </table>
 <h3 id="_3">Пример</h3>
-<pre><code class="javascript">function onConversationStarted(data) {
-  var source = data['source'] || {};
+<pre><code class="javascript">function onConversationStarted(event) {
+  var data = event['data'];
+  var source = event['data']['source'] || {};
   var sourceType = source['type'];
 
   if (sourceType === LiveTex.SourceType.VISITOR) {
     alert('Обращение началось с сообщения посетителя');
   } else if (sourceType === LiveTex.SourceType.EMPLOYEE) {
     alert('Обращение началось с приглашения оператора');
-  } else  if (sourceType === LiveTex.SourceType.SYSTEM) {
+  } else if (sourceType === LiveTex.SourceType.SYSTEM) {
     alert('Обращение началось с автоприглашения');
   } else if (sourceType === LiveTex.SourceType.API) {
     alert('Обращение началось после вызова метода API');

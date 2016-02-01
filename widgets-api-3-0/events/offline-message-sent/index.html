@@ -413,8 +413,8 @@
 </table>
 
 <h3 id="_3">Пример</h3>
-<pre><code class="javascript">function onOfflineMessageSent(data) {
-  alert('Оператор прислал сообщение "' + data['text'] + '".');
+<pre><code class="javascript">function onOfflineMessageSent(event) {
+  alert('Оператор прислал сообщение "' + event['data']['text'] + '".');
 }
 
 var descriptor = LiveTex.addEventListener(
