@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Employee - Livetex Widgets API 3.0</title>
+	<title>Welcome window shown - Livetex Widgets API 3.0</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -59,61 +59,61 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
 
                             <li >
-                                <a href="../../events/call-established/">Call established</a>
+                                <a href="../call-established/">Call established</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../../events/call-started/">Call started</a>
+                                <a href="../call-started/">Call started</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../../events/conversation-started/">Conversation started</a>
+                                <a href="../conversation-started/">Conversation started</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../../events/employee-message-sent/">Employee message sent</a>
+                                <a href="../employee-message-sent/">Employee message sent</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../../events/invitation-window-close/">Invitation window close</a>
+                                <a href="../invitation-window-close/">Invitation window close</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../../events/invitation-window-shown/">Invitation window shown</a>
+                                <a href="../invitation-window-shown/">Invitation window shown</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../../events/offline-message-sent/">Offline message sent</a>
+                                <a href="../offline-message-sent/">Offline message sent</a>
+                            </li>
+
+
+
+                            <li class="active">
+                                <a href="./">Welcome window shown</a>
                             </li>
 
 
 
                             <li >
-                                <a href="../../events/welcome-window-shown/">Welcome window shown</a>
-                            </li>
-
-
-
-                            <li >
-                                <a href="../../events/x-window-shown/">X-Window shown</a>
+                                <a href="../x-window-shown/">X-Window shown</a>
                             </li>
 
                         
@@ -261,45 +261,45 @@
                         </ul>
                     </li>
                 
-
                 
-                    <li class="dropdown active">
+                
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Typedefs <b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
 
                             <li >
-                                <a href="../Contact/">Contact</a>
+                                <a href="../../typedefs/Contact/">Contact</a>
                             </li>
                         
                             
 <li >
-    <a href="../ConversationAttribute">ConversationAttribute</a>
-</li>
-
-
-<li class="active">
-    <a href="./">Employee</a>
+    <a href="../../typedefs/ConversationAttribute/">ConversationAttribute</a>
 </li>
 
 
                             <li >
-                                <a href="../EmployeeFilter">EmployeeFilter</a>
+                                <a href="../../typedefs/Employee">Employee</a>
                             </li>
 
 
                             <li >
-                                <a href="../Schedule">Schedule</a>
+                                <a href="../../typedefs/EmployeeFilter">EmployeeFilter</a>
                             </li>
 
 
                             <li >
-                                <a href="../VisitorAttributes/">VisitorAttributes</a>
+                                <a href="../../typedefs/Schedule">Schedule</a>
                             </li>
 
 
                             <li >
-                                <a href="../VisitorDisplayedName/">VisitorDisplayedName</a>
+                                <a href="../../typedefs/VisitorAttributes/">VisitorAttributes</a>
+                            </li>
+
+
+                            <li >
+                                <a href="../../typedefs/VisitorDisplayedName/">VisitorDisplayedName</a>
                             </li>
 
                         
@@ -324,9 +324,9 @@
 
 
 
-                            <li >
-                                <a href="../../enums/EmployeeStatus/">EmployeeStatus</a>
-                            </li>
+<li >
+    <a href="../../EmployeeStatus/">EmployeeStatus</a>
+</li>
 
                         
                             
@@ -362,12 +362,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../ConversationAttribute/">
+                        <a rel="next" href="../offline-message-sent/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../EmployeeFilter/">
+                        <a rel="prev" href="../x-window-shown/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -382,69 +382,34 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#employee">Employee</a></li>
-        
-            <li><a href="#_1">Описание</a></li>
-        
-            <li><a href="#_2">Тип</a></li>
-        
-    
+
+      <li class="main active"><a href="#welcome-window-shown">WELCOME_WINDOW_SHOWN</a></li>
+      <li><a href="#_1">Описание</a></li>
+      <li><a href="#_2">Данные</a></li>
+      <li><a href="#_3">Пример</a></li>
+
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="employee">Employee</h2>
+<h2 id="welcome-window-shown">LiveTex.Event.WELCOME_WINDOW_SHOWN</h2>
 <h3 id="_1">Описание</h3>
-<p>Оператор</p>
-<h3 id="_2">Тип</h3>
-<p>{ id: string,
-    name: string,
-    avatar_url: string,
-    status: LiveTex.EmployeeStatus,
-    is_available: boolean}</p>
-<table>
-<thead>
-<tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Описание</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>Идентификатор оператора</td>
-<td></td>
-</tr>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Имя оператора (Имя + Фамилия)</td>
-<td></td>
-</tr>
-<tr>
-<td>avatar_url</td>
-<td>string</td>
-<td>Ссылка на аватар</td>
-<td></td>
-</tr>
-<tr>
-<td>status</td>
-<td>LiveTex.EmployeeStatus</td>
-<td>Статус оператора</td>
-<td></td>
-</tr>
-<tr>
-<td>is_available</td>
-<td>boolean</td>
-<td>Флаг занятости оператора</td>
-<td></td>
-</tr>
-</tbody>
-</table></div>
+<p>Событие открытия welcome-window</p>
+<p>Уведомляет о показе окна приветствия на сайте</p>
+<h3 id="_2">Данные</h3>
+<h4 id="event">event</h4>
+<p>'welcome-window-shown'</p>
+<h4 id="data">data</h4>
+<p>-</p>
+
+<h3 id="_3">Пример</h3>
+<pre><code class="javascript">function onWelсomeWindowShown() {
+  console.log('Окно приветствия показано');
+}
+
+var descriptor = LiveTex.addEventListener(
+  LiveTex.Event.WELCOME_WINDOW_SHOWN, onWelсomeWindowShown);</code></pre>
+</div>
             
         </div>
 
