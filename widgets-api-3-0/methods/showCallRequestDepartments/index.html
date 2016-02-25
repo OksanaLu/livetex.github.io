@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>showOfflineWindow - Livetex Widgets API 3.0</title>
+    <title>showCallRequestDepartments - Livetex Widgets API 3.0</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -116,6 +116,7 @@
                             <a href="../../events/x-window-shown/">X-Window shown</a>
                         </li>
 
+
                     </ul>
                 </li>
 
@@ -187,7 +188,7 @@
 
 
                         <li >
-                            <a href="../showWelcomeWindow/">showWelcomeWindow</a>
+                            <a href="../openWelcomeWindow/">openWelcomeWindow</a>
                         </li>
 
 
@@ -223,13 +224,13 @@
 
 
                         <li >
-                            <a href="../showLabel/">showLabel</a>
+                            <a href="../showChatLabel/">showChatLabel</a>
                         </li>
 
 
 
                         <li >
-                            <a href="../showConversationWindow">showConversationWindow</a>
+                            <a href="../showConversationWindow/">showConversationWindow</a>
                         </li>
 
 
@@ -240,8 +241,8 @@
 
 
 
-                        <li >
-                            <a href="../showCallRequestDepartments/">showCallRequestDepartments</a>
+                        <li class="active">
+                            <a href="./">showCallRequestDepartments</a>
                         </li>
 
 
@@ -252,8 +253,8 @@
 
 
 
-                        <li class="active">
-                            <a href="./">showOfflineWindow</a>
+                        <li >
+                            <a href="../showOfflineWindow/">showOfflineWindow</a>
                         </li>
 
 
@@ -342,7 +343,7 @@
 
 
                         <li >
-                            <a href="../../enums/SourceType/">SourceType</a>
+                            <a href="../../enums/Source/">Source</a>
                         </li>
 
 
@@ -367,12 +368,12 @@
                 </li>
 
                 <li >
-                    <a rel="next" href="../showOfflineDepartments/">
+                    <a rel="next" href="../showInvitationWindow/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../showXWindow/">
+                    <a rel="prev" href="../showOfflineDepartments/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -388,25 +389,57 @@
     <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
         <ul class="nav bs-sidenav">
 
-            <li class="main active"><a href="#showofflinewindow">showOfflineWindow</a></li>
+            <li class="main active"><a href="#showcallrequestdepartments">showCallRequestDepartments</a></li>
 
             <li><a href="#_1">Описание</a></li>
 
-            <li><a href="#_2">Пример</a></li>
+            <li><a href="#_2">Параметры</a></li>
+
+            <li><a href="#_3">Пример</a></li>
 
 
         </ul>
     </div></div>
     <div class="col-md-9" role="main">
 
-        <p><a name="showOfflineWindow"></a></p>
-        <h2 id="showofflinewindow">showOfflineWindow</h2>
+        <p><a name="showInvitationWindow"></a></p>
+        <h2 id="showcallrequestdepartments">showCallRequestDepartments</h2>
         <p><a name="Описание"></a></p>
         <h3 id="_1">Описание</h3>
-        <p>Открывает offline окно.</p>
+        <p>Отображает селектор групп в форме заказа звонка</p>
+        <p><i>Данный метод предназначен для работы со встроенном видом окна</i></p>
+        <p><a name="Параметры"></a></p>
+        <h3 id="_2">Параметры</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Тип</th>
+                <th>Описание</th>
+                <th>Опциональность</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>opt_groups</td>
+                <td>Array.<{id: string, name: string}>=</td>
+                <td>группы</td>
+                <td>Опциональный</td>
+            </tr>
+            </tbody>
+        </table>
         <p><a name="Пример"></a></p>
-        <h3 id="_2">Пример</h3>
-<pre><code class="js">LiveTex.showOfflineWindow();</code></pre></div>
+        <h3 id="_3">Пример</h3>
+<pre><code class="js">// позволяет выбрать группу в форме заказа звонка
+LiveTex.showCallRequestDepartments();
+</code></pre><pre><code class="js">// предустанавливает группу в форме заказа звонка
+LiveTex.showCallRequestDepartments([{ "id": "16429", "name": "Отдел продаж"}]);
+</code></pre><pre><code class="js">// позволяет выбрать группу из предустановленных
+LiveTex.showCallRequestDepartments([
+  { "id": "16429", "name": "Отдел продаж"},
+  { "id": "16430", "name": "Тех поддержка"}
+]);
+</code></pre></div>
 
 </div>
 
