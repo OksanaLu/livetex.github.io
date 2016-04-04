@@ -422,9 +422,9 @@
 <td></td>
 </tr>
 <tr>
-<td>source</td>
-<td>{type: <a href="../../enums/SourceType/">LiveTex.SourceType</a>, id: string}</td>
-<td>Источник сообщения</td>
+<td>sender_id</td>
+<td>string</td>
+<td>Идентификатор отправителя</td>
 <td></td>
 </tr>
 <tr>
@@ -438,7 +438,7 @@
 
 <h3 id="_3">Пример</h3>
 <pre><code class="javascript">function onOfflineMessageSent(event) {
-  alert('Оператор прислал сообщение "' + event['data']['text'] + '".');
+  alert('Оператор отправил офлайн сообщение "' + event['data']['text'] + '".');
 }
 
 var descriptor = LiveTex.addEventListener(
