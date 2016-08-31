@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
+
+	<title>LiveTex SDK 2.x</title>
+
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">LiveTex SDK 2.x</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="faq/">Faq</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="push-notifications/">Push notifications</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Android <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="android/example/">Example</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ios <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="ios/objective-c/">Objective c</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="ios/swift/">Swift</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="faq/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#livetex-mobile-sdk-2x">LiveTex Mobile SDK 2.x</a></li>
+        
+            <li><a href="#_1">Функциональность</a></li>
+        
+            <li><a href="#_2">Концепции</a></li>
+        
+            <li><a href="#_3">Архитектура</a></li>
+        
+            <li><a href="#_4">Быстрый старт</a></li>
+        
+            <li><a href="#_5">Примеры</a></li>
+        
+            <li><a href="#api">Документация API</a></li>
+        
+            <li><a href="#livetex-kit">Документация LiveTex Kit</a></li>
+        
+            <li><a href="#_6">Исходные коды</a></li>
+        
+            <li><a href="#push-">Работа с PUSH-оповещениями</a></li>
+        
+            <li><a href="#faq">FAQ</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="livetex-mobile-sdk-2x">LiveTex Mobile SDK 2.x</h1>
+<p><em>LiveTex Mobile SDK 2.0</em> предоставляет набор инструментов для организации
+консультирования пользователей мобильных приложений.</p>
+<h2 id="_1">Функциональность</h2>
+<ul>
+<li>Возможность выбора департамента и/или оператора для обращения.</li>
+<li>Передача и прием текстовых сообщений.</li>
+<li>Передача и прием файлов.</li>
+<li>Мгновенное оповещение о событиях: оповещение о наборе, удерживающие сообщения, изменение оператора диалога, закрытие диалога оператором.</li>
+<li>Просмотр истории сообщений.</li>
+<li>PUSH-уведомления.</li>
+</ul>
+<h2 id="_2">Концепции</h2>
+<ul>
+<li><strong>Собеседник</strong> - пользователь мобильного приложения, которому предоставляется консультация.</li>
+<li><strong>Оператор</strong> - сотрудник организации клиента, который осуществляет консультацию.</li>
+<li><strong>Направление обращения</strong> - уточняющие атрибуты обращения, необходимые для корректной маршрутизации на оператора.</li>
+<li><em>Собеседник</em> может иметь только одно активное обращение.</li>
+<li><em>Собеседник</em> может начать переписку в независимости от доступности <em>Операторов</em> на рабочем месте.</li>
+<li>Сообщения <em>собеседника</em> будут доставлены, когда необходимый <em>оператор</em> станет доступен для обработки обращений.</li>
+</ul>
+<h2 id="_3">Архитектура</h2>
+<p>Клиентские библиотеки LiveTex SDK состоят из двух компонент:</p>
+<ul>
+<li>LiveTex Core - базовая функциональность, необходимая для интеграции с сервисами LiveTex.</li>
+<li>LiveTex Kit - библиотека готовых UI-элементов.</li>
+</ul>
+<h2 id="_4">Быстрый старт</h2>
+<ol>
+<li><a href="https://my.livetex.ru/register/">Создать аккаунт</a> в системе LiveTex.</li>
+<li><a href="https://my.livetex.ru/settings/personnel/add/">Создать <em>операторов</em></a>.</li>
+<li><a href="https://my.livetex.ru/settings/sites/">Создать точку контакта</a> для мобильного приложения.</li>
+<li>Запросить ключ разработчика у техподдержки по <a href="mailto:sdk.customers@livetex.ru">email</a>. В письме необходимо указать
+  идентификатор аккаунта в системе Livetex. Идентификатор аккаунта в системе можно посмотреть в личном кабинете в
+  выпадающем списке при нажатии на профиль администратора (верхний правый угол).</li>
+<li><a href="#_5">Скачать демо приложение</a></li>
+</ol>
+<h2 id="_5">Примеры</h2>
+<ul>
+<li><a href="android/example/">Примеры использования Android SDK</a></li>
+<li><a href="ios/objective-c/">Примеры использования iOS SDK (Objective-C)</a></li>
+<li><a href="ios/swift/">Примеры использования iOS SDK (Swift)</a></li>
+</ul>
+<h2 id="api">Документация API</h2>
+<ul>
+<li><a href="http://livetex.github.io/sdk-v2/generated/android/index.html">Android</a></li>
+<li><a href="http://livetex.github.io/sdk-v2/generated/ios/index.html">iOS</a></li>
+</ul>
+<h2 id="livetex-kit">Документация LiveTex Kit</h2>
+<ul>
+<li><a href="https://support.livetex.ru/hc/ru/articles/207070209-%D0%9F%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-LivetexKit-%D0%B4%D0%BB%D1%8F-Android">Android</a></li>
+<li><a href="https://support.livetex.ru/hc/ru/articles/206792119-Использaование-LivetexKit">iOS</a></li>
+</ul>
+<h2 id="_6">Исходные коды</h2>
+<ul>
+<li><a href="https://github.com/LiveTex/Livetex-Android-SDK-Demo">Android SDK Demo</a></li>
+<li><a href="https://github.com/LiveTex/Livetex-iOS-SDK-Demo">iOS SDK Demo</a></li>
+<li><a href="https://github.com/LiveTex/iOS-SDK-Demo-Design-Level">iOS Kit Demo</a></li>
+</ul>
+<h2 id="push-">Работа с PUSH-оповещениями</h2>
+<ul>
+<li><a href="push-notifications/">Архитектура</a></li>
+<li><a href="https://support.livetex.ru/hc/ru/articles/206620499-Push-%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%BB%D1%8F-Android">Android</a></li>
+<li><a href="https://support.livetex.ru/hc/ru/articles/206618669-Push-%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%BB%D1%8F-iOS">iOS</a></li>
+</ul>
+<h2 id="faq"><a href="faq/">FAQ</a></h2></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script>
+        <script>var base_url = '.';</script>
+        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+        <script src="./js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-08-31 11:48:07.716795
+-->

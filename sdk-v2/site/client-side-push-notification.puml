@@ -1,0 +1,31 @@
+@startuml
+
+box "Mobile Platform Infrastructure" #LightRad
+	participant PlatformPushService
+end box
+
+box "SDK Client Infrastructure" #LightBlue
+	participant ClientPushNotificationService
+	participant MobileApplication
+end box
+
+box "Livetex Infrastructure" #LightGreen
+	participant AuthenticationService
+	participant Service
+end box
+
+MobileApplication -> AuthenticationService: getVisitorToken(application)
+AuthenticationService --> MobileApplication: token
+
+MobileApplication -> ClientPushNotificationService: addToken(token, deviceId)
+ClientPushNotificationService --> MobileApplication: ok 
+
+Service -> AuthenticationService: checkToken(token)
+AuthenticationService --> Service: pushEndpoint
+
+Service -> ClientPushNotificationService: token, notification
+
+ClientPushNotificationService -> PlatformPushService: sendToDevice(notification, device)
+PlatformPushService -> MobileApplication: notification 
+
+@enduml
