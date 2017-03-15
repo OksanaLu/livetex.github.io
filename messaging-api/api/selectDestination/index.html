@@ -146,19 +146,21 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#selectdestination">selectDestination</a></li>
-            <li><a href="#_1">Формат запроса</a></li>
-            <li><a href="#_2">Формат ответа</a></li>
+            <li><a href="#_1">Пример</a></li>
+            <li><a href="#_2">Формат запроса</a></li>
+            <li><a href="#_3">Формат ответа</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h3 id="selectdestination">selectDestination</h3>
+<h4 id="_1">Пример</h4>
 <pre><code class="bash">curl -XPOST -d'{&quot;user_id&quot;: &quot;&lt;user_id&gt;&quot;, &quot;destination_type&quot;: &quot;TouchPoint&quot;, &quot;destination_id&quot;: &quot;&lt;touchpoint_id&gt;&quot;}' \
    http://messaging.livetex.ru/&lt;version&gt;/selectDestination?key=&lt;authentication_key&gt;
 </code></pre>
 
-<p>Выбор <em>собеседником</em> либо внутренней логикой конкретного <strong>TouchPoint Gateway</strong> направления маршрутизации обращения. Для некоторых точек контакта может быть реализовано предоставлением выбора <em>собеседнику</em> (например в Telegram для этого есть<a href="https://core.telegram.org/bots/api#keyboardbutton"> KeyboardButton</a>). Некоторые точки контакта меньше подходят для такого рода взаимодействий (например SMS или Email), в подобных случаях логику выбора может взять на себя сам <strong>TouchPoint Gateway</strong>. Выбор направления маршрутизации может происходить, как реакция на оповещение о необходимости выбрать направление - SelectDestination.</p>
-<h4 id="_1">Формат запроса</h4>
+<p>Выбор <em>собеседником</em>, либо внутренней логикой конкретного <strong>TouchPoint Gateway</strong> направления маршрутизации обращения. Для некоторых точек контакта может быть реализовано предоставлением выбора <em>собеседнику</em> (например, в Telegram для этого есть<a href="https://core.telegram.org/bots/api#keyboardbutton"> KeyboardButton</a>). Некоторые точки контакта меньше подходят для такого рода взаимодействий (например SMS или Email), в подобных случаях логику выбора может взять на себя сам <strong>TouchPoint Gateway</strong>. Выбор направления маршрутизации может происходить как реакция на оповещение о необходимости выбрать направление SelectDestination.</p>
+<h4 id="_2">Формат запроса</h4>
 <table>
   <tr>
     <td><b>Имя</b></td>
@@ -170,7 +172,7 @@
     <td>user_id</td>
     <td>String</td>
     <td>Да</td>
-    <td>Уникальный идентификатор собеседника в точке контакта, задается на клиенте.</td>
+    <td>Идентификатор собеседника в точке контакта. Задается на стороне клиента</td>
   </tr>
   <tr>
     <td>destination_type</td>
@@ -182,7 +184,7 @@
     <td>destination_id</td>
     <td>String</td>
     <td>Да</td>
-    <td>Идентификатор направления маршрутизации.</td>
+    <td>Идентификатор направления маршрутизации</td>
   </tr>
   <tr>
     <td>name</td>
@@ -194,17 +196,17 @@
     <td>attributes</td>
     <td>Map<String, String></td>
     <td>Нет</td>
-    <td>Набор кастомных атрибутов, которые будут переданы оператору.</td>
+    <td>Набор кастомных атрибутов, которые будут переданы оператору</td>
   </tr>
   <tr>
     <td>hidden_attributes</td>
     <td>Map<String, String></td>
     <td>Нет</td>
-    <td>Набор кастомных атрибутов, которые будут переданы оператору.</td>
+    <td>Набор кастомных атрибутов, которые будут переданы оператору</td>
   </tr>
 </table>
 
-<h4 id="_2">Формат ответа</h4>
+<h4 id="_3">Формат ответа</h4>
 <table>
   <tr>
     <td><b>Имя</b></td>
@@ -216,19 +218,19 @@
     <td>success</td>
     <td>Boolean</td>
     <td>Да</td>
-    <td>Успешно ли выполняется запрос.</td>
+    <td>Проверка успешности выполнения запроса</td>
   </tr>
   <tr>
     <td>error_message</td>
     <td>String</td>
     <td>Нет</td>
-    <td>Описание ошибки.</td>
+    <td>Описание ошибки</td>
   </tr>
   <tr>
     <td>error_code</td>
     <td>Integer</td>
     <td>Нет</td>
-    <td>Код ошибки. Для возможности интернационализации.</td>
+    <td>Код ошибки. Для возможности интернационализации</td>
   </tr>
 </table></div>
         </div>

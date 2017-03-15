@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,37 +13,37 @@
         
     <url>
      <loc>/api/getDestinations/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/getWebhookSettings/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/selectDestination/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/sendFile/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/sendText/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/setWebhook/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -53,13 +53,13 @@
         
     <url>
      <loc>/types/destination/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/types/employee/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -69,37 +69,37 @@
         
     <url>
      <loc>/webhooks/Closed/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/webhooks/FileMessage/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/webhooks/HoldMessage/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/webhooks/MessageDelivered/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/webhooks/SelectDestination/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/webhooks/TextMessage/</loc>
-     <lastmod>2017-03-02</lastmod>
+     <lastmod>2017-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

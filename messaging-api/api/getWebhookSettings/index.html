@@ -146,17 +146,19 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#getwebhooksettings">getWebhookSettings</a></li>
-            <li><a href="#_1">Формат ответа</a></li>
+            <li><a href="#_1">Пример</a></li>
+            <li><a href="#_2">Формат ответа</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h3 id="getwebhooksettings"><strong>getWebhookSettings</strong></h3>
+<h4 id="_1">Пример</h4>
 <pre><code class="bash">curl -XPOST http://messaging.livetex.ru/&lt;version&gt;/getWebhookSettings?key=&lt;authentication_key&gt;
 </code></pre>
 
 <p>Получить текущие настройки для webhook.</p>
-<h4 id="_1">Формат ответа</h4>
+<h4 id="_2">Формат ответа</h4>
 <table>
   <tr>
     <td><b>Имя</b></td>
@@ -168,25 +170,25 @@
     <td>success</td>
     <td>Boolean</td>
     <td>Да</td>
-    <td>Успешно ли выполняется запрос.</td>
+    <td>Проверка успешности выполнения запроса</td>
   </tr>
   <tr>
       <td>url</td>
       <td>String</td>
       <td>Да</td>
-      <td>URL по которому посылаются WebHooks оповещения, пустой если WebHook не выставлен.</td>
+      <td>URL, по которому посылаются WebHooks оповещения. URL будет пустой, если WebHook не выставлен</td>
     </tr>
   <tr>
     <td>error_message</td>
     <td>String</td>
     <td>Нет</td>
-    <td>Описание ошибки.</td>
+    <td>Описание ошибки</td>
   </tr>
   <tr>
     <td>error_code</td>
     <td>Integer</td>
     <td>Нет</td>
-    <td>Код ошибки. Для возможности интернационализации.</td>
+    <td>Код ошибки. Для возможности интернационализации</td>
   </tr>
 </table></div>
         </div>

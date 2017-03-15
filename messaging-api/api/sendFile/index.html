@@ -146,19 +146,21 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#sendfile">sendFile</a></li>
-            <li><a href="#_1">Формат запроса</a></li>
-            <li><a href="#_2">Формат ответа</a></li>
+            <li><a href="#_1">Пример</a></li>
+            <li><a href="#_2">Формат запроса</a></li>
+            <li><a href="#_3">Формат ответа</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h3 id="sendfile">sendFile</h3>
+<h4 id="_1">Пример</h4>
 <pre><code class="bash">curl -XPOST -d'{&quot;user_id&quot;: &quot;&lt;user_id&gt;&quot;, &quot;url&quot;: &quot;https://livetex.ru/wp-content/themes/livetex/ltx/img/Logo_LiveTex.png&quot;}' \
   http://messaging.livetex.ru/&lt;version&gt;/sendFile?key=&lt;authentication_key&gt;
 </code></pre>
 
-<p>Отправка файла в обращение от лица <em>собеседника</em>. В случае успешного запроса порождается оповещение UserFile доступное собеседнику и агентам обслуживающим обращение.</p>
-<h4 id="_1">Формат запроса</h4>
+<p>Отправка файла в обращение от лица <em>собеседника</em>. В случае успешного запроса создаётся оповещение UserFile, доступное собеседнику и агентам, обслуживающим обращение.</p>
+<h4 id="_2">Формат запроса</h4>
 <table>
   <tr>
     <td><b>Имя</b></td>
@@ -170,35 +172,35 @@
     <td>user_id</td>
     <td>String</td>
     <td>Да</td>
-    <td>Уникальный идентификатор собеседника в точке контакта, задается на клиенте.</td>
+    <td>Идентификатор собеседника в точке контакта. Задается на стороне клиента</td>
   </tr>
   <tr>
     <td>url</td>
     <td>String</td>
     <td>Да</td>
-    <td>Ссылка для скачивания файла.</td>
+    <td>Ссылка для скачивания файла</td>
   </tr>
   <tr>
     <td>file_name</td>
     <td>String</td>
     <td>Нет</td>
-    <td>Имя файла для скачивания.</td>
+    <td>Имя файла для скачивания</td>
   </tr>
   <tr>
     <td>size</td>
     <td>Long</td>
     <td>Нет</td>
-    <td>Размер файла в байтах.</td>
+    <td>Размер файла в байтах</td>
   </tr>
   <tr>
     <td>comment</td>
     <td>String</td>
     <td>Нет</td>
-    <td>Комментарий к переданному файлу.</td>
+    <td>Комментарий к переданному файлу</td>
   </tr>
 </table>
 
-<h4 id="_2">Формат ответа</h4>
+<h4 id="_3">Формат ответа</h4>
 <table>
   <tr>
     <td><b>Имя</b></td>
@@ -210,31 +212,31 @@
     <td>success</td>
     <td>Boolean</td>
     <td>Да</td>
-    <td>Успешно ли выполняется запрос.</td>
+    <td>Проверка успешности выполнения запроса</td>
   </tr>
   <tr>
     <td>id</td>
     <td>String</td>
     <td>Да</td>
-    <td>Идентификатор присвоенный сообщению.</td>
+    <td>Идентификатор, присвоенный сообщению</td>
   </tr>  
   <tr>
     <td>timestamp</td>
     <td>Long</td>
     <td>Да</td>
-    <td>Время в формате Unix time.</td>
+    <td>Время в формате Unix time</td>
   </tr>  
   <tr>
     <td>error_message</td>
     <td>String</td>
     <td>Нет</td>
-    <td>Описание ошибки.</td>
+    <td>Описание ошибки</td>
   </tr>
   <tr>
     <td>error_code</td>
     <td>Integer</td>
     <td>Нет</td>
-    <td>Код ошибки. Для возможности интернационализации.</td>
+    <td>Код ошибки. Для возможности интернационализации</td>
   </tr>
 </table></div>
         </div>
